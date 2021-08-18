@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\artist;
+use App\Models\Artist;
 use Illuminate\Http\Request;
 
 class ArtistController extends Controller
@@ -41,10 +41,10 @@ class ArtistController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\artist  $artist
+     * @param  \App\Models\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function show(artist $artist)
+    public function show(Artist $artist)
     {
         //
     }
@@ -52,10 +52,10 @@ class ArtistController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\artist  $artist
+     * @param  \App\Models\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function edit(artist $artist)
+    public function edit(Artist $artist)
     {
         //
     }
@@ -64,10 +64,10 @@ class ArtistController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\artist  $artist
+     * @param  \App\Models\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, artist $artist)
+    public function update(Request $request, Artist $artist)
     {
         //
     }
@@ -75,10 +75,10 @@ class ArtistController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\artist  $artist
+     * @param  \App\Models\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(artist $artist)
+    public function destroy(Artist $artist)
     {
         //
     }

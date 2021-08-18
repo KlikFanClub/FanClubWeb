@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\workart;
+use App\Models\Workart;
 use Illuminate\Http\Request;
 
 class WorkartController extends Controller
@@ -41,10 +41,10 @@ class WorkartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\workart  $workart
+     * @param  \App\Models\Workart  $workart
      * @return \Illuminate\Http\Response
      */
-    public function show(workart $workart)
+    public function show(Workart $workart)
     {
         //
     }
@@ -52,10 +52,10 @@ class WorkartController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\workart  $workart
+     * @param  \App\Models\Workart  $workart
      * @return \Illuminate\Http\Response
      */
-    public function edit(workart $workart)
+    public function edit(Workart $workart)
     {
         //
     }
@@ -64,10 +64,10 @@ class WorkartController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\workart  $workart
+     * @param  \App\Models\Workart  $workart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, workart $workart)
+    public function update(Request $request, Workart $workart)
     {
         //
     }
@@ -75,10 +75,10 @@ class WorkartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\workart  $workart
+     * @param  \App\Models\Workart  $workart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(workart $workart)
+    public function destroy(Workart $workart)
     {
         //
     }
