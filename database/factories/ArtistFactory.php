@@ -22,7 +22,14 @@ class ArtistFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'artistname' => $this->faker->text(),
+            'artistpicture' => $this->faker->imageUrl(),
+            'bio'=> $this->faker->text(),
+            'website'=> $this->faker->text(),
+            'email'=> $this->faker->unique()->safeEmail(),
+            'instagram'=> $this->faker->url(),
+            'facebook'=> $this->faker->url(),
+            'twiter'=> $this->faker->url(),
         ];
     }
 }

@@ -16,6 +16,15 @@ class CreateWorkartsTable extends Migration
         Schema::create('workarts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('title');
+            $table->string('imageworkart');
+            $table->string('artistname');
+            $table->string('edition');
+            $table->string('price');
+            $table->string('technique');
+            $table->string('theme');
+            $table->string('others');
+            $table->string('category');
         });
     }
 
