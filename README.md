@@ -44,5 +44,3 @@ $ composer update
 * Gabriela Piñeiro
 * Martín Madridejos
 * Joan Recordà Pellicer
-
-Won't you please, please help me?
