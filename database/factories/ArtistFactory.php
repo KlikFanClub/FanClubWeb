@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\artist;
+use App\Models\Artist;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ArtistFactory extends Factory
@@ -12,7 +12,7 @@ class ArtistFactory extends Factory
      *
      * @var string
      */
-    protected $model = artist::class;
+    protected $model = Artist::class;
 
     /**
      * Define the model's default state.

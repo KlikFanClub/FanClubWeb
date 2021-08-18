@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\workart;
+use App\Models\Workart;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WorkartFactory extends Factory
@@ -12,7 +12,7 @@ class WorkartFactory extends Factory
      *
      * @var string
      */
-    protected $model = workart::class;
+    protected $model = Workart::class;
 
     /**
      * Define the model's default state.

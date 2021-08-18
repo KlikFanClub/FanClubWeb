@@ -24,6 +24,8 @@ class CreateArtistsTable extends Migration
             $table->string('instagram');
             $table->string('facebook');
             $table->string('twiter');
+            
+            
         });
     }
 
