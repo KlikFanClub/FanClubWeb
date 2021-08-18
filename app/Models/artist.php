@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class artist extends Model
 {
     use HasFactory;
+
+    public function workarts (){
+        return $this->hasMany(workart::class); 
+    }
 }
