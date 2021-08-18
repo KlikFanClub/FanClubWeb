@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class workart extends Model
+class Workart extends Model
 {
     use HasFactory;
+
+    public function artist (){
+        return $this->belongsTo(Artist::class); 
+    }
 }
