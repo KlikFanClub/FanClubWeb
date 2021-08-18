@@ -1,5 +1,7 @@
 # FanClubWeb
 
+[![wakatime](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb.svg)](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb)
+
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Stack and Technologies](#stack-technologies)
