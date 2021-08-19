@@ -22,8 +22,8 @@ class ArtistFactory extends Factory
     public function definition()
     {
         return [
-            'artistname' => $this->faker->text(),
-            'artistpicture' => $this->faker->imageUrl(),
+            'name' => $this->faker->text(),
+            'profile-picture' => $this->faker->imageUrl(),
             'bio'=> $this->faker->text(),
             'website'=> $this->faker->text(),
             'email'=> $this->faker->unique()->safeEmail(),
