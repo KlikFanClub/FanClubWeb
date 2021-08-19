@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" >
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="https://i.postimg.cc/cJBr74VS/fan-club.png" style="width: 50px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -34,13 +34,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        
                         <!-- Authentication Links -->
                         @guest
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark h5" href="{{ url('artists') }}">Artists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark h5" href="{{ url('workarts') }}">Workarts</a>
+                        </li>
+{{--                         
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -69,7 +77,7 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> --}}
                         @endguest
                     </ul>
                 </div>

@@ -17,7 +17,7 @@ class WorkartController extends Controller
   {
     $workarts = Workart::all()
             ->sortByDesc('created_at');
-    return view('artists', compact('workarts'));
+    return view('pages.artists', compact('workarts'));
   }
 
   /**

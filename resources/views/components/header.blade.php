@@ -1,3 +1,8 @@
-<div>
-    HEADER
-</div>
+@extends('layouts.app')
+@section('content')
+
+@endsection
+
+
+
+
