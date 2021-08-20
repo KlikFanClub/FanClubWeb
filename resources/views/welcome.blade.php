@@ -22,10 +22,11 @@
     </head>
     <body class="antialiased">
         <x-header/>
-        
-
+        <x-slider/>
+        <x-container-info/>
+        <x-container-catalogue/>
         <x-footer/>
-        </div>
+        
     </body>
 </html>
 
