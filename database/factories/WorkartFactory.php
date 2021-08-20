@@ -23,7 +23,7 @@ class WorkartFactory extends Factory
     {
         return [
             'title' => $this->faker->text(),
-            'imageworkart' => $this->faker->image(),
+            'imageworkart' => $this->faker->imageUrl(),
             'artistname' => $this->faker->text(),
             'edition' => $this->faker->text(),
             'price' => $this->faker->randomNumber(2),

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\WorkartController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +24,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('/artists', function () {
-    return view('pages/artistsView');
-});
-
-Route::get('/workarts', function () {
-    return view('pages/workartsView');
-});
-
+Route::get('/artists', [ArtistController::class, 'index']);
+Route::get('/workarts', [WorkartController::class, 'index']);

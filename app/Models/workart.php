@@ -7,9 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Workart extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    public function artist (){
-        return $this->belongsTo(Artist::class); 
-    }
+  protected $fillable = [
+
+    'title',
+    'imageworkart',
+    'artistname',
+    'edition',
+    'price',
+    'technique',
+    'theme',
+    'others',
+    'category'
+  ];
+
+  public function artist()
+  {
+    return $this->belongsTo(Artist::class);
+  }
 }
