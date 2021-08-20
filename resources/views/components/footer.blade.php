@@ -22,22 +22,22 @@
       <ul class="list-unstyled">
         <li>
           <p>
-            <a href="#!">PROJECTS</a>
+            <a href="#!">Workarts</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="#!">ABOUT US</a>
+            <a href="#!">Artistas</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="#!">BLOG</a>
+            <a href="#!">Sobre nosotros</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="#!">AWARDS</a>
+            <a href="#!">Contacto</a>
           </p>
         </li>
       </ul>
@@ -51,12 +51,14 @@
     <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
 
       <!-- Contact details -->
-      <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+      <h5 class="font-weight-bold text-uppercase mb-4">Dirección</h5>
 
       <ul class="list-unstyled">
         <li>
           <p>
-            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <i class="fas fa-home mr-3"></i> c/ de Puigmartí, 37 (Pl John Lennon)
+            08012 Barcelona
+            </p>
         </li>
         <li>
           <p>
