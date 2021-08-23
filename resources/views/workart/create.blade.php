@@ -7,8 +7,11 @@
         @csrf
 <div>
     <label for="artist_id">Artista</label>
-    <select name="" id="">
+    <select name="artist_id" >
         <option value="0">Selecione un artista</option>
+        @foreach ($artists as $artist)
+            <option value="{{$artist->id}}">{{$artist->name}}</option>            
+        @endforeach
     </select>
 </div>
 <div>

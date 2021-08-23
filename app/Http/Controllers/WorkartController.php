@@ -28,7 +28,8 @@ class WorkartController extends Controller
    */
   public function create()
   {
-    return view('workart.create');
+    $artists=Artist::all();
+    return view('workart.create', compact('artists'));
   }
 
   /**
