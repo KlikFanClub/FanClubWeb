@@ -18,7 +18,7 @@ class WorkartController extends Controller
   {
     $workarts = Workart::all()
             ->sortByDesc('created_at');
-    return view('pages.artists', compact('workarts'));
+    return view('pages.workarts', compact('workarts'));
   }
 
   /**
@@ -41,7 +41,7 @@ class WorkartController extends Controller
   public function store(Request $request)
   {
     $workart=Workart::create([
-      'artist_id'=>$request->Artista,
+      'artist_id'=>$request->artist_id,
       'title'=>$request->title,
       'imageworkart'=>$request->imageworkart,
       'edition'=>$request->edition,
@@ -54,7 +54,7 @@ class WorkartController extends Controller
       'highlighted'=>$request->highlighted      
     ]);
     $workart->save();
-    return redirect()->route('welcome');
+    return redirect()->route('workarts');
 
   }
 
@@ -75,9 +75,10 @@ class WorkartController extends Controller
    * @param  \App\Models\Workart  $workart
    * @return \Illuminate\Http\Response
    */
-  public function edit(Workart $workart)
+  public function edit($id)
   {
-    //
+    $workart=Workart::find($id);
+    return view ('workart.edit', compact('workart'));
   }
 
   /**
