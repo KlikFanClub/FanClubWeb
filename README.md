@@ -47,4 +47,4 @@ $ composer update
 * Martín Madridejos
 * Joan Recordà Pellicer
 
-* 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
+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
