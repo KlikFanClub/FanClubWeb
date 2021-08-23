@@ -17,16 +17,17 @@ class CreateWorkartsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
-            $table->string('imageworkart');
-            $table->string('artistname');
+            $table->string('imageworkart');            
             $table->string('edition');
             $table->string('price');
             $table->string('technique');
             $table->string('theme');
             $table->string('others');
             $table->string('category');
+            $table->boolean('carousel')->default(0);
+            $table->boolean('highlighted')->default(0);
             $table->foreign('artist_id')->references('id')->on('artists')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('artist_id')->nullable();
+            $table->unsignedBigInteger('artist_id')->default(1);
         });
     }
 

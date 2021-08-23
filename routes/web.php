@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\WorkartController;
+use App\Models\Workart;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -26,3 +27,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/artists', [ArtistController::class, 'index']);
 Route::get('/workarts', [WorkartController::class, 'index']);
+Route::get('/workarts/create',[WorkartController::class, 'create']);
+Route::post('/workarts/create', [WorkartController::class,'store'])->name('storeWorkart');
+

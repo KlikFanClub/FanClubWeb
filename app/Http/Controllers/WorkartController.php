@@ -6,6 +6,7 @@ use App\Models\Workart;
 use Illuminate\Http\Request;
 use App\Models\Artist;
 
+
 class WorkartController extends Controller
 {
   /**
@@ -27,7 +28,7 @@ class WorkartController extends Controller
    */
   public function create()
   {
-    //
+    return view('workart.create');
   }
 
   /**
@@ -38,7 +39,22 @@ class WorkartController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $workart=Workart::create([
+      'artistname'=>$request->Artista,
+      'title'=>$request->Título,
+      'imageworkart'=>$request->ImagenWorkart,
+      'edition'=>$request->Edición,
+      'price'=>$request->Precio,
+      'technique'=>$request->Técnica,
+      'theme'=>$request->Tema,
+      'others'=>$request->Otros,
+      'category'=>$request->Categoria,
+      'carousel'=>$request->Carrusel,
+      'highlighted'=>$request->Destacados
+    ]);
+    $workart->save();
+    return redirect()->route('/');
+
   }
 
   /**
