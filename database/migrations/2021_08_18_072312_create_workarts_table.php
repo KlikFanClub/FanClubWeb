@@ -17,7 +17,7 @@ class CreateWorkartsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
-            $table->string('imageworkart');            
+            $table->string('imageworkart');                   
             $table->string('edition');
             $table->string('price');
             $table->string('technique');

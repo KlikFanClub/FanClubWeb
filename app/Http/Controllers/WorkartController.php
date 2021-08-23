@@ -28,7 +28,7 @@ class WorkartController extends Controller
    */
   public function create()
   {
-    $artists=Artist::all();
+    $artists=Artist::orderBy('name')->get();
     return view('workart.create', compact('artists'));
   }
 
@@ -41,20 +41,20 @@ class WorkartController extends Controller
   public function store(Request $request)
   {
     $workart=Workart::create([
-      'artistname'=>$request->Artista,
-      'title'=>$request->Título,
-      'imageworkart'=>$request->ImagenWorkart,
-      'edition'=>$request->Edición,
-      'price'=>$request->Precio,
-      'technique'=>$request->Técnica,
-      'theme'=>$request->Tema,
-      'others'=>$request->Otros,
-      'category'=>$request->Categoria,
-      'carousel'=>$request->Carrusel,
-      'highlighted'=>$request->Destacados
+      'artist_id'=>$request->Artista,
+      'title'=>$request->title,
+      'imageworkart'=>$request->imageworkart,
+      'edition'=>$request->edition,
+      'price'=>$request->price,
+      'technique'=>$request->technique,
+      'theme'=>$request->theme,
+      'others'=>$request->others,
+      'category'=>$request->category,
+      'carousel'=>$request->carousel,
+      'highlighted'=>$request->highlighted      
     ]);
     $workart->save();
-    return redirect()->route('/');
+    return redirect()->route('welcome');
 
   }
 
