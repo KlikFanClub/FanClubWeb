@@ -1,0 +1,62 @@
+.artworkSlider {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 130px;
+}
+
+.artworkHighlights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.artworkCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 25px;
+}
+
+.artwork {
+  filter: drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.25));
+}
+
+.artistName {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.highlights {
+  margin-top: 150px;
+  padding: 0px 100px;
+}
+
+.highlightsTitle {
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: 3.5%;
+  margin-bottom: 50px;
+}
+
+.artworkDetailsBtn {
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  padding: 3px 0;
+  margin-top: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.artworkDetailsBtn:hover {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+}
+
