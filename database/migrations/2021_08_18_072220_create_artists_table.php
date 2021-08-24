@@ -6,36 +6,34 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateArtistsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('artists', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('name');
-            $table->string('profile-picture');
-            $table->string('bio');
-            $table->string('website');
-            $table->string('email')->unique();
-            $table->string('instagram');
-            $table->string('facebook');
-            $table->string('twiter');
-            
-            
-        });
-    }
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    Schema::create('artists', function (Blueprint $table) {
+      $table->id();
+      $table->timestamps();
+      $table->string('name');
+      $table->string('profile-picture');
+      $table->string('bio');
+      $table->string('website');
+      $table->string('email')->unique();
+      $table->string('instagram');
+      $table->string('facebook');
+      $table->string('twiter');
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('artists');
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::dropIfExists('artists');
+  }
 }

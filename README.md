@@ -42,6 +42,12 @@ $ npm run watch
 
 * Generate key env
 
+* Compile laravel run watch
+```
+$ npm run watch
+```
+
+
 ## collaboration
 
 * Berta Lopez
@@ -50,4 +56,4 @@ $ npm run watch
 * Martín Madridejos
 * Joan Recordà Pellicer
 
-* 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
+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
