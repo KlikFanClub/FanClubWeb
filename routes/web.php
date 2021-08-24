@@ -25,8 +25,6 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/artists', [ArtistController::class, 'index']);
-
 //Routes Workart
 
 Route::get('/workarts', [WorkartController::class, 'index'])->name('workarts');
@@ -35,3 +33,9 @@ Route::post('/workarts/create', [WorkartController::class,'store'])->name('store
 Route::get('/workarts/edit/{id}', [WorkartController::class, 'edit'])->name('editWorkart');
 Route::put('/workarts/update/{id}', [WorkartController::class, 'update'])->name('updateWorkart');
 Route::get('/workarts/delete/{id}', [WorkartController::class, 'destroy'])->name('deleteWorkart');
+
+//Routes Artists
+
+Route::get('/artists', [ArtistController::class, 'index']);
+
+route::get('/artists/create', [ArtistController::class, 'create']);
