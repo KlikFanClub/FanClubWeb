@@ -119,8 +119,10 @@ class WorkartController extends Controller
    * @param  \App\Models\Workart  $workart
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Workart $workart)
+  public function destroy($id)
   {
-    //
+    Workart::find($id)->delete();
+    return redirect()->route('workarts');
   }
+  
 }

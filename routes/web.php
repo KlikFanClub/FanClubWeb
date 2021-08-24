@@ -26,10 +26,12 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/artists', [ArtistController::class, 'index']);
-Route::get('/workarts', [WorkartController::class, 'index'])->name('workarts');
 
+//Routes Workart
+
+Route::get('/workarts', [WorkartController::class, 'index'])->name('workarts');
 Route::get('/workarts/create',[WorkartController::class, 'create']);
 Route::post('/workarts/create', [WorkartController::class,'store'])->name('storeWorkart');
-
 Route::get('/workarts/edit/{id}', [WorkartController::class, 'edit'])->name('editWorkart');
 Route::put('/workarts/update/{id}', [WorkartController::class, 'update'])->name('updateWorkart');
+Route::get('/workarts/delete/{id}', [WorkartController::class, 'destroy'])->name('deleteWorkart');
