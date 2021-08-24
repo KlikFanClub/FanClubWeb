@@ -4,7 +4,8 @@
     <x-header />
 
 @foreach ($artists as $artist)
-  <h6>{{ $artist->name }}</h6>
+    <img src="{{ $artist->profile_picture }}">
+    <h6>{{ $artist->name }}</h6>
 @endforeach
 
 @endsection

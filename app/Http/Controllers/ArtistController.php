@@ -37,7 +37,19 @@ class ArtistController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $artist=Artist::create([
+        'name'=>$request->name,
+        'profile_picture'=>$request->profile_picture,
+        'bio'=>$request->bio,
+        'website'=>$request->website,
+        'email'=>$request->email,
+        'instagram'=>$request->instagram,
+        'facebook'=>$request->facebook,
+        'twitter'=>$request->twitter,
+        'other_socials'=>$request->other_socials
+    ]);
+      $artist->save();
+      return redirect()->route('artists');
   }
 
   /**

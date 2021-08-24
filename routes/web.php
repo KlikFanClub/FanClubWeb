@@ -36,6 +36,7 @@ Route::get('/workarts/delete/{id}', [WorkartController::class, 'destroy'])->name
 
 //Routes Artists
 
-Route::get('/artists', [ArtistController::class, 'index']);
+Route::get('/artists', [ArtistController::class, 'index'])->name('artists');
 
-route::get('/artists/create', [ArtistController::class, 'create']);
+Route::post('/artists/create', [ArtistController::class, 'store'])->name('storeArtist');
+Route::get('/artists/create', [ArtistController::class, 'create']);
