@@ -47,9 +47,9 @@
 </div>
 <div>
     <label for="caurosel">Carrusel</label>
-    <input type="checkbox" name="caurosel" required>   
+    <input type="checkbox" name="caurosel" >   
     <label for="highlighted">Destacados</label>
-    <input type="checkbox" name="highlighted" required>   
+    <input type="checkbox" name="highlighted" >   
 </div>
 <div>
     <button type="submit">Crear</button>
