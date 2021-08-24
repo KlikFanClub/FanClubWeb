@@ -25,16 +25,19 @@
 
 * Git clone https://github.com/KlikFanClub/FanClubWeb.git
 
-* Install Composer if you don't have already globally installed 
-
+* Install Composer if you don't have already globally installed
 ```
 $ composer install
 ```
 
 * Or make an Update
-
 ```
 $ composer update
+```
+
+* To compile laravel
+```
+$ npm run watch
 ```
 
 * Generate key env
