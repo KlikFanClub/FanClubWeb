@@ -8,7 +8,7 @@
 <div>
     <label for="artist_id">Artista</label>
     <select name="artist_id" >
-        <option value="0">Selecione un artista</option>
+        <option value="" selected disabled>Selecione un artista</option>
         @foreach ($artists as $artist)
             <option value="{{$artist->id}}">{{$artist->name}}</option>            
         @endforeach
@@ -16,7 +16,7 @@
 </div>
 <div>
     <label for="title">Título</label>
-    <input type="text" name= "title" required>   
+    <input type="text" name="title" required>   
 </div>
 <div>
     <label for="imageworkart">ImagenWorkart</label>
