@@ -77,8 +77,9 @@ class WorkartController extends Controller
    */
   public function edit($id)
   {
+    $artists=Artist::orderBy('name')->get();
     $workart=Workart::find($id);
-    return view ('workart.edit', compact('workart'));
+    return view ('workart.edit', compact('workart','artists'));
   }
 
   /**
@@ -88,9 +89,28 @@ class WorkartController extends Controller
    * @param  \App\Models\Workart  $workart
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, Workart $workart)
+  public function update(Request $request, $id)
   {
-    //
+    $artists=Artist::orderBy('name')->get();
+   
+    $workart=Workart::whereId($id);
+
+    $workart->update([
+      //'artistname'=>$request->artistname,
+      'title'=>$request->title,
+      'imageworkart'=>$request->imageworkart,
+      'edition'=>$request->edition,
+      'price'=>$request->price,
+      'technique'=>$request->technique,
+      'theme'=>$request->theme,
+      'others'=>$request->others,
+      'category'=>$request->category,
+      'carousel'=>$request->carousel,
+      'highlighted'=>$request->highlighted  
+    ]);
+
+    return redirect()->route('workarts', 'artists');
+      
   }
 
   /**

@@ -32,3 +32,4 @@ Route::get('/workarts/create',[WorkartController::class, 'create']);
 Route::post('/workarts/create', [WorkartController::class,'store'])->name('storeWorkart');
 
 Route::get('/workarts/edit/{id}', [WorkartController::class, 'edit'])->name('editWorkart');
+Route::put('/workarts/update/{id}', [WorkartController::class, 'update'])->name('updateWorkart');

@@ -2,15 +2,19 @@
 
 @section ('content')
 
-
-
 <div>
-    <form action="">
-
-         <div>
+    <form method="POST" action="{{route ('updateWorkart', $workart->id)}}">
+        @csrf
+        @method('PUT')
+        <div>
             <label for="artist_id">Artista</label>
-            <input type="text" name="artist_id" value="{{$workart->artistname}}" required>
-        </div>   
+            <select name="artist_id" >
+                <option value="" selected disabled>Selecione un artista</option>
+                @foreach ($artists as $artist)
+                    <option value="{{$artist->id}}">{{$artist->name}}</option>                     
+                @endforeach
+            </select>
+        </div> 
         <div>
             <label for="title">Título</label>
             <input type="text" name="title" value="{{$workart->title}}" required>
@@ -45,11 +49,11 @@
         </div>
         <div>
             <label for="caurosel">Carrusel</label>
-            <input type="checkbox"  name="caurosel" value="{{$workart->caurosel}}" required>
+            <input type="checkbox"  name="caurosel" value="{{$workart->caurosel}}" >
         </div>
         <div>
             <label for="highlighted">Destacados</label>
-            <input type="checkbox"  name="highlighted" value="{{$workart->highlighted}}" required>
+            <input type="checkbox"  name="highlighted" value="{{$workart->highlighted}}" >
         </div>  
         <div>
             <button type="submit">Editar</button>
