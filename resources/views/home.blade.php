@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <x-header />
+
   <section class="artworkSlider">
     <img class="artwork" src="{{ asset('img/home/slider/Narrativas_trans.png') }}" alt="">
     <img class="artwork" src="{{ asset('img/home/slider/ORUGA_A3.png') }}" alt="">
@@ -9,7 +11,7 @@
   </section>
 
   <section class="highlights">
-    <h2 class="highlightsTitle">Destacados</h4>
+    <h2 class="highlightsTitle">Destacados</h2>
     <div class="artworkHighlights">
       <div class="artworkCard">
         <div>
@@ -34,7 +36,6 @@
         <span class="artistName">Daniela Ilustra</span>
         <a class="artworkDetailsBtn" href="">ver su obra</a>
       </div>
-
       <div class="artworkCard">
         <div>
           <img class="artwork" src="{{ asset('img/home/highlighted/ORUGA_A3_2.png') }}" alt="">

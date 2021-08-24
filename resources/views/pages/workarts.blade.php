@@ -1,6 +1,8 @@
 @extends ('layouts.app')
 @section ('content')
 
+    <x-header />
+
 @foreach ($workarts as $workart)
 <img src="{{ $workart->imageworkart }}" alt="">
 <h5>{{ $workart->title . ' - ' . $workart->created_at }}</h5>
