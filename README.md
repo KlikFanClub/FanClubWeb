@@ -32,12 +32,17 @@ $ composer install
 ```
 
 * Or make an Update
-
 ```
 $ composer update
 ```
 
 * Generate key env
+
+* Compile laravel run watch
+```
+$ npm run watch
+```
+
 
 ## collaboration
 
