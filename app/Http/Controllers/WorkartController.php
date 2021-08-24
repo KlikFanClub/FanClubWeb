@@ -6,6 +6,7 @@ use App\Models\Workart;
 use Illuminate\Http\Request;
 use App\Models\Artist;
 
+
 class WorkartController extends Controller
 {
   /**
@@ -17,7 +18,7 @@ class WorkartController extends Controller
   {
     $workarts = Workart::all()
             ->sortByDesc('created_at');
-    return view('pages.artists', compact('workarts'));
+    return view('pages.workarts', compact('workarts'));
   }
 
   /**
@@ -27,7 +28,8 @@ class WorkartController extends Controller
    */
   public function create()
   {
-    //
+    $artists=Artist::orderBy('name')->get();
+    return view('workart.create', compact('artists'));
   }
 
   /**
@@ -38,7 +40,22 @@ class WorkartController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $workart=Workart::create([
+      'artist_id'=>$request->artist_id,
+      'title'=>$request->title,
+      'imageworkart'=>$request->imageworkart,
+      'edition'=>$request->edition,
+      'price'=>$request->price,
+      'technique'=>$request->technique,
+      'theme'=>$request->theme,
+      'others'=>$request->others,
+      'category'=>$request->category,
+      'carousel'=>$request->carousel,
+      'highlighted'=>$request->highlighted      
+    ]);
+    $workart->save();
+    return redirect()->route('workarts');
+
   }
 
   /**
@@ -58,9 +75,11 @@ class WorkartController extends Controller
    * @param  \App\Models\Workart  $workart
    * @return \Illuminate\Http\Response
    */
-  public function edit(Workart $workart)
+  public function edit($id)
   {
-    //
+    $artists=Artist::orderBy('name')->get();
+    $workart=Workart::find($id);
+    return view ('workart.edit', compact('workart','artists'));
   }
 
   /**
@@ -70,9 +89,28 @@ class WorkartController extends Controller
    * @param  \App\Models\Workart  $workart
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, Workart $workart)
+  public function update(Request $request, $id)
   {
-    //
+    $artists=Artist::orderBy('name')->get();
+   
+    $workart=Workart::whereId($id);
+
+    $workart->update([
+      //'artistname'=>$request->artistname,
+      'title'=>$request->title,
+      'imageworkart'=>$request->imageworkart,
+      'edition'=>$request->edition,
+      'price'=>$request->price,
+      'technique'=>$request->technique,
+      'theme'=>$request->theme,
+      'others'=>$request->others,
+      'category'=>$request->category,
+      'carousel'=>$request->carousel,
+      'highlighted'=>$request->highlighted  
+    ]);
+
+    return redirect()->route('workarts', 'artists');
+      
   }
 
   /**

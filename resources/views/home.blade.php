@@ -2,26 +2,55 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <x-header />
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+  <section class="artworkSlider">
+    <img class="artwork" src="{{ asset('img/home/slider/Narrativas_trans.png') }}" alt="">
+    <img class="artwork" src="{{ asset('img/home/slider/ORUGA_A3.png') }}" alt="">
+    <img class="artwork" src="{{ asset('img/home/slider/PrintsArtboard_1.png') }}" alt="">
+  </section>
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+  <section class="highlights">
+    <h2 class="highlightsTitle">Destacados</h2>
+    <div class="artworkHighlights">
+      <div class="artworkCard">
+        <div>
+          <img class="artwork" src="{{ asset('img/home/highlighted/PrintsArtboard_2.png') }}" alt="">
         </div>
-        
-    </div>
-    
-</div>
+        <span class="artistName">Daniela Ilustra</span>
+        <a class="artworkDetailsBtn" href="">ver su obra</a>
+      </div>
 
+      <div class="artworkCard">
+        <div>
+          <img class="artwork" src="{{ asset('img/home/highlighted/Reflection.png') }}" alt="">
+        </div>
+        <span class="artistName">Daniela Ilustra</span>
+        <a class="artworkDetailsBtn" href="">ver su obra</a>
+      </div>
+
+      <div class="artworkCard">
+        <div>
+          <img class="artwork" src="{{ asset('img/home/highlighted/Narrativas_trans_2.png') }}" alt="">
+        </div>
+        <span class="artistName">Daniela Ilustra</span>
+        <a class="artworkDetailsBtn" href="">ver su obra</a>
+      </div>
+      <div class="artworkCard">
+        <div>
+          <img class="artwork" src="{{ asset('img/home/highlighted/ORUGA_A3_2.png') }}" alt="">
+        </div>
+        <span class="artistName">Daniela Ilustra</span>
+        <a class="artworkDetailsBtn" href="">ver su obra</a>
+      </div>
+
+      <div class="artworkCard">
+        <div>
+          <img class="artwork" src="{{ asset('img/home/highlighted/Rebirth_of_venus.png') }}" alt="">
+        </div>
+        <span class="artistName">Daniela Ilustra</span>
+        <a class="artworkDetailsBtn" href="">ver su obra</a>
+      </div>
+    </div>
+  </section>
 @endsection

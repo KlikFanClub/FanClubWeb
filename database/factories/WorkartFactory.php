@@ -22,15 +22,17 @@ class WorkartFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->text(),
-            'imageworkart' => $this->faker->imageUrl(),
-            'artistname' => $this->faker->text(),
+            'title' => $this->faker->text(), 
+            // 'artistname'=>$this->faker->text(),           
+            'imageworkart' => $this->faker->imageUrl(),            
             'edition' => $this->faker->text(),
             'price' => $this->faker->randomNumber(2),
             'technique' => $this->faker->text(),
             'theme' => $this->faker->text(),
             'others' => $this->faker->text(),
             'category' => $this->faker->text(),
+            'carousel'=>$this->faker->boolean(),
+            'highlighted'=>$this->faker->boolean(),
         ];
     }
 }
