@@ -42,7 +42,6 @@ $ composer update
 $ npm run watch
 ```
 
-
 ## collaboration
 
 * Berta Lopez
