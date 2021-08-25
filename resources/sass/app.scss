@@ -11,13 +11,19 @@
 
 // Components
 @import 'components/home';
+@import 'components/home_info';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    background-color: white;
-    font-family: Rosario, sans-serif !important;
-    font-size: 40px;
+  background-color: white;
+  font-family: Rosario, sans-serif !important;
+  font-size: 40px;
 }
 
 .navLogo {
-    padding: 5px;
+  padding: 5px;
 }
+
