@@ -6,15 +6,7 @@
     <form method="POST" action="{{route ('updateArtist', $artist->id)}}">
         @csrf
         @method('PUT')
-        <div>
-            <label for="artist_id">Artista</label>
-            <select name="artist_id" >
-                <option value="" selected disabled>Selecione un artista</option>
-                @foreach ($artists as $artist)
-                    <option value="{{$artist->id}}">{{$artist->name}}</option>
-                @endforeach
-            </select>
-        </div>
+      
         <div>
             <label for="name">Nombre artista</label>
             <input type="text" name="name" value="{{$artist->name}}" required>

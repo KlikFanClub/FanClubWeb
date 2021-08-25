@@ -112,8 +112,9 @@ class ArtistController extends Controller
    * @param  \App\Models\Artist  $artist
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Artist $artist)
+  public function destroy($id)
   {
-    //
+    Artist::find($id)->delete();
+    return redirect()->route('artists');
   }
 }
