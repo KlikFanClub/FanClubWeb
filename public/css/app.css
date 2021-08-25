@@ -10065,6 +10065,47 @@ h3 {
   background-color: black;
 }
 
+#info_aboutUs {
+  font-size: 20px;
+  margin: 200px 80px;
+}
+
+.introduction_container {
+  display: flex;
+  margin: 50px 0;
+}
+
+.objectives_container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 50px 0;
+}
+
+.info_title {
+  text-align: center;
+  margin-bottom: 75px;
+  font-weight: 700;
+  font-size: 35px;
+  font-style: italic;
+}
+
+.introduction_title,
+.objectives_title {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.introduction,
+.introduction_img,
+.objectives,
+.objectives_img {
+  margin: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: white;
   font-family: Rosario, sans-serif !important;
