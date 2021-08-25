@@ -42,6 +42,10 @@
         <input type="text" name="other_socials">
     </div>
     <div>
+        <label for="highlighted">Destacados</label>
+        <input type="checkbox"  name="highlighted">
+    </div>
+    <div>
         <button type="submit">Crear</button>
     </div>
     <div>

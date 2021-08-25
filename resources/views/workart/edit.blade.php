@@ -11,10 +11,10 @@
             <select name="artist_id" >
                 <option value="" selected disabled>Selecione un artista</option>
                 @foreach ($artists as $artist)
-                    <option value="{{$artist->id}}">{{$artist->name}}</option>                     
+                    <option value="{{$artist->id}}">{{$artist->name}}</option>
                 @endforeach
             </select>
-        </div> 
+        </div>
         <div>
             <label for="title">Título</label>
             <input type="text" name="title" value="{{$workart->title}}" required>
@@ -54,15 +54,13 @@
         <div>
             <label for="highlighted">Destacados</label>
             <input type="checkbox"  name="highlighted" value="{{$workart->highlighted}}" >
-        </div>  
+        </div>
         <div>
             <button type="submit">Editar</button>
         </div>
         <div>
             <button type="submit">Cancelar</button>
-        </div>     
-
-      
+        </div>
     </form>
 </div>
 @endsection
