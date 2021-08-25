@@ -4,7 +4,10 @@
   <x-header />
 
   <div class="catalogue">
-    <div class="mobile_filterBtn"></div>
+    <div class="mobile_filterBtn">
+      <span class="iconify" data-icon="cil:filter"></span>
+    </div>
+    
     <aside class="filter">
       <span class="filter_category">TODOS LOS PRODUCTOS</span>
       <span class="filter_category">EDICIÓN</span>
