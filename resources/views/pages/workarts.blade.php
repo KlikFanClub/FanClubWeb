@@ -4,9 +4,9 @@
   <x-header />
 
   <div class="catalogue">
-    <div class="mobile_filterBtn">
+    <a role="button" tabindex="0" class="mobile_filterBtn">
       <span class="iconify" data-icon="cil:filter"></span>
-    </div>
+    </a>
     
     <aside class="filter">
       <span class="filter_category">TODOS LOS PRODUCTOS</span>
