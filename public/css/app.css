@@ -10102,6 +10102,82 @@ h3 {
   margin: 20px;
 }
 
+.filter {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 20px;
+  margin: 30px;
+}
+@media (max-width: 767px) {
+  .filter {
+    display: none;
+  }
+}
+
+.filter_category {
+  white-space: nowrap;
+  font-size: 18px;
+  padding: 6px 0;
+}
+
+.catalogue {
+  display: flex;
+}
+
+.catalogue_artworks {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 30px;
+}
+@media (max-width: 1400px) {
+  .catalogue_artworks {
+    grid-template-columns: 50% 50%;
+  }
+}
+@media (max-width: 1023px) {
+  .catalogue_artworks {
+    grid-template-columns: 100%;
+  }
+}
+
+.artwork_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.action_buttons {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 20px;
+}
+
+.artwork_img {
+  width: 100%;
+}
+
+.artwork_title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.artwork_artistName {
+  font-size: 16px;
+}
+
+.artwork_date {
+  font-style: italic;
+}
+
+.artwork_price {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -10109,7 +10185,6 @@ html {
 body {
   background-color: white;
   font-family: Rosario, sans-serif !important;
-  font-size: 40px;
 }
 
 .navLogo {

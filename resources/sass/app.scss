@@ -10,8 +10,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Components
-@import 'components/home';
-@import 'components/home_info';
+@import 'components/home/home';
+@import 'components/home/home_info';
+@import 'components/catalogue/filter_category';
 
 html {
   scroll-behavior: smooth;
@@ -20,7 +21,6 @@ html {
 body {
   background-color: white;
   font-family: Rosario, sans-serif !important;
-  font-size: 40px;
 }
 
 .navLogo {
