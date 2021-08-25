@@ -12,7 +12,7 @@
     <a href="{{route ('editWorkart', ['id'=>$workart->id])}}">
         <i class="far fa-edit"></i>
     </a>
-   <a href="">
+   <a href="{{route ('deleteWorkart', ['id'=>$workart->id])}}">
     <i class="fas fa-trash-alt"></i>
    </a>
 </div>

@@ -26,7 +26,7 @@ class ArtistController extends Controller
    */
   public function create()
   {
-    //
+    return view ('artist.create');
   }
 
   /**
@@ -37,7 +37,19 @@ class ArtistController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $artist=Artist::create([
+        'name'=>$request->name,
+        'profile_picture'=>$request->profile_picture,
+        'bio'=>$request->bio,
+        'website'=>$request->website,
+        'email'=>$request->email,
+        'instagram'=>$request->instagram,
+        'facebook'=>$request->facebook,
+        'twitter'=>$request->twitter,
+        'other_socials'=>$request->other_socials
+    ]);
+      $artist->save();
+      return redirect()->route('artists');
   }
 
   /**
@@ -57,9 +69,11 @@ class ArtistController extends Controller
    * @param  \App\Models\Artist  $artist
    * @return \Illuminate\Http\Response
    */
-  public function edit(Artist $artist)
+  public function edit(Artist $artist, $id)
   {
-    //
+    $artists=Artist::orderBy('name')->get();
+    $artist=Artist::find($id);
+    return view('artist.edit', compact('artist','artists'));
   }
 
   /**
@@ -69,9 +83,27 @@ class ArtistController extends Controller
    * @param  \App\Models\Artist  $artist
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, Artist $artist)
+  public function update(Request $request, Artist $artist, $id)
   {
-    //
+      $artists=Artist::orderBy('name')->get();
+
+      $artist=Artist::whereId($id);
+
+      $artist->update([
+      'name'=>$request->name,
+      'profile_picture'=>$request->profile_picture,
+      'bio'=>$request->bio,
+      'website'=>$request->website,
+      'email'=>$request->email,
+      'instagram'=>$request->instagram,
+      'facebook'=>$request->facebook,
+      'twitter'=>$request->twitter,
+      'other_socials'=>$request->other_socials,
+      'highlighted'=>$request->highlighted,
+      ]);
+
+      return redirect()->route('artists', 'artists');
+
   }
 
   /**
@@ -80,8 +112,9 @@ class ArtistController extends Controller
    * @param  \App\Models\Artist  $artist
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Artist $artist)
+  public function destroy($id)
   {
-    //
+    Artist::find($id)->delete();
+    return redirect()->route('artists');
   }
 }
