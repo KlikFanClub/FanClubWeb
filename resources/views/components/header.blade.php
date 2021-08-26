@@ -40,7 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark h5" href="{{ url('contactus') }}">CONTACT US</a>
                     </li>
-                    
+                    {{--
                                                 @if (Route::has('login'))
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -69,7 +69,7 @@
                                                             @csrf
                                                         </form>
                                                     </div>
-                                                </li>
+                                                </li> --}}
                 @endguest
             </ul>
         </div>
