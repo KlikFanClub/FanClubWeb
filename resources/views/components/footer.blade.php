@@ -10,19 +10,19 @@
     <!-- links to other pages inside web -->
     <nav class="pagesLinks navbar navbar-expand-md">
       <ul class="navbar-links navbar-nav">
-        <li class="list-unstyled" style="display: inline; margin-left: -128px;">
+        <li class="list-unstyled" style="display: inline;">
           <a href="#!" class="txtLinks">Subir</a> <!-- poner función ir arriba de la página -->
         </li>
-        <li class="list-unstyled" style="display: inline; margin-left: -83px;">
+        <li class="list-unstyled" style="display: inline;">
           <a href="#!" class="txtLinks">Términos y condiciones</a> <!-- linkar con página TyC -->
         </li>
-        <li class="list-unstyled" style="display: inline; margin-left: -83px;">
+        <li class="list-unstyled" style="display: inline;">
           <a href="#!" class="txtLinks">Aviso legal</a> <!-- linkar con página Aviso legal -->
         </li>
-        <li class="list-unstyled" style="display: inline; margin-left: -83px;">
+        <li class="list-unstyled" style="display: inline;">
           <a href="#!" class="txtLinks">Mapa del sitio</a>
         </li>
-        <li class="list-unstyled" style="display: inline; margin-left: -83px;">
+        <li class="list-unstyled" style="display: inline;">
           <a href="http://127.0.0.1:8000/login" class="txtLinks">Administración</a>
         </li>
       </ul>
@@ -61,7 +61,6 @@
       <span class="subscribing"></span>
       <span class="thanks"> Gracias! pronto recibirás noticias nuestras!</span>
     </div>
-    </div>
  </div>
   <!-- Copyright -->
   <div class="footerCR text-center py-3">© 2020 Copyright:
@@ -70,5 +69,3 @@
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
-</div>
-</nav>
