@@ -1,11 +1,10 @@
 <!-- <div id="app"> -->
-<<<<<<< HEAD
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container navContainer">
-=======
+
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="font-family:'Roboto'">
     <div class="container">
->>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
+
         <a class="navbar-brand" href="{{ url('/') }}">
             <img class="navLogo" src="https://i.postimg.cc/cJBr74VS/fan-club.png" style="width: 50px" alt="Fan Club logo">
         </a>
@@ -45,21 +44,19 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark h5" href="{{ url('contactus') }}">CONTACT US</a>
                     </li>
-<<<<<<< HEAD
                     {{--
                                         @if (Route::has('login'))
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                             </li>
                                         @endif
-=======
-                    
+
+
                                                 @if (Route::has('login'))
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                                     </li>
                                                 @endif
->>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
 
                                         @if (Route::has('register'))
                                             <li class="nav-item">
@@ -78,20 +75,16 @@
                                                                  document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
-
-<<<<<<< HEAD
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                     @csrf
                                                 </form>
                                             </div>
                                         </li> --}}
-=======
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                            @csrf
-                                                        </form>
-                                                    </div>
-                                                </li>
->>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
                 @endguest
             </ul>
         </div>

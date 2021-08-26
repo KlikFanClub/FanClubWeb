@@ -63,8 +63,4 @@
         </div>
     </form>
 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
 @endsection
