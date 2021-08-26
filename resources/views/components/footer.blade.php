@@ -1,4 +1,3 @@
-
 <!-- Footer -->
 <footer class="footer">
 
@@ -6,7 +5,7 @@
 
     <!-- logo -->
     <img class="footerLogo" src="http://127.0.0.1:8000/img/home/logo/fan-club.png" alt="footerLogo">
-    
+
     <!-- links to other pages inside web -->
     <nav class="pagesLinks navbar navbar-expand-md">
       <ul class="navbar-links navbar-nav">
@@ -26,7 +25,7 @@
           <a href="http://127.0.0.1:8000/login" class="txtLinks">Administración</a>
         </li>
       </ul>
-  </nav>
+    </nav>
   </div>
 
   <!-- Social Media links -->
@@ -34,7 +33,9 @@
   <div class="socialLinks">
 
     <!-- Social buttons -->
-    <h6 style="font-family: Roboto;font-weight:900;display:flex;flex-direction: column;flex-wrap: wrap;align-content: flex-start;justify-content: flex-end;align-items: center;">Síguenos</h6>
+    <h6
+      style="font-family: Roboto;font-weight:900;display:flex;flex-direction: column;flex-wrap: wrap;align-content: flex-start;justify-content: flex-end;align-items: center;">
+      Síguenos</h6>
 
     <!-- Facebook -->
     <div class="socialButtons" style="margin-top: 22px;">
@@ -52,9 +53,9 @@
       </a>
     </div>
   </div>
- <div class="newsletter">
+  <div class="newsletter">
     <h6 style="font-family: Roboto;">Si no quieres perderte lo que pasa en FAN CLUB,
-    apúntate a nuestra newsletter!</h6>
+      apúntate a nuestra newsletter!</h6>
     <div class="login_bar" style="font-family: Roboto;">
       <input type="email" class="login">super-email@gmail.com</span>
       <span class="subscribe_button" onclick="subscribeOnClick()">SUBSCRIBIRME</span>
