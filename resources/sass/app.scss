@@ -1,6 +1,7 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 
 // Variables
@@ -18,12 +19,23 @@ html {
 }
 
 body {
+<<<<<<< HEAD
+    background-color: white;
+    font-family: Rosario, sans-serif !important;
+=======
   background-color: white;
   font-family: Rosario, sans-serif !important;
   font-size: 40px;
+>>>>>>> d55ed6a692fbde88363ab227f14ec057b63ef699
 }
 
 .navLogo {
   padding: 5px;
 }
 
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> d55ed6a692fbde88363ab227f14ec057b63ef699

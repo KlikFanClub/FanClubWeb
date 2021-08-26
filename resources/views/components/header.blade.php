@@ -1,10 +1,10 @@
 <!-- <div id="app"> -->
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="font-family:'Roboto'">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img class="navLogo" src="https://i.postimg.cc/cJBr74VS/fan-club.png" style="width: 50px" alt="Fan Club logo">
         </a>
-        <button class="navbar-toggler " style="border: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button class="navbar-toggler" style="border: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon" ></span>
         </button>
 
