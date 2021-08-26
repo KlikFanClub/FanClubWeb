@@ -10067,7 +10067,6 @@ h3 {
   background-color: black;
 }
 
-<<<<<<< HEAD
 footer {
   background-color: #F9F9F9 !important;
   height: 160px;
@@ -10104,7 +10103,7 @@ footer {
 
 .socialButtons {
   display: flex;
-  justify-items: center;
+  justify-items: space-around;
 }
 
 .adressInfo {
@@ -10213,7 +10212,8 @@ footer {
 .footerCR {
   font-family: "Roboto";
   margin-top: -67px;
-=======
+}
+
 #info_aboutUs {
   font-size: 20px;
   margin: 200px 80px;
@@ -10253,7 +10253,6 @@ footer {
 
 html {
   scroll-behavior: smooth;
->>>>>>> d55ed6a692fbde88363ab227f14ec057b63ef699
 }
 
 body {
