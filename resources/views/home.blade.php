@@ -53,11 +53,6 @@
       </div>
     </div>
   </section>
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> f7b2a7e0e928915860acca863b20586e39287f20
   <section id="info_aboutUs">
     <h2 class="info_title">¿Quiénes somos?</h2>
     <div class="introduction_container">
@@ -88,15 +83,10 @@
       </div>
     </div>
   </section>
-<<<<<<< HEAD
-
-  <x-footer />
-=======
   <div>
     <x-footer />
   </div>
   
->>>>>>> f7b2a7e0e928915860acca863b20586e39287f20
 @endsection
 
 

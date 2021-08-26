@@ -10091,19 +10091,24 @@ footer {
   display: block;
   font-family: Roboto !important;
   text-decoration: none;
-  margin-left: 120px;
+  margin-left: 20px;
   font-size: 15px !important;
   background-color: transparent;
 }
 
 .socialLinks {
-  margin-left: 800px;
-  margin-top: -93px;
+  display: flex;
+  margin-top: -98px;
+  margin-left: 27px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .socialButtons {
-  display: flex;
-  justify-items: space-around;
+  font-size: 20px;
 }
 
 .adressInfo {
@@ -10211,7 +10216,7 @@ footer {
 
 .footerCR {
   font-family: "Roboto";
-  margin-top: -67px;
+  margin-top: 0px;
 }
 
 #info_aboutUs {
