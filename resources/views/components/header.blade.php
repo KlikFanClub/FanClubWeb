@@ -1,10 +1,15 @@
 <!-- <div id="app"> -->
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container navContainer">
+=======
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="font-family:'Roboto'">
+    <div class="container">
+>>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
         <a class="navbar-brand" href="{{ url('/') }}">
             <img class="navLogo" src="https://i.postimg.cc/cJBr74VS/fan-club.png" style="width: 50px" alt="Fan Club logo">
         </a>
-        <button class="navbar-toggler " style="border: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button class="navbar-toggler" style="border: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon" ></span>
         </button>
 
@@ -40,12 +45,21 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark h5" href="{{ url('contactus') }}">CONTACT US</a>
                     </li>
+<<<<<<< HEAD
                     {{--
                                         @if (Route::has('login'))
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                             </li>
                                         @endif
+=======
+                    
+                                                @if (Route::has('login'))
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                                    </li>
+                                                @endif
+>>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
 
                                         @if (Route::has('register'))
                                             <li class="nav-item">
@@ -65,11 +79,19 @@
                                                     {{ __('Logout') }}
                                                 </a>
 
+<<<<<<< HEAD
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                     @csrf
                                                 </form>
                                             </div>
                                         </li> --}}
+=======
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
+                                                    </div>
+                                                </li>
+>>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
                 @endguest
             </ul>
         </div>

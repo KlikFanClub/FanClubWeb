@@ -7,6 +7,7 @@ use App\Models\Artist;
 use App\Models\Workart;
 use App\Models\User;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,6 +19,11 @@ class DatabaseSeeder extends Seeder
     {
         Artist::factory(5)->create();
         Workart::factory(10)->create();
-        User::factory()->create(['email'=>'usuario@gmail.com']);
+        User::factory(1)->create([
+            'id'=>1,
+            'name'=>'Admin',
+            'email'=>'admin@gmail.com',
+            'isAdmin'=>true,
+        ]);
     }
 }

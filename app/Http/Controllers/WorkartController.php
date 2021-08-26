@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Artist;
 
 
+
+
 class WorkartController extends Controller
 {
   /**
@@ -51,11 +53,10 @@ class WorkartController extends Controller
       'others'=>$request->others,
       'category'=>$request->category,
       'carousel'=>$request->carousel,
-      'highlighted'=>$request->highlighted      
+      'highlighted'=>$request->highlighted
     ]);
     $workart->save();
     return redirect()->route('workarts');
-
   }
 
   /**
@@ -92,7 +93,7 @@ class WorkartController extends Controller
   public function update(Request $request, $id)
   {
     $artists=Artist::orderBy('name')->get();
-   
+
     $workart=Workart::whereId($id);
 
     $workart->update([
@@ -106,11 +107,11 @@ class WorkartController extends Controller
       'others'=>$request->others,
       'category'=>$request->category,
       'carousel'=>$request->carousel,
-      'highlighted'=>$request->highlighted  
+      'highlighted'=>$request->highlighted
     ]);
 
     return redirect()->route('workarts', 'artists');
-      
+
   }
 
   /**
@@ -119,8 +120,10 @@ class WorkartController extends Controller
    * @param  \App\Models\Workart  $workart
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Workart $workart)
+  public function destroy($id)
   {
-    //
+    Workart::find($id)->delete();
+    return redirect()->route('workarts');
   }
+
 }
