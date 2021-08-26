@@ -84,8 +84,10 @@
       </div>
     </div>
   </section>
+  <div>
+    <x-footer />
+  </div>
   
-  <x-footer />
 @endsection
 
 
