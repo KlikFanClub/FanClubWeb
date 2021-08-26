@@ -23,13 +23,15 @@ class ArtistFactory extends Factory
     {
         return [
             'name' => $this->faker->text(20),
-            'profile-picture' => $this->faker->imageUrl(),
+            'profile_picture' => $this->faker->imageUrl(),
             'bio'=> $this->faker->text(),
             'website'=> $this->faker->text(),
             'email'=> $this->faker->unique()->safeEmail(),
             'instagram'=> $this->faker->url(),
             'facebook'=> $this->faker->url(),
-            'twiter'=> $this->faker->url(),
+            'twitter'=> $this->faker->url(),
+            'other_socials' => $this->faker->url(),
+            'highlighted'=>$this->faker->boolean(),
         ];
     }
 }

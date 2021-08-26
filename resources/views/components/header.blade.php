@@ -23,7 +23,7 @@
                         <a class="nav-link text-dark h5" href="{{ url('/') }}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark h5" href="{{ url('info') }}">INFO</a>
+                        <a class="nav-link text-dark h5" href="#info_aboutUs">INFO</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark h5" href="{{ url('workarts') }}">CATALOGUE</a>
@@ -40,8 +40,8 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark h5" href="{{ url('contactus') }}">CONTACT US</a>
                     </li>
-                    {{--
-                                                @if (Route::has('login'))
+                    
+                                                {{-- @if (Route::has('login'))
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                                     </li>

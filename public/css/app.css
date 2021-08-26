@@ -10067,6 +10067,7 @@ h3 {
   background-color: black;
 }
 
+<<<<<<< HEAD
 footer {
   background-color: #F9F9F9 !important;
   height: 160px;
@@ -10212,6 +10213,47 @@ footer {
 .footerCR {
   font-family: "Roboto";
   margin-top: -67px;
+=======
+#info_aboutUs {
+  font-size: 20px;
+  margin: 200px 80px;
+}
+
+.introduction_container {
+  display: flex;
+  margin: 50px 0;
+}
+
+.objectives_container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 50px 0;
+}
+
+.info_title {
+  text-align: center;
+  margin-bottom: 75px;
+  font-weight: 700;
+  font-size: 35px;
+  font-style: italic;
+}
+
+.introduction_title,
+.objectives_title {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.introduction,
+.introduction_img,
+.objectives,
+.objectives_img {
+  margin: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+>>>>>>> d55ed6a692fbde88363ab227f14ec057b63ef699
 }
 
 body {

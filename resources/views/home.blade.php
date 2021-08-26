@@ -53,8 +53,42 @@
       </div>
     </div>
   </section>
+<<<<<<< HEAD
   
   <x-footer />
+=======
+
+  <section id="info_aboutUs">
+    <h2 class="info_title">¿Quiénes somos?</h2>
+    <div class="introduction_container">
+      <div class="introduction">
+        <h4 class="introduction_title">Conócenos</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+      <div>
+        <img class="introduction_img" src="{{ asset('img/home/about_us/fanclublocal.png') }}" alt="">
+      </div>
+    </div>
+
+    <div class="objectives_container">
+      <div class="objectives">
+        <h4 class="objectives_title">Objetivos</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+      <div>
+        <img class="objectives_img" src="{{ asset('img/home/about_us/fanclublocal.png') }}" alt="">
+      </div>
+    </div>
+  </section>
+>>>>>>> d55ed6a692fbde88363ab227f14ec057b63ef699
 @endsection
 
 

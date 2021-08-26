@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\WorkartController;
-use App\Models\Workart;
+
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +26,20 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/artists', [ArtistController::class, 'index']);
+//Routes Workart
+
 Route::get('/workarts', [WorkartController::class, 'index'])->name('workarts');
+Route::get('/workarts/create',[WorkartController::class, 'create'])->middleware('admin');
+Route::post('/workarts/create', [WorkartController::class,'store'])->middleware('admin')->name('storeWorkart');
+Route::get('/workarts/edit/{id}', [WorkartController::class, 'edit'])->middleware('admin')->name('editWorkart');
+Route::put('/workarts/update/{id}', [WorkartController::class, 'update'])->middleware('admin')->name('updateWorkart');
+Route::get('/workarts/delete/{id}', [WorkartController::class, 'destroy'])->middleware('admin')->name('deleteWorkart');
 
-Route::get('/workarts/create',[WorkartController::class, 'create']);
-Route::post('/workarts/create', [WorkartController::class,'store'])->name('storeWorkart');
+//Routes Artists
 
-Route::get('/workarts/edit/{id}', [WorkartController::class, 'edit'])->name('editWorkart');
-Route::put('/workarts/update/{id}', [WorkartController::class, 'update'])->name('updateWorkart');
+Route::get('/artists', [ArtistController::class, 'index'])->name('artists');
+Route::get('/artists/create', [ArtistController::class, 'create'])->middleware('admin');
+Route::post('/artists/create', [ArtistController::class, 'store'])->middleware('admin')->name('storeArtist');
+Route::get('/artists/edit/{id}', [ArtistController::class, 'edit'])->middleware('admin')->name('editArtist');
+Route::put('/artists/update/{id}', [ArtistController::class, 'update'])->middleware('admin')->name('updateArtist');
+Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middleware('admin')->name('deleteArtist');
