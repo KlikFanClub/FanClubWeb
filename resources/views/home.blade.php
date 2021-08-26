@@ -3,7 +3,7 @@
 @section('content')
 
   <x-header />
-  
+
   <main>
     <section class="artworkSlider">
       <img class="artwork" src="{{ asset('img/home/slider/Narrativas_trans.png') }}" alt="">

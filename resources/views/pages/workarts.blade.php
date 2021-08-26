@@ -8,7 +8,8 @@
       <span class="iconify" data-icon="cil:filter"></span>
     </a>
     
-    <aside class="filter">
+    <filter-artwork :workarts="$workarts"></filter-artwork>
+    {{-- <aside class="filter">
       <span class="filter_category">TODOS LOS PRODUCTOS</span>
       <span class="filter_category">EDICIÓN</span>
       <span class="filter_category">TAMAÑO</span>
@@ -17,7 +18,7 @@
       <span class="filter_category">TEMAS</span>
       <span class="filter_category">OTROS</span>
       <span class="filter_category">ARTISTAS</span>
-    </aside>
+    </aside> --}}
 
     <main class="catalogue_artworks">
       @foreach ($workarts as $workart)
