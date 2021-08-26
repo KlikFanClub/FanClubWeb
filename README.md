@@ -47,7 +47,6 @@ $ npm run watch
 $ npm run watch
 ```
 
-
 ## collaboration
 
 * Berta Lopez
