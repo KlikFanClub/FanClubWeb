@@ -1,121 +1,73 @@
+<!-- Footer -->
+<footer class="footer">
 
+  <div class="footerNav">
 
-<div>
-    <!-- Footer -->
-<footer class="page-footer  font-small mdb-color lighten-3 pt-4 ">
-
-<!-- Footer Links -->
-<div class="container text-center text-md-left">
-
-  <!-- Grid row -->
-  <div class="row">
-    <!-- Grid column -->
-
-    <hr class="clearfix w-100 d-md-none">
-
-    <!-- Grid column -->
-    <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
-
-      <!-- Links -->
-      <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
-
-      <ul class="list-unstyled">
-        <li>
-          <p>
-            <a href="#!">PROJECTS</a>
-          </p>
+    <!-- logo -->
+    <img class="footerLogo" src="http://127.0.0.1:8000/img/home/logo/fan-club.png" alt="footerLogo">
+    
+    <!-- links to other pages inside web -->
+    <nav class="pagesLinks navbar navbar-expand-md">
+      <ul class="navbar-links navbar-nav">
+        <li class="list-unstyled" style="display: inline; margin-left: -128px;">
+          <a href="#!" class="txtLinks">Subir</a> <!-- poner función ir arriba de la página -->
         </li>
-        <li>
-          <p>
-            <a href="#!">ABOUT US</a>
-          </p>
+        <li class="list-unstyled" style="display: inline; margin-left: -83px;">
+          <a href="#!" class="txtLinks">Términos y condiciones</a> <!-- linkar con página TyC -->
         </li>
-        <li>
-          <p>
-            <a href="#!">BLOG</a>
-          </p>
+        <li class="list-unstyled" style="display: inline; margin-left: -83px;">
+          <a href="#!" class="txtLinks">Aviso legal</a> <!-- linkar con página Aviso legal -->
         </li>
-        <li>
-          <p>
-            <a href="#!">AWARDS</a>
-          </p>
+        <li class="list-unstyled" style="display: inline; margin-left: -83px;">
+          <a href="#!" class="txtLinks">Mapa del sitio</a>
+        </li>
+        <li class="list-unstyled" style="display: inline; margin-left: -83px;">
+          <a href="http://127.0.0.1:8000/login" class="txtLinks">Administración</a>
         </li>
       </ul>
-
-    </div>
-    <!-- Grid column -->
-
-    <hr class="clearfix w-100 d-md-none">
-
-    <!-- Grid column -->
-    <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
-
-      <!-- Contact details -->
-      <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
-
-      <ul class="list-unstyled">
-        <li>
-          <p>
-            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-        </li>
-        <li>
-          <p>
-            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-        </li>
-        <li>
-          <p>
-            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-        </li>
-        <li>
-          <p>
-            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-        </li>
-      </ul>
-
-    </div>
-    <!-- Grid column -->
-
-    <hr class="clearfix w-100 d-md-none">
-
-    <!-- Grid column -->
-    <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
-
-      <!-- Social buttons -->
-      <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
-
-      <!-- Facebook -->
-      <a type="button" class="btn-floating btn-fb">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <!-- Twitter -->
-      <a type="button" class="btn-floating btn-tw">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <!-- Google +-->
-      <a type="button" class="btn-floating btn-gplus">
-        <i class="fab fa-google-plus-g"></i>
-      </a>
-      <!-- Dribbble -->
-      <a type="button" class="btn-floating btn-dribbble">
-        <i class="fab fa-dribbble"></i>
-      </a>
-
-    </div>
-    <!-- Grid column -->
-
+  </nav>
   </div>
-  <!-- Grid row -->
 
-</div>
-<!-- Footer Links -->
+  <!-- Social Media links -->
 
-<!-- Copyright -->
-<div class="footer-copyright text-center py-3">© 2020 Copyright:
-  <a> FanClubStore</a>
-</div>
-<!-- Copyright -->
+  <div class="socialLinks">
 
+    <!-- Social buttons -->
+    <h6 style="font-family: Roboto;font-weight:900;display:flex;flex-direction: column;flex-wrap: wrap;align-content: flex-start;justify-content: flex-end;align-items: center;">Síguenos</h6>
+
+    <!-- Facebook -->
+    <div class="socialButtons" style="margin-top: 22px;">
+      <a type="button" class="btnFacebook" href="#!">
+        <i class="fab fa-facebook-f" style="color: black; width: 15px; height: 15px;"></i>
+      </a>
+      <a type="button" class="btnTweeter" href="#!">
+        <i class="fab fa-twitter fa-lg" style="color: black; width: 22px; height: 15px;"></i>
+      </a>
+      <a type="button" class="btnInstagram" href="#!">
+        <i class="fab fa-instagram fa-lg" style="color: black; width: 22px; height: 15px;"></i>
+      </a>
+      <a type="button" class="btnSpotify" href="#!">
+        <i class="fa fa-spotify fa-lg" style="color: black; width: 45px; height: 15px;"></i>
+      </a>
+    </div>
+  </div>
+ <div class="newsletter">
+    <h6 style="font-family: Roboto;">Si no quieres perderte lo que pasa en FAN CLUB,
+    apúntate a nuestra newsletter!</h6>
+    <div class="login_bar" style="font-family: Roboto;">
+      <input type="email" class="login">super-email@gmail.com</span>
+      <span class="subscribe_button" onclick="subscribeOnClick()">SUBSCRIBIRME</span>
+      <span class="subscribing"></span>
+      <span class="thanks"> Gracias! pronto recibirás noticias nuestras!</span>
+    </div>
+    </div>
+ </div>
+  <!-- Copyright -->
+  <div class="footerCR text-center py-3">© 2020 Copyright:
+    <a> FanClubStore</a>
+  </div>
+  <!-- Copyright -->
 </footer>
 <!-- Footer -->
-
 </div>
+</nav>

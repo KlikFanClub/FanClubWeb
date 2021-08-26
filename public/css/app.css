@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @import url(https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -10065,10 +10067,156 @@ h3 {
   background-color: black;
 }
 
+footer {
+  background-color: #F9F9F9 !important;
+  height: 160px;
+}
+
+.footerNav {
+  display: flex;
+  align-items: center;
+}
+
+.footerLogo {
+  width: 125px;
+  padding: 30px;
+}
+
+.pageslinks {
+  align-items: center;
+}
+
+.txtLinks {
+  color: black;
+  display: block;
+  font-family: Roboto !important;
+  text-decoration: none;
+  margin-left: 120px;
+  font-size: 15px !important;
+  background-color: transparent;
+}
+
+.socialLinks {
+  margin-left: 800px;
+  margin-top: -93px;
+}
+
+.socialButtons {
+  display: flex;
+  justify-items: center;
+}
+
+.adressInfo {
+  font-family: Roboto !important;
+  left: 345px;
+  bottom: 86px;
+}
+
+.newsletter {
+  display: flex;
+  justify-content: center;
+  margin-top: -59px;
+  margin-right: -871px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+}
+
+.login_bar {
+  width: 300px;
+  height: 50px;
+  background: white;
+  border-radius: 10px;
+  top: 50%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.login {
+  background: transparent;
+  position: absolute;
+  height: 100%;
+  width: 190px;
+  padding-left: 10px;
+  text-align: left;
+  line-height: 50px;
+  vertical-align: middle;
+  z-index: 10;
+  transition: transform 0.2s ease-in-out 0s;
+}
+
+.login_active {
+  transform: translateX(300px);
+}
+
+.subscribe_button:hover {
+  background-color: #222A33;
+  cursor: pointer;
+}
+
+.subscribe_button {
+  background: #171D23;
+  position: absolute;
+  top: -50px;
+  left: 200px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 150px;
+  width: 100px;
+  text-align: center;
+  line-height: 150px;
+  vertical-align: middle;
+  color: white;
+  transition: transform 0.5s ease 0s;
+}
+
+.subscribe_button_active {
+  transform: translateY(50px);
+}
+
+.subscribing {
+  background: #F9F9F9 !important;
+  height: 100%;
+  width: 300px;
+  z-index: 5;
+  left: -300px;
+  display: inline-block;
+  transition: transform 1s ease 0s;
+}
+
+.subscribing_active {
+  transform: translateX(300px);
+}
+
+.thanks {
+  background: transparent;
+  height: 100%;
+  width: 300px;
+  z-index: 5;
+  text-align: left;
+  line-height: 50px;
+  vertical-align: middle;
+  padding-left: 10px;
+  position: absolute;
+  top: 50px;
+  display: inline-block;
+  transition: transform 0.5s ease 0s;
+}
+
+.thanks_active {
+  transform: translateY(-50px);
+}
+
+.footerCR {
+  font-family: "Roboto";
+  margin-top: -67px;
+}
+
 body {
   background-color: white;
   font-family: Rosario, sans-serif !important;
-  font-size: 40px;
 }
 
 .navLogo {
