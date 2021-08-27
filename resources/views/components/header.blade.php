@@ -40,8 +40,15 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark h5" href="{{ url('contactus') }}">CONTACT US</a>
                     </li>
-                    
-                                                {{-- @if (Route::has('login'))
+                    {{--
+                                        @if (Route::has('login'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                            </li>
+                                        @endif
+
+
+                                                @if (Route::has('login'))
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                                     </li>
@@ -64,13 +71,17 @@
                                                                  document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
-
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                            @csrf
-                                                        </form>
-                                                    </div>
-                                                </li> --}}
-              
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li> --}}
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+               
             </ul>
         </div>
     </div>

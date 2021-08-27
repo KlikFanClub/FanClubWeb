@@ -21,8 +21,16 @@
         </li>
       </ul>
     </nav>
-  </div>  <!-- Social Media links -->  <div class="socialLinks">    <!-- Social buttons -->
-    <h6 style="font-family: Roboto;font-weight:900;font-size: 17px;margin-left: -23px;">Síguenos</h6>    <!-- Facebook -->
+  </div>
+
+  <!-- Social Media links -->
+
+  <div class="socialLinks">
+
+    <!-- Social buttons -->
+    <h6 style="font-family: Roboto;font-weight:900;font-size: 17px;margin-left: -23px;">Síguenos</h6>
+
+    <!-- Facebook -->
     <div class="socialButtons" style="margin-top: 22px;">
       <a type="button" class="btnFacebook" href="#!">
         <i class="fab fa-facebook-f" style="color: black; width: 15px; height: 15px;"></i>

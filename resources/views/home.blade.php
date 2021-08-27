@@ -53,9 +53,14 @@
           <a class="artworkDetailsBtn" href="">ver su obra</a>
         </div>
       </div>
+<<<<<<< HEAD
     </section>
   </main>
 
+=======
+    </div>
+  </section>
+>>>>>>> 67e154118a1266a0df25a3ecf81d0340e3ac26bd
   <section id="info_aboutUs">
     <h2 class="info_title">¿Quiénes somos?</h2>
     <div class="introduction_container">
@@ -90,9 +95,10 @@
       </div>
     </div>
   </section>
+  <div>
+    <x-footer />
+  </div>
   
-  <x-footer />
-
 @endsection
 
 
