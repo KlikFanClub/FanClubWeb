@@ -18,7 +18,7 @@
             <ul class="navbar-nav ml-auto">
 
                 <!-- Authentication Links -->
-                @guest
+               
                     <li class="nav-item">
                         <a class="nav-link text-dark h5" href="{{ url('/') }}">HOME</a>
                     </li>
@@ -41,7 +41,7 @@
                         <a class="nav-link text-dark h5" href="{{ url('contactus') }}">CONTACT US</a>
                     </li>
                     
-                                                @if (Route::has('login'))
+                                                {{-- @if (Route::has('login'))
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                                     </li>
@@ -69,8 +69,8 @@
                                                             @csrf
                                                         </form>
                                                     </div>
-                                                </li>
-                @endguest
+                                                </li> --}}
+              
             </ul>
         </div>
     </div>
