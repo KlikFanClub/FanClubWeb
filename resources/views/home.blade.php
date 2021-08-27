@@ -53,11 +53,7 @@
       </div>
     </div>
   </section>
-<<<<<<< HEAD
   
-  <x-footer />
-=======
-
   <section id="info_aboutUs">
     <h2 class="info_title">¿Quiénes somos?</h2>
     <div class="introduction_container">
@@ -88,7 +84,9 @@
       </div>
     </div>
   </section>
->>>>>>> d55ed6a692fbde88363ab227f14ec057b63ef699
+  
+  <x-footer />
+
 @endsection
 
 
