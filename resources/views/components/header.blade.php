@@ -3,7 +3,7 @@
     <div class="container navContainer">
 
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="font-family:'Roboto'">
-    <div class="container">
+    <div class="container navContainer">
 
         <a class="navbar-brand" href="{{ url('/') }}">
             <img class="navLogo" src="https://i.postimg.cc/cJBr74VS/fan-club.png" style="width: 50px" alt="Fan Club logo">

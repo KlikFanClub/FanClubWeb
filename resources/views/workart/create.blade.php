@@ -2,7 +2,7 @@
 
 @section ('content')
 
-    <x-header />
+    <x-header/>
 
 <form method="POST" action="{{route ('storeWorkart')}}">
         @csrf
