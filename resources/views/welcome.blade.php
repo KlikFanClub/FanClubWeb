@@ -19,14 +19,14 @@
 </head>
 
 <body class="antialiased">
-  <div id="app">
-    {{-- <x-header />
+  {{-- <div id="app">
+    <x-header />
   <x-slider />
   <x-container-info />
   <x-container-catalogue />
-  <x-footer /> --}}
+  <x-footer />
     @yield('content')
-  </div>
+  </div> --}}
 </body>
 
 </html>
