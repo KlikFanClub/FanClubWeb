@@ -10,9 +10,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Components
-@import 'components/home';
-@import 'components/home_info';
+
 @import 'components/workart_create';
+@import 'components/home/home';
+@import 'components/home/home_info';
+@import 'components/catalogue/filter_category';
 
 html {
   scroll-behavior: smooth;

@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @import url(https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -10005,6 +10005,69 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.form-container {
+  background-color: whitesmoke;
+  border-radius: 8px;
+}
+
+.form-group {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2vw 5vw 2vw 5vw;
+}
+
+label {
+  padding: 0.1vw 1vw 0.1vw 0;
+}
+
+input {
+  width: 100%;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: right;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  justify-content: space-between;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+button[type=submit] {
+  background-color: #a1a1a1;
+  color: white;
+  padding: 8px 10px;
+  margin: 0px 0px 0px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
 .artworkSlider {
   display: flex;
   justify-content: space-evenly;
@@ -10068,7 +10131,7 @@ h3 {
 }
 
 footer {
-  background-color: #F9F9F9 !important;
+  background-color: #f9f9f9 !important;
   height: 160px;
 }
 
@@ -10157,12 +10220,12 @@ footer {
 }
 
 .subscribe_button:hover {
-  background-color: #222A33;
+  background-color: #222a33;
   cursor: pointer;
 }
 
 .subscribe_button {
-  background: #171D23;
+  background: #171d23;
   position: absolute;
   top: -50px;
   left: 200px;
@@ -10182,7 +10245,7 @@ footer {
 }
 
 .subscribing {
-  background: #F9F9F9 !important;
+  background: #f9f9f9 !important;
   height: 100%;
   width: 300px;
   z-index: 5;
@@ -10256,67 +10319,153 @@ footer {
   margin: 20px;
 }
 
-.form-container {
-  background-color: whitesmoke;
-  border-radius: 8px;
-}
-
-.form-group {
-  width: 80vw;
+.filter {
+  position: fixed;
+  left: 0;
+  z-index: 10;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  margin: 2vw 5vw 2vw 5vw;
+  padding: 0 20px;
+  margin: 30px;
+  margin-top: 50px;
+  background-color: white;
+  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
+  transition: border, display, bottom, right;
+}
+@media (max-width: 768px) {
+  .filter {
+    display: none;
+    transition: color 4s ease;
+  }
+  .filter:hover, .filter:focus, .filter:active {
+    display: flex;
+    position: fixed;
+    border: solid 1px black;
+    border-radius: 6px;
+    left: unset;
+    right: 20px;
+    bottom: 85px;
+    width: 260px;
+  }
 }
 
-label {
-  padding: 0.1vw 1vw 0.1vw 0;
+.mobile_filterBtn {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile_filterBtn {
+    text-decoration: none;
+    color: initial;
+    border: solid 1px black;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50px;
+    right: 50px;
+    z-index: 10;
+    width: 55px;
+    height: 55px;
+    border-radius: 200px;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    font-size: 28px;
+  }
+  .mobile_filterBtn:hover, .mobile_filterBtn:active, .mobile_filterBtn:focus {
+    color: initial;
+  }
+  .mobile_filterBtn:hover + .filter, .mobile_filterBtn:focus + .filter, .mobile_filterBtn:active + .filter {
+    display: flex;
+    position: fixed;
+    border: solid 1px black;
+    border-radius: 6px;
+    left: unset;
+    right: 20px;
+    bottom: 85px;
+    width: 260px;
+  }
 }
 
-input {
+.filter_category {
+  white-space: nowrap;
+  font-size: 18px;
+  padding: 6px 0;
+  /* transition: color 4s ease;
+
+  &:hover+,
+  &:focus+,
+  &:active+ {
+    color: blue;
+  } */
+}
+
+.catalogue {
+  /* display: grid;
+  grid-template-columns: 20% 80%; */
+}
+
+.catalogue_artworks {
+  float: right;
+  max-width: 75%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 30px;
+}
+@media (max-width: 1400px) {
+  .catalogue_artworks {
+    grid-template-columns: 50% 50%;
+    max-width: 70%;
+  }
+}
+@media (max-width: 1023px) {
+  .catalogue_artworks {
+    grid-template-columns: 100%;
+    max-width: 60%;
+  }
+}
+@media (max-width: 768px) {
+  .catalogue_artworks {
+    grid-template-columns: 100%;
+    max-width: 100%;
+  }
+}
+
+.artwork_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.action_buttons {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 20px;
+}
+
+.artwork_img {
   width: 100%;
 }
 
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
+.artwork_title {
+  font-size: 18px;
+  font-weight: 700;
 }
 
-.col-75 {
-  float: right;
-  width: 75%;
-  margin-top: 6px;
+.artwork_artistName {
+  font-size: 16px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  justify-content: space-between;
-  clear: both;
+.artwork_date {
+  font-style: italic;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-button[type=submit] {
-  background-color: #a1a1a1;
-  color: white;
-  padding: 8px 10px;
-  margin: 0px 0px 0px 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-button[type=submit]:hover {
-  background-color: #45a049;
+.artwork_price {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
 html {
@@ -10325,11 +10474,7 @@ html {
 
 body {
   background-color: white;
-<<<<<<< HEAD
-  font-family: "Rosario", sans-serif;
-=======
   font-family: Rosario, sans-serif !important;
->>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
 }
 
 .navLogo {

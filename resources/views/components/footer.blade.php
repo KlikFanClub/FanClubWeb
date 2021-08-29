@@ -1,12 +1,6 @@
 <!-- Footer -->
-<footer class="footer">
-
-  <div class="footerNav">
-
-    <!-- logo -->
-    <img class="footerLogo" src="http://127.0.0.1:8000/img/home/logo/fan-club.png" alt="footerLogo">
-
-    <!-- links to other pages inside web -->
+<footer class="footer">  <div class="footerNav">    <!-- logo -->
+    <img class="footerLogo" src="http://127.0.0.1:8000/img/home/logo/fan-club.png" alt="footerLogo">    <!-- links to other pages inside web -->
     <nav class="pagesLinks navbar navbar-expand-md" style="
     margin-left: -33px;">
       <ul class="navbar-links navbar-nav">

@@ -1,10 +1,6 @@
 <!-- <div id="app"> -->
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container navContainer">
-
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="font-family:'Roboto'">
-    <div class="container navContainer">
-
         <a class="navbar-brand" href="{{ url('/') }}">
             <img class="navLogo" src="https://i.postimg.cc/cJBr74VS/fan-club.png" style="width: 50px" alt="Fan Club logo">
         </a>
@@ -21,8 +17,8 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
 
-                <!-- Authentication Links -->
-                @guest
+                <!-- Authentication Links --> 
+               
                     <li class="nav-item">
                         <a class="nav-link text-dark h5" href="{{ url('/') }}">HOME</a>
                     </li>
@@ -85,7 +81,7 @@
                                                 </form>
                                             </div>
                                         </li>
-                @endguest
+               
             </ul>
         </div>
     </div>

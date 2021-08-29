@@ -123,4 +123,7 @@
             </div>
         </div>
     </div>
+
+</form>
+
 @endsection
