@@ -10,7 +10,6 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Components
-
 @import 'components/workart_create';
 @import 'components/home/home';
 @import 'components/home/home_info';
@@ -22,11 +21,7 @@ html {
 
 body {
   background-color: white;
-<<<<<<< HEAD
   font-family: $font-family-sans-serif;
-=======
-  font-family: Rosario, sans-serif !important;
->>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
 }
 
 .navLogo {

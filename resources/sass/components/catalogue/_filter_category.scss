@@ -54,13 +54,17 @@
     font-size: 28px;
 
     &:hover,
-    &:active,
-    &:focus {
+    &:focus,
+    &:focus-within,
+    &:focus-visible,
+    &:active {
       color: initial;
     }
 
     &:hover+.filter,
     &:focus+.filter,
+    &:focus-within+.filter,
+    &:focus-visible+.filter,
     &:active+.filter {
       display: flex;
       position: fixed;

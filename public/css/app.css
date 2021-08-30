@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @import url(https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
-
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -10371,10 +10370,10 @@ footer {
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
     font-size: 28px;
   }
-  .mobile_filterBtn:hover, .mobile_filterBtn:active, .mobile_filterBtn:focus {
+  .mobile_filterBtn:hover, .mobile_filterBtn:focus, .mobile_filterBtn:focus-within, .mobile_filterBtn:focus-visible, .mobile_filterBtn:active {
     color: initial;
   }
-  .mobile_filterBtn:hover + .filter, .mobile_filterBtn:focus + .filter, .mobile_filterBtn:active + .filter {
+  .mobile_filterBtn:hover + .filter, .mobile_filterBtn:focus + .filter, .mobile_filterBtn:focus-within + .filter, .mobile_filterBtn:focus-visible + .filter, .mobile_filterBtn:active + .filter {
     display: flex;
     position: fixed;
     border: solid 1px black;
@@ -10474,11 +10473,7 @@ html {
 
 body {
   background-color: white;
-<<<<<<< HEAD
   font-family: "Rosario", sans-serif;
-=======
-  font-family: Rosario, sans-serif !important;
->>>>>>> 9cd4fed3bd08e4c665869768f55d5244ef203a8d
 }
 
 .navLogo {
