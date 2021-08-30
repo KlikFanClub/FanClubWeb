@@ -3,6 +3,13 @@
 
     <x-header />
 
+    <div>
+        <a href="{{ route('createArtist') }}">
+            <button type='submit'>Crear Nuevo Artista!
+            </button>
+        </a>
+    </div>
+
     @foreach ($artists as $artist)
         <img src="{{ $artist->profile_picture }}">
         <h6>{{ $artist->name }}</h6>
