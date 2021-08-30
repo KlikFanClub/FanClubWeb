@@ -20,12 +20,15 @@
       <span class="filter_category">ARTISTAS</span>
     </aside> --}}
 
-        <div>
-            <a href="{{ route('createWorkart') }}">
-                <button type='submit'>Crear Nueva Obra!
-                </button>
-            </a>
-        </div>
+    @if (Auth::user())
+    @if (Auth::user()->isAdmin)
+    <div>
+        <a href="{{ route('createWorkart') }}">
+            <button type='submit'>Crear Nueva Obra!</button>
+        </a>
+    </div>
+    @endif
+    @endif
 
         <main class="catalogue_artworks">
             @foreach ($workarts as $workart)

@@ -20,10 +20,10 @@
                     <label for="artist_id">Artista</label>
                 </div>
                 <div class="col-75">
-                    <select name="artist_id" >
-                        <option value="" selected disabled>Seleccione un artista</option>
+                    <select name="artist_id">
+                        <option value="" selected disabled>Seleccione un artista </option>
                         @foreach ($artists as $artist)
-                            <option value="{{$artist->id}}">{{$artist->name}}</option>
+                            <option value="{{$artist->id}}">{{$artist->name}} </option>
                         @endforeach
                     </select>
                 </div>
@@ -118,7 +118,9 @@
             </div>
 
             <div class="buttons">
-                <button type="submit">Cancelar</button>
+                <button type="submit">Cancelar
+                    <a href="{{ route('workarts') }}">
+                </button>
                 <button type="submit">Crear</button>
             </div>
         </div>
