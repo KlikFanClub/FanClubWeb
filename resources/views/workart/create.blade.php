@@ -118,7 +118,7 @@
             </div>
 
             <div class="buttons">
-                <button type="submit">Cancelar
+                <button type="button">Cancelar
                     <a href="{{ route('workarts') }}">
                 </button>
                 <button type="submit">Crear</button>
@@ -127,5 +127,10 @@
     </div>
 
 </form>
+<div class="buttons">
+    <button type="button">Cancelar
+        <a href="{{ route('workarts') }}">
+    </button>
+</div>
 
 @endsection
