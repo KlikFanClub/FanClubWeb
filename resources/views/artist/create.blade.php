@@ -29,7 +29,7 @@
 
                     <div class="row">
                         <div class="col-25">
-                            <label for="profile_picture">Imagen de perfil</label>
+                            <label for="profile_picture">Imagen</label>
                         </div>
                         <div class="col-75">
                             <input type="text" name="profile_picture" required>
@@ -93,7 +93,7 @@
 
                     <div class="row">
                         <div class="col-25">
-                            <label for="other_socials">Otras redes sociales</label>
+                            <label for="other_socials">Otras redes</label>
                         </div>
                         <div class="col-75">
                             <input type="text" name="other_socials" required>
