@@ -10301,12 +10301,13 @@ input {
   border: 0.5px solid;
   border-color: #EBEBEB;
   border-radius: 4px;
+  transition: all 0.7s ease;
 }
 
 input:focus {
   outline: none;
   background-color: #FFF9DC;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px #E14E85 inset;
+  transform: scale(1.03);
 }
 
 select {
