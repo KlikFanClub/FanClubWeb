@@ -10004,69 +10004,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
-.form-container {
-  background-color: whitesmoke;
-  border-radius: 8px;
-}
-
-.form-group {
-  width: 80vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2vw 5vw 2vw 5vw;
-}
-
-label {
-  padding: 0.1vw 1vw 0.1vw 0;
-}
-
-input {
-  width: 100%;
-}
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: right;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  justify-content: space-between;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-button[type=submit] {
-  background-color: #a1a1a1;
-  color: white;
-  padding: 8px 10px;
-  margin: 0px 0px 0px 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-button[type=submit]:hover {
-  background-color: #45a049;
-}
-
 .artworkSlider {
   display: flex;
   justify-content: space-evenly;
@@ -10318,6 +10255,140 @@ footer {
   margin: 20px;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  min-width: 800px !important;
+}
+
+/* Responsive layout - when the screen is less than 768px wide, set label margins */
+@media screen and (max-width: 768px) {
+  form {
+    min-width: 220px !important;
+    max-width: 600px !important;
+  }
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 2vw 5vw 2vw 5vw;
+}
+
+.form-box-container {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 2vw 0 !important;
+}
+
+label {
+  padding: 0.1vw 1vw 0.1vw 0;
+  margin: 0 6rem 1rem 0 !important;
+}
+
+/* Responsive layout - when the screen is less than 768px wide, set label margins */
+@media screen and (max-width: 768px) {
+  label {
+    margin: 1rem 4rem 0 0 !important;
+  }
+}
+input {
+  width: 100%;
+  border: 0.5px solid;
+  border-color: #EBEBEB;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  background-color: #FFF9DC;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #E14E85 inset;
+}
+
+select {
+  width: 100%;
+  border: 0.5px solid;
+  border-color: #EBEBEB;
+  border-radius: 4px;
+  line-height: 2.4;
+}
+
+.row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: stretch;
+  margin-right: 3rem !important;
+  margin-left: 3rem !important;
+  line-height: 2.4;
+  font-size: 1rem;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: right;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  justify-content: space-between;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 768px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 768px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+.checkbox-input {
+  border-color: #EBEBEB !important;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+button[type=submit] {
+  color: white;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.btnCreate {
+  background-color: #381377;
+}
+
+.btnCancel {
+  background-color: #E14E85;
+}
+
+.btnCreate[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.btnCancel[type=submit]:hover {
+  background-color: red;
+}
+
 .filter {
   position: fixed;
   left: 0;
@@ -10467,6 +10538,33 @@ footer {
   margin-bottom: 6px;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+  display: flex;
+  line-height: 0 !important;
+  margin-right: 0.5rem !important;
+  margin-left: 0.5rem !important;
+}
+
+.nav-link {
+  display: flex !important;
+  align-items: center;
+  margin-bottom: 0 !important;
+  padding: 0 1.75rem 0 1.75rem !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin-left: 0.1rem !important;
+    margin-right: 0.1rem !important;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -10474,8 +10572,4 @@ html {
 body {
   background-color: white;
   font-family: "Rosario", sans-serif;
-}
-
-.navLogo {
-  padding: 5px;
 }
