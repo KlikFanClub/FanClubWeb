@@ -2,54 +2,121 @@
 
 @section ('content')
 
-<div>
-    <form method="POST" action="{{route ('storeArtist')}}">
-        @csrf
-    <div>
-        <label for="name">Nombre</label>
-        <input type="text" name="name" required>
+    <x-header />
+
+    <div class="form-container">
+
+        <form method="POST" action="{{route ('storeArtist')}}">
+            @csrf
+
+            <div class="form-group row">
+
+                <h4>Formulario del artista</h4>
+                <br>
+                <h6>Introduzca a continuación los datos del artista</h6>
+                <br>
+
+                <div class="form-box-container">
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="name">Nombre</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="name" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="profile_picture">Imagen de perfil</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="profile_picture" required>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="bio">Bio</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="bio" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="website">Web</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="website" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="instagram">Instagram</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="instagram" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="facebook">Facebook</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="facebook" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="twitter">Twitter</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="twitter" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="other_socials">Otras redes sociales</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="other_socials" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <input type="checkbox" name="highlighted">
+                        </div>
+                        <div class="col-75">
+                            <label for="highlighted">Destacados</label>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="btnCreate" type="submit">Crear</button>
+                        <button class="btnCancel" type="submit">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
     </div>
-    <div>
-        <label for="profile_picture">Imagen de perfil</label>
-        <input type="text" name="profile_picture" required>
-    </div>
-    <div>
-        <label for="bio">Bio</label>
-        <input type="text" name="bio" required>
-    </div>
-    <div>
-        <label for="website">Web</label>
-        <input type="text" name="website">
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="text" name="email" required>
-    </div>
-    <div>
-        <label for="instagram">Instagram</label>
-        <input type="text" name="instagram">
-    </div>
-    <div>
-        <label for="facebook">Facebook</label>
-        <input type="text" name="facebook">
-    </div>
-    <div>
-        <label for="twitter">Twitter</label>
-        <input type="text" name="twitter">
-    </div>
-    <div>
-        <label for="other_socials">Otras redes sociales</label>
-        <input type="text" name="other_socials">
-    </div>
-    <div>
-        <label for="highlighted">Destacados</label>
-        <input type="checkbox"  name="highlighted">
-    </div>
-    <div>
-        <button type="submit">Crear</button>
-    </div>
-    <div>
-        <button type="submit">Cancelar</button>
-    </div>
-    </form>
-</div>
+
+@endsection
