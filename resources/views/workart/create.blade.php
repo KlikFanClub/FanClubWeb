@@ -88,7 +88,7 @@
 
                 <div class="row">
                     <div class="col-25">
-                        <label for="category">Categoria</label>
+                        <label for="category">Categoría</label>
                     </div>
                     <div class="col-75">
                         <input type="text" name="category" required>
