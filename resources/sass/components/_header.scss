@@ -1,0 +1,32 @@
+// nav {
+//     font-size: 12px;
+// }
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.navContainer {
+// background: red;
+    display: flex;
+    line-height: 0 !important;
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+}
+
+.nav-link {
+    display: flex !important;
+    align-items: center;
+    margin-bottom: 0 !important;
+    padding: 0 1.75rem 0 1.75rem !important;
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        margin-left: 0.1rem !important;
+        margin-right: 0.1rem !important;
+    }
+}

@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @import url(https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -36,7 +35,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Rosario", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -59,7 +58,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rosario", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -5588,7 +5587,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rosario", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -5690,7 +5689,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rosario", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10068,7 +10067,7 @@ h3 {
 }
 
 footer {
-  background-color: #F9F9F9 !important;
+  background-color: #f9f9f9 !important;
   height: 160px;
 }
 
@@ -10091,19 +10090,24 @@ footer {
   display: block;
   font-family: Roboto !important;
   text-decoration: none;
-  margin-left: 120px;
+  margin-left: 20px;
   font-size: 15px !important;
   background-color: transparent;
 }
 
 .socialLinks {
-  margin-left: 800px;
-  margin-top: -93px;
+  display: flex;
+  margin-top: -98px;
+  margin-left: 27px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .socialButtons {
-  display: flex;
-  justify-items: space-around;
+  font-size: 20px;
 }
 
 .adressInfo {
@@ -10152,12 +10156,12 @@ footer {
 }
 
 .subscribe_button:hover {
-  background-color: #222A33;
+  background-color: #222a33;
   cursor: pointer;
 }
 
 .subscribe_button {
-  background: #171D23;
+  background: #171d23;
   position: absolute;
   top: -50px;
   left: 200px;
@@ -10177,7 +10181,7 @@ footer {
 }
 
 .subscribing {
-  background: #F9F9F9 !important;
+  background: #f9f9f9 !important;
   height: 100%;
   width: 300px;
   z-index: 5;
@@ -10211,7 +10215,7 @@ footer {
 
 .footerCR {
   font-family: "Roboto";
-  margin-top: -67px;
+  margin-top: 0px;
 }
 
 #info_aboutUs {
@@ -10251,15 +10255,322 @@ footer {
   margin: 20px;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  min-width: 800px !important;
+}
+
+/* Responsive layout - when the screen is less than 768px wide, set label margins */
+@media screen and (max-width: 768px) {
+  form {
+    min-width: 220px !important;
+    max-width: 600px !important;
+  }
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 2vw 5vw 2vw 5vw;
+}
+
+.form-box-container {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 2vw 0 !important;
+}
+
+label {
+  padding: 0.1vw 1vw 0.1vw 0;
+  margin: 0 6rem 1rem 0 !important;
+}
+
+/* Responsive layout - when the screen is less than 768px wide, set label margins */
+@media screen and (max-width: 768px) {
+  label {
+    margin: 1rem 4rem 0 0 !important;
+  }
+}
+input {
+  width: 100%;
+  border: 0.5px solid;
+  border-color: #EBEBEB;
+  border-radius: 4px;
+  transition: all 0.7s ease;
+}
+
+input:focus {
+  outline: none;
+  background-color: #FFF9DC;
+  transform: scale(1.03);
+}
+
+select {
+  width: 100%;
+  border: 0.5px solid;
+  border-color: #EBEBEB;
+  border-radius: 4px;
+  line-height: 2.4;
+}
+
+.row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: stretch;
+  margin-right: 3rem !important;
+  margin-left: 3rem !important;
+  line-height: 2.3;
+  font-size: 1rem;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: right;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  justify-content: space-between;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 768px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 768px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+.checkbox-input {
+  border-color: #EBEBEB !important;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+button[type=submit] {
+  color: white;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.btnCreate {
+  background-color: #381377;
+}
+
+.btnCancel {
+  background-color: #E14E85;
+}
+
+.btnCreate[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.btnCancel[type=submit]:hover {
+  background-color: red;
+}
+
+.filter {
+  position: fixed;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  margin: 30px;
+  margin-top: 50px;
+  background-color: white;
+  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
+  transition: border, display, bottom, right;
+}
+@media (max-width: 768px) {
+  .filter {
+    display: none;
+    transition: color 4s ease;
+  }
+  .filter:hover, .filter:focus, .filter:active {
+    display: flex;
+    position: fixed;
+    border: solid 1px black;
+    border-radius: 6px;
+    left: unset;
+    right: 20px;
+    bottom: 85px;
+    width: 260px;
+  }
+}
+
+.mobile_filterBtn {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile_filterBtn {
+    text-decoration: none;
+    color: initial;
+    border: solid 1px black;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50px;
+    right: 50px;
+    z-index: 10;
+    width: 55px;
+    height: 55px;
+    border-radius: 200px;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    font-size: 28px;
+  }
+  .mobile_filterBtn:hover, .mobile_filterBtn:focus, .mobile_filterBtn:focus-within, .mobile_filterBtn:focus-visible, .mobile_filterBtn:active {
+    color: initial;
+  }
+  .mobile_filterBtn:hover + .filter, .mobile_filterBtn:focus + .filter, .mobile_filterBtn:focus-within + .filter, .mobile_filterBtn:focus-visible + .filter, .mobile_filterBtn:active + .filter {
+    display: flex;
+    position: fixed;
+    border: solid 1px black;
+    border-radius: 6px;
+    left: unset;
+    right: 20px;
+    bottom: 85px;
+    width: 260px;
+  }
+}
+
+.filter_category {
+  white-space: nowrap;
+  font-size: 18px;
+  padding: 6px 0;
+  /* transition: color 4s ease;
+
+  &:hover+,
+  &:focus+,
+  &:active+ {
+    color: blue;
+  } */
+}
+
+.catalogue {
+  /* display: grid;
+  grid-template-columns: 20% 80%; */
+}
+
+.catalogue_artworks {
+  float: right;
+  max-width: 75%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 30px;
+}
+@media (max-width: 1400px) {
+  .catalogue_artworks {
+    grid-template-columns: 50% 50%;
+    max-width: 70%;
+  }
+}
+@media (max-width: 1023px) {
+  .catalogue_artworks {
+    grid-template-columns: 100%;
+    max-width: 60%;
+  }
+}
+@media (max-width: 768px) {
+  .catalogue_artworks {
+    grid-template-columns: 100%;
+    max-width: 100%;
+  }
+}
+
+.artwork_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.action_buttons {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 20px;
+}
+
+.artwork_img {
+  width: 100%;
+}
+
+.artwork_title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.artwork_artistName {
+  font-size: 16px;
+}
+
+.artwork_date {
+  font-style: italic;
+}
+
+.artwork_price {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+  display: flex;
+  line-height: 0 !important;
+  margin-right: 0.5rem !important;
+  margin-left: 0.5rem !important;
+}
+
+.nav-link {
+  display: flex !important;
+  align-items: center;
+  margin-bottom: 0 !important;
+  padding: 0 1.75rem 0 1.75rem !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin-left: 0.1rem !important;
+    margin-right: 0.1rem !important;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
 
 body {
   background-color: white;
-  font-family: Rosario, sans-serif !important;
-}
-
-.navLogo {
-  padding: 5px;
+  font-family: "Rosario", sans-serif;
 }
