@@ -111,7 +111,9 @@
 
                     <div class="buttons">
                         <button class="btnCreate" type="submit">Crear</button>
-                        <button class="btnCancel" type="submit">Cancelar</button>
+                        <button  class="btnCancel" type="button">
+                            <a href="{{ route('artists') }}">Cancelar</a>
+                        </button>
                     </div>
                 </div>
             </div>

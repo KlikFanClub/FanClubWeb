@@ -120,16 +120,19 @@
                 </div>
 
                 <div class="buttons">
-                    <button class="btnCreate" type="submit">Crear</button>                   
+                    <button class="btnCreate" type="submit">Crear</button> 
+                    <button  class="btnCancel" type="button">
+                        <a href="{{ route('workarts') }}">Cancelar</a>
+                    </button>                 
                 </div>
             </div>
         </div>
 
 </form>
 <div class="buttons">
-    <button class= "btnCancel" type="button">Cancelar
-        <a href="{{ route('workarts') }}">
-    </button>
+    {{-- <button class="btnCancel" type="button">
+        <a href="{{ route('workarts') }}">Cancelar</a>
+    </button> --}}
 </div>
 
 @endsection
