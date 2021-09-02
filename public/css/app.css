@@ -10558,6 +10558,26 @@ button[type=submit] {
   padding: 0 1.75rem 0 1.75rem !important;
 }
 
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-family: "Roboto" !important;
+}
+
+.nav-link:hover, .nav-link:focus {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  background-color: #ced4da;
+  transition: all 0.5s;
+}
+
+.selected {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  background-color: #ced4da;
+  color: black;
+}
+
 @media (min-width: 768px) {
   .navbar-expand-md {
     flex-flow: row nowrap;
