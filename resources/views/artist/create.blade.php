@@ -17,13 +17,21 @@
                 <br>
 
                 <div class="form-box-container">
-
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col-25">
                             <label for="name">Nombre</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="name" required>
+                            <input type="text" name="name" value="{{old('name')}}" required>
                         </div>
                     </div>
 
@@ -32,7 +40,7 @@
                             <label for="profile_picture">Imagen</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="profile_picture" required>
+                            <input type="text" name="profile_picture" value="{{old('profile_picture')}}" required>
                         </div>
                     </div>
 
@@ -42,7 +50,7 @@
                             <label for="bio">Bio</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="bio" required>
+                            <input type="text" name="bio" value="{{old('bio')}}" required>
                         </div>
                     </div>
 
@@ -51,7 +59,7 @@
                             <label for="website">Web</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="website" required>
+                            <input type="text" name="website" value="{{old('website')}}">
                         </div>
                     </div>
 
@@ -60,7 +68,7 @@
                             <label for="email">Email</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="email" required>
+                            <input type="text" name="email" value="{{old('email')}}" required>
                         </div>
                     </div>
 
@@ -69,7 +77,7 @@
                             <label for="instagram">Instagram</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="instagram" required>
+                            <input type="text" name="instagram" value="{{old('instagram')}}">
                         </div>
                     </div>
 
@@ -78,7 +86,7 @@
                             <label for="facebook">Facebook</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="facebook" required>
+                            <input type="text" name="facebook" value="{{old('facebook')}}">
                         </div>
                     </div>
 
@@ -87,7 +95,7 @@
                             <label for="twitter">Twitter</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="twitter" required>
+                            <input type="text" name="twitter" value="{{old('twitter')}}">
                         </div>
                     </div>
 
@@ -96,7 +104,7 @@
                             <label for="other_socials">Otras redes</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="other_socials" required>
+                            <input type="text" name="other_socials" value="{{old('other_socials')}}" >
                         </div>
                     </div>
 

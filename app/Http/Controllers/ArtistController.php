@@ -37,6 +37,32 @@ class ArtistController extends Controller
    */
   public function store(Request $request)
   {
+    
+    // $request->validate([
+    //   'name'=>'required|max:100',
+    //   'profile_picture'=>'required',
+    //   'bio'=>'required|max:500',
+    //   'website'=>'',
+    //   'email'=>'required|email|unique:artists',
+    //   'instagram'=>'',
+    //   'facebook'=>'',
+    //   'twitter'=>'',
+    //   'other_socials'=>'',
+    //   'highlighted'=>'boolean'
+      
+    // ]);
+    
+    if(isset($request->highlighted)){
+      //dd('1');
+      $highlighted = true;
+      //dd($highlighted);
+    }
+    if(isset($request->highlighted)==false){
+     // dd('0');
+     $highlighted = false;
+          
+  };
+
     $artist=Artist::create([
         'name'=>$request->name,
         'profile_picture'=>$request->profile_picture,
@@ -46,7 +72,8 @@ class ArtistController extends Controller
         'instagram'=>$request->instagram,
         'facebook'=>$request->facebook,
         'twitter'=>$request->twitter,
-        'other_socials'=>$request->other_socials
+        'other_socials'=>$request->other_socials,
+        'highlighted'=>$highlighted
     ]);
       $artist->save();
       return redirect()->route('artists');
@@ -99,7 +126,7 @@ class ArtistController extends Controller
       'facebook'=>$request->facebook,
       'twitter'=>$request->twitter,
       'other_socials'=>$request->other_socials,
-      'highlighted'=>$request->highlighted,
+      'highlighted'=>$request->has('highlighted'),
       ]);
 
       return redirect()->route('artists', 'artists');
