@@ -2,7 +2,7 @@
 
 @section ('content')
 
-    <x-header />
+    <x-header/>
 
 <div class="form-container">
 
