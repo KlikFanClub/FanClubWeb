@@ -18,7 +18,6 @@
         </div>
       </div>
     </aside>
-
     <a
       role="button"
       v-on:click="toggleMenu"
@@ -30,7 +29,6 @@
     </a>
   </div>
 </template>
-
 <script>
 export default {
   name: "FilterArtwork",
@@ -61,7 +59,12 @@ export default {
         },
         theme: {
           name: "temas",
-          subMenu: ["Animales", "Personas y retratos", "Blanco y negro", "Flores y plantas"],
+          subMenu: [
+            "Animales",
+            "Personas y retratos",
+            "Blanco y negro",
+            "Flores y plantas",
+          ],
         },
         other: {
           name: "otros",
@@ -69,7 +72,7 @@ export default {
         },
         artists: {
           name: "artistas",
-          subMenu: ["Alba Macfarlane", "Emily Eldridge", "Irene López León", ],
+          subMenu: ["Alba Macfarlane", "Emily Eldridge", "Irene López León"],
         },
       },
     };

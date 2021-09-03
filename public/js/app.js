@@ -1876,8 +1876,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FilterArtwork",
   data: function data() {
@@ -1961,14 +1959,14 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 // const files = require.context('./', true, /\.vue$/i)
-//files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('filter-artwork', __webpack_require__(/*! ./components/FilterArtwork.vue */ "./resources/js/components/FilterArtwork.vue").default);
 /**
-* Next, we will create a fresh Vue application instance and attach it to
-* the page. Then, you may begin adding components to this application
-* or customize the JavaScript scaffolding to fit your unique needs.
-*/
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 
 var app = new Vue({
   el: '#app'

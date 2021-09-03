@@ -13,7 +13,6 @@
   transition: border, display, bottom, right;
 
   @media (max-width: 768px) {
-
     position: fixed;
     background-color: rgb(245, 245, 245);
     border-radius: 6px;
@@ -21,36 +20,6 @@
     right: 20px;
     bottom: 85px;
     width: 260px;
-  }
-}
-
-.mobile_filterBtn {
-  @media (max-width: 768px) {
-    text-decoration: none;
-    color: initial;
-    border: solid 1px rgb(175, 175, 175);
-    position: fixed;
-    left: 0;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 20px;
-    margin: 30px;
-    margin-top: 50px;
-    background-color: white;
-    -webkit-box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
-    transition: border, display, bottom, right;
-
-    @media (max-width: 768px) {
-      position: fixed;
-      background-color: rgb(245, 245, 245);
-      border-radius: 6px;
-      left: unset;
-      right: 20px;
-      bottom: 85px;
-      width: 260px;
-    }
   }
 }
 
