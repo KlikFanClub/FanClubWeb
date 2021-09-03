@@ -42,6 +42,20 @@ class WorkartController extends Controller
    */
   public function store(Request $request)
   {
+
+    $request->validate([
+      'title'=>'required',
+      'imageworkart'=>'required',
+      'edition'=>'required',
+      'price'=>'required',
+      'technique'=>'required',
+      'theme'=>'required',
+      'others'=>'',
+      'category'=>'required',
+      'carousel'=>'',
+      'highlighted'=>'',
+    ]);
+dd($request);
     $workart=Workart::create([
       'artist_id'=>$request->artist_id,
       'title'=>$request->title,
@@ -52,8 +66,8 @@ class WorkartController extends Controller
       'theme'=>$request->theme,
       'others'=>$request->others,
       'category'=>$request->category,
-      'carousel'=>$request->carousel,
-      'highlighted'=>$request->highlighted
+      'carousel'=>$request->has ('carousel'),
+      'highlighted'=>$request->has('highlighted')
     ]);
     $workart->save();
     return redirect()->route('workarts');
@@ -94,6 +108,19 @@ class WorkartController extends Controller
   {
     $artists=Artist::orderBy('name')->get();
 
+    $request->validate([
+      'title'=>'required',
+      'imageworkart'=>'required',
+      'edition'=>'required',
+      'price'=>'required',
+      'technique'=>'required',
+      'theme'=>'required',
+      'others'=>'',
+      'category'=>'required',
+      'carousel'=>'',
+      'highlighted'=>'',
+    ]);
+
     $workart=Workart::whereId($id);
 
     $workart->update([
@@ -106,8 +133,8 @@ class WorkartController extends Controller
       'theme'=>$request->theme,
       'others'=>$request->others,
       'category'=>$request->category,
-      'carousel'=>$request->carousel,
-      'highlighted'=>$request->highlighted
+      'carousel'=>$request->has('carousel'),
+      'highlighted'=>$request->has('highlighted')
     ]);
 
     return redirect()->route('workarts', 'artists');

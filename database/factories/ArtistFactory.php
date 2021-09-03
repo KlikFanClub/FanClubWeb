@@ -31,7 +31,7 @@ class ArtistFactory extends Factory
             'facebook'=> $this->faker->url(),
             'twitter'=> $this->faker->url(),
             'other_socials' => $this->faker->url(),
-            'highlighted'=>$this->faker->boolean(),
+            'highlighted'=>$this->faker->numberBetween(0,1),
         ];
     }
 }

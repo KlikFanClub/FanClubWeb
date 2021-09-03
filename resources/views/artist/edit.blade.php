@@ -51,7 +51,9 @@
             <button type="submit">Editar</button>
         </div>
         <div>
-            <button type="submit">Cancelar</button>
+            <button  class="btnCancel" type="button">
+                <a href="{{ route('artists') }}">Cancelar</a>
+            </button>
         </div>
     </form>
 </div>

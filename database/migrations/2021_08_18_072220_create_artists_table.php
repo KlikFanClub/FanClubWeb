@@ -19,13 +19,13 @@ class CreateArtistsTable extends Migration
       $table->string('name');
       $table->string('profile_picture')->default();
       $table->string('bio');
-      $table->string('website');
+      $table->string('website')->nullable();;
       $table->string('email')->unique();
       $table->string('instagram')->nullable();
       $table->string('facebook')->nullable();
       $table->string('twitter')->nullable();
       $table->string('other_socials')->nullable();
-      $table->boolean('highlighted')->default()->nullable();
+      $table->integer('highlighted')->default(0);
     });
   }
 
