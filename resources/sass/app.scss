@@ -10,10 +10,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Components
-@import 'components/workart_create';
 @import 'components/home/home';
 @import 'components/home/home_info';
+@import 'components/workart_create';
 @import 'components/catalogue/filter_category';
+@import 'components/header';
 
 html {
   scroll-behavior: smooth;
@@ -22,8 +23,4 @@ html {
 body {
   background-color: white;
   font-family: $font-family-sans-serif;
-}
-
-.navLogo {
-  padding: 5px;
 }

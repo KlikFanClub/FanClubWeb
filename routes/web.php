@@ -30,7 +30,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //Routes Workart
 
 Route::get('/workarts', [WorkartController::class, 'index'])->name('workarts');
-Route::get('/workarts/create',[WorkartController::class, 'create'])->middleware('admin');
+Route::get('/workarts/create',[WorkartController::class, 'create'])->middleware('admin')->name('createWorkart');
 Route::post('/workarts/create', [WorkartController::class,'store'])->middleware('admin')->name('storeWorkart');
 Route::get('/workarts/edit/{id}', [WorkartController::class, 'edit'])->middleware('admin')->name('editWorkart');
 Route::put('/workarts/update/{id}', [WorkartController::class, 'update'])->middleware('admin')->name('updateWorkart');
@@ -39,7 +39,7 @@ Route::get('/workarts/delete/{id}', [WorkartController::class, 'destroy'])->midd
 //Routes Artists
 
 Route::get('/artists', [ArtistController::class, 'index'])->name('artists');
-Route::get('/artists/create', [ArtistController::class, 'create'])->middleware('admin');
+Route::get('/artists/create', [ArtistController::class, 'create'])->middleware('admin')->name('createArtist');
 Route::post('/artists/create', [ArtistController::class, 'store'])->middleware('admin')->name('storeArtist');
 Route::get('/artists/edit/{id}', [ArtistController::class, 'edit'])->middleware('admin')->name('editArtist');
 Route::put('/artists/update/{id}', [ArtistController::class, 'update'])->middleware('admin')->name('updateArtist');

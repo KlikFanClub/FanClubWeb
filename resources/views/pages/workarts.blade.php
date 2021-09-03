@@ -3,10 +3,19 @@
 
   <x-header />
 
-  <filter-artwork></filter-artwork>
-
   <div class="catalogue">
-    
+
+    <filter-artwork></filter-artwork>
+
+    @if (Auth::user())
+      @if (Auth::user()->isAdmin)
+        <div>
+          <a href="{{ route('createWorkart') }}">
+            <button type='submit'>Crear Nueva Obra!</button>
+          </a>
+        </div>
+      @endif
+    @endif
 
     <main class="catalogue_artworks">
       @foreach ($workarts as $workart)
@@ -29,6 +38,8 @@
 
               @endif
             @endif
+
+
           </div>
         </div>
       @endforeach
