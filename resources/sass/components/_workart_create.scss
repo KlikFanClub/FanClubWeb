@@ -8,7 +8,7 @@ form {
     min-width: 800px !important;
 }
 
-/* Responsive layout - when the screen is less than 768px wide, set label margins */
+/* Responsive layout - when the screen is less than 768px wide, set form width */
 @media screen and (max-width: 768px) {
     form {
         min-width: 220px !important;
