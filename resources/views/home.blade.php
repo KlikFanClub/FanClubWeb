@@ -3,6 +3,7 @@
 @section('content')
 
   <x-header />
+  
 
   <main>
     <section class="artworkSlider">
@@ -10,7 +11,7 @@
       <img class="artwork" src="{{ asset('img/home/slider/ORUGA_A3.png') }}" alt="">
       <img class="artwork" src="{{ asset('img/home/slider/PrintsArtboard_1.png') }}" alt="">
     </section>
-<filter-artwork></filter-artwork>
+
     <section class="highlights">
       <h2 class="highlightsTitle">Destacados</h2>
       <div class="artworkHighlights">

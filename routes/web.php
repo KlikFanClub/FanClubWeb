@@ -6,6 +6,7 @@ use App\Http\Controllers\WorkartController;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------

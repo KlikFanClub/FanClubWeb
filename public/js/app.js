@@ -1849,7 +1849,93 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "FilterArtwork",
+  data: function data() {
+    return {
+      mobileView: false,
+      isOpen: true,
+      menuItems: {
+        all: {
+          name: "todos los productos",
+          subMenu: []
+        },
+        edition: {
+          name: "edición",
+          subMenu: ["Edición Limitada", "Edición Abierta", "Pieza única"]
+        },
+        size: {
+          name: "tamaño",
+          subMenu: ["Pêqueño", "Mediano", "Grande", "Muy Grande"]
+        },
+        price: {
+          name: "precio",
+          subMenu: ["<25€", "25-50€", "50-100€", "100-150€", "+150€"]
+        },
+        technique: {
+          name: "técnica",
+          subMenu: ["Dibujo", "Impresión Digital", "Pintura", "Grabado"]
+        },
+        theme: {
+          name: "temas",
+          subMenu: ["Animales", "Personas y retratos", "Blanco y negro", "Flores y plantas"]
+        },
+        other: {
+          name: "otros",
+          subMenu: []
+        },
+        artists: {
+          name: "artistas",
+          subMenu: ["Alba Macfarlane", "Emily Eldridge", "Irene López León"]
+        }
+      }
+    };
+  },
+  methods: {
+    handleView: function handleView() {
+      this.mobileView = window.innerWidth <= 768;
+    },
+    toggleMenu: function toggleMenu() {
+      this.isOpen = !this.isOpen;
+    }
+  },
+  created: function created() {
+    this.handleView();
+
+    if (this.mobileView) {
+      this.isOpen = false;
+    }
+  }
+});
 
 /***/ }),
 
@@ -1877,11 +1963,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('filter-artwork', __webpack_require__(/*! ./components/FilterArtwork.vue */ "./resources/js/components/FilterArtwork.vue").default, {
-  props: [{
-    workarts: 'workarts'
-  }]
-});
+Vue.component('filter-artwork', __webpack_require__(/*! ./components/FilterArtwork.vue */ "./resources/js/components/FilterArtwork.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -37409,7 +37491,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("holaaaaa")])
+  return _c("div", [
+    _vm.isOpen
+      ? _c(
+          "aside",
+          { staticClass: "filter" },
+          _vm._l(_vm.menuItems, function(menuItem, index) {
+            return _c("div", { key: index, staticClass: "filter_category" }, [
+              _vm._v("\n      " + _vm._s(menuItem.name) + "\n      "),
+              _c(
+                "div",
+                { staticClass: "filter_subMenu" },
+                _vm._l(menuItem.subMenu, function(item, index) {
+                  return _c(
+                    "span",
+                    { key: index, staticClass: "subMenuItem" },
+                    [_vm._v("\n          " + _vm._s(item) + "\n        ")]
+                  )
+                }),
+                0
+              )
+            ])
+          }),
+          0
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.mobileView
+      ? _c(
+          "a",
+          {
+            staticClass: "mobile_filterBtn",
+            attrs: { role: "button", tabIndex: "0" },
+            on: { click: _vm.toggleMenu }
+          },
+          [
+            _c("span", {
+              staticClass: "iconify",
+              attrs: { "data-icon": "cil:filter" }
+            })
+          ]
+        )
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
