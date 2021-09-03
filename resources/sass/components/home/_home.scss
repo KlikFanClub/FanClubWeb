@@ -1,8 +1,46 @@
+.mainFatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    max-width: 1200px;
+}
+
+section {
+    max-width: 1200px;
+}
+
 .artworkSlider {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 130px;
+    margin-top: 1vh;
+    // border: 3px solid black;
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+}
+
+.carousel-item {
+    height: 75vh;
+    text-align: center;
+}
+
+.d-block {
+    // position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 75vh;
+    // height: auto;
+    // width: auto;
+    // overflow: hidden;
+    // margin: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(100%);
 }
 
 .artworkHighlights {
@@ -22,6 +60,8 @@
 
 .artwork {
   filter: drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.25));
+    height: 18vh;
+    width: auto;
 }
 
 .artistName {
@@ -31,8 +71,7 @@
 }
 
 .highlights {
-  margin-top: 150px;
-  padding: 0 100px;
+    margin-top: 1vh;
 }
 
 .highlightsTitle {
