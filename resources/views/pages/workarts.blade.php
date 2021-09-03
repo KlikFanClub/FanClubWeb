@@ -4,21 +4,8 @@
     <x-header />
 
     <div class="catalogue">
-        <a role="button" tabindex="0" class="mobile_filterBtn">
-            <span class="iconify" data-icon="cil:filter"></span>
-        </a>
 
-        <filter-artwork :workarts="$workarts"></filter-artwork>
-        {{-- <aside class="filter">
-      <span class="filter_category">TODOS LOS PRODUCTOS</span>
-      <span class="filter_category">EDICIÓN</span>
-      <span class="filter_category">TAMAÑO</span>
-      <span class="filter_category">PRECIO</span>
-      <span class="filter_category">TÉCNICA</span>
-      <span class="filter_category">TEMAS</span>
-      <span class="filter_category">OTROS</span>
-      <span class="filter_category">ARTISTAS</span>
-    </aside> --}}
+      <filter-artwork></filter-artwork>
 
     @if (Auth::user())
     @if (Auth::user()->isAdmin)
