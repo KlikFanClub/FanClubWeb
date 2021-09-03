@@ -108,6 +108,19 @@ dd($request);
   {
     $artists=Artist::orderBy('name')->get();
 
+    $request->validate([
+      'title'=>'required',
+      'imageworkart'=>'required',
+      'edition'=>'required',
+      'price'=>'required',
+      'technique'=>'required',
+      'theme'=>'required',
+      'others'=>'',
+      'category'=>'required',
+      'carousel'=>'',
+      'highlighted'=>'',
+    ]);
+
     $workart=Workart::whereId($id);
 
     $workart->update([
@@ -120,8 +133,8 @@ dd($request);
       'theme'=>$request->theme,
       'others'=>$request->others,
       'category'=>$request->category,
-      'carousel'=>$request->carousel,
-      'highlighted'=>$request->highlighted
+      'carousel'=>$request->has('carousel'),
+      'highlighted'=>$request->has('highlighted')
     ]);
 
     return redirect()->route('workarts', 'artists');

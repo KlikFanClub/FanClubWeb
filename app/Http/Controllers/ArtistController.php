@@ -38,30 +38,30 @@ class ArtistController extends Controller
   public function store(Request $request)
   {
     
-    // $request->validate([
-    //   'name'=>'required|max:100',
-    //   'profile_picture'=>'required',
-    //   'bio'=>'required|max:500',
-    //   'website'=>'',
-    //   'email'=>'required|email|unique:artists',
-    //   'instagram'=>'',
-    //   'facebook'=>'',
-    //   'twitter'=>'',
-    //   'other_socials'=>'',
-    //   'highlighted'=>'boolean'
+    $request->validate([
+      'name'=>'required|max:100',
+      'profile_picture'=>'required',
+      'bio'=>'required|max:500',
+      'website'=>'',
+      'email'=>'required|email|unique:artists',
+      'instagram'=>'',
+      'facebook'=>'',
+      'twitter'=>'',
+      'other_socials'=>'',
+      'highlighted'=>''
       
-    // ]);
+    ]);
     
-    if(isset($request->highlighted)){
-      //dd('1');
-      $highlighted = true;
-      //dd($highlighted);
-    }
-    if(isset($request->highlighted)==false){
-     // dd('0');
-     $highlighted = false;
+  //   if(isset($request->highlighted)){
+  //     //dd('1');
+  //     $highlighted = true;
+  //     //dd($highlighted);
+  //   }
+  //   if(isset($request->highlighted)==false){
+  //    // dd('0');
+  //    $highlighted = false;
           
-  };
+  // };
 
     $artist=Artist::create([
         'name'=>$request->name,
@@ -73,7 +73,7 @@ class ArtistController extends Controller
         'facebook'=>$request->facebook,
         'twitter'=>$request->twitter,
         'other_socials'=>$request->other_socials,
-        'highlighted'=>$highlighted
+        'highlighted'=>$request->highlighted
     ]);
       $artist->save();
       return redirect()->route('artists');
@@ -113,6 +113,20 @@ class ArtistController extends Controller
   public function update(Request $request, Artist $artist, $id)
   {
       $artists=Artist::orderBy('name')->get();
+
+      $request->validate([
+        'name'=>'required|max:100',
+        'profile_picture'=>'required',
+        'bio'=>'required|max:500',
+        'website'=>'',
+        'email'=>'required|email|unique:artists',
+        'instagram'=>'',
+        'facebook'=>'',
+        'twitter'=>'',
+        'other_socials'=>'',
+        'highlighted'=>''
+        
+      ]);
 
       $artist=Artist::whereId($id);
 

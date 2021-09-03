@@ -7,6 +7,15 @@
         @csrf
         @method('PUT')
         <div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             <label for="artist_id">Artista</label>
             <select name="artist_id" >
                 <option value="" selected disabled>Selecione un artista</option>
@@ -45,7 +54,7 @@
         </div>
         <div>
             <label for="others">Otros</label>
-            <input type="text" name="others" value="{{$workart->others}}" required>
+            <input type="text" name="others" value="{{$workart->others}}" >
         </div>
         <div>
             <label for="caurosel">Carrusel</label>
