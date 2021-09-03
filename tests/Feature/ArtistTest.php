@@ -18,8 +18,7 @@ class ArtistTest extends TestCase
      */
     public function test_highlighted_is_true()
     {
-        $artist= new ArtistController();
-       
+        $artist= new ArtistController();       
 
         $request = new Request([
             'name'=>"Gabriela",
