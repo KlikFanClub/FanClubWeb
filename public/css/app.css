@@ -10004,11 +10004,43 @@ h3 {
     border-color: #dee2e6;
   }
 }
-.artworkSlider {
+.mainFatherContainer {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  margin-top: 130px;
+}
+
+main {
+  max-width: 1200px;
+}
+
+section {
+  max-width: 1200px;
+}
+
+.artworkSlider {
+  margin-top: 1vh;
+}
+
+.carousel-inner {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-item {
+  height: 75vh;
+  text-align: center;
+}
+
+.d-block {
+  top: 0;
+  left: 0;
+  max-height: 75vh;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(100%);
 }
 
 .artworkHighlights {
@@ -10028,6 +10060,8 @@ h3 {
 
 .artwork {
   filter: drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.25));
+  height: 18vh;
+  width: auto;
 }
 
 .artistName {
@@ -10037,8 +10071,7 @@ h3 {
 }
 
 .highlights {
-  margin-top: 150px;
-  padding: 0 100px;
+  margin-top: 1vh;
 }
 
 .highlightsTitle {
@@ -10220,7 +10253,7 @@ footer {
 
 #info_aboutUs {
   font-size: 20px;
-  margin: 200px 80px;
+  margin: 5vh 80px;
 }
 
 .introduction_container {
@@ -10265,7 +10298,7 @@ form {
   min-width: 800px !important;
 }
 
-/* Responsive layout - when the screen is less than 768px wide, set label margins */
+/* Responsive layout - when the screen is less than 768px wide, set form width */
 @media screen and (max-width: 768px) {
   form {
     min-width: 220px !important;
