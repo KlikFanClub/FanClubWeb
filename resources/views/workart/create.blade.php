@@ -17,6 +17,15 @@
             <br>
 
             <div class="form-box-container">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
                 <div class="row">
                     <div class="col-25">
                         <label for="artist_id">Artista</label>
@@ -36,7 +45,7 @@
                         <label for="title">Título</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="title" required>
+                        <input type="text" name="title" value="{{old('title')}}" required>
                     </div>
                 </div>
 
@@ -45,7 +54,7 @@
                         <label for="imageworkart">Imagen</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="imageworkart" required>
+                        <input type="text" name="imageworkart" value="{{old('imageworkart')}}" required>
                     </div>
                 </div>
 
@@ -55,7 +64,7 @@
                         <label for="edition">Edición</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="edition" required>
+                        <input type="text" name="edition" value="{{old('edition')}}" required>
                     </div>
                 </div>
 
@@ -64,7 +73,7 @@
                         <label for="price">Precio</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="price" required>
+                        <input type="text" name="price" value="{{old('price')}}" required>
                     </div>
                 </div>
 
@@ -73,7 +82,7 @@
                         <label for="technique">Técnica</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="technique" required>
+                        <input type="text" name="technique" value="{{old('technique')}}" required>
                     </div>
                 </div>
 
@@ -82,7 +91,7 @@
                         <label for="theme">Tema</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="theme" required>
+                        <input type="text" name="theme" value="{{old('theme')}}" required>
                     </div>
                 </div>
 
@@ -91,7 +100,7 @@
                         <label for="category">Categoría</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="category" required>
+                        <input type="text" name="category" value="{{old('category')}}" required>
                     </div>
                 </div>
 
@@ -100,7 +109,7 @@
                         <label for="others">Otros</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="others" required>
+                        <input type="text" name="others" value="{{old('others')}}" >
                     </div>
                 </div>
 
@@ -120,16 +129,19 @@
                 </div>
 
                 <div class="buttons">
-                    <button class="btnCreate" type="submit">Crear</button>                   
+                    <button class="btnCreate" type="submit">Crear</button> 
+                    <button  class="btnCancel" type="button">
+                        <a href="{{ route('workarts') }}">Cancelar</a>
+                    </button>                 
                 </div>
             </div>
         </div>
 
 </form>
 <div class="buttons">
-    <button class= "btnCancel" type="button">Cancelar
-        <a href="{{ route('workarts') }}">
-    </button>
+    {{-- <button class="btnCancel" type="button">
+        <a href="{{ route('workarts') }}">Cancelar</a>
+    </button> --}}
 </div>
 
 @endsection
