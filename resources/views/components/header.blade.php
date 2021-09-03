@@ -23,7 +23,7 @@
                 <!-- Authentication Links -->
 
                 <li class="nav-item">
-                    <a class="nav-link text-dark h5" href="#info_aboutUs">INFO</a>
+                    <a class="nav-link text-dark h5" href="home#info_aboutUs">INFO</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark h5" href="{{ url('workarts') }}">CATÁLOGO</a>
