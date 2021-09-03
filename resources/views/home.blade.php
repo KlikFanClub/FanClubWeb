@@ -50,7 +50,6 @@
 
 
 </section>
-
 <section class="highlights">
 <h2 class="highlightsTitle">Destacados</h2>
 <div class="artworkHighlights">
