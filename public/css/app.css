@@ -10060,7 +10060,7 @@ section {
 
 .artwork {
   filter: drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.25));
-  height: 18vh;
+  height: 16vh;
   width: auto;
 }
 
@@ -10071,12 +10071,13 @@ section {
 }
 
 .highlights {
-  margin-top: 1vh;
+  margin-top: 3vh;
 }
 
 .highlightsTitle {
+  text-align: center;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 35px;
   margin-left: 3.5%;
   margin-bottom: 50px;
 }
