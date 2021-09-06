@@ -55,7 +55,7 @@ class WorkartController extends Controller
       'carousel'=>'',
       'highlighted'=>'',
     ]);
-dd($request);
+//dd($request);
     $workart=Workart::create([
       'artist_id'=>$request->artist_id,
       'title'=>$request->title,
@@ -69,6 +69,12 @@ dd($request);
       'carousel'=>$request->has ('carousel'),
       'highlighted'=>$request->has('highlighted')
     ]);
+
+    
+    //dd($request->hasfile('imageworkart'));
+    if($request->hasFile('imageworkart')){
+      $workart['imageworkart']=$request->file('imageworkart')->store('uploads', 'public');
+    }
     $workart->save();
     return redirect()->route('workarts');
   }

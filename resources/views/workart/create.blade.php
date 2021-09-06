@@ -6,7 +6,7 @@
 
 <div class="form-container">
 
-    <form method="POST" action="{{route ('storeWorkart')}}">
+    <form method="POST" action="{{route ('storeWorkart')}}" enctype="multipart/form-data">
             @csrf
 
         <div class="form-group row">

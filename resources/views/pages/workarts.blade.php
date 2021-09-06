@@ -21,10 +21,10 @@
             @foreach ($workarts as $workart)
                 <div class="artwork_card">
                     <img class="artwork_img" src="{{ $workart->imageworkart }}" alt="">
-                    <span class="artwork_title">{{-- {{ $workart->title . ' - ' . $workart->created_at }} --}}Nombre de la obra</span>
-                    <span class="artwork_artistName">{{-- {{ $workart->artistname }} --}}Nombre del artista</span>
+                    <span class="artwork_title">{{ $workart->title }}</span>
+                    <span class="artwork_artistName">{{ $workart->artistname }}</span>
                     <span class="artwork_date">10/12/2016</span>
-                    <span class="artwork_price">{{-- {{ $workart->price }} --}}123€</span>
+                    <span class="artwork_price">{{ ($workart->price) }}€</span>
                     <div class="action_buttons">
                         @if (Auth::user())
                             @if (Auth::user()->isAdmin)

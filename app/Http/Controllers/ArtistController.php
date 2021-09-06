@@ -79,7 +79,7 @@ class ArtistController extends Controller
 
     //dd($request->hasfile('profile_picture'));
     if($request->hasFile('profile_picture')){
-     $artist['profile_picture']=$request->file('profile_picture')->store('uploads', 'public');
+     $artist['profile_picture']=$request->file('profile_picture')->store('uploads_artist', 'public');
    }
     
 
