@@ -54,7 +54,7 @@
                         <label for="imageworkart">Imagen</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="imageworkart" value="{{old('imageworkart')}}" required>
+                        <input type="file" name="imageworkart" value="{{old('imageworkart')}}" accept="image/*" required>
                     </div>
                 </div>
 

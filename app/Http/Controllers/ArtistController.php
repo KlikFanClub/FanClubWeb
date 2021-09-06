@@ -62,6 +62,7 @@ class ArtistController extends Controller
   //    $highlighted = false;
           
   // };
+  
 
     $artist=Artist::create([
         'name'=>$request->name,
@@ -75,6 +76,13 @@ class ArtistController extends Controller
         'other_socials'=>$request->other_socials,
         'highlighted'=>$request->highlighted
     ]);
+
+    //dd($request->hasfile('profile_picture'));
+    if($request->hasFile('profile_picture')){
+     $artist['profile_picture']=$request->file('profile_picture')->store('uploads', 'public');
+   }
+    
+
       $artist->save();
       return redirect()->route('artists');
   }
