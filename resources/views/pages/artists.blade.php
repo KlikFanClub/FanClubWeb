@@ -13,10 +13,11 @@
     @endif
 
     @foreach ($artists as $artist)
-        <img src="{{ $artist->profile_picture }}">
+        <img src= <?php echo "storage/{$artist->profile_picture}" ?>>
         <h6>{{ $artist->name }}</h6>
         @if (Auth::user())
             @if (Auth::user()->isAdmin)
+           
             
                 <div>
                     <a href="{{ route('editArtist', ['id' => $artist->id]) }}">

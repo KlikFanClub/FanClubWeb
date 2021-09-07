@@ -20,9 +20,10 @@
         <main class="catalogue_artworks">
             @foreach ($workarts as $workart)
                 <div class="artwork_card">
-                    <img class="artwork_img" src="{{ $workart->imageworkart }}" alt="">
+                    <img class="artwork_img" src="{{asset('storage') . '/' . $workart->imageworkart}}">
                     <span class="artwork_title">{{ $workart->title }}</span>
-                    <span class="artwork_artistName">{{ $workart->artistname }}</span>
+                    <span class="artwork_artistName">{{-- Artist::find($workart->artist_id)->name--}}
+                    </span>
                     <span class="artwork_date">10/12/2016</span>
                     <span class="artwork_price">{{ ($workart->price) }}€</span>
                     <div class="action_buttons">
