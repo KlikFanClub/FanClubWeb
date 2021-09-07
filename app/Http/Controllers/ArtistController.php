@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArtistController extends Controller
 {
@@ -120,36 +121,47 @@ class ArtistController extends Controller
    */
   public function update(Request $request, Artist $artist, $id)
   {
-      $artists=Artist::orderBy('name')->get();
-
-      $request->validate([
-        'name'=>'required|max:100',
-        'profile_picture'=>'required',
-        'bio'=>'required|max:500',
-        'website'=>'',
-        'email'=>'required|email|unique:artists',
-        'instagram'=>'',
-        'facebook'=>'',
-        'twitter'=>'',
-        'other_socials'=>'',
-        'highlighted'=>''
+      //$artists=Artist::orderBy('name')->get();
+      $artistUpdate=request()->except(['_token', '_method']);
+      // $request->validate([
+      //   'name'=>'required|max:100',
+      //   'profile_picture'=>'required',
+      //   'bio'=>'required|max:500',
+      //   'website'=>'',
+      //   'email'=>'required|email|unique:artists',
+      //   'instagram'=>'',
+      //   'facebook'=>'',
+      //   'twitter'=>'',
+      //   'other_socials'=>'',
+      //   'highlighted'=>''
         
-      ]);
+      // ]);
+
+      if($request->hasFile('profile_picture')){
+        $artist=Artist::findOrFail($id);
+        //dd($workart);
+         Storage::delete('public/'. $artist->profile_picture);
+         
+         $artistUpdate['profile_picture']=$request->file('profile_picture')->store('uploads_artist', 'public');
+       //dd($workart->imageworkart);
+       }
+
+       Artist::where('id', '=', $id)->update($artistUpdate);
 
       $artist=Artist::whereId($id);
 
-      $artist->update([
-      'name'=>$request->name,
-      'profile_picture'=>$request->profile_picture,
-      'bio'=>$request->bio,
-      'website'=>$request->website,
-      'email'=>$request->email,
-      'instagram'=>$request->instagram,
-      'facebook'=>$request->facebook,
-      'twitter'=>$request->twitter,
-      'other_socials'=>$request->other_socials,
-      'highlighted'=>$request->has('highlighted'),
-      ]);
+      // $artist->update([
+      // 'name'=>$request->name,
+      // 'profile_picture'=>$request->profile_picture,
+      // 'bio'=>$request->bio,
+      // 'website'=>$request->website,
+      // 'email'=>$request->email,
+      // 'instagram'=>$request->instagram,
+      // 'facebook'=>$request->facebook,
+      // 'twitter'=>$request->twitter,
+      // 'other_socials'=>$request->other_socials,
+      // 'highlighted'=>$request->has('highlighted'),
+      // ]);
 
       return redirect()->route('artists', 'artists');
 

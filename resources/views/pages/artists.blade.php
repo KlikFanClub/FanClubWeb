@@ -13,7 +13,7 @@
     @endif
 
     @foreach ($artists as $artist)
-        <img src= <?php echo "storage/{$artist->profile_picture}" ?>>
+        <img src= <?php echo "storage/{$artist->profile_picture}" ?> width="100">
         <h6>{{ $artist->name }}</h6>
         @if (Auth::user())
             @if (Auth::user()->isAdmin)
