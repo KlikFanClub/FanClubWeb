@@ -6,7 +6,7 @@
 
     <div class="form-container">
 
-        <form method="POST" action="{{route ('storeArtist')}}">
+        <form method="POST" action="{{route ('storeArtist')}}" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group row">
@@ -40,7 +40,7 @@
                             <label for="profile_picture">Imagen</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="profile_picture" value="{{old('profile_picture')}}" required>
+                            <input type="file" name="profile_picture" value="{{old('profile_picture')}}" accept="image/*" required>
                         </div>
                     </div>
 

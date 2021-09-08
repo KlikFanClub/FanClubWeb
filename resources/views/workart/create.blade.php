@@ -6,7 +6,7 @@
 
 <div class="form-container">
 
-    <form method="POST" action="{{route ('storeWorkart')}}">
+    <form method="POST" action="{{route ('storeWorkart')}}" enctype="multipart/form-data">
             @csrf
 
         <div class="form-group row">
@@ -54,7 +54,7 @@
                         <label for="imageworkart">Imagen</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="imageworkart" value="{{old('imageworkart')}}" required>
+                        <input type="file" name="imageworkart" value="{{old('imageworkart')}}" accept="image/*" required>
                     </div>
                 </div>
 
