@@ -7,49 +7,47 @@
 <div class="mainFatherContainer">
   <main>
     <section class="artworkSlider">
+
   {{-- The .active class needs to be added to one of
        the slides. Otherwise, the carousel will not
        be visible. --}}
-
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-      </ol>
-      <div class="carousel-inner">
-          <div class="carousel-item active">
-              <img class="d-block" src="{{ asset('img/home/general/Tarde de jardín fk.png') }}" alt="First slide">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          </ol>
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img class="img-fluid" src="{{ asset('img/home/general/Tarde_jardin_slider.png') }}" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                  <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                  <img class="img-fluid" src="{{ asset('img/home/general/Santiago_slider.png') }}" alt="Third slide">
+              </div>
+              <div class="carousel-item">
+                  <img class="img-fluid" src="{{ asset('img/home/general/Regresar_slider.png') }}" alt="Forth slide">
+              </div>
+              <div class="carousel-item">
+                  <img class="img-fluid" src="{{ asset('img/home/general/Chica_azul_slider.png') }}" alt="Fifth slide">
+              </div>
           </div>
-          <div class="carousel-item">
-              <img class="d-block" src="{{ asset('img/home/general/Raizal fk.png') }}" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-              <img class="d-block" src="{{ asset('img/home/general/Santiago fk.png') }}" alt="Third slide">
-          </div>
-          <div class="carousel-item">
-              <img class="d-block h-100" src="{{ asset('img/home/general/Regresar fk.png') }}" alt="Forth slide">
-          </div>
-          <div class="carousel-item">
-              <img class="d-block h-100" src="{{ asset('img/home/general/Chica azul fk.png') }}" alt="Fifth slide">
-          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-      </a>
-  </div>
 
 
-
-
-</section>
+    </section>
 <section class="highlights">
 <h2 class="highlightsTitle">Destacados</h2>
 <div class="artworkHighlights">

@@ -7,12 +7,16 @@
     justify-content: center;
 }
 
+.nav-item {
+    margin-left: 2vw;
+}
+
 .navContainer {
-// background: red;
     display: flex;
     line-height: 0 !important;
     margin-right: 0.5rem !important;
     margin-left: 0.5rem !important;
+    max-width: 1440px !important;
 }
 
 .nav-link {
