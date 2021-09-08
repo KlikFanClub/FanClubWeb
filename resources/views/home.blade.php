@@ -10,6 +10,11 @@
   {{-- The .active class needs to be added to one of
        the slides. Otherwise, the carousel will not
        be visible. --}}
+<div>
+  <button> 
+    <a href="{{ route('register') }}">Haga parte de FanClub y exhibe tus obras aqui! =)</a>
+  </button>
+</div>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
