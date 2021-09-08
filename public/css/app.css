@@ -10014,6 +10014,33 @@ main {
   max-width: 1440px;
 }
 
+.joinUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.joinUsButton {
+  color: white;
+  margin: 0.5em;
+  padding: 1em 4em;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.joinUsButton:after {
+  position: absolute;
+  transition: 0.3s;
+  content: "";
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  background: #f7f7f7;
+}
+
 .highlights {
   padding-top: 3em;
   padding-bottom: 3em;
@@ -10246,8 +10273,8 @@ select {
   margin-top: 20px;
 }
 
-button[type=submit] {
-  color: white;
+button {
+  color: white !important;
   padding: 4px 12px;
   border: none;
   border-radius: 4px;
@@ -10264,11 +10291,11 @@ button[type=submit] {
 }
 
 .btnCreate[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #38c172;
 }
 
-.btnCancel[type=submit]:hover {
-  background-color: red;
+.btnCancel[type=button]:hover {
+  background-color: #e3342f;
 }
 
 .filter {

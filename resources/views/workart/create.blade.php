@@ -120,19 +120,13 @@
                     <div class="col-75">
                         <label for="carousel">Carrusel</label>
                     </div>
-                    <div class="col-25">
-                        <input type="checkbox" name="highlighted">
-                    </div>
-                    <div class="col-75">
-                        <label for="highlighted">Destacados</label>
-                    </div>
                 </div>
 
                 <div class="buttons">
-                    <button class="btnCreate" type="submit">Crear</button> 
-                    <button  class="btnCancel" type="button">
+                    <button class="btnCreate" type="submit">Crear</button>
+                    <button class="btnCancel" type="button">
                         <a href="{{ route('workarts') }}">Cancelar</a>
-                    </button>                 
+                    </button>
                 </div>
             </div>
         </div>
