@@ -11,7 +11,7 @@
        the slides. Otherwise, the carousel will not
        be visible. --}}
 <div>
-  <button> 
+  <button>
     <a href="{{ route('register') }}">Haga parte de FanClub y exhibe tus obras aqui! =)</a>
   </button>
 </div>
