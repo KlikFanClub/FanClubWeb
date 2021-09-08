@@ -7,6 +7,7 @@
 <div class="mainFatherContainer">
   <main>
     <section class="artworkSlider">
+
   {{-- The .active class needs to be added to one of
        the slides. Otherwise, the carousel will not
        be visible. --}}
@@ -45,9 +46,6 @@
           <span class="sr-only">Next</span>
       </a>
   </div>
-
-
-
 
 </section>
 <section class="highlights">

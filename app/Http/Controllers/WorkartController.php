@@ -6,9 +6,6 @@ use App\Models\Workart;
 use Illuminate\Http\Request;
 use App\Models\Artist;
 
-
-
-
 class WorkartController extends Controller
 {
   /**
@@ -19,7 +16,7 @@ class WorkartController extends Controller
   public function index()
   {
     $workarts = Workart::all()
-            ->sortByDesc('created_at');
+      ->sortByDesc('created_at');
     return view('pages.workarts', compact('workarts'));
   }
 
@@ -30,7 +27,7 @@ class WorkartController extends Controller
    */
   public function create()
   {
-    $artists=Artist::orderBy('name')->get();
+    $artists = Artist::orderBy('name')->get();
     return view('workart.create', compact('artists'));
   }
 
@@ -44,30 +41,30 @@ class WorkartController extends Controller
   {
 
     $request->validate([
-      'title'=>'required',
-      'imageworkart'=>'required',
-      'edition'=>'required',
-      'price'=>'required',
-      'technique'=>'required',
-      'theme'=>'required',
-      'others'=>'',
-      'category'=>'required',
-      'carousel'=>'',
-      'highlighted'=>'',
+      'title' => 'required',
+      'imageworkart' => 'required',
+      'edition' => 'required',
+      'price' => 'required',
+      'technique' => 'required',
+      'theme' => 'required',
+      'others' => '',
+      'category' => 'required',
+      'carousel' => '',
+      'highlighted' => '',
     ]);
-dd($request);
-    $workart=Workart::create([
-      'artist_id'=>$request->artist_id,
-      'title'=>$request->title,
-      'imageworkart'=>$request->imageworkart,
-      'edition'=>$request->edition,
-      'price'=>$request->price,
-      'technique'=>$request->technique,
-      'theme'=>$request->theme,
-      'others'=>$request->others,
-      'category'=>$request->category,
-      'carousel'=>$request->has ('carousel'),
-      'highlighted'=>$request->has('highlighted')
+    dd($request);
+    $workart = Workart::create([
+      'artist_id' => $request->artist_id,
+      'title' => $request->title,
+      'imageworkart' => $request->imageworkart,
+      'edition' => $request->edition,
+      'price' => $request->price,
+      'technique' => $request->technique,
+      'theme' => $request->theme,
+      'others' => $request->others,
+      'category' => $request->category,
+      'carousel' => $request->has('carousel'),
+      'highlighted' => $request->has('highlighted')
     ]);
     $workart->save();
     return redirect()->route('workarts');
@@ -92,9 +89,9 @@ dd($request);
    */
   public function edit($id)
   {
-    $artists=Artist::orderBy('name')->get();
-    $workart=Workart::find($id);
-    return view ('workart.edit', compact('workart','artists'));
+    $artists = Artist::orderBy('name')->get();
+    $workart = Workart::find($id);
+    return view('workart.edit', compact('workart', 'artists'));
   }
 
   /**
@@ -106,39 +103,38 @@ dd($request);
    */
   public function update(Request $request, $id)
   {
-    $artists=Artist::orderBy('name')->get();
+    $artists = Artist::orderBy('name')->get();
 
     $request->validate([
-      'title'=>'required',
-      'imageworkart'=>'required',
-      'edition'=>'required',
-      'price'=>'required',
-      'technique'=>'required',
-      'theme'=>'required',
-      'others'=>'',
-      'category'=>'required',
-      'carousel'=>'',
-      'highlighted'=>'',
+      'title' => 'required',
+      'imageworkart' => 'required',
+      'edition' => 'required',
+      'price' => 'required',
+      'technique' => 'required',
+      'theme' => 'required',
+      'others' => '',
+      'category' => 'required',
+      'carousel' => '',
+      'highlighted' => '',
     ]);
 
-    $workart=Workart::whereId($id);
+    $workart = Workart::whereId($id);
 
     $workart->update([
       //'artistname'=>$request->artistname,
-      'title'=>$request->title,
-      'imageworkart'=>$request->imageworkart,
-      'edition'=>$request->edition,
-      'price'=>$request->price,
-      'technique'=>$request->technique,
-      'theme'=>$request->theme,
-      'others'=>$request->others,
-      'category'=>$request->category,
-      'carousel'=>$request->has('carousel'),
-      'highlighted'=>$request->has('highlighted')
+      'title' => $request->title,
+      'imageworkart' => $request->imageworkart,
+      'edition' => $request->edition,
+      'price' => $request->price,
+      'technique' => $request->technique,
+      'theme' => $request->theme,
+      'others' => $request->others,
+      'category' => $request->category,
+      'carousel' => $request->has('carousel'),
+      'highlighted' => $request->has('highlighted')
     ]);
 
     return redirect()->route('workarts', 'artists');
-
   }
 
   /**
@@ -152,5 +148,4 @@ dd($request);
     Workart::find($id)->delete();
     return redirect()->route('workarts');
   }
-
 }
