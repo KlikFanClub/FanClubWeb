@@ -5,13 +5,7 @@
   <x-header />
 
 <div class="mainFatherContainer">
-  <main>
-
-<div class="joinUs">
-  <button class="joinUsButton">
-      <a href="{{ route('register') }}">Forma parte de FanClub y exhibe tus obras aqui! =)</a>
-  </button>
-</div>
+<main>
 
 <section class="artworkSlider">
   {{-- The .active class needs to be added to one of
@@ -107,13 +101,12 @@
 <div class="introduction_container">
 <div class="introduction">
   <h4 class="introduction_title">Conócenos</h4>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua.
-  </p>
+    <p>
+      Fan Club es una tienda especializada en sistema de impresión que se apoya en el artivismo para dar visibilidad a mujeres artistas latinaméricanas, pero también a otros artistas cuya expresión se encuentre alineada con nuestros valores.
+    </p>
+    <p>
+      Nuestra misión es servir de embajadores y de vitrina para la generación de mujeres latinoamericanas que buscan sentar una posición política a través de su expresión artística.
+    </p>
 </div>
 <div>
   <img class="introduction_img" src="{{ asset('img/home/about_us/fanclublocal.png') }}" alt="">
@@ -123,24 +116,28 @@
 <div class="objectives_container">
 <div class="objectives">
   <h4 class="objectives_title">Objetivos</h4>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua.
-  </p>
+    <p>
+    Somos una tienda de arte gráfico independiente femenista especilizada en prints, collages, originales, fotografía, risografía y serigráfia impresos en papel reciclado; las obras y productos que vendemos tienen un mensaje que busca mostrar protagonistas diversos y hacer sentir a quienes lo adquieren como parte inclusiva de esa diversidad.
+    </p>
+    <p>
+    También, ofreceremos talleres y cursos de modelado de plastilina y tinta china para todas las edades.
+    </p>
 </div>
 <div>
   <img class="objectives_img" src="{{ asset('img/home/about_us/fanclublocal.png') }}" alt="">
 </div>
 </div>
 </section>
+
+    <div class="joinUs">
+        <button class="joinUsButton">
+            <a href="{{ route('register') }}">Forma parte de FanClub y exhibe tus obras aqui! =)</a>
+        </button>
+    </div>
+
 </div>
 
-<div>
 <x-footer />
-</div>
 
 <script>
 $('.carousel').carousel()
@@ -148,11 +145,6 @@ $('.carousel').carousel()
 
 @endsection
 
-
 {{-- <img class="artwork" src="{{ asset('img/home/slider/Narrativas_trans.png') }}" alt="">
 <img class="artwork" src="{{ asset('img/home/general/Raizal.png') }}" alt="">
 <img class="artwork" src="{{ asset('img/home/slider/PrintsArtboard_1.png') }}" alt=""> --}}
-
-
-
-

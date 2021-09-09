@@ -1,13 +1,20 @@
 .mainFatherFooterContainer {
     display: flex;
     justify-content: center;
-    max-width: 1440px;
 }
 
 footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     max-width: 1440px;
-    background-color: #f9f9f9 !important;
-    height: 160px;
+    width: 100%;
+    background-color: #E9E9E9 !important;
+    height: 12em;
+    font-weight: 400;
+    color: $fcdark;
+    font-size: 0.9em;
 }
 
 .footerNav {
@@ -16,8 +23,8 @@ footer {
 }
 
 .footerLogo {
-    width: 125px;
-    padding: 30px;
+    width: 5em;
+    padding: 1em;
 }
 
 .pageslinks {
@@ -25,28 +32,25 @@ footer {
 }
 
 .txtLinks {
-    color: black;
-    display: block;
-    font-family: Roboto !important;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 15px !important;
+    margin-left: 2em;
+    color: $fcdark;
     background-color: transparent;
 }
 
 .socialLinks {
     display: flex;
-    margin-top: -98px;
-    margin-left: 27px;
+    // margin-top: -98px;
+    // margin-left: 27px;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
+    padding: 2em 4em;
 }
 
 .socialButtons {
-    font-size: 20px;
+    font-size: 1.5em;
+    color: $fcdark !important;
 }
 
 .adressInfo {
@@ -56,24 +60,25 @@ footer {
 }
 
 .newsletter {
-    display: flex;
-    justify-content: center;
-    margin-top: -59px;
-    margin-right: -871px;
+    display: block;
+    // justify-content: center;
+    // margin-top: -59px;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-content: center;
-    align-items: center;
+    // align-content: center;
+    // align-items: center;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 .login_bar {
-    width: 300px;
-    height: 50px;
+    width: 21em;
+    height: 2em;
     background: white;
     border-radius: 10px;
-    top: 50%;
+    // top: 50%;
     position: relative;
-    z-index: 1;
+    // z-index: 1;
     overflow: hidden;
 }
 
@@ -109,14 +114,14 @@ footer {
 .subscribe_button {
     background: #171d23;
     position: absolute;
-    top: -50px;
+    // top: -50px;
     left: 200px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     height: 150px;
     width: 100px;
     text-align: center;
-    line-height: 150px;
+    line-height: -2px;
     vertical-align: middle;
     color: white;
     -webkit-transition: transform 0.5s ease 0s;
@@ -181,6 +186,14 @@ footer {
 }
 
 .footerCR {
-    font-family: "Roboto";
-    margin-top: 0px;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.rightFooter {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
 }

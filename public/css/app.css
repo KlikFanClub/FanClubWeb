@@ -10021,38 +10021,27 @@ main {
 }
 
 .joinUsButton {
-  color: white;
+  color: #10072B;
+  background-color: #10072B;
   margin: 0.5em;
   padding: 1em 4em;
   text-align: center;
   text-transform: uppercase;
   position: relative;
-  overflow: hidden;
-  transition: 0.3s;
-}
-.joinUsButton:after {
-  position: absolute;
-  transition: 0.3s;
-  content: "";
-  width: 0;
-  left: 50%;
-  bottom: 0;
-  height: 3px;
-  background: #f7f7f7;
 }
 
 .highlights {
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding: 2em;
   background-color: #10072B;
   color: #FBE472;
 }
 
 .highlightsTitle {
+  font-size: 2em;
   font-weight: 700;
-  font-size: 3em;
+  font-style: italic;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .artworkHighlights {
@@ -10077,58 +10066,59 @@ main {
 }
 
 .artistName {
-  font-weight: 700;
-  font-size: 2em;
-  margin-top: 20px;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin-top: 0.5em;
 }
 
 .artworkDetailsBtn {
-  border: 1px solid black;
+  border: 1px solid #E14E85;
   width: 100%;
   text-align: center;
   text-decoration: none;
   color: #E14E85;
-  font-size: 15px;
-  padding: 3px 0;
-  margin-top: 5px;
+  font-size: 1em;
+  padding: 0.5em 0;
+  margin-top: 1em;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .artworkDetailsBtn:hover {
   text-decoration: none;
-  color: white;
-  background-color: black;
+  color: #FBE472;
+  background-color: #E14E85;
+}
+
+.info_title {
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 2em;
 }
 
 #info_aboutUs {
   max-width: 1440px;
-  font-size: 20px;
-  margin: 5vh 80px;
+  font-size: 1.5em;
+  margin: 2em 0;
 }
 
 .introduction_container {
   display: flex;
-  margin: 50px 0;
+  margin: 2em 0;
 }
 
 .objectives_container {
   display: flex;
   flex-direction: row-reverse;
-  margin: 50px 0;
-}
-
-.info_title {
-  text-align: center;
-  margin-bottom: 75px;
-  font-weight: 700;
-  font-size: 35px;
-  font-style: italic;
+  margin: 2em 0 0 0;
 }
 
 .introduction_title,
 .objectives_title {
   font-weight: 700;
   font-style: italic;
+  margin-bottom: 1.5em;
 }
 
 .introduction,
@@ -10433,6 +10423,7 @@ button {
 }
 
 .navContainer {
+  background-color: white;
   display: flex;
   line-height: 0 !important;
   margin-right: 0.5rem !important;
@@ -10478,13 +10469,20 @@ button {
 .mainFatherFooterContainer {
   display: flex;
   justify-content: center;
-  max-width: 1440px;
 }
 
 footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   max-width: 1440px;
-  background-color: #f9f9f9 !important;
-  height: 160px;
+  width: 100%;
+  background-color: #E9E9E9 !important;
+  height: 12em;
+  font-weight: 400;
+  color: #10072B;
+  font-size: 0.9em;
 }
 
 .footerNav {
@@ -10493,8 +10491,8 @@ footer {
 }
 
 .footerLogo {
-  width: 125px;
-  padding: 30px;
+  width: 5em;
+  padding: 1em;
 }
 
 .pageslinks {
@@ -10502,28 +10500,22 @@ footer {
 }
 
 .txtLinks {
-  color: black;
-  display: block;
-  font-family: Roboto !important;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 15px !important;
+  margin-left: 2em;
+  color: #10072B;
   background-color: transparent;
 }
 
 .socialLinks {
   display: flex;
-  margin-top: -98px;
-  margin-left: 27px;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-content: center;
-  justify-content: center;
   align-items: center;
+  padding: 2em 4em;
 }
 
 .socialButtons {
-  font-size: 20px;
+  font-size: 1.5em;
+  color: #10072B !important;
 }
 
 .adressInfo {
@@ -10533,24 +10525,19 @@ footer {
 }
 
 .newsletter {
-  display: flex;
-  justify-content: center;
-  margin-top: -59px;
-  margin-right: -871px;
+  display: block;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-content: center;
-  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .login_bar {
-  width: 300px;
-  height: 50px;
+  width: 21em;
+  height: 2em;
   background: white;
   border-radius: 10px;
-  top: 50%;
   position: relative;
-  z-index: 1;
   overflow: hidden;
 }
 
@@ -10579,14 +10566,13 @@ footer {
 .subscribe_button {
   background: #171d23;
   position: absolute;
-  top: -50px;
   left: 200px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 150px;
   width: 100px;
   text-align: center;
-  line-height: 150px;
+  line-height: -2px;
   vertical-align: middle;
   color: white;
   transition: transform 0.5s ease 0s;
@@ -10630,8 +10616,16 @@ footer {
 }
 
 .footerCR {
-  font-family: "Roboto";
-  margin-top: 0px;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.rightFooter {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
 }
 
 html {

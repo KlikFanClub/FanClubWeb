@@ -1,3 +1,7 @@
+body {
+    // background-color: $fcdark !important;
+}
+
 .mainFatherContainer {
     display: flex;
     flex-direction: column;
@@ -15,38 +19,27 @@ main {
 }
 
 .joinUsButton {
-    color: white;
+    color: $fcdark;
+    background-color: $fcdark;
     margin: 0.5em;
     padding: 1em 4em;
     text-align: center;
     text-transform: uppercase;
     position: relative;
-    overflow: hidden;
-    transition: .3s;
-        &:after {
-            position: absolute;
-            transition: .3s;
-            content: '';
-            width: 0;
-            left: 50%;
-            bottom: 0;
-            height: 3px;
-            background: #f7f7f7;
-        }
 }
 
 .highlights {
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding: 2em;
     background-color: $fcdark;
     color: $fcyellow;
 }
 
 .highlightsTitle {
+    font-size: 2em;
     font-weight: 700;
-    font-size: 3em;
+    font-style: italic;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 .artworkHighlights {
@@ -57,11 +50,11 @@ main {
 }
 
 .artworkCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1em;
     margin-left: 1em;
 }
 
@@ -71,25 +64,25 @@ main {
 }
 
 .artistName {
-  font-weight: 700;
-  font-size: 2em;
-  margin-top: 20px;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin-top: 0.5em;
 }
 
 .artworkDetailsBtn {
-  border: 1px solid black;
+  border: 1px solid $fcpink;
   width: 100%;
   text-align: center;
   text-decoration: none;
   color: $fcpink;
-  font-size: 15px;
-  padding: 3px 0;
-  margin-top: 5px;
+  font-size: 1em;
+  padding: 0.5em 0;
+  margin-top: 1em;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .artworkDetailsBtn:hover {
   text-decoration: none;
-  color: white;
-  background-color: black;
+  color: $fcyellow;
+  background-color: $fcpink;
 }
