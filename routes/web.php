@@ -6,7 +6,9 @@ use App\Http\Controllers\WorkartController;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\MailController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\New_Artist_Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,3 +45,8 @@ Route::post('/artists/create', [ArtistController::class, 'store'])->middleware('
 Route::get('/artists/edit/{id}', [ArtistController::class, 'edit'])->middleware('admin')->name('editArtist');
 Route::put('/artists/update/{id}', [ArtistController::class, 'update'])->middleware('admin')->name('updateArtist');
 Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middleware('admin')->name('deleteArtist');
+
+//Send mails
+
+Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
+Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store');
