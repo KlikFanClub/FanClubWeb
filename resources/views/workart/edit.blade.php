@@ -3,7 +3,7 @@
 @section ('content')
 
 <div>
-    <form method="POST" action="{{route ('updateWorkart', $workart->id)}}">
+    <form method="POST" action="{{route ('updateWorkart', $workart->id)}}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div>
@@ -30,7 +30,9 @@
         </div>
         <div>
             <label for="imageworkart">ImagenWorkart</label>
-            <input type="text" name="imageworkart" value="{{$workart->imageworkart}}" required>
+            <img src="{{asset('storage') . '/' . $workart->imageworkart}}" width="100">
+            <input type="file" name="imageworkart" accept="image/*"required>
+            {{-- {{$workart->imageworkart}} --}}
         </div>
         <div>
             <label for="edition">Edición</label>

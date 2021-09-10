@@ -6,7 +6,7 @@
 
 <div class="form-container">
 
-    <form method="POST" action="{{route ('storeWorkart')}}">
+    <form method="POST" action="{{route ('storeWorkart')}}" enctype="multipart/form-data">
             @csrf
 
         <div class="form-group row">
@@ -54,7 +54,7 @@
                         <label for="imageworkart">Imagen</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="imageworkart" value="{{old('imageworkart')}}" required>
+                        <input type="file" name="imageworkart" value="{{old('imageworkart')}}" accept="image/*" required>
                     </div>
                 </div>
 
@@ -120,19 +120,13 @@
                     <div class="col-75">
                         <label for="carousel">Carrusel</label>
                     </div>
-                    <div class="col-25">
-                        <input type="checkbox" name="highlighted">
-                    </div>
-                    <div class="col-75">
-                        <label for="highlighted">Destacados</label>
-                    </div>
                 </div>
 
                 <div class="buttons">
-                    <button class="btnCreate" type="submit">Crear</button> 
-                    <button  class="btnCancel" type="button">
+                    <button class="btnCreate" type="submit">Crear</button>
+                    <button class="btnCancel" type="button">
                         <a href="{{ route('workarts') }}">Cancelar</a>
-                    </button>                 
+                    </button>
                 </div>
             </div>
         </div>

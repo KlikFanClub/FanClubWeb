@@ -12,9 +12,11 @@
 // Components
 @import 'components/home/home';
 @import 'components/home/home_info';
+@import 'components/home/home_slider';
 @import 'components/workart_create';
 @import 'components/catalogue/filter_category';
 @import 'components/header';
+@import 'components/footer';
 
 html {
   scroll-behavior: smooth;
