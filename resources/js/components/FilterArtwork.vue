@@ -29,12 +29,17 @@
 </template>
 
 <script>
+import { artworkService } from "../services/artworkService";
+
+console.log(getArtistsNames());
+
 export default {
   name: "FilterArtwork",
   data() {
     return {
       mobileView: false,
       isOpen: true,
+      namesArray = [],
       menuItems: [
         {
           id: 1,
@@ -86,7 +91,7 @@ export default {
         {
           id: 8,
           name: "artistas",
-          subMenu: ["Alba Macfarlane", "Emily Eldridge", "Irene López León"],
+          subMenu: getArtistsNames(),
           isOpen: false,
         },
       ],
@@ -114,12 +119,23 @@ export default {
     subMenuOpen(menuItem) {
       return menuItem.isOpen ? "filter_category open" : "filter_category";
     },
+    async getArtistsNames() {
+  const request = await artworkService.getAllArtists();
+  let namesArray = [];
+  request.data.forEach((item) => {
+    namesArray.push(item.name);
+  });
+  namesArray.sort();
+  return namesArray;
+}
   },
+  computed: {},
   created() {
     this.handleView();
     if (this.mobileView) {
       this.isOpen = false;
-    }
+    };
+    
   },
 };
 </script>
