@@ -31,15 +31,13 @@
 <script>
 import { artworkService } from "../services/artworkService";
 
-console.log(getArtistsNames());
-
 export default {
   name: "FilterArtwork",
   data() {
     return {
       mobileView: false,
       isOpen: true,
-      namesArray = [],
+      namesArray: [],
       menuItems: [
         {
           id: 1,
@@ -91,7 +89,7 @@ export default {
         {
           id: 8,
           name: "artistas",
-          subMenu: getArtistsNames(),
+          subMenu: ['asd'],
           isOpen: false,
         },
       ],
@@ -120,22 +118,21 @@ export default {
       return menuItem.isOpen ? "filter_category open" : "filter_category";
     },
     async getArtistsNames() {
-  const request = await artworkService.getAllArtists();
-  let namesArray = [];
-  request.data.forEach((item) => {
-    namesArray.push(item.name);
-  });
-  namesArray.sort();
-  return namesArray;
-}
+      const request = await artworkService.getAllArtists();
+      let namesArray = [];
+      request.data.forEach((item) => {
+        namesArray.push(item.name);
+      });
+      namesArray.sort();
+      return namesArray;
+    },
   },
   computed: {},
   created() {
     this.handleView();
     if (this.mobileView) {
       this.isOpen = false;
-    };
-    
+    }
   },
 };
 </script>
