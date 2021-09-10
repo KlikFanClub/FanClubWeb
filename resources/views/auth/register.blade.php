@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" action='{{route('sendmail.store')}}'>
                         @csrf
 
                         <div class="form-group row">
@@ -40,6 +40,35 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="" class="col-md-5 col-form-label text-md-right">{{ __('Un enlace con tus obras') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="someLink" type="text" class="form-control  @error('someLink') is-invalid @enderror" name="someLink" value="{{ old('someLink') }}" required autocomplete="someLink" autofocus>
+
+                                @error('someLink')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-md-5 col-form-label text-md-right">{{ __('Cuéntanos un poco sobre ti! :)') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="aboutArtist" type="text" size="50" class="form-control 
+                                  @error('aboutArtist') is-invalid @enderror" name="aboutArtist" value="{{ old('aboutArtist') }}" required autocomplete="aboutArtist" autofocus>
+
+                                @error('aboutArtist')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        {{-- <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -59,7 +88,7 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

@@ -3,7 +3,7 @@
 @section ('content')
 
 <div>
-    <form method="POST" action="{{route ('updateArtist', $artist->id)}}">
+    <form method="POST" action="{{route ('updateArtist', $artist->id)}}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
       
@@ -13,7 +13,8 @@
         </div>
         <div>
             <label for="profile_picture">Imagen del perfil</label>
-            <input type="text" name="profile_picture" value="{{$artist->profile_picture}}" required>
+            <img src="{{asset('storage') . '/' . $artist->profile_picture}}" width="100">
+            <input type="file" name="profile_picture" value="{{$artist->profile_picture}}" accept="image/*"   required>
         </div>
         <div>
             <label for="bio">Bio</label>
@@ -21,7 +22,7 @@
         </div>
         <div>
             <label for="website">Web</label>
-            <input type="text" name="website" value="{{$artist->website}}" required>
+            <input type="text" name="website" value="{{$artist->website}}" >
         </div>
         <div>
             <label for="email">Email</label>
@@ -29,15 +30,15 @@
         </div>
         <div>
             <label for="instagram">Instagram</label>
-            <input type="text" name="instagram" value="{{$artist->instagram}}" required>
+            <input type="text" name="instagram" value="{{$artist->instagram}}" >
         </div>
         <div>
             <label for="facebook">Facebook</label>
-            <input type="text" name="facebook" value="{{$artist->facebook}}" required>
+            <input type="text" name="facebook" value="{{$artist->facebook}}" >
         </div>
         <div>
             <label for="twitter">Twitter</label>
-            <input type="text" name="twitter" value="{{$artist->twitter}}" required>
+            <input type="text" name="twitter" value="{{$artist->twitter}}" >
         </div>
         <div>
             <label for="other_socials">Otras redes sociales</label>
