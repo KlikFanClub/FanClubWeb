@@ -30,6 +30,7 @@
 
 <script>
 import { artworkService } from "../services/artworkService";
+import { artistService } from "../services/artistService";
 
 export default {
   name: "FilterArtwork",
@@ -89,7 +90,7 @@ export default {
         {
           id: 8,
           name: "artistas",
-          subMenu: ['asd'],
+          subMenu: null,
           isOpen: false,
         },
       ],
@@ -118,13 +119,21 @@ export default {
       return menuItem.isOpen ? "filter_category open" : "filter_category";
     },
     async getArtistsNames() {
-      const request = await artworkService.getAllArtists();
+      const request = await artistService.getAllArtists();
       let namesArray = [];
       request.data.forEach((item) => {
         namesArray.push(item.name);
       });
       namesArray.sort();
-      return namesArray;
+      this.namesArray = namesArray
+      this.setArtistsNames()
+    },
+    setArtistsNames() {
+      this.menuItems.filter((item) => {
+        if (item.name === "artistas") {
+          item.subMenu = this.namesArray;
+        }
+      });
     },
   },
   computed: {},
@@ -133,7 +142,12 @@ export default {
     if (this.mobileView) {
       this.isOpen = false;
     }
+    this.getArtistsNames();
   },
+  /* mounted() {
+    this.getArtistsNames()
+    
+  }, */
 };
 </script>
 
