@@ -9,5 +9,6 @@
 <body>
     <h1>Correo eletronico</h1>
     <p>Este es un email test</p>
+    <p>{{$contact['name']}}</p>
 </body>
 </html>

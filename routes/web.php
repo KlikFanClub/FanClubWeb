@@ -48,5 +48,6 @@ Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middle
 
 //Send mails
 
+route::get ('/mail', [MailController::class, 'store'])->name('mailmesaje');
 Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
 Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store');
