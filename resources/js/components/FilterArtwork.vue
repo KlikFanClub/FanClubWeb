@@ -120,12 +120,10 @@ export default {
     },
     async getArtistsNames() {
       const request = await artistService.getAllArtists();
-      let namesArray = [];
       request.data.forEach((item) => {
-        namesArray.push(item.name);
+        this.namesArray.push(item.name);
       });
-      namesArray.sort();
-      this.namesArray = namesArray
+      this.namesArray.sort();
       this.setArtistsNames()
     },
     setArtistsNames() {
