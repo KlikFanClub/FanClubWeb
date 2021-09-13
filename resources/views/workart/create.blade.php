@@ -125,7 +125,7 @@
                 <div class="buttons">
                     <button class="btnCreate" type="submit">Crear</button>
                     <button class="btnCancel" type="button">
-                        <a href="{{ route('workarts') }}">Cancelar</a>
+                        <a class="quitColor" href="{{ route('workarts') }}">Cancelar</a>
                     </button>
                 </div>
             </div>

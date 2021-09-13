@@ -10153,6 +10153,10 @@ main {
   filter: invert(100%);
 }
 
+.router-link {
+  text-decoration: none;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -10288,6 +10292,11 @@ button {
   background-color: #e3342f;
 }
 
+/* .quitColor, a:link, a:visited {
+    text-decoration: none;
+}
+
+ */
 /* .filter {
     position: fixed;
     left: 0;
@@ -10512,6 +10521,7 @@ footer {
   flex-wrap: nowrap;
   align-items: center;
   padding: 2em 4em;
+  color: #10072B;
 }
 
 .socialButtons {

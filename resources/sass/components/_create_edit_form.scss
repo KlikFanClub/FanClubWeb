@@ -1,3 +1,7 @@
+.router-link {
+    text-decoration: none;
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -136,3 +140,9 @@ button {
 .btnCancel[type=button]:hover {
     background-color: $red;
 }
+
+/* .quitColor, a:link, a:visited {
+    text-decoration: none;
+}
+
+ */
