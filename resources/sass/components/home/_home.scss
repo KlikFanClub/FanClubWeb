@@ -43,10 +43,10 @@ main {
 }
 
 .artworkHighlights {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .artworkCard {
@@ -64,25 +64,48 @@ main {
 }
 
 .artistName {
-  font-weight: 500;
-  font-size: 1.5em;
-  margin-top: 0.5em;
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-top: 0.5em;
 }
 
 .artworkDetailsBtn {
-  border: 1px solid $fcpink;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-  color: $fcpink;
-  font-size: 1em;
-  padding: 0.5em 0;
-  margin-top: 1em;
-  transition: background-color 0.2s ease, color 0.2s ease;
+    border: 1px solid $fcpink;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: $fcpink;
+    font-size: 1em;
+    padding: 0.5em 0;
+    margin-top: 1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .artworkDetailsBtn:hover {
-  text-decoration: none;
-  color: $fcyellow;
-  background-color: $fcpink;
+    text-decoration: none;
+    color: $fcyellow;
+    background-color: $fcpink;
+
+    @media only screen and (max-width: 425px) {
+        .highlights {
+            width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+            .highlights {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .highlights {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1600px) {
+            .highlights {
+                width: 100%;
+            }
+        }
+    }
 }

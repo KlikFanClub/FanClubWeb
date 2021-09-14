@@ -9,14 +9,17 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
 // Components
 @import 'components/home/home';
 @import 'components/home/home_info';
 @import 'components/home/home_slider';
-@import 'components/workart_create';
+@import 'components/create_edit_form';
 @import 'components/catalogue/filter_category';
 @import 'components/header';
 @import 'components/footer';
+
+// @include link-colors(#00c, #0cc, #c0c, #ccc, #cc0);
 
 html {
   scroll-behavior: smooth;
