@@ -14,7 +14,7 @@ class MailController extends Controller
         return view('emails.mail');
     }
 
-    public function store(Request $request)
+   /*  public function store(Request $request)
     {
         $contact=([
             'name' => $request['name'],
@@ -24,10 +24,10 @@ class MailController extends Controller
         ]);
 
         $correo = new New_Artist_Mail($contact);
-        //dd($contact);
+      
 
         Mail::to('gabipineiro@hotmail.com')->send($correo);
 
         return 'Gracias por estar con nosostros! Tu email ha sido enviado a FanClub y pronto te contestaremos!';
-    }
+    } */
 }

@@ -72,8 +72,14 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        Mail::raw(
-            'Nombre del Artista:' . '' . $data['name'], 
+        Mail::raw('
+            Nombre del Artista:' . ' ' . $data['name'] . '.
+
+            Correo del artista:' . ' ' . $data['email'] . '.
+
+            Links: ' . $data['someLink'] . '. 
+
+            Info: ' . $data['aboutArtist'] . '.', 
             function ($m) {
         $m->from('admin@fanclubproject.com', 'FanClub Bcn');
 

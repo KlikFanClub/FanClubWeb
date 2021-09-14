@@ -13,7 +13,7 @@
 ***
 * This is a collaborative Laravel CRUD project for the Full Stack Development Bootcamp developed by KlikFanClub team.
 * Project status: work in progress.
-* Heroku depolyment url: https://xyxyxyxyxyxyxyxyxyxyxy.herokuapp.com/
+* Heroku deployment url: https://xyxyxyxyxyxyxyxyxyxyxy.herokuapp.com/
 
 ## Stack and Technologies
 
@@ -54,5 +54,9 @@ $ npm run watch
 * Gabriela Piñeiro
 * Martín Madridejos
 * Joan Recordà Pellicer
+* Andriu Suárez
+* Diego González
+* Jael Masllorens
+* Armando Mago
 
 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
