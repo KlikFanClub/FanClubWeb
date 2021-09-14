@@ -10088,16 +10088,27 @@ main {
   color: #FBE472;
   background-color: #E14E85;
 }
-
 @media only screen and (max-width: 425px) {
-  .artworkSlider {
-    width: 80%;
-  }
-
-  .highlights {
-    width: 80%;
+  .artworkDetailsBtn:hover .highlights {
+    width: 100%;
   }
 }
+@media only screen and (max-width: 425px) and (max-width: 768px) {
+  .artworkDetailsBtn:hover .highlights {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 425px) and (max-width: 1200px) {
+  .artworkDetailsBtn:hover .highlights {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 425px) and (max-width: 1600px) {
+  .artworkDetailsBtn:hover .highlights {
+    width: 100%;
+  }
+}
+
 .info_title {
   font-size: 2em;
   font-weight: 700;
@@ -10141,6 +10152,81 @@ main {
   .info_aboutUs {
     width: 80%;
   }
+
+  .introduction,
+.introduction_img,
+.objectives,
+.objectives_img {
+    width: 80%;
+  }
+
+  .introduction_container {
+    flex-direction: column;
+  }
+
+  .objectives_container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .info_aboutUs {
+    width: 80%;
+  }
+
+  .introduction,
+.introduction_img,
+.objectives,
+.objectives_img {
+    width: 80%;
+  }
+
+  .introduction_container {
+    flex-direction: column;
+  }
+
+  .objectives_container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .info_aboutUs {
+    width: 80%;
+  }
+
+  .introduction,
+.introduction_img,
+.objectives,
+.objectives_img {
+    width: 80%;
+  }
+
+  .introduction_container {
+    flex-direction: column;
+  }
+
+  .objectives_container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .info_aboutUs {
+    width: 80%;
+  }
+
+  .introduction,
+.introduction_img,
+.objectives,
+.objectives_img {
+    width: 80%;
+  }
+
+  .introduction_container {
+    flex-direction: column;
+  }
+
+  .objectives_container {
+    flex-direction: column;
+  }
 }
 .carousel-inner {
   display: flex;
@@ -10169,8 +10255,8 @@ main {
 
 @media screen and (max-width: 425px) {
   .carousel-inner {
-    width: 80vw;
-    height: 40vh;
+    width: 100vw;
+    height: 50vh;
   }
 
   .carousel-item {
@@ -10180,8 +10266,8 @@ main {
 }
 @media screen and (max-width: 768px) {
   .carousel-inner {
-    width: 80vw;
-    height: 40vh;
+    width: 100vw;
+    height: 50vh;
   }
 
   .carousel-item {
@@ -10191,14 +10277,14 @@ main {
 }
 @media screen and (max-width: 1200px) {
   .carousel-inner {
-    width: 80vw;
-    height: 40vh;
+    width: 100vw;
+    height: 50vh;
   }
 }
 @media screen and (max-width: 1600px) {
   .carousel-inner {
-    width: 80vw;
-    height: 40vh;
+    width: 100vw;
+    height: 50vh;
   }
 }
 .router-link {
@@ -10516,7 +10602,7 @@ button {
   color: black;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .navbar-expand-md {
     flex-flow: row nowrap;
     justify-content: space-evenly;
