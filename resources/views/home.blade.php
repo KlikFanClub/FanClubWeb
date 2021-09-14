@@ -53,13 +53,6 @@
       <section class="highlights">
         <h2 class="highlightsTitle">Destacados</h2>
         <div class="artworkHighlights">
-          <div class="artworkCard">
-            <div>
-              <img class="artwork" src="{{ asset('img/home/highlighted/PrintsArtboard_2.png') }}" alt="">
-            </div>
-            <span class="artistName">Daniela Ilustra</span>
-            <a class="artworkDetailsBtn" href="">ver su obra</a>
-          </div>
 
           <div class="artworkCard">
             <div>
@@ -76,6 +69,7 @@
             <span class="artistName">Agustina</span>
             <a class="artworkDetailsBtn" href="">ver su obra</a>
           </div>
+
           <div class="artworkCard">
             <div>
               <img class="artwork" src="{{ asset('img/home/highlighted/ORUGA_A3_2.png') }}" alt="">
@@ -135,11 +129,14 @@
       </div>
     </section>
 
-    <div class="joinUs">
-      <button class="joinUsButton">
-        <a href="{{ route('register') }}">Forma parte de FanClub y exhibe tus obras aqui! =)</a>
-      </button>
-    </div>
+      <div class="joinUsContainer">
+
+        <div class="joinUs">
+          <button class="joinUsButton">
+            <a href="{{ route('register') }}">Forma parte de FanClub y exhibe tus obras aqui! =)</a>
+          </button>
+        </div>
+      </div>
 
   </div>
 

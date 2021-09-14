@@ -10014,22 +10014,6 @@ main {
   max-width: 1440px;
 }
 
-.joinUs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.joinUsButton {
-  color: #10072B;
-  background-color: #10072B;
-  margin: 0.5em;
-  padding: 1em 4em;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
-}
-
 .highlights {
   padding: 2em;
   background-color: #10072B;
@@ -10080,6 +10064,7 @@ main {
   font-size: 1em;
   padding: 0.5em 0;
   margin-top: 1em;
+  margin-bottom: 2em;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -10088,27 +10073,64 @@ main {
   color: #FBE472;
   background-color: #E14E85;
 }
-@media only screen and (max-width: 425px) {
-  .artworkDetailsBtn:hover .highlights {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 425px) and (max-width: 768px) {
-  .artworkDetailsBtn:hover .highlights {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 425px) and (max-width: 1200px) {
-  .artworkDetailsBtn:hover .highlights {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 425px) and (max-width: 1600px) {
-  .artworkDetailsBtn:hover .highlights {
-    width: 100%;
-  }
+
+.joinUsContainer {
+  background-color: #10072B;
+  width: 100%;
+  max-width: 1440px;
+  padding: 2em;
 }
 
+.joinUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.joinUsButton {
+  color: #FBE472;
+  background-color: #E9E9E9;
+  margin: 0.5em;
+  padding: 1em 4em;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+}
+
+@media only screen and (max-width: 425px) {
+  .highlights {
+    width: 100%;
+  }
+
+  .artworkHighlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  .highlights {
+    width: 100%;
+  }
+
+  .artworkHighlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .highlights {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .highlights {
+    width: 100%;
+  }
+}
 .info_title {
   font-size: 2em;
   font-weight: 700;
@@ -10603,7 +10625,15 @@ button {
 }
 
 @media (max-width: 768px) {
-  .navbar-expand-md {
+  .navbar-expand-lg {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin-left: 0.1rem !important;
+    margin-right: 0.1rem !important;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar-expand-lg {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     margin-left: 0.1rem !important;
