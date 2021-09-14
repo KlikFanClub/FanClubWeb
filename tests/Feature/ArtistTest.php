@@ -18,9 +18,7 @@ class ArtistTest extends TestCase
      */
     public function test_highlighted_is_true()
     {
-        $artist= new ArtistController();       
-
-        $request = new Request([
+        $artist= new Artist([
             'name'=>"Gabriela",
             'profile_picture'=>'ok',
             'bio'=>'ok', 
@@ -34,8 +32,8 @@ class ArtistTest extends TestCase
 
                        
         ]);
-        $artist->store($request);
-       
+      
+        dd($artist);
         $this->assertTrue($artist->highlighted);
         // $response = $this->get('/');
 
