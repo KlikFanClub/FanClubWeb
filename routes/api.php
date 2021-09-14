@@ -31,6 +31,8 @@ Route::get('workarts/{id}', function($id) {
   return json_encode($workart);
 });
 
+
+
 Route::get('artists', function() {
   $artists = Artist::all();
   return json_encode($artists);
