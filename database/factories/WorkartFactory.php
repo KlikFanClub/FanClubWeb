@@ -31,8 +31,7 @@ class WorkartFactory extends Factory
             'theme' => $this->faker->text(),
             'others' => $this->faker->text(),
             'category' => $this->faker->text(),
-            'carousel'=>$this->faker->boolean(),
-            'highlighted'=>$this->faker->boolean(),
+            'carousel'=>$this->faker->numberBetween(0,1),         
         ];
     }
 }
