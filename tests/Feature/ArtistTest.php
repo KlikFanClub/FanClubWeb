@@ -57,4 +57,17 @@ class ArtistTest extends TestCase
             $response->assertStatus(200)
             ->assertJsonFragment(['id' => 1]);
     }
+
+    public function test_That_artist_has_related_workarts()
+    {
+        Artist::factory(1)->create([]);
+        Workart::factory(3)->create([
+            'artist_id' => 1
+        ]);
+
+        $response = $this->get('api/artists/1/workarts');
+
+        $response->assertStatus(200)
+            ->assertJsonCount(3);
+    }
 }
