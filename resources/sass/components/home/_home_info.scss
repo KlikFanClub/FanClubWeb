@@ -36,3 +36,9 @@
 .objectives_img {
   margin: 20px;
 }
+
+@media only screen and (max-width: 425px) {
+    .info_aboutUs {
+        width: 80%;
+    }
+}

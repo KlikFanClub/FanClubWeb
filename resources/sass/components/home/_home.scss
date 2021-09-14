@@ -86,3 +86,12 @@ main {
   color: $fcyellow;
   background-color: $fcpink;
 }
+
+@media only screen and (max-width: 425px) {
+    .artworkSlider {
+        width: 80%;
+    }
+    .highlights {
+        width: 80%;
+    }
+}

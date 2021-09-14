@@ -10089,6 +10089,15 @@ main {
   background-color: #E14E85;
 }
 
+@media only screen and (max-width: 425px) {
+  .artworkSlider {
+    width: 80%;
+  }
+
+  .highlights {
+    width: 80%;
+  }
+}
 .info_title {
   font-size: 2em;
   font-weight: 700;
@@ -10128,6 +10137,11 @@ main {
   margin: 20px;
 }
 
+@media only screen and (max-width: 425px) {
+  .info_aboutUs {
+    width: 80%;
+  }
+}
 .carousel-inner {
   display: flex;
   align-items: center;
@@ -10153,6 +10167,40 @@ main {
   filter: invert(100%);
 }
 
+@media screen and (max-width: 425px) {
+  .carousel-inner {
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .carousel-item {
+    width: 100vw;
+    height: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .carousel-inner {
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .carousel-item {
+    width: 100vw;
+    height: auto;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .carousel-inner {
+    width: 80vw;
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .carousel-inner {
+    width: 80vw;
+    height: 40vh;
+  }
+}
 .router-link {
   text-decoration: none;
 }

@@ -23,11 +23,46 @@
 .img-fluid {
     width: 100%;
     height: auto;
-
 }
 
 .carousel-control-prev,
 .carousel-control-next,
 .carousel-indicators {
     filter: invert(100%);
+}
+
+@media screen and (max-width: 425px) {
+    .carousel-inner {
+        width: 80vw;
+        height: 40vh;
+    }
+    .carousel-item {
+        width: 100vw;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-inner {
+        width: 80vw;
+        height: 40vh;
+    }
+    .carousel-item {
+        width: 100vw;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .carousel-inner {
+        width: 80vw;
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+.carousel-inner {
+        width: 80vw;
+        height: 40vh;
+    }
 }
