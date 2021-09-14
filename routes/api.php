@@ -23,20 +23,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('workarts', function() {
   $workarts = Workart::all();
-  return json_encode($workarts);
+  return response()->json($workarts);
 });
 
 Route::get('workarts/{id}', function($id) {
   $workart = Workart::findOrFail($id);
-  return json_encode($workart);
+  return response()->json($workart);
 });
+
+
 
 Route::get('artists', function() {
   $artists = Artist::all();
-  return json_encode($artists);
+  return response()->json($artists);
 });
 
 Route::get('artists/{id}', function($id) {
   $artist = Artist::findOrFail($id);
-  return json_encode($artist);
+  return response()->json($artist);
 });
+
+Route::get('artists/{id}/workarts', [WorkartController::class, 'getWorkarts']);
