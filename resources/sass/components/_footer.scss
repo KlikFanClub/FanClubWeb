@@ -12,9 +12,9 @@ footer {
     width: 100%;
     background-color: #E9E9E9 !important;
     height: 12em;
-    font-weight: 400;
+    font-size: 0.7rem;
+    font-weight: 200;
     color: $fcdark;
-    font-size: 0.9em;
 }
 
 .footerNav {
@@ -23,8 +23,8 @@ footer {
 }
 
 .footerLogo {
-    width: 5em;
-    padding: 1em;
+    width: 3.5em;
+    margin: 1em 2em 1em 1em;
 }
 
 .pageslinks {
@@ -50,7 +50,7 @@ footer {
 }
 
 .socialButtons {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: $fcdark !important;
 }
 

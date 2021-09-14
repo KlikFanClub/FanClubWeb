@@ -11,7 +11,7 @@
     @if (Auth::user()->isAdmin)
     <div>
         <a href="{{ route('createWorkart') }}">
-            <button type='submit'>Crear Nueva Obra!</button>
+            <button type='submit'>Crear Nueva Obra</button>
         </a>
     </div>
     @endif

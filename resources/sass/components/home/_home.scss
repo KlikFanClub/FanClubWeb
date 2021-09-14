@@ -19,9 +19,8 @@ main {
 }
 
 .highlightsTitle {
-    font-size: 2em;
-    font-weight: 700;
-    font-style: italic;
+    font-size: 2rem;
+    font-weight: 900;
     text-align: center;
     margin-bottom: 2em;
 }
@@ -49,7 +48,7 @@ main {
 
 .artistName {
     font-weight: 500;
-    font-size: 1.5em;
+    font-size: 1.2rem;
     margin-top: 0.5em;
 }
 
@@ -59,7 +58,8 @@ main {
     text-align: center;
     text-decoration: none;
     color: $fcpink;
-    font-size: 1em;
+    font-size: 0.7rem;
+    font-weight: 300;
     padding: 0.5em 0;
     margin-top: 1em;
     margin-bottom: 2em;
