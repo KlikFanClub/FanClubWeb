@@ -6,11 +6,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Artist;
-use App\Http\Controllers\ArtistController;
-use Illuminate\Http\Request;
 
 class ArtistTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -18,25 +17,31 @@ class ArtistTest extends TestCase
      */
     public function test_highlighted_is_true()
     {
-        $artist= new Artist([
-            'name'=>"Gabriela",
-            'profile_picture'=>'ok',
-            'bio'=>'ok', 
-            'website'=>"",           
-            'email'=>'gabi3@gmail.com',
-            'instagram'=>'',
-            'facebook'=>'',
-            'twitter'=>'',
-            'other_socials'=>'',
-            'highlighted'=>true
+        $artist = new Artist([
+            'name' => "Gabriela",
+            'profile_picture' => 'ok',
+            'bio' => 'ok',
+            'website' => "",
+            'email' => 'gabi3@gmail.com',
+            'instagram' => '',
+            'facebook' => '',
+            'twitter' => '',
+            'other_socials' => '',
+            'highlighted' => true
 
-                       
+
         ]);
-      
-        dd($artist);
-        $this->assertTrue($artist->highlighted);
-        // $response = $this->get('/');
 
-        // $response->assertStatus(200);
+        $this->assertTrue($artist->highlighted);
+    }
+
+    public function test_can_retrieve_all_artists() {
+        Artist::factory(10)->create([]);
+
+        $response = $this->get('/artists');
+
+        $this->assertEquals(10, count(Artist::all()));
+        $response->assertStatus(200);
+          
     }
 }

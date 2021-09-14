@@ -111,7 +111,7 @@
 
                     <div class="row">
                         <div class="col-25">
-                            <input type="checkbox" name="highlighted">
+                            <input type="checkbox" name="highlighted" value="1">
                         </div>
                         <div class="col-75">
                             <label for="highlighted">Destacados</label>
