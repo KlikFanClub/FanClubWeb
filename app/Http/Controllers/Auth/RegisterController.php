@@ -77,7 +77,7 @@ class RegisterController extends Controller
             function ($m) {
         $m->from('admin@fanclubproject.com', 'FanClub Bcn');
 
-            $m->to('gabipineiro@hotmail.com')->subject('You have a new notification');
+        $m->to('gabipineiro@hotmail.com')->subject('You have a new notification');
   
         });   
            
