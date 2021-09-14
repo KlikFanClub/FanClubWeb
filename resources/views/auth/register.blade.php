@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" action='{{route('sendmail.store')}}'>
+                    <form method="POST" action='{{route('register')}}'>
                         @csrf
 
                         <div class="form-group row">
@@ -57,8 +57,8 @@
                             <label for="" class="col-md-5 col-form-label text-md-right">{{ __('Cuéntanos un poco sobre ti! :)') }}</label>
 
                             <div class="col-md-6">
-                                <input id="aboutArtist" type="text" size="50" class="form-control 
-                                  @error('aboutArtist') is-invalid @enderror" name="aboutArtist" value="{{ old('aboutArtist') }}" required autocomplete="aboutArtist" autofocus>
+                                <textarea id="aboutArtist" type="text" row: 10 class="form-control 
+                                  @error('aboutArtist') is-invalid @enderror" name="aboutArtist" value="{{ old('aboutArtist') }}" required autocomplete="aboutArtist" autofocus></textarea>
 
                                 @error('aboutArtist')
                                     <span class="invalid-feedback" role="alert">

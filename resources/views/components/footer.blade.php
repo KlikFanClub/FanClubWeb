@@ -1,65 +1,69 @@
 <!-- Footer -->
-<footer class="footer">  <div class="footerNav">    <!-- logo -->
-    <img class="footerLogo" src="http://127.0.0.1:8000/img/home/logo/fan-club.png" alt="footerLogo">    <!-- links to other pages inside web -->
-    <nav class="pagesLinks navbar navbar-expand-md" style="
-    margin-left: -33px;">
-      <ul class="navbar-links navbar-nav">
-        <li class="list-unstyled" style="display: inline;">
-          <a href="#!" class="txtLinks">Subir</a> <!-- poner función ir arriba de la página -->
-        </li>
-        <li class="list-unstyled" style="display: inline;">
-          <a href="#!" class="txtLinks">Términos y condiciones</a> <!-- linkar con página TyC -->
-        </li>
-        <li class="list-unstyled" style="display: inline;">
-          <a href="#!" class="txtLinks">Aviso legal</a> <!-- linkar con página Aviso legal -->
-        </li>
-        <li class="list-unstyled" style="display: inline;">
-          <a href="#!" class="txtLinks">Mapa del sitio</a>
-        </li>
-        <li class="list-unstyled" style="display: inline;">
-          <a href="{{url ('/login')}}" class="txtLinks">Administración</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+<div class="mainFatherFooterContainer">
+    <footer class="footer">  <div class="footerNav">    <!-- logo -->
+        <img class="footerLogo" src="http://127.0.0.1:8000/img/home/logo/fan-club.png" alt="footerLogo">    <!-- links to other pages inside web -->
+        <nav class="pagesLinks navbar navbar-expand-md" style="
+        margin-left: -33px;">
+          <ul class="navbar-links navbar-nav">
+            <li class="list-unstyled" style="display: inline;">
+              <a href="#!" class="txtLinks">Subir</a> <!-- poner función ir arriba de la página -->
+            </li>
+            <li class="list-unstyled" style="display: inline;">
+              <a href="#!" class="txtLinks">Términos y condiciones</a> <!-- linkar con página TyC -->
+            </li>
+            <li class="list-unstyled" style="display: inline;">
+              <a href="#!" class="txtLinks">Aviso legal</a> <!-- linkar con página Aviso legal -->
+            </li>
+            <li class="list-unstyled" style="display: inline;">
+              <a href="#!" class="txtLinks">Mapa del sitio</a>
+            </li>
+            <li class="list-unstyled" style="display: inline;">
+              <a href="{{url ('/login')}}" class="txtLinks">Administración</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-  <!-- Social Media links -->
+      <!-- Social Media links -->
 
-  <div class="socialLinks">
+      <div class="socialLinks">
 
-    <!-- Social buttons -->
-    <h6 style="font-family: Roboto;font-weight:900;font-size: 17px;margin-left: -23px;">Síguenos</h6>
+        <!-- Social buttons -->
+        <p>Síguenos</p>
 
-    <!-- Facebook -->
-    <div class="socialButtons" style="margin-top: 22px;">
-      <a type="button" class="btnFacebook" href="#!">
-        <i class="fab fa-facebook-f" style="color: black; width: 15px; height: 15px;"></i>
-      </a>
-      <a type="button" class="btnTweeter" href="#!">
-        <i class="fab fa-twitter fa-lg" style="color: black; width: 22px; height: 15px; margin-left: 10px;"></i>
-      </a>
-      <a type="button" class="btnInstagram" href="#!">
-        <i class="fab fa-instagram fa-lg" style="color: black; width: 22px; height: 15px; margin-left: 10px;"></i>
-      </a>
-      <a type="button" class="btnSpotify" href="#!">
-        <i class="fa fa-spotify fa-lg" style="color: black; width: 45px; height: 15px; margin-left: 10px;"></i>
-      </a>
-    </div>
-  </div>
-  <div class="newsletter">
-    <h6 style="font-family: Roboto;">Si no quieres perderte lo que pasa en FAN CLUB,
-      apúntate a nuestra newsletter!</h6>
-    <div class="login_bar" style="font-family: Roboto;">
-      <input type="email" class="login">super-email@gmail.com</span>
-      <span class="subscribe_button" onclick="subscribeOnClick()">SUBSCRIBIRME</span>
-      <span class="subscribing"></span>
-      <span class="thanks"> Gracias! pronto recibirás noticias nuestras!</span>
-    </div>
-  </div>
-  <!-- Copyright -->
-  <div class="footerCR text-center py-3">© 2020 Copyright:
-    <a> FanClubStore</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+        <!-- Facebook -->
+        <div class="socialButtons">
+          <a type="button" class="btnFacebook" href="#!">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a type="button" class="btnTweeter" href="#!">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+          <a type="button" class="btnInstagram" href="#!">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a type="button" class="btnSpotify" href="#!">
+            <i class="fa fa-spotify fa-lg"></i>
+          </a>
+        </div>
+      </div>
+        <div class="rightFooter">
+          <div class="newsletter">
+            <p>Si no quieres perderte lo que pasa en FAN CLUB,
+              apúntate a nuestra newsletter!</p>
+            <div class="login_bar">
+              <input type="email" class="login">super-email@gmail.com
+              <span class="subscribe_button" onclick="subscribeOnClick()">SUBSCRIBIRME</span>
+              <span class="subscribing"></span>
+              <span class="thanks">Gracias! pronto recibirás noticias nuestras!</span>
+            </div>
+          </div>
+          <!-- Copyright -->
+          <div class="footerCR text-center py-3">© 2021 Copyright:
+            <a> FanClubStore</a>
+          </div>
+        </div>
+      <!-- Copyright -->
+    </footer>
+</div>
 <!-- Footer -->

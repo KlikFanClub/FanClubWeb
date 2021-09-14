@@ -35,6 +35,11 @@ $ composer install
 $ composer update
 ```
 
+* To compile laravel
+```
+$ npm run watch
+```
+
 * Generate key env
 
 * Compile laravel run watch
