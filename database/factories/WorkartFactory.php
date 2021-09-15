@@ -22,8 +22,7 @@ class WorkartFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->text(), 
-            // 'artistname'=>$this->faker->text(),           
+            'title' => $this->faker->text(),          
             'imageworkart' => $this->faker->imageUrl(),            
             'edition' => $this->faker->text(),
             'price' => $this->faker->randomNumber(2),

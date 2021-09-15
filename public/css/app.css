@@ -1,6 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-@import url(https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -35,7 +33,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Rosario", sans-serif;
+  --font-family-sans-serif: "Source Sans Pro", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -58,7 +56,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Rosario", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -5587,7 +5585,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Rosario", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -5689,7 +5687,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Rosario", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10014,22 +10012,6 @@ main {
   max-width: 1440px;
 }
 
-.joinUs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.joinUsButton {
-  color: #10072B;
-  background-color: #10072B;
-  margin: 0.5em;
-  padding: 1em 4em;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
-}
-
 .highlights {
   padding: 2em;
   background-color: #10072B;
@@ -10037,9 +10019,8 @@ main {
 }
 
 .highlightsTitle {
-  font-size: 2em;
-  font-weight: 700;
-  font-style: italic;
+  font-size: 2rem;
+  font-weight: 900;
   text-align: center;
   margin-bottom: 2em;
 }
@@ -10067,7 +10048,7 @@ main {
 
 .artistName {
   font-weight: 500;
-  font-size: 1.5em;
+  font-size: 1.2rem;
   margin-top: 0.5em;
 }
 
@@ -10077,9 +10058,11 @@ main {
   text-align: center;
   text-decoration: none;
   color: #E14E85;
-  font-size: 1em;
+  font-size: 0.7rem;
+  font-weight: 300;
   padding: 0.5em 0;
   margin-top: 1em;
+  margin-bottom: 2em;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -10088,31 +10071,67 @@ main {
   color: #FBE472;
   background-color: #E14E85;
 }
-@media only screen and (max-width: 425px) {
-  .artworkDetailsBtn:hover .highlights {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 425px) and (max-width: 768px) {
-  .artworkDetailsBtn:hover .highlights {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 425px) and (max-width: 1200px) {
-  .artworkDetailsBtn:hover .highlights {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 425px) and (max-width: 1600px) {
-  .artworkDetailsBtn:hover .highlights {
-    width: 100%;
-  }
+
+.joinUsContainer {
+  background-color: #10072B;
+  width: 100%;
+  max-width: 1440px;
+  padding: 2em;
 }
 
+.joinUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.joinUsButton {
+  color: #FBE472;
+  background-color: #E9E9E9;
+  margin: 0.5em;
+  padding: 1em 4em;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+}
+
+@media only screen and (max-width: 425px) {
+  .highlights {
+    width: 100%;
+  }
+
+  .artworkHighlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  .highlights {
+    width: 100%;
+  }
+
+  .artworkHighlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .highlights {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .highlights {
+    width: 100%;
+  }
+}
 .info_title {
-  font-size: 2em;
-  font-weight: 700;
-  font-style: italic;
+  font-size: 2rem;
+  font-weight: 900;
   text-align: center;
   margin-bottom: 2em;
 }
@@ -10136,9 +10155,9 @@ main {
 
 .introduction_title,
 .objectives_title {
+  font-size: 1.5rem;
   font-weight: 700;
-  font-style: italic;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 .introduction,
@@ -10585,7 +10604,6 @@ button {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  font-family: "Roboto" !important;
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -10603,7 +10621,15 @@ button {
 }
 
 @media (max-width: 768px) {
-  .navbar-expand-md {
+  .navbar-expand-lg {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin-left: 0.1rem !important;
+    margin-right: 0.1rem !important;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar-expand-lg {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     margin-left: 0.1rem !important;
@@ -10624,9 +10650,9 @@ footer {
   width: 100%;
   background-color: #E9E9E9 !important;
   height: 12em;
-  font-weight: 400;
+  font-size: 0.7rem;
+  font-weight: 200;
   color: #10072B;
-  font-size: 0.9em;
 }
 
 .footerNav {
@@ -10635,8 +10661,8 @@ footer {
 }
 
 .footerLogo {
-  width: 5em;
-  padding: 1em;
+  width: 3.5em;
+  margin: 1em 2em 1em 1em;
 }
 
 .pageslinks {
@@ -10659,7 +10685,7 @@ footer {
 }
 
 .socialButtons {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: #10072B !important;
 }
 
@@ -10779,5 +10805,5 @@ html {
 
 body {
   background-color: white;
-  font-family: "Rosario", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
