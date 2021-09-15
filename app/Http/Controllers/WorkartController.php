@@ -174,4 +174,13 @@ class WorkartController extends Controller
     Workart::find($id)->delete();
     return redirect()->route('workarts');
   }
+
+  public function getWorkarts($id)
+  {
+      $artist = Artist::find($id);
+
+      $workarts = $artist->workarts;
+
+      return response()->json($workarts, 200);
+  }
 }

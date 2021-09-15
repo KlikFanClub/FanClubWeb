@@ -13,7 +13,6 @@ class Workart extends Model
 
     'title',
     'imageworkart',
-    'artistname',
     'edition',
     'price',
     'technique',
