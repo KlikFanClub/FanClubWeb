@@ -24,8 +24,7 @@
                         @foreach ($workarts as $workart)
                             @if ($workart->carousel)
                                 <div class="carousel-item active">
-                                    <img class="img-fluid" alt="First slide"
-                                        src="{{ asset('storage') . '/' . $workart->imageworkart }}">
+                                    <img class="img-fluid" alt="" src="{{ asset('storage') . '/' . $workart->imageworkart }}">
                                 </div>
                             @endif
                         @endforeach
