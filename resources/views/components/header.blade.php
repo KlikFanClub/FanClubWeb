@@ -43,29 +43,27 @@
 
                 @guest
                     @if (Route::has('login'))
-                        <li class="nav-item logInOut logOut">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                     @endif
-
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link logInOut logOut" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown logInOut">
-                        <a id="dropdownMenuButton" class="nav-link dropdown-toggle logInOut logOut" href="#" role="button"
+                    <li class="nav-item dropdown">
+                        <a id="dropdownMenuButton" class="nav-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
-
-                        <div class="dropdown-menu dropdown-menu-right logOut" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            <form id="logout-form logOut" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </div>
