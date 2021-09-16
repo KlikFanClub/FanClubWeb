@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container row justify-content-center">
+    <div class="row justify-content-center p-5">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -57,7 +57,7 @@
                             <label for="" class="col-md-5 col-form-label text-md-right">{{ __('Cuéntanos un poco sobre ti! :)') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="aboutArtist" type="text" row: 10 class="form-control 
+                                <textarea id="aboutArtist" type="text" row: 10 class="form-control
                                   @error('aboutArtist') is-invalid @enderror" name="aboutArtist" value="{{ old('aboutArtist') }}" required autocomplete="aboutArtist" autofocus></textarea>
 
                                 @error('aboutArtist')
