@@ -21,10 +21,14 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
           </ol>
           <div class="carousel-inner">
+            @foreach($artists as $artist)
+            @if($artist->highlighted)
             <div class="carousel-item active">
-              <img class="img-fluid" src="{{ asset('img/home/general/Tarde_jardin_slider.png') }}"
+              <img class="img-fluid">{{$artist->profile_picture}}
                 alt="First slide">
             </div>
+            @endif
+            @endforeach
             <div class="carousel-item">
               <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}" alt="Second slide">
             </div>
