@@ -15,12 +15,9 @@ class ArtistController extends Controller
    */
   public function index()
   {
-    //$highlighted = Artist::where('highlighted', true)->take(4)->get();
-    $artists = Artist::all()->sortBy('name');
+   $artists = Artist::all()->sortBy('name');
 
-    //return view ('home', ['highlighted'=>$highlighted, 'artists'=>$artists]);
-
-    return view('pages.artists', compact('artists'));
+   return view('pages.artists', compact('artists'));
   }
 
   /**

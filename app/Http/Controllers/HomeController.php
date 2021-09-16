@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artist;
+use App\Models\Workart;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,10 +26,13 @@ class HomeController extends Controller
     public function index()
     {
 
-        $highlighted = Artist::where('highlighted', true)->take(4)->get();
+        $highlighted = Artist::where('highlighted', true)->take(4)->get();      
         $artists = Artist::all()->sortBy('name');
+
+        $slideWorkart= Workart::where('carousel', true)-> take(4)->get();
+        $workarts = Workart::all()->sortByDesc('created_at');
     
-        return view ('home', ['highlighted'=>$highlighted, 'artists'=>$artists]);
-        //return view('home');
+        return view ('home', ['highlighted'=>$highlighted, 'artists'=>$artists, 'slideWorkart'=>$slideWorkart, 'workarts'=>$workarts]);
+       
     }
 }

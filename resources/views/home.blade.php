@@ -21,16 +21,14 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                     </ol>
                     <div class="carousel-inner">                   
-                        
-                      <div class="carousel-item">
-                        <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}"
-                            alt="First slide">
-                    </div>
-                         
+                      @foreach ($workarts as $workart)
+                      @if ($workart->carousel)
                         <div class="carousel-item">
-                            <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}"
+                            <img class="img-fluid" src="{{asset('storage') . '/' . $workart->imageworkart}}"
                                 alt="Second slide">
                         </div>
+                        @endif
+                    @endforeach
                         <div class="carousel-item">
                             <img class="img-fluid" src="{{ asset('img/home/general/Santiago_slider.png') }}"
                                 alt="Third slide">
@@ -65,8 +63,8 @@
                         <div>
                             <img class="artwork"  alt="" src=<?php echo "storage/{$artist->profile_picture}"; ?>>
                         </div>
-                        <span class="artistName">Milagros Reyes</span>
-                        <a class="artworkDetailsBtn" href="">ver su obra</a>
+                        <span class="artistName">{{ $artist->name }} </span>
+                        <a class="artworkDetailsBtn" href="">Ver sus obras</a>
                     </div>
                     @endif
                     @endforeach

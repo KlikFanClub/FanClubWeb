@@ -16,11 +16,9 @@ class WorkartController extends Controller
    */
   public function index()
   {
-    //$artist=new Artist();
-    $workarts = Workart::all()
-      ->sortByDesc('created_at');
-    //return View::make('pages.workarts', compact('workarts'))->withModel($artist);
-    return view('pages.workarts', compact('workarts'));
+   $workarts = Workart::all()->sortByDesc('created_at');
+   
+   return view('pages.workarts', compact('workarts'));
   }
 
   /**
