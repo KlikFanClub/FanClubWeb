@@ -10,6 +10,7 @@
             v-for="(item, index) in menuItem.subMenu"
             v-bind:key="index"
             class="subMenuItem"
+            @click="filterByArtist(item)"
           >
             {{ item }}
           </span>
@@ -133,6 +134,12 @@ export default {
         }
       });
     },
+    /* filterByArtist(artistName) {
+      this.$root.$emit('filter_by_artist', artistName)
+    } */
+    filterByArtist() {
+      this.$root.$emit('filter_by_artist', 'hola');
+    }
   },
   computed: {},
   created() {
@@ -142,10 +149,10 @@ export default {
     }
     this.getArtistsNames();
   },
-  /* mounted() {
-    this.getArtistsNames()
+  mounted() {
     
-  }, */
+    this.filterByArtist()
+  },
 };
 </script>
 

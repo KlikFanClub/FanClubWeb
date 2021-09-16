@@ -52,7 +52,7 @@ class WorkartController extends Controller
       'carousel' => '',
       'highlighted' => '',
     ]);
-    dd($request);
+    /* dd($request); */
     $workart = Workart::create([
       'artist_id' => $request->artist_id,
       'title' => $request->title,

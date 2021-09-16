@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="artwork_card" v-for="artwork in artworks">
+    <div class="artwork_card" v-for="artwork in artworks" v-on:filter_by_artist="filterByArtist">
       <img class="artwork_img" :src="artwork.imageworkart" alt="" />
       <span class="artwork_title">{{ artwork.title }}</span>
       <span class="artwork_artistName">{{
-        artistName(artwork.artist_id)
+        artwork.artist.name
       }}</span>
       <span class="artwork_date">10/12/2016</span>
       <span class="artwork_price">{{ artwork.price }}</span>
@@ -22,7 +22,6 @@ export default {
     return {
       artworks: [],
       artists: [],
-      artistName: null
     };
   },
   methods: {
@@ -41,10 +40,13 @@ export default {
     artistName(id) {
       this.artists.filter((item) => {
         if (id === item.id) {
-          this.artistName = item.name
+          return item.name
         }
       });
     },
+    filterByArtist(artistName) {
+      console.log('hola')
+    }
     /* async getArtist(id) {
       const request = await artistService.getArtist(id);
       return request.data;
@@ -58,5 +60,10 @@ export default {
     this.getAllArtworks();
     this.getAllArtists();
   },
+  mounted() {
+    this.$root.$on('filter-by-artist', data => {
+      console.log(data)
+    })
+  }
 };
 </script>

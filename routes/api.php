@@ -23,6 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('workarts', function () {
   $workarts = Workart::all();
+  $workarts->load('artist');
   return json_encode($workarts);
 });
 

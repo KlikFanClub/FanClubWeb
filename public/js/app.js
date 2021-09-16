@@ -2107,8 +2107,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       artworks: [],
-      artists: [],
-      artistName: null
+      artists: []
     };
   },
   methods: {
@@ -2165,13 +2164,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     artistName: function artistName(id) {
-      var _this3 = this;
-
       this.artists.filter(function (item) {
         if (id === item.id) {
-          _this3.artistName = item.name;
+          return item.name;
         }
       });
+    },
+    filterByArtist: function filterByArtist(artistName) {
+      console.log('hola');
     }
     /* async getArtist(id) {
       const request = await artistService.getArtist(id);
@@ -2187,6 +2187,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   created: function created() {
     this.getAllArtworks();
     this.getAllArtists();
+  },
+  mounted: function mounted() {
+    this.$root.$on('filter-by-artist', function (data) {
+      console.log(data);
+    });
   }
 });
 
@@ -2213,6 +2218,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
 //
 //
 //
@@ -2355,6 +2361,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           item.subMenu = _this2.namesArray;
         }
       });
+    },
+
+    /* filterByArtist(artistName) {
+      this.$root.$emit('filter_by_artist', artistName)
+    } */
+    filterByArtist: function filterByArtist() {
+      this.$root.$emit('filter_by_artist', 'hola');
     }
   },
   computed: {},
@@ -2366,12 +2379,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
 
     this.getArtistsNames();
+  },
+  mounted: function mounted() {
+    this.filterByArtist();
   }
-  /* mounted() {
-    this.getArtistsNames()
-    
-  }, */
-
 });
 
 /***/ }),
@@ -39244,26 +39255,33 @@ var render = function() {
   return _c(
     "div",
     _vm._l(_vm.artworks, function(artwork) {
-      return _c("div", { staticClass: "artwork_card" }, [
-        _c("img", {
-          staticClass: "artwork_img",
-          attrs: { src: artwork.imageworkart, alt: "" }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "artwork_title" }, [
-          _vm._v(_vm._s(artwork.title))
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "artwork_artistName" }, [
-          _vm._v(_vm._s(_vm.artistName(artwork.artist_id)))
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "artwork_date" }, [_vm._v("10/12/2016")]),
-        _vm._v(" "),
-        _c("span", { staticClass: "artwork_price" }, [
-          _vm._v(_vm._s(artwork.price))
-        ])
-      ])
+      return _c(
+        "div",
+        {
+          staticClass: "artwork_card",
+          on: { filter_by_artist: _vm.filterByArtist }
+        },
+        [
+          _c("img", {
+            staticClass: "artwork_img",
+            attrs: { src: artwork.imageworkart, alt: "" }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "artwork_title" }, [
+            _vm._v(_vm._s(artwork.title))
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "artwork_artistName" }, [
+            _vm._v(_vm._s(artwork.artist.name))
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "artwork_date" }, [_vm._v("10/12/2016")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "artwork_price" }, [
+            _vm._v(_vm._s(artwork.price))
+          ])
+        ]
+      )
     }),
     0
   )
@@ -39318,7 +39336,15 @@ var render = function() {
                   _vm._l(menuItem.subMenu, function(item, index) {
                     return _c(
                       "span",
-                      { key: index, staticClass: "subMenuItem" },
+                      {
+                        key: index,
+                        staticClass: "subMenuItem",
+                        on: {
+                          click: function($event) {
+                            return _vm.filterByArtist(item)
+                          }
+                        }
+                      },
                       [_vm._v("\n          " + _vm._s(item) + "\n        ")]
                     )
                   }),
