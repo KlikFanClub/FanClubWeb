@@ -113,16 +113,25 @@
                 <input type="text" name="others" value="{{$workart->others}}" >
             </div>
         </div>
-
+        @if($workart->carousel == 0)
         <div class="row">
             <div class="col-25">
-                <label for="caurosel">Carrusel</label>
+                <label for="carousel">Carrusel</label>
             </div>
             <div class="col-75">
-                <input type="checkbox"  name="caurosel" value="{{$workart->caurosel}}" >
+                <input type="checkbox"  name="carousel" value="1" >
             </div>
         </div>
-
+        @else
+        <div class="row">
+            <div class="col-25">
+                <label for="carousel">No Carrusel</label>
+            </div>
+            <div class="col-75">
+                <input type="checkbox"  name="carousel" value="0" >
+            </div>
+        </div>
+        @endif
 
             <div class="buttons">
                 <button class="btnCreate" type="submit">Editar</button>

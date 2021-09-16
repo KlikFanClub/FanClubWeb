@@ -24,7 +24,7 @@ class CreateWorkartsTable extends Migration
             $table->string('theme');
             $table->string('others')->nullable();
             $table->string('category');
-            $table->boolean('carousel')->default(0);            
+            $table->boolean('carousel')->default('0');            
             $table->foreign('artist_id')->references('id')->on('artists')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('artist_id')->default(1);
         });

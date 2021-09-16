@@ -142,17 +142,18 @@ class WorkartController extends Controller
 
     $workart = Workart::findOrFail($id);
 
-    $request->update([
-      'title' => $request->title,
-      'imageworkart' => $request->imageworkart,
-      'edition' => $request->edition,
-      'technique' => $request->technique,
-      'theme' => $request->theme,
-      'others' => $request->others,
-      'category' => $request->category,
-      'carousel' => $request->has('carousel'),
+    // $request->update([
+    //   'title' => $request->title,
+    //   'imageworkart' => $request->imageworkart,
+    //   'edition' => $request->edition,
+    //   'price'=> $request->price,
+    //   'technique' => $request->technique,
+    //   'theme' => $request->theme,
+    //   'others' => $request->others,
+    //   'category' => $request->category,
+    //   'carousel' => $request->has('carousel'),
 
-    ]);
+    // ]);
 
     //$workart=Workart::findOrFail($id);    
 

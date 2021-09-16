@@ -112,14 +112,15 @@
                         <input type="text" name="others" value="{{old('others')}}" >
                     </div>
                 </div>
-
+               
                 <div class="row">
                     <div class="col-25">
                         <input type="checkbox" name="carousel" value="1">
-                    </div>
+                    </div>                                    
                     <div class="col-75">
                         <label for="carousel">Carrusel</label>
                     </div>
+                
                 </div>
 
                 <div class="buttons">
