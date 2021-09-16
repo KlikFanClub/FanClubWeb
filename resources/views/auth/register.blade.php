@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container row justify-content-center">
-    <div class="row justify-content-center p-5">
+<div class="registerContainer container ">
+    <div class="formulario">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="" class="col-md-5 col-form-label text-md-right">{{ __('Un enlace con tus obras') }}</label>
+                            <label for="" class="col-md-5 col-form-label">{{ __('Un enlace con tus obras') }}</label>
 
                             <div class="col-md-6">
                                 <input id="someLink" type="text" class="form-control  @error('someLink') is-invalid @enderror" name="someLink" value="{{ old('someLink') }}" required autocomplete="someLink" autofocus>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="" class="col-md-5 col-form-label text-md-right">{{ __('Cuéntanos un poco sobre ti! :)') }}</label>
+                            <label for="" class="col-md-5 col-form-label">{{ __('Cuéntanos un poco sobre ti! :)') }}</label>
 
                             <div class="col-md-6">
                                 <textarea id="aboutArtist" type="text" row: 10 class="form-control
@@ -65,6 +65,11 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btnRegister">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -90,13 +95,7 @@
                             </div>
                         </div> --}}
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
+
                     </form>
                 </div>
             </div>

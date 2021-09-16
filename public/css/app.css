@@ -10799,6 +10799,38 @@ footer {
   padding-top: 2em;
 }
 
+.registerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.formulario {
+  display: flex;
+  justify-content: center;
+}
+
+.infoFormulario {
+  text-align: justify;
+}
+
+.btnRegister {
+  position: absolute;
+  background-color: #10072B;
+  margin: 5%;
+}
+
+@media only screen and (max-width: 425px) {
+  .btnRegister {
+    position: inherit;
+    background-color: #10072B;
+    margin: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .btnRegister {
+    position: relative;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
