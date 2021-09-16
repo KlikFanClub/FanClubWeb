@@ -10799,6 +10799,16 @@ footer {
   padding-top: 2em;
 }
 
+.logInOut {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.logOut {
+  font-size: 15px !important;
+  position: absolute !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
