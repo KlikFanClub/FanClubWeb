@@ -9,8 +9,8 @@
 
             <section class="artworkSlider">
                 {{-- The .active class needs to be added to one of
-       the slides. Otherwise, the carousel will not
-       be visible. --}}
+           the slides. Otherwise, the carousel will not
+           be visible. --}}
 
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -20,15 +20,19 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                     </ol>
-                    <div class="carousel-inner">                   
-                      @foreach ($workarts as $workart)
-                      @if ($workart->carousel)
+                    <div class="carousel-inner">
+                        @foreach ($workarts as $workart)
+                            @if ($workart->carousel)
+                                <div class="carousel-item active">
+                                    <img class="img-fluid" alt="First slide"
+                                        src="{{ asset('storage') . '/' . $workart->imageworkart }}">
+                                </div>
+                            @endif
+                        @endforeach
                         <div class="carousel-item">
-                            <img class="img-fluid" src="{{asset('storage') . '/' . $workart->imageworkart}}"
+                            <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}"
                                 alt="Second slide">
                         </div>
-                        @endif
-                    @endforeach
                         <div class="carousel-item">
                             <img class="img-fluid" src="{{ asset('img/home/general/Santiago_slider.png') }}"
                                 alt="Third slide">
@@ -57,19 +61,17 @@
             <section class="highlights">
                 <h2 class="highlightsTitle">Destacados</h2>
                 <div class="artworkHighlights">
-                  @foreach ($artists as $artist)
-                  @if ($artist->highlighted)
-                    <div class="artworkCard">
-                        <div>
-                            <img class="artwork"  alt="" src=<?php echo "storage/{$artist->profile_picture}"; ?>>
-                        </div>
-                        <span class="artistName">{{ $artist->name }} </span>
-                        <a class="artworkDetailsBtn" href="">Ver sus obras</a>
-                    </div>
-                    @endif
+                    @foreach ($artists as $artist)
+                        @if ($artist->highlighted)
+                            <div class="artworkCard">
+                                <div>
+                                    <img class="artwork" alt="" src=<?php echo "storage/{$artist->profile_picture}"; ?>>
+                                </div>
+                                <span class="artistName">{{ $artist->name }} </span>
+                                <a class="artworkDetailsBtn" href="">Ver sus obras</a>
+                            </div>
+                        @endif
                     @endforeach
-
-
                     <div class="artworkCard">
                         <div>
                             <img class="artwork" src="{{ asset('img/home/highlighted/Narrativas_trans_2.png') }}"
