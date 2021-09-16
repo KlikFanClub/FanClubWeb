@@ -29,7 +29,7 @@ class HomeController extends Controller
         $highlighted = Artist::where('highlighted', true)->take(4)->get();      
         $artists = Artist::all()->sortBy('name');
 
-        $slideWorkart= Workart::where('carousel', true)-> take(4)->get();
+        $slideWorkart= Workart::where('carousel', true)-> take(5)->get();
         $workarts = Workart::all()->sortByDesc('created_at');
     
         return view ('home', ['highlighted'=>$highlighted, 'artists'=>$artists, 'slideWorkart'=>$slideWorkart, 'workarts'=>$workarts]);
