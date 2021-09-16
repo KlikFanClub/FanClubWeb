@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Artist;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $highlighted = Artist::where('highlighted', true)->take(4)->get();
+        $artists = Artist::all()->sortBy('name');
+    
+        return view ('home', ['highlighted'=>$highlighted, 'artists'=>$artists]);
+        //return view('home');
     }
 }
