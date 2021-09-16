@@ -97,7 +97,7 @@
           <h4 class="introduction_title">Conócenos</h4>
           <p>
             Fan Club es una tienda especializada en sistema de impresión que se apoya en el artivismo para dar visibilidad
-            a mujeres artistas latinaméricanas, pero también a otros artistas cuya expresión se encuentre alineada con
+            a mujeres artistas latinoméricanas, pero también a otros artistas cuya expresión se encuentre alineada con
             nuestros valores.
           </p>
           <p>
