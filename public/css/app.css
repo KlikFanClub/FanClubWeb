@@ -10650,7 +10650,7 @@ footer {
   width: 100%;
   background-color: #E9E9E9 !important;
   height: 12em;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 200;
   color: #10072B;
 }
@@ -10797,16 +10797,6 @@ footer {
   display: flex;
   flex-direction: column;
   padding-top: 2em;
-}
-
-.logInOut {
-  display: flex !important;
-  flex-direction: column;
-}
-
-.logOut {
-  font-size: 15px !important;
-  position: absolute !important;
 }
 
 html {
