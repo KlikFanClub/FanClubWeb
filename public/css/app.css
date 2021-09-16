@@ -10831,6 +10831,20 @@ footer {
     position: relative;
   }
 }
+.loginContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+}
+
+.btnLogin {
+  background-color: #10072B;
+}
+
 html {
   scroll-behavior: smooth;
 }

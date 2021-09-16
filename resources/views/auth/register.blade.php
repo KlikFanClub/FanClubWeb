@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="registerContainer container ">
+<div class="registerContainer container">
     <div class="formulario">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Datos de contacto') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action='{{route('register')}}'>
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -67,7 +67,7 @@
                                 @enderror
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btnRegister">
-                                        {{ __('Register') }}
+                                        {{ __('Enviar') }}
                                     </button>
                                 </div>
                             </div>
