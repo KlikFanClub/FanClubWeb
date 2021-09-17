@@ -133,9 +133,9 @@
 <x-footer />
 </div>
 
-<script>
+{{-- <script>
 $('.carousel').carousel()
-</script>
+</script> --}}
 
 @endsection
 
