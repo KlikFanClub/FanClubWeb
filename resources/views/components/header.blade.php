@@ -23,22 +23,22 @@
                 <!-- Authentication Links -->
 
                 <li class="nav-item">
-                    <a class="nav-link text-dark h5" href="home#info_aboutUs">INFO</a>
+                    <a class="nav-link active text-dark h5" aria-selected="false" href="home#info_aboutUs">INFO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark h5" href="{{ url('workarts') }}">CATÁLOGO</a>
+                    <a class="nav-link active text-dark h5" aria-selected="false" href="{{ url('workarts') }}">CATÁLOGO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark h5" href="{{ url('artists') }}">ARTISTAS</a>
+                    <a class="nav-link active text-dark h5" aria-selected="false" href="{{ url('artists') }}">ARTISTAS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark h5" href="{{ url('agenda') }}">EVENTOS</a>
+                    <a class="nav-link active text-dark h5" aria-selected="false" href="{{ url('agenda') }}">EVENTOS</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-dark h5" href="{{ url('blog') }}">BLOG</a>
+                    <a class="nav-link active text-dark h5" aria-selected="false" href="{{ url('blog') }}">BLOG</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark h5" href="{{ url('contactus') }}">CONTACTO</a>
+                    <a class="nav-link active text-dark h5" aria-selected="false" href="{{ url('contactus') }}">CONTACTO</a>
                 </li>
 
             </ul>
