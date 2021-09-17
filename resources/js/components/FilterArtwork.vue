@@ -7,11 +7,12 @@
         </div>
         <div :class="subMenuExpanded(menuItem)">
           <span
-            v-for="(item, index) in menuItem.subMenu"
+            v-for="(artistName, index) in menuItem.subMenu"
             v-bind:key="index"
             class="subMenuItem"
+            @click="filterByArtist(artistName)"
           >
-            {{ item }}
+            {{ artistName }}
           </span>
         </div>
       </template>
@@ -30,6 +31,8 @@
 
 <script>
 import { artworkService } from "../services/artworkService";
+import { artistService } from "../services/artistService";
+import { eventBus } from "../app.js";
 
 export default {
   name: "FilterArtwork",
@@ -89,7 +92,8 @@ export default {
         {
           id: 8,
           name: "artistas",
-          subMenu: this.artistNamesArray,
+          /* subMenu: this.artistNamesArray, */
+          subMenu: null,
           isOpen: false,
         },
       ],
@@ -124,14 +128,23 @@ export default {
       });
       this.artistNamesArray.sort();
     },
+    setArtistsNames() {
+      this.menuItems.filter((item) => {
+        if (item.name === "artistas") {
+          item.subMenu = this.namesArray;
+        }
+      });
+    },
+    filterByArtist(artistName) {
+      eventBus.$emit('filter', artistName);
+    }
   },
-  computed: {},
   created() {
     this.handleView();
     if (this.mobileView) {
       this.isOpen = false;
     }
-    getArtistsNames()
+    this.getArtistsNames();
   },
 };
 </script>

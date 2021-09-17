@@ -43,3 +43,19 @@
     </main>
   </div>
 @endsection
+{{-- <div class="action_buttons">
+  @if (Auth::user())
+      @if (Auth::user()->isAdmin)
+
+          <a href="{{ route('editWorkart', ['id' => $workart->id]) }}">
+              <i class="far fa-edit"></i>
+          </a>
+          <a href="{{ route('deleteWorkart', ['id' => $workart->id]) }}">
+              <i class="fas fa-trash-alt"></i>
+          </a>
+
+      @endif
+  @endif
+
+
+</div> --}}
