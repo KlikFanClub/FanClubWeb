@@ -20,12 +20,11 @@ use App\Mail\New_Artist_Mail;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 Auth::routes();
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Routes Workart
@@ -48,5 +47,6 @@ Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middle
 
 //Send mails
 
-Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
-Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store');
+Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');
+/* Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
+Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store'); */

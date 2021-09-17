@@ -16,7 +16,6 @@ class CreateWorkartsTable extends Migration
         Schema::create('workarts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            //$table->string('artistname');
             $table->string('title');
             $table->string('imageworkart');                   
             $table->string('edition');
@@ -25,8 +24,7 @@ class CreateWorkartsTable extends Migration
             $table->string('theme');
             $table->string('others')->nullable();
             $table->string('category');
-            $table->boolean('carousel')->default(0);
-            $table->boolean('highlighted')->default(0);
+            $table->boolean('carousel')->default('0');            
             $table->foreign('artist_id')->references('id')->on('artists')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('artist_id')->default(1);
         });

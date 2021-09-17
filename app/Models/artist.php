@@ -18,7 +18,9 @@ class Artist extends Model
         'email',
         'instagram',
         'facebook',
-        'twiter'
+        'twiter',
+        'other_socials',
+        'highlighted'
     ];
 
     public function workarts (){

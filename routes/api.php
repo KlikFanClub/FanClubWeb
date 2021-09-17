@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WorkartController;
+use App\Models\Artist;
+use App\Models\Workart;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/* Route::middleware('auth:api')->get('/api/artworks', function (Request $request) {
-  return 'hola api';
-}); */
+Route::get('workarts', function() {
+  $workarts = Workart::all();
+  return response()->json($workarts);
+});
+
+Route::get('workarts/{id}', function($id) {
+  $workart = Workart::findOrFail($id);
+  return response()->json($workart);
+});
+
+Route::get('artists', function() {
+  $artists = Artist::all();
+  return response()->json($artists);
+});
+
+Route::get('artists/{id}', function($id) {
+  $artist = Artist::findOrFail($id);
+  return response()->json($artist);
+});
+
+Route::get('artists/{id}/workarts', [WorkartController::class, 'getWorkarts']);

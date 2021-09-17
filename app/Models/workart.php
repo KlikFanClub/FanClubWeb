@@ -13,13 +13,13 @@ class Workart extends Model
 
     'title',
     'imageworkart',
-    'artistname',
     'edition',
     'price',
     'technique',
     'theme',
     'others',
-    'category'
+    'category',
+    'carousel'
   ];
 
   public function artist()

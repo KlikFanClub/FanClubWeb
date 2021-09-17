@@ -1,7 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 // Variables
 @import 'variables';
@@ -9,14 +7,19 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
 // Components
 @import 'components/home/home';
 @import 'components/home/home_info';
 @import 'components/home/home_slider';
-@import 'components/workart_create';
+@import 'components/create_edit_form';
 @import 'components/catalogue/filter_category';
 @import 'components/header';
 @import 'components/footer';
+@import 'components/auth/register';
+@import 'components/auth/login';
+
+// @include link-colors(#00c, #0cc, #c0c, #ccc, #cc0);
 
 html {
   scroll-behavior: smooth;
@@ -26,3 +29,4 @@ body {
   background-color: white;
   font-family: $font-family-sans-serif;
 }
+

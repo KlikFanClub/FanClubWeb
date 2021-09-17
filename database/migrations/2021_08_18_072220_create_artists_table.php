@@ -25,7 +25,7 @@ class CreateArtistsTable extends Migration
       $table->string('facebook')->nullable();
       $table->string('twitter')->nullable();
       $table->string('other_socials')->nullable();
-      $table->integer('highlighted')->default(0);
+      $table->boolean('highlighted')->default('0');
     });
   }
 

@@ -15,9 +15,9 @@ class ArtistController extends Controller
    */
   public function index()
   {
-    $artists = Artist::all()
-      ->sortBy('name');
-    return view('pages.artists', compact('artists'));
+   $artists = Artist::all()->sortBy('name');
+
+   return view('pages.artists', compact('artists'));
   }
 
   /**
@@ -75,7 +75,7 @@ class ArtistController extends Controller
         'facebook'=>$request->facebook,
         'twitter'=>$request->twitter,
         'other_socials'=>$request->other_socials,
-        'highlighted'=>$request->highlighted
+        'highlighted'=>$request->has('highlighted')
     ]);
 
     //dd($request->hasfile('profile_picture'));
