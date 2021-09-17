@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-75">
                             <select name="artist_id">
-                                <option value="" selected disabled>Selecione un artista</option>
+                                <option value="{{$workart ->artist}}" selected disabled>Selecione un artista</option>
                                 @foreach ($artists as $artist)
                                     <option value="{{ $artist->id }}">{{ $artist->name }}</option>
                                 @endforeach
@@ -44,10 +44,10 @@
                     <div class="row">
                         <div class="col-25">
                             <label for="imageworkart">Imagen</label>
-                            <img src="{{ asset('storage') . '/' . $workart->imageworkart }}" width="100">
+                            <img src="{{ asset('storage') . '/' . $workart->imageworkart }}" width="100" required>
                         </div>
                         <div class="col-75">
-                            <input type="file" name="imageworkart" accept="image/*" required>
+                            <input type="file" name="imageworkart" accept="image/*">
                             {{-- {{$workart->imageworkart}} --}}
                         </div>
                     </div>

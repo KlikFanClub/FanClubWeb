@@ -113,17 +113,17 @@ class WorkartController extends Controller
   public function update(Request $request, $id)
   {
     //$artists=Artist::orderBy('name')->get();
-
-    $request->validate([
-      'title' => 'required',
-      'imageworkart' => 'required',
-      'edition' => 'required',
-      'price' => 'required',
-      'technique' => 'required',
-      'theme' => 'required',
-      'others' => '',
-      'category' => 'required',
-      'carousel' => '',
+    $workart = Workart::find($id);
+    $workart->update([
+      'title' => $request -> title ? $request->title : $workart->title,
+      'imageworkart' => $request -> imageworkart ? $request->imageworkart : $workart->title,
+      'edition' =>  $request->edition ? $request->edition : $workart->edition,
+      'price' =>  $request->price ? $request->price : $workart->price,
+      'technique' =>  $request->technique ? $request->technique : $workart->technique,
+      'theme' =>  $request->theme ? $request->theme : $workart->theme,
+      'others' => $request->others ? $request->others : $workart->others,
+      'category' =>  $request->category ? $request->category : $workart->category,
+      'carousel' => $request->carousel ? $request->carousel : $workart->carousel,
     ]);
     //dd($request);
     $workartUpdate = request()->except(['_token', '_method']);
@@ -155,7 +155,7 @@ class WorkartController extends Controller
 
     // ]);
 
-    //$workart=Workart::findOrFail($id);    
+    //$workart=Workart::findOrFail($id);
 
     return redirect()->route('workarts', 'artists');
   }
