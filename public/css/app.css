@@ -10452,55 +10452,45 @@ button {
  */
 /* .filter {
     position: fixed;
-    left: 0;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 20px;
-    margin: 30px;
-    margin-top: 50px;
-    background-color: white;
-    -webkit-box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
-    transition: border, display, bottom, right;
-    @media (max-width: 768px) {
-        position: fixed;
-        background-color: rgb(245, 245, 245);
-        border-radius: 6px;
-        left: unset;
-        right: 20px;
-        bottom: 85px;
-        width: 260px;
-    }
+    background-color: rgb(245, 245, 245);
+    border-radius: 6px;
+    left: unset;
+    right: 20px;
+    bottom: 85px;
+    width: 260px;
+  }
 }
+
 .mobile_filterBtn {
-    @media (max-width: 768px) {
-        text-decoration: none;
-        color: initial;
-        border: solid 1px rgb(175, 175, 175);
-        position: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        bottom: 50px;
-        right: 50px;
-        z-index: 10;
-        width: 55px;
-        height: 55px;
-        border-radius: 200px;
-        background-color: rgb(255, 255, 255);
-        -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
-        box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
-        font-size: 28px;
-        &:hover,
-        &:focus,
-        &:focus-within,
-        &:focus-visible,
-        &:active {
-            color: initial;
-        }
+  @media (max-width: 768px) {
+    text-decoration: none;
+    color: initial;
+    border: solid 1px rgb(175, 175, 175);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50px;
+    right: 50px;
+    z-index: 10;
+    width: 55px;
+    height: 55px;
+    border-radius: 200px;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    font-size: 28px;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:focus-visible,
+    &:active {
+      color: initial;
     }
+  }
 }
+
 .filter_category {
     white-space: nowrap;
     font-size: 18px;
@@ -10650,7 +10640,7 @@ footer {
   width: 100%;
   background-color: #E9E9E9 !important;
   height: 12em;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 200;
   color: #10072B;
 }
@@ -10799,14 +10789,50 @@ footer {
   padding-top: 2em;
 }
 
-.logInOut {
-  display: flex !important;
-  flex-direction: column;
+.registerContainer {
+  display: flex;
+  justify-content: center;
 }
 
-.logOut {
-  font-size: 15px !important;
-  position: absolute !important;
+.formulario {
+  display: flex;
+  justify-content: center;
+}
+
+.infoFormulario {
+  text-align: justify;
+}
+
+.btnRegister {
+  position: absolute;
+  background-color: #10072B;
+  margin: 5%;
+}
+
+@media only screen and (max-width: 425px) {
+  .btnRegister {
+    position: inherit;
+    background-color: #10072B;
+    margin: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .btnRegister {
+    position: relative;
+  }
+}
+.loginContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+}
+
+.btnLogin {
+  background-color: #10072B;
 }
 
 html {

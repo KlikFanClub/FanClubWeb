@@ -16,11 +16,9 @@ class WorkartController extends Controller
    */
   public function index()
   {
-    //$artist=new Artist();
-    $workarts = Workart::all()
-      ->sortByDesc('created_at');
-    //return View::make('pages.workarts', compact('workarts'))->withModel($artist);
-    return view('pages.workarts', compact('workarts'));
+   $workarts = Workart::all()->sortByDesc('created_at');
+   
+   return view('pages.workarts', compact('workarts'));
   }
 
   /**
@@ -53,7 +51,6 @@ class WorkartController extends Controller
       'others' => '',
       'category' => 'required',
       'carousel' => '',
-      'highlighted' => '',
     ]);
     //dd($request);
     $workart = Workart::create([
@@ -67,7 +64,6 @@ class WorkartController extends Controller
       'others' => $request->others,
       'category' => $request->category,
       'carousel' => $request->has('carousel'),
-      'highlighted' => $request->has('highlighted')
     ]);
 
 
@@ -116,20 +112,19 @@ class WorkartController extends Controller
   {
     //$artists=Artist::orderBy('name')->get();
 
-    $workartUpdate = request()->except(['_token', '_method']);
-    // $request->validate([
-    //   'title'=>'required',
-    //   'imageworkart'=>'required',
-    //   'edition'=>'required',
-    //   'price'=>'required',
-    //   'technique'=>'required',
-    //   'theme'=>'required',
-    //   'others'=>'',
-    //   'category'=>'required',
-    //   'carousel'=>'',
-    //   'highlighted'=>'',
-    // ]);
+    $request->validate([
+      'title' => 'required',
+      'imageworkart' => 'required',
+      'edition' => 'required',
+      'price' => 'required',
+      'technique' => 'required',
+      'theme' => 'required',
+      'others' => '',
+      'category' => 'required',
+      'carousel' => '',
+    ]);
     //dd($request);
+    $workartUpdate = request()->except(['_token', '_method']);
 
     if ($request->hasFile('imageworkart')) {
       $workart = Workart::findOrFail($id);
@@ -145,18 +140,17 @@ class WorkartController extends Controller
 
     $workart = Workart::findOrFail($id);
 
-    // $workart->update([
-    //   //'artistname'=>$request->artistname,
-    //   'title'=>$request->title,
-    //   'imageworkart'=>$request->imageworkart,
-    //   'edition'=>$request->edition,
-    //   'price'=>$request->price,
-    //   'technique'=>$request->technique,
-    //   'theme'=>$request->theme,
-    //   'others'=>$request->others,
-    //   'category'=>$request->category,
-    //   'carousel'=>$request->has('carousel'),
-    //   'highlighted'=>$request->has('highlighted')
+    // $request->update([
+    //   'title' => $request->title,
+    //   'imageworkart' => $request->imageworkart,
+    //   'edition' => $request->edition,
+    //   'price'=> $request->price,
+    //   'technique' => $request->technique,
+    //   'theme' => $request->theme,
+    //   'others' => $request->others,
+    //   'category' => $request->category,
+    //   'carousel' => $request->has('carousel'),
+
     // ]);
 
     //$workart=Workart::findOrFail($id);    

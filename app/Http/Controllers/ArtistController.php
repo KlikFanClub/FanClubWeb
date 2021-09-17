@@ -15,9 +15,9 @@ class ArtistController extends Controller
    */
   public function index()
   {
-    $artists = Artist::all()
-      ->sortBy('name');
-    return view('pages.artists', compact('artists'));
+   $artists = Artist::all()->sortBy('name');
+
+   return view('pages.artists', compact('artists'));
   }
 
   /**

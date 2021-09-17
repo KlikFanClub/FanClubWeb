@@ -18,7 +18,8 @@ class Workart extends Model
     'technique',
     'theme',
     'others',
-    'category'
+    'category',
+    'carousel'
   ];
 
   public function artist()

@@ -9,8 +9,8 @@
 
       <section class="artworkSlider">
         {{-- The .active class needs to be added to one of
-       the slides. Otherwise, the carousel will not
-       be visible. --}}
+           the slides. Otherwise, the carousel will not
+           be visible. --}}
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -21,10 +21,13 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="img-fluid" src="{{ asset('img/home/general/Tarde_jardin_slider.png') }}"
-                alt="First slide">
-            </div>
+            @foreach ($workarts as $workart)
+              @if ($workart->carousel)
+                <div class="carousel-item active">
+                  <img class="img-fluid" alt="" src="{{ asset('storage') . '/' . $workart->imageworkart }}">
+                </div>
+              @endif
+            @endforeach
             <div class="carousel-item">
               <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}" alt="Second slide">
             </div>
@@ -53,15 +56,17 @@
       <section class="highlights">
         <h2 class="highlightsTitle">Destacados</h2>
         <div class="artworkHighlights">
-
-          <div class="artworkCard">
-            <div>
-              <img class="artwork" src="{{ asset('img/home/highlighted/Reflection.png') }}" alt="">
-            </div>
-            <span class="artistName">Milagros Reyes</span>
-            <a class="artworkDetailsBtn" href="">ver su obra</a>
-          </div>
-
+          @foreach ($artists as $artist)
+            @if ($artist->highlighted)
+              <div class="artworkCard">
+                <div>
+                  <img class="artwork" alt="" src=<?php echo "storage/{$artist->profile_picture}"; ?>>
+                </div>
+                <span class="artistName">{{ $artist->name }} </span>
+                <a class="artworkDetailsBtn" href="">Ver sus obras</a>
+              </div>
+            @endif
+          @endforeach
           <div class="artworkCard">
             <div>
               <img class="artwork" src="{{ asset('img/home/highlighted/Narrativas_trans_2.png') }}" alt="">
@@ -96,12 +101,15 @@
         <div class="introduction">
           <h4 class="introduction_title">Conócenos</h4>
           <p>
-            Fan Club es una tienda especializada en sistema de impresión que se apoya en el artivismo para dar visibilidad
-            a mujeres artistas latinoméricanas, pero también a otros artistas cuya expresión se encuentre alineada con
+            Fan Club es una tienda especializada en sistema de impresión que se apoya en el artivismo para dar
+            visibilidad
+            a mujeres artistas latinoméricanas, pero también a otros artistas cuya expresión se encuentre
+            alineada con
             nuestros valores.
           </p>
           <p>
-            Nuestra misión es servir de embajadores y de vitrina para la generación de mujeres latinoamericanas que buscan
+            Nuestra misión es servir de embajadores y de vitrina para la generación de mujeres latinoamericanas
+            que buscan
             sentar una posición política a través de su expresión artística.
           </p>
         </div>
@@ -114,13 +122,17 @@
         <div class="objectives">
           <h4 class="objectives_title">Objetivos</h4>
           <p>
-            Somos una tienda de arte gráfico independiente femenista especilizada en prints, collages, originales,
-            fotografía, risografía y serigráfia impresos en papel reciclado; las obras y productos que vendemos tienen un
-            mensaje que busca mostrar protagonistas diversos y hacer sentir a quienes lo adquieren como parte inclusiva de
+            Somos una tienda de arte gráfico independiente femenista especilizada en prints, collages,
+            originales,
+            fotografía, risografía y serigráfia impresos en papel reciclado; las obras y productos que vendemos
+            tienen un
+            mensaje que busca mostrar protagonistas diversos y hacer sentir a quienes lo adquieren como parte
+            inclusiva de
             esa diversidad.
           </p>
           <p>
-            También, ofreceremos talleres y cursos de modelado de plastilina y tinta china para todas las edades.
+            También, ofreceremos talleres y cursos de modelado de plastilina y tinta china para todas las
+            edades.
           </p>
         </div>
         <div>
@@ -129,14 +141,14 @@
       </div>
     </section>
 
-      <div class="joinUsContainer">
+    <div class="joinUsContainer">
 
-        <div class="joinUs">
-          <button class="joinUsButton">
-            <a href="{{ route('register') }}">Forma parte de FanClub y exhibe tus obras aqui! =)</a>
-          </button>
-        </div>
+      <div class="joinUs">
+        <button class="joinUsButton">
+          <a href="{{ route('register') }}">Forma parte de FanClub y exhibe tus obras aqui! =)</a>
+        </button>
       </div>
+    </div>
 
   </div>
 
