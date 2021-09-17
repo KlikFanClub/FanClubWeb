@@ -38,7 +38,7 @@ class ArtistController extends Controller
    */
   public function store(Request $request)
   {
-    
+
     $request->validate([
       'name'=>'required|max:100',
       'profile_picture'=>'required',
@@ -48,22 +48,13 @@ class ArtistController extends Controller
       'instagram'=>'',
       'facebook'=>'',
       'twitter'=>'',
-      'other_socials'=>'',
-      'highlighted'=>''
-      
-    ]);
-    
-  //   if(isset($request->highlighted)){
-  //     //dd('1');
-  //     $highlighted = true;
-  //     //dd($highlighted);
   //   }
   //   if(isset($request->highlighted)==false){
   //    // dd('0');
   //    $highlighted = false;
-          
+
   // };
-  
+
 
     $artist=Artist::create([
         'name'=>$request->name,
@@ -76,13 +67,13 @@ class ArtistController extends Controller
         'twitter'=>$request->twitter,
         'other_socials'=>$request->other_socials,
         'highlighted'=>$request->has('highlighted')
-    ]);
+    ])]);
 
     //dd($request->hasfile('profile_picture'));
     if($request->hasFile('profile_picture')){
      $artist['profile_picture']=$request->file('profile_picture')->store('uploads_artist', 'public');
    }
-    
+
 
       $artist->save();
       return redirect()->route('artists');
@@ -134,14 +125,14 @@ class ArtistController extends Controller
       //   'twitter'=>'',
       //   'other_socials'=>'',
       //   'highlighted'=>''
-        
+
       // ]);
 
       if($request->hasFile('profile_picture')){
         $artist=Artist::findOrFail($id);
         //dd($workart);
          Storage::delete('public/'. $artist->profile_picture);
-         
+
          $artistUpdate['profile_picture']=$request->file('profile_picture')->store('uploads_artist', 'public');
        //dd($workart->imageworkart);
        }

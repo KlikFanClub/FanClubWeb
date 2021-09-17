@@ -10649,7 +10649,7 @@ footer {
   max-width: 1440px;
   width: 100%;
   background-color: #E9E9E9 !important;
-  height: 12em;
+  height: 14rem;
   font-size: 0.8rem;
   font-weight: 200;
   color: #10072B;
@@ -10689,8 +10689,11 @@ footer {
   color: #10072B !important;
 }
 
+.fab {
+  margin-left: 4rem;
+}
+
 .adressInfo {
-  font-family: Roboto !important;
   left: 345px;
   bottom: 86px;
 }

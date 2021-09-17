@@ -11,10 +11,14 @@ footer {
     max-width: 1440px;
     width: 100%;
     background-color: #E9E9E9 !important;
-    height: 12em;
+    height: 14rem;
     font-size: 0.8rem;
     font-weight: 200;
     color: $fcdark;
+}
+
+.leftFooter {
+
 }
 
 .footerNav {
@@ -39,11 +43,8 @@ footer {
 
 .socialLinks {
     display: flex;
-    // margin-top: -98px;
-    // margin-left: 27px;
     flex-direction: column;
     flex-wrap: nowrap;
-    // justify-content: center;
     align-items: center;
     padding: 2em 4em;
     color: $fcdark;
@@ -54,8 +55,11 @@ footer {
     color: $fcdark !important;
 }
 
+.fab {
+    margin-left: 4rem;
+}
+
 .adressInfo {
-    font-family: Roboto !important;
     left: 345px;
     bottom: 86px;
 }

@@ -29,30 +29,28 @@ class ArtistTest extends TestCase
             'twitter' => '',
             'other_socials' => '',
             'highlighted' => true
-
-
         ]);
 
         $this->assertTrue($artist->highlighted);
     }
 
     public function test_can_retrieve_all_artists() {
-        
+
         Artist::factory(10)->create([]);
 
         $response = $this->get('/artists');
 
         $this->assertEquals(count(Artist::all()), 10 );
         $response->assertStatus(200);
-          
+
     }
 
     public function test_can_retrieve_artist_by_id() {
-       
+
             Artist::factory()->create(['id' => 1]);
-        
+
             $response = $this->get('api/artists/1');
-          
+
 
             $response->assertStatus(200)
             ->assertJsonFragment(['id' => 1]);
