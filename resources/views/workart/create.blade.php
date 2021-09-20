@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <x-header />
     <div class="form-container">
         <form method="POST" action="{{ route('storeWorkart') }}" enctype="multipart/form-data">
             @csrf
@@ -108,7 +107,7 @@
                     <div class="buttons">
                         <button class="btnCreate" type="submit">Crear</button>
                         <button class="btnCancel" type="button">
-                            <a class="quitColor" href="{{ route('workarts') }}">Cancelar</a>
+                            <a class="btnBlanco" href="{{ route('workarts') }}">Cancelar</a>
                         </button>
                     </div>
                 </div>
@@ -116,5 +115,4 @@
         </form>
         <div class="buttons">
         </div>
-        <x-footer />
     @endsection

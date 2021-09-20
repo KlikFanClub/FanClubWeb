@@ -10008,10 +10008,9 @@ h3 {
   align-items: center;
 }
 
-main {
-  max-width: 1440px;
-}
-
+/* main {
+    max-width: 1440px;
+} */
 .highlights {
   padding: 2em;
   background-color: #10072B;
@@ -10093,6 +10092,10 @@ main {
   text-align: center;
   text-transform: uppercase;
   position: relative;
+}
+
+.card {
+  margin: 30px;
 }
 
 @media only screen and (max-width: 425px) {
@@ -10187,26 +10190,22 @@ main {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 768px) {
-  .info_aboutUs {
-    width: 80%;
-  }
-
-  .introduction,
-.introduction_img,
-.objectives,
-.objectives_img {
-    width: 80%;
-  }
-
-  .introduction_container {
-    flex-direction: column;
-  }
-
-  .objectives_container {
-    flex-direction: column;
-  }
+text-decoration .info_aboutUs {
+  width: 80%;
 }
+text-decoration .introduction,
+text-decoration .introduction_img,
+text-decoration .objectives,
+text-decoration .objectives_img {
+  width: 80%;
+}
+text-decoration .introduction_container {
+  flex-direction: column;
+}
+text-decoration .objectives_container {
+  flex-direction: column;
+}
+
 @media screen and (max-width: 1200px) {
   .info_aboutUs {
     width: 80%;
@@ -10445,11 +10444,14 @@ button {
   background-color: #e3342f;
 }
 
-/* .quitColor, a:link, a:visited {
-    text-decoration: none;
+.quitColor {
+  color: black;
 }
 
- */
+.btnBlanco {
+  color: white;
+}
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -10481,8 +10483,7 @@ button {
 }
 
 .nav-link:hover, .nav-link:focus {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration: none;
   background-color: #ced4da;
   transition: all 0.5s;
 }
@@ -10513,6 +10514,10 @@ button {
 .mainFatherFooterContainer {
   display: flex;
   justify-content: center;
+  /* position:absolute; */
+  bottom: 0;
+  width: 100%;
+  /* margin: 0px auto; */
 }
 
 footer {
@@ -10520,7 +10525,7 @@ footer {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   width: 100%;
   background-color: #E9E9E9 !important;
   height: 12em;
@@ -10547,6 +10552,7 @@ footer {
   margin-left: 2em;
   color: #10072B;
   background-color: transparent;
+  text-decoration: none;
 }
 
 .socialLinks {
@@ -10673,6 +10679,10 @@ footer {
   padding-top: 2em;
 }
 
+.iconos {
+  color: black;
+}
+
 .registerContainer {
   display: flex;
   justify-content: center;
@@ -10690,7 +10700,7 @@ footer {
 .btnRegister {
   position: absolute;
   background-color: #10072B;
-  margin: 5%;
+  margin: 15px;
 }
 
 @media only screen and (max-width: 425px) {
@@ -10726,4 +10736,13 @@ html {
 body {
   background-color: white;
   font-family: "Source Sans Pro", sans-serif;
+  height: 100vh;
+}
+
+#app {
+  height: 100vh;
+}
+
+a:link {
+  text-decoration: none !important;
 }
