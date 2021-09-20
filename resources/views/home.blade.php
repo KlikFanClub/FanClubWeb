@@ -29,6 +29,9 @@
               <img class="img-fluid" src="{{ asset('storage') . '/' . $workart->imageworkart }}" alt="First image">
             </div>
 
+              @endif
+          @endforeach
+
             <div class="carousel-item">
               <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}" alt="Second slide">
             </div>
@@ -41,9 +44,6 @@
             <div class="carousel-item">
               <img class="img-fluid" src="{{ asset('img/home/general/Chica_azul_slider.png') }}" alt="Fifth slide">
             </div>
-
-              @endif
-          @endforeach
 
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
