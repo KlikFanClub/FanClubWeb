@@ -127,4 +127,5 @@
                 </div>
         </form>
     </div>
+    <x-footer />
 @endsection

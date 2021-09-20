@@ -116,4 +116,5 @@
         </form>
         <div class="buttons">
         </div>
+        <x-footer />
     @endsection

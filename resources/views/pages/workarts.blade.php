@@ -42,7 +42,8 @@
       @endforeach --}}
     </main>
   </div>
-@endsection
+  <x-footer />
+  @endsection
 {{-- <div class="action_buttons">
   @if (Auth::user())
       @if (Auth::user()->isAdmin)
