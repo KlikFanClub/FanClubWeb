@@ -1939,6 +1939,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       _this3.filteredArtworks = filteredArtworks;
     });
+    this.$root.$refs.Artworks = this;
   }
 });
 
@@ -2008,41 +2009,49 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       menuItems: [{
         id: 1,
         name: "todos los productos",
+        "class": "all",
         subMenu: [],
-        isOpen: false
+        isOpen: true
       }, {
         id: 2,
         name: "edición",
+        "class": "edition",
         subMenu: ["Edición Limitada", "Edición Abierta", "Pieza única"],
         isOpen: false
       }, {
         id: 3,
         name: "tamaño",
+        "class": "size",
         subMenu: ["Pequeño", "Mediano", "Grande", "Muy Grande"],
         isOpen: false
       }, {
         id: 4,
         name: "precio",
+        "class": "price",
         subMenu: ["<25€", "25-50€", "50-100€", "100-150€", "+150€"],
         isOpen: false
       }, {
         id: 5,
         name: "técnica",
+        "class": "technique",
         subMenu: ["Dibujo", "Impresión Digital", "Pintura", "Grabado"],
         isOpen: false
       }, {
         id: 6,
         name: "temas",
+        "class": "themes",
         subMenu: ["Animales", "Personas y retratos", "Blanco y negro", "Flores y plantas"],
         isOpen: false
       }, {
         id: 7,
         name: "otros",
+        "class": "other",
         subMenu: [],
         isOpen: false
       }, {
         id: 8,
         name: "artistas",
+        "class": "artists",
         subMenu: null,
         isOpen: false
       }]
@@ -2050,12 +2059,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     handleView: function handleView() {
-      this.mobileView = window.innerWidth <= 768;
+      this.mobileView = window.innerWidth <= 1023;
     },
     toggleMenu: function toggleMenu() {
       this.isOpen = !this.isOpen;
     },
     toggleSubMenu: function toggleSubMenu(menuItem) {
+      if (menuItem.name === "todos los productos") {
+        this.$root.$refs.Artworks.restoreArtworks();
+      }
+
       this.menuItems.forEach(function (item) {
         if (item === menuItem) {
           menuItem.isOpen = !menuItem.isOpen;
@@ -17616,7 +17629,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".catalogue_artworks {\n  float: right;\n  max-width: 75%;\n  display: grid;\n  grid-template-columns: 25% 25% 25% 25%;\n  margin: 30px;\n}\n@media (max-width: 1400px) {\n.catalogue_artworks {\n    grid-template-columns: 50% 50%;\n    max-width: 70%;\n}\n}\n@media (max-width: 1023px) {\n.catalogue_artworks {\n    grid-template-columns: 100%;\n    max-width: 60%;\n}\n}\n@media (max-width: 768px) {\n.catalogue_artworks {\n    grid-template-columns: 100%;\n    max-width: 100%;\n}\n}\n.artwork_card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 20px;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n.action_buttons {\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n  font-size: 20px;\n}\n.artwork_img {\n  width: 100%;\n}\n.artwork_title {\n  font-size: 18px;\n  font-weight: 700;\n}\n.artwork_artistName {\n  font-size: 16px;\n}\n.artwork_date {\n  font-style: italic;\n}\n.artwork_price {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 6px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".catalogue {\n  display: flex;\n  flex-direction: column;\n}\n.catalogue_artworks {\n  max-width: 75%;\n  display: grid;\n  grid-template-columns: 33.3% 33.3% 33.3%;\n  margin: 30px;\n  margin-left: 300px;\n}\n@media (max-width: 1400px) {\n.catalogue_artworks {\n    grid-template-columns: 50% 50%;\n    max-width: 70%;\n}\n}\n@media (max-width: 1023px) {\n.catalogue_artworks {\n    grid-template-columns: 100%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n@media (max-width: 768px) {\n.catalogue_artworks {\n    grid-template-columns: 100%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n.artwork_card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 20px;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n.action_buttons {\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n  font-size: 20px;\n}\n.artwork_img {\n  width: 100%;\n}\n.artwork_title {\n  font-size: 18px;\n  font-weight: 700;\n}\n.artwork_artistName {\n  font-size: 16px;\n}\n.artwork_date {\n  font-style: italic;\n}\n.artwork_price {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 6px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17640,7 +17653,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".filter {\n  overflow-y: scroll;\n  max-height: 600px;\n  position: fixed;\n  left: 0;\n  z-index: 10;\n  display: flex;\n  flex-direction: column;\n  padding: 10px 20px;\n  margin: 50px 30px 30px 30px;\n  background-color: #e2e2e2;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n@media (max-width: 768px) {\n.filter {\n    border-radius: 6px;\n    position: fixed;\n    left: unset;\n    right: 20px;\n    bottom: 85px;\n    width: 260px;\n}\n}\n@media (max-width: 768px) {\n.mobile_filterBtn {\n    text-decoration: none;\n    color: initial;\n    border: solid 1px #afafaf;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    bottom: 50px;\n    right: 50px;\n    z-index: 10;\n    width: 55px;\n    height: 55px;\n    border-radius: 200px;\n    background-color: white;\n    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);\n    font-size: 28px;\n}\n.mobile_filterBtn:hover, .mobile_filterBtn:focus, .mobile_filterBtn:focus-within, .mobile_filterBtn:focus-visible, .mobile_filterBtn:active {\n    color: initial;\n}\n}\n.filter_category {\n  white-space: nowrap;\n  font-size: 18px;\n  padding: 6px 0;\n  text-transform: uppercase;\n  margin: auto -20px;\n  padding: 10px 20px;\n  cursor: pointer;\n}\n.open {\n  background-color: #1a1a1a;\n  color: white;\n}\n.filter_subMenu {\n  display: flex;\n  flex-direction: column;\n  height: 0;\n  transition: height 1s 0.2s;\n  overflow-y: hidden;\n  cursor: pointer;\n}\n.expanded {\n  display: flex;\n  flex-direction: column;\n  max-height: 350px;\n  height: auto;\n  overflow-y: unset;\n}\n.subMenuItem {\n  background-color: white;\n  margin: auto -20px;\n  font-size: 18px;\n  padding: 4px 20px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".filter {\n  overflow-y: scroll;\n  max-height: 600px;\n  position: fixed;\n  left: 0;\n  z-index: 10;\n  display: flex;\n  flex-direction: column;\n  padding: 10px 20px;\n  margin: 50px 30px 30px 30px;\n  background-color: #e2e2e2;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n@media (max-width: 1023px) {\n.filter {\n    border-radius: 6px;\n    position: fixed;\n    left: unset;\n    right: 20px;\n    bottom: 85px;\n    width: 260px;\n}\n}\n@media (max-width: 1023px) {\n.mobile_filterBtn {\n    text-decoration: none;\n    color: initial;\n    border: solid 1px #afafaf;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    bottom: 50px;\n    right: 50px;\n    z-index: 10;\n    width: 55px;\n    height: 55px;\n    border-radius: 200px;\n    background-color: white;\n    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);\n    font-size: 28px;\n}\n.mobile_filterBtn:hover, .mobile_filterBtn:focus, .mobile_filterBtn:focus-within, .mobile_filterBtn:focus-visible, .mobile_filterBtn:active {\n    color: initial;\n}\n}\n.filter_category {\n  white-space: nowrap;\n  font-size: 18px;\n  padding: 6px 0;\n  text-transform: uppercase;\n  margin: auto -20px;\n  padding: 10px 20px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n.filter_category:hover {\n  background-color: #3f88f7;\n}\n.open {\n  background-color: #1a1a1a;\n  color: white;\n}\n.filter_subMenu {\n  display: flex;\n  flex-direction: column;\n  height: 0;\n  transition: height 1s 0.2s;\n  overflow-y: hidden;\n  cursor: pointer;\n}\n.expanded {\n  display: flex;\n  flex-direction: column;\n  max-height: 350px;\n  height: auto;\n  overflow-y: unset;\n}\n.subMenuItem {\n  background-color: white;\n  margin: auto -20px;\n  font-size: 18px;\n  padding: 4px 20px;\n  transition: background-color 0.2s;\n}\n.subMenuItem:hover {\n  background-color: #a45fff;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39073,7 +39086,7 @@ var render = function() {
       return _c("div", { staticClass: "artwork_card" }, [
         _c("img", {
           staticClass: "artwork_img",
-          attrs: { src: artwork.imageworkart, alt: "" }
+          attrs: { src: "storage/" + artwork.imageworkart, alt: "" }
         }),
         _vm._v(" "),
         _c("span", { staticClass: "artwork_title" }, [

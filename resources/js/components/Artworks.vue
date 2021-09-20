@@ -1,7 +1,7 @@
 <template>
   <div class="catalogue_artworks">
     <div class="artwork_card" v-for="artwork in filteredArtworks">
-      <img class="artwork_img" :src="artwork.imageworkart" alt="" />
+      <img class="artwork_img" :src="'storage/' + artwork.imageworkart" alt="" />
       <span class="artwork_title">{{ artwork.title }}</span>
       <span class="artwork_artistName">{{ artwork.artist.name }}</span>
       <!-- <span class="artwork_date">10/12/2016</span> -->
@@ -46,16 +46,20 @@ export default {
       );
       this.filteredArtworks = filteredArtworks;
     });
+    this.$root.$refs.Artworks = this;
   },
 };
 </script>
 
 <style lang="scss">
+.catalogue {
+  display: flex;
+  flex-direction: column;
+}
 .catalogue_artworks {
-  float: right;
   max-width: 75%;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 33.3% 33.3% 33.3%;
 
   @media (max-width: 1400px) {
     grid-template-columns: 50% 50%;
@@ -64,15 +68,20 @@ export default {
 
   @media (max-width: 1023px) {
     grid-template-columns: 100%;
-    max-width: 60%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 100%;
-    max-width: 100%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   margin: 30px;
+  margin-left: 300px;
 }
 
 .artwork_card {

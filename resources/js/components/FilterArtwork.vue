@@ -44,36 +44,42 @@ export default {
         {
           id: 1,
           name: "todos los productos",
+          class: "all",
           subMenu: [],
-          isOpen: false,
+          isOpen: true,
         },
         {
           id: 2,
           name: "edición",
+          class: "edition",
           subMenu: ["Edición Limitada", "Edición Abierta", "Pieza única"],
           isOpen: false,
         },
         {
           id: 3,
           name: "tamaño",
+          class: "size",
           subMenu: ["Pequeño", "Mediano", "Grande", "Muy Grande"],
           isOpen: false,
         },
         {
           id: 4,
           name: "precio",
+          class: "price",
           subMenu: ["<25€", "25-50€", "50-100€", "100-150€", "+150€"],
           isOpen: false,
         },
         {
           id: 5,
           name: "técnica",
+          class: "technique",
           subMenu: ["Dibujo", "Impresión Digital", "Pintura", "Grabado"],
           isOpen: false,
         },
         {
           id: 6,
           name: "temas",
+          class: "themes",
           subMenu: [
             "Animales",
             "Personas y retratos",
@@ -85,12 +91,14 @@ export default {
         {
           id: 7,
           name: "otros",
+          class: "other",
           subMenu: [],
           isOpen: false,
         },
         {
           id: 8,
           name: "artistas",
+          class: "artists",
           subMenu: null,
           isOpen: false,
         },
@@ -99,12 +107,15 @@ export default {
   },
   methods: {
     handleView() {
-      this.mobileView = window.innerWidth <= 768;
+      this.mobileView = window.innerWidth <= 1023;
     },
     toggleMenu() {
       this.isOpen = !this.isOpen;
     },
     toggleSubMenu(menuItem) {
+      if(menuItem.name === "todos los productos") {
+        this.$root.$refs.Artworks.restoreArtworks();
+      }
       this.menuItems.forEach((item) => {
         if (item === menuItem) {
           menuItem.isOpen = !menuItem.isOpen;
@@ -162,7 +173,7 @@ export default {
   background-color: rgb(226, 226, 226);
   -webkit-box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     border-radius: 6px;
     position: fixed;
     left: unset;
@@ -172,7 +183,7 @@ export default {
   }
 }
 .mobile_filterBtn {
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     text-decoration: none;
     color: initial;
     border: solid 1px rgb(175, 175, 175);
@@ -208,6 +219,11 @@ export default {
   margin: auto -20px;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #3f88f7;
+  }
 }
 
 .open {
@@ -237,5 +253,10 @@ export default {
   margin: auto -20px;
   font-size: 18px;
   padding: 4px 20px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #a45fff;
+  }
 }
 </style>

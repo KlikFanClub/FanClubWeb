@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <x-header />
     <div class="form-container">
         <form method="POST" action="{{ route('storeWorkart') }}" enctype="multipart/form-data">
             @csrf
@@ -45,8 +44,7 @@
                             <label for="imageworkart">Imagen</label>
                         </div>
                         <div class="col-75">
-                            <input type="file" name="imageworkart" value="{{ old('imageworkart') }}" accept="image/*"
-                                required>
+                            <input type="file" name="imageworkart" accept="image/*" autocomplete="imageworkart" required>                           
                         </div>
                     </div>
                     <div class="row">
@@ -108,7 +106,7 @@
                     <div class="buttons">
                         <button class="btnCreate" type="submit">Crear</button>
                         <button class="btnCancel" type="button">
-                            <a class="quitColor" href="{{ route('workarts') }}">Cancelar</a>
+                            <a class="btnBlanco" href="{{ route('workarts') }}">Cancelar</a>
                         </button>
                     </div>
                 </div>

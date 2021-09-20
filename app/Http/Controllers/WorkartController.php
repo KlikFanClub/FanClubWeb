@@ -16,9 +16,8 @@ class WorkartController extends Controller
    */
   public function index()
   {
-   $workarts = Workart::all()->sortByDesc('created_at');
-   
-   return view('pages.workarts', compact('workarts'));
+    $workarts = Workart::all()->sortByDesc('created_at');
+    return view('pages.workarts', compact('workarts'));
   }
 
   /**
@@ -40,7 +39,6 @@ class WorkartController extends Controller
    */
   public function store(Request $request)
   {
-
     $request->validate([
       'title' => 'required',
       'imageworkart' => 'required',
@@ -52,9 +50,8 @@ class WorkartController extends Controller
       'category' => 'required',
       'carousel' => '',
     ]);
-    //dd($request);
+
     $workart = Workart::create([
-      'artist_id' => $request->artist_id,
       'title' => $request->title,
       'imageworkart' => $request->imageworkart,
       'edition' => $request->edition,
@@ -64,17 +61,15 @@ class WorkartController extends Controller
       'others' => $request->others,
       'category' => $request->category,
       'carousel' => $request->has('carousel'),
+      'artist_id' => $request->artist_id,
     ]);
 
-
-    //dd($request->hasfile('imageworkart'));
     if ($request->hasFile('imageworkart')) {
       $workart['imageworkart'] = $request->file('imageworkart')->store('uploads_workart', 'public');
     }
     $workart->save();
     return redirect()->route('workarts');
   }
-
   /**
    * Display the specified resource.
    *
@@ -94,13 +89,10 @@ class WorkartController extends Controller
    */
   public function edit($id)
   {
-
-
     $artists = Artist::orderBy('name')->get();
     $workart = Workart::find($id);
     return view('workart.edit', compact('workart', 'artists'));
   }
-
   /**
    * Update the specified resource in storage.
    *
@@ -110,11 +102,9 @@ class WorkartController extends Controller
    */
   public function update(Request $request, $id)
   {
-    //$artists=Artist::orderBy('name')->get();
-
     $request->validate([
       'title' => 'required',
-      'imageworkart' => 'required',
+      'imageworkart' => '',
       'edition' => 'required',
       'price' => 'required',
       'technique' => 'required',
@@ -123,38 +113,16 @@ class WorkartController extends Controller
       'category' => 'required',
       'carousel' => '',
     ]);
-    //dd($request);
     $workartUpdate = request()->except(['_token', '_method']);
 
     if ($request->hasFile('imageworkart')) {
       $workart = Workart::findOrFail($id);
-      //dd($workart);
       Storage::delete('public/' . $workart->imageworkart);
-
       $workartUpdate['imageworkart'] = $request->file('imageworkart')->store('uploads_workart', 'public');
-      //dd($workart->imageworkart);
     }
-    //$workart=Workart::whereId($id);
 
     Workart::where('id', '=', $id)->update($workartUpdate);
-
     $workart = Workart::findOrFail($id);
-
-    // $request->update([
-    //   'title' => $request->title,
-    //   'imageworkart' => $request->imageworkart,
-    //   'edition' => $request->edition,
-    //   'price'=> $request->price,
-    //   'technique' => $request->technique,
-    //   'theme' => $request->theme,
-    //   'others' => $request->others,
-    //   'category' => $request->category,
-    //   'carousel' => $request->has('carousel'),
-
-    // ]);
-
-    //$workart=Workart::findOrFail($id);    
-
     return redirect()->route('workarts', 'artists');
   }
   /**
@@ -171,10 +139,8 @@ class WorkartController extends Controller
 
   public function getWorkarts($id)
   {
-      $artist = Artist::find($id);
-
-      $workarts = $artist->workarts;
-
-      return response()->json($workarts, 200);
+    $artist = Artist::find($id);
+    $workarts = $artist->workarts;
+    return response()->json($workarts, 200);
   }
 }

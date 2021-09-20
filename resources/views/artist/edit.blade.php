@@ -39,11 +39,11 @@
                     <div class="row">
                         <div class="col-25">
                             <label for="profile_picture">Imagen</label>
-                            <img src="{{ asset('storage') . '/' . $artist->profile_picture }}" width="100">
+                            <img  id="uploadPreview1" src="{{ asset('storage') . '/' . $artist->profile_picture }}" width="100">
                         </div>
                         <div class="col-75">
-                            <input type="file" name="profile_picture" value="{{ $artist->profile_picture }}"
-                                accept="image/*" required>
+                            <input id="uploadImage1" type="file" name="profile_picture" value="{{ $artist->profile_picture }}"
+                                accept="image/*"  onchange="previewImage(1);" >
                         </div>
                     </div>
 
@@ -136,4 +136,15 @@
                     </div>
         </form>
     </div>
+
+    <script>
+        function previewImage(nb) {
+            var reader = new FileReader();
+            reader.readAsDataURL(document.getElementById('uploadImage' + nb).files[0]);
+            reader.onload = function(e) {
+                document.getElementById('uploadPreview' + nb).src = e.target.result;
+            };
+        }
+    </script>
+
 @endsection
