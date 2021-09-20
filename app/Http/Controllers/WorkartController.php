@@ -52,9 +52,9 @@ class WorkartController extends Controller
       'category' => 'required',
       'carousel' => '',
     ]);
-    //dd($request);
+    /* dd($request); */
+    $artistId = (int)$request->artist_id;
     $workart = Workart::create([
-      'artist_id' => $request->artist_id,
       'title' => $request->title,
       'imageworkart' => $request->imageworkart,
       'edition' => $request->edition,
@@ -64,6 +64,7 @@ class WorkartController extends Controller
       'others' => $request->others,
       'category' => $request->category,
       'carousel' => $request->has('carousel'),
+      'artist_id' => $artistId,
     ]);
 
 
