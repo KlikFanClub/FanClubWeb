@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <x-header />
     <div class="form-container">
         <form method="POST" action="{{ route('updateWorkart', $workart->id) }}" enctype="multipart/form-data">
             @csrf
@@ -127,5 +126,4 @@
                 </div>
         </form>
     </div>
-    <x-footer />
 @endsection
