@@ -39,7 +39,7 @@
 
           </div>
         </div>
-      @endforeach --}}
+      @endforeach 
     </main>
   </div>
   <x-footer />
