@@ -21,13 +21,14 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
           </ol>
           <div class="carousel-inner">
+
             @foreach ($workarts as $workart)
               @if ($workart->carousel)
-                <div class="carousel-item active">
-                  <img class="img-fluid" alt="" src="{{ asset('storage') . '/' . $workart->imageworkart }}">
-                </div>
-              @endif
-            @endforeach
+
+            <div class="carousel-item active">
+              <img class="img-fluid" src="{{ asset('storage') . '/' . $workart->imageworkart }}" alt="First image">
+            </div>
+
             <div class="carousel-item">
               <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}" alt="Second slide">
             </div>
@@ -40,6 +41,10 @@
             <div class="carousel-item">
               <img class="img-fluid" src="{{ asset('img/home/general/Chica_azul_slider.png') }}" alt="Fifth slide">
             </div>
+
+              @endif
+          @endforeach
+
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
