@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-75">
                             <input type="file" name="profile_picture" value="{{ $artist->profile_picture }}"
-                                accept="image/*" required>
+                                accept="image/*" >
                         </div>
                     </div>
 

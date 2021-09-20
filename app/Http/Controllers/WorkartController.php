@@ -114,7 +114,7 @@ class WorkartController extends Controller
 
     $request->validate([
       'title' => 'required',
-      'imageworkart' => 'required',
+      'imageworkart' => '',
       'edition' => 'required',
       'price' => 'required',
       'technique' => 'required',

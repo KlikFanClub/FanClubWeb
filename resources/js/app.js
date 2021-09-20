@@ -28,3 +28,7 @@ Vue.component('filter-artwork', require('./components/FilterArtwork.vue').defaul
 const app = new Vue({
   el: '#app',
 });
+
+
+
+
