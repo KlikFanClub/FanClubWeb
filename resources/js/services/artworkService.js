@@ -8,11 +8,5 @@ export const artworkService = {
   },
   getArtwork(id) {
     return axios.get(baseURL + 'api/workarts/' + id)
-  },
-  getAllArtists() {
-    return axios.get(baseURL + 'api/artists')
-  },
-  getArtist(id) {
-    return axios.get(baseURL + 'api/artists/' + id)
   }
 }

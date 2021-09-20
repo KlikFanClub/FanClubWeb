@@ -40,11 +40,7 @@
         <li class="nav-item">
           <a class="nav-link text-dark h5" href="{{ url('contactus') }}">CONTACTO</a>
         </li>
-
       </ul>
     </div>
-  </div>
-  </div>
-  </div>
   </div>
 </nav>
