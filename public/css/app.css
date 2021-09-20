@@ -10008,10 +10008,9 @@ h3 {
   align-items: center;
 }
 
-main {
-  max-width: 1440px;
-}
-
+/* main {
+    max-width: 1440px;
+} */
 .highlights {
   padding: 2em;
   background-color: #10072B;
