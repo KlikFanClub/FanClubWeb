@@ -4,7 +4,7 @@
       <img class="artwork_img" :src="artwork.imageworkart" alt="" />
       <span class="artwork_title">{{ artwork.title }}</span>
       <span class="artwork_artistName">{{ artwork.artist.name }}</span>
-      <span class="artwork_date">10/12/2016</span>
+      <!-- <span class="artwork_date">10/12/2016</span> -->
       <span class="artwork_price">{{ artwork.price }}</span>
     </div>
   </div>

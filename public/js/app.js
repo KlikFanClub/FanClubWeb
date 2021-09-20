@@ -39304,8 +39304,6 @@ var render = function() {
           _vm._v(_vm._s(artwork.artist.name))
         ]),
         _vm._v(" "),
-        _c("span", { staticClass: "artwork_date" }, [_vm._v("10/12/2016")]),
-        _vm._v(" "),
         _c("span", { staticClass: "artwork_price" }, [
           _vm._v(_vm._s(artwork.price))
         ])
