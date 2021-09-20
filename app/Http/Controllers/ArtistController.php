@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artist;
+use App\Models\Workart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -75,9 +76,13 @@ class ArtistController extends Controller
    * @param  \App\Models\Artist  $artist
    * @return \Illuminate\Http\Response
    */
-  public function show(Artist $artist)
+  public function show($id)
   {
-    //
+    $artist=Artist::find($id);
+    $workart=Workart::find($artist->id);
+    
+    dd($workart);
+    return view ('artist.show', compact ('artist', 'workart'));
   }
 
   /**

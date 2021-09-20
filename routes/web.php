@@ -44,9 +44,10 @@ Route::post('/artists/create', [ArtistController::class, 'store'])->middleware('
 Route::get('/artists/edit/{id}', [ArtistController::class, 'edit'])->middleware('admin')->name('editArtist');
 Route::put('/artists/update/{id}', [ArtistController::class, 'update'])->middleware('admin')->name('updateArtist');
 Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middleware('admin')->name('deleteArtist');
+Route::get('/artists/show/{id}', [ArtistController::class, 'show'])->name('showArtist');
 
 //Send mails
 
-Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');
+//Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');
 /* Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
 Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store'); */
