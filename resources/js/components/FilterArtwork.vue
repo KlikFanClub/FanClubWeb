@@ -151,10 +151,11 @@ export default {
 <style lang="scss">
 .filter {
   overflow-y: scroll;
+  width: 300px;
   max-height: 600px;
-  position: fixed;
+  /* position: fixed; */
   left: 0;
-  z-index: 10;
+ /*  z-index: 10; */
   display: flex;
   flex-direction: column;
   padding: 10px 20px;

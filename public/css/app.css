@@ -155,21 +155,17 @@ sup {
 }
 
 a {
-  color: #3490dc;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #1d68a7;
   text-decoration: underline;
 }
 
 a:not([href]):not([class]) {
-  color: inherit;
   text-decoration: none;
 }
 a:not([href]):not([class]):hover {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -10187,26 +10183,22 @@ main {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 768px) {
-  .info_aboutUs {
-    width: 80%;
-  }
-
-  .introduction,
-.introduction_img,
-.objectives,
-.objectives_img {
-    width: 80%;
-  }
-
-  .introduction_container {
-    flex-direction: column;
-  }
-
-  .objectives_container {
-    flex-direction: column;
-  }
+text-decoration .info_aboutUs {
+  width: 80%;
 }
+text-decoration .introduction,
+text-decoration .introduction_img,
+text-decoration .objectives,
+text-decoration .objectives_img {
+  width: 80%;
+}
+text-decoration .introduction_container {
+  flex-direction: column;
+}
+text-decoration .objectives_container {
+  flex-direction: column;
+}
+
 @media screen and (max-width: 1200px) {
   .info_aboutUs {
     width: 80%;
@@ -10445,11 +10437,14 @@ button {
   background-color: #e3342f;
 }
 
-/* .quitColor, a:link, a:visited {
-    text-decoration: none;
+.quitColor {
+  color: black;
 }
 
- */
+.btnBlanco {
+  color: white;
+}
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -10481,8 +10476,7 @@ button {
 }
 
 .nav-link:hover, .nav-link:focus {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration: none;
   background-color: #ced4da;
   transition: all 0.5s;
 }
@@ -10547,6 +10541,7 @@ footer {
   margin-left: 2em;
   color: #10072B;
   background-color: transparent;
+  text-decoration: none;
 }
 
 .socialLinks {
@@ -10673,6 +10668,10 @@ footer {
   padding-top: 2em;
 }
 
+.iconos {
+  color: black;
+}
+
 .registerContainer {
   display: flex;
   justify-content: center;
@@ -10726,4 +10725,9 @@ html {
 body {
   background-color: white;
   font-family: "Source Sans Pro", sans-serif;
+  height: 100vh;
+}
+
+a:link {
+  text-decoration: none !important;
 }

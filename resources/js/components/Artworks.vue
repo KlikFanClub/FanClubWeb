@@ -52,8 +52,6 @@ export default {
 
 <style lang="scss">
 .catalogue_artworks {
-  float: right;
-  max-width: 75%;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
 

@@ -3,6 +3,7 @@
     justify-content: center;
 }
 
+
 footer {
     display: flex;
     flex-direction: row;
@@ -35,6 +36,7 @@ footer {
     margin-left: 2em;
     color: $fcdark;
     background-color: transparent;
+    text-decoration: none;
 }
 
 .socialLinks {
@@ -199,4 +201,7 @@ footer {
     padding-top: 2em;
 }
 
+.iconos {
+    color: black;
+}
 
