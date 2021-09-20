@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import { artworkService } from "../services/artworkService";
 import { artistService } from "../services/artistService";
 import { eventBus } from "../app.js";
 
@@ -40,7 +39,7 @@ export default {
     return {
       mobileView: false,
       isOpen: true,
-      artistNamesArray: [],
+      namesArray: [],
       menuItems: [
         {
           id: 1,
@@ -92,7 +91,6 @@ export default {
         {
           id: 8,
           name: "artistas",
-          /* subMenu: this.artistNamesArray, */
           subMenu: null,
           isOpen: false,
         },
@@ -122,11 +120,12 @@ export default {
       return menuItem.isOpen ? "filter_category open" : "filter_category";
     },
     async getArtistsNames() {
-      const request = await artworkService.getAllArtists();
+      const request = await artistService.getAllArtists();
       request.data.forEach((item) => {
-        this.artistNamesArray.push(item.name);
+        this.namesArray.push(item.name);
       });
-      this.artistNamesArray.sort();
+      this.namesArray.sort();
+      this.setArtistsNames()
     },
     setArtistsNames() {
       this.menuItems.filter((item) => {
@@ -208,6 +207,7 @@ export default {
   text-transform: uppercase;
   margin: auto -20px;
   padding: 10px 20px;
+  cursor: pointer;
 }
 
 .open {
@@ -221,6 +221,7 @@ export default {
   height: 0;
   transition: height 1s 0.2s;
   overflow-y: hidden;
+  cursor: pointer;
 }
 
 .expanded {
