@@ -2,8 +2,6 @@
 
 @section('content')
 
-  <x-header />
-
   <div class="mainFatherContainer">
     <main>
 
@@ -152,7 +150,7 @@
 
   </div>
 
-  <x-footer />
+
 
   <script>
     $('.carousel').carousel()

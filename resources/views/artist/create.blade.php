@@ -130,4 +130,6 @@
         </form>
     </div>
 
+    <x-footer />
+
 @endsection

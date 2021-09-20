@@ -1,14 +1,19 @@
 .mainFatherFooterContainer {
     display: flex;
     justify-content: center;
+    /* position:absolute; */
+    bottom: 0;
+    width: 100%;
+    /* margin: 0px auto; */
 }
+
 
 footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     width: 100%;
     background-color: #E9E9E9 !important;
     height: 12em;
@@ -35,6 +40,7 @@ footer {
     margin-left: 2em;
     color: $fcdark;
     background-color: transparent;
+    text-decoration: none;
 }
 
 .socialLinks {
@@ -199,4 +205,7 @@ footer {
     padding-top: 2em;
 }
 
+.iconos {
+    color: black;
+}
 
