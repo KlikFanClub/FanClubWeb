@@ -45,11 +45,13 @@
                     <div class="row">
                         <div class="col-25">
                             <label for="imageworkart">Imagen</label>
-                            <img  id="uploadPreview1"src="{{ asset('storage') . '/' . $workart->imageworkart }}" width="100">
+                            <img id="uploadPreview1" src="{{ asset('storage') . '/' . $workart->imageworkart }}"
+                                width="100">
                         </div>
                         <div class="col-75">
-                            <input id="uploadImage1" type="file" name="imageworkart" accept="image/*" onchange="previewImage(1);">
-                       </div>
+                            <input id="uploadImage1" type="file" name="imageworkart" accept="image/*"
+                                onchange="previewImage(1);">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-25">
@@ -127,15 +129,15 @@
                 </div>
         </form>
     </div>
-    
+
     <script>
         function previewImage(nb) {
-    var reader = new FileReader();
-    reader.readAsDataURL(document.getElementById('uploadImage' + nb).files[0]);
-    reader.onload = function(e) {
-        document.getElementById('uploadPreview' + nb).src = e.target.result;
-    };
-}
+            var reader = new FileReader();
+            reader.readAsDataURL(document.getElementById('uploadImage' + nb).files[0]);
+            reader.onload = function(e) {
+                document.getElementById('uploadPreview' + nb).src = e.target.result;
+            };
+        }
     </script>
 
 @endsection

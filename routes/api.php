@@ -18,25 +18,26 @@ use App\Models\Workart;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+  return $request->user();
 });
 
-Route::get('workarts', function() {
+Route::get('workarts', function () {
   $workarts = Workart::all();
-  return response()->json($workarts);
+  $workarts->load('artist');
+  return json_encode($workarts);
 });
 
-Route::get('workarts/{id}', function($id) {
+Route::get('workarts/{id}', function ($id) {
   $workart = Workart::findOrFail($id);
   return response()->json($workart);
 });
 
-Route::get('artists', function() {
+Route::get('artists', function () {
   $artists = Artist::all();
   return response()->json($artists);
 });
 
-Route::get('artists/{id}', function($id) {
+Route::get('artists/{id}', function ($id) {
   $artist = Artist::findOrFail($id);
   return response()->json($artist);
 });

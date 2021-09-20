@@ -19,7 +19,8 @@ class Workart extends Model
     'theme',
     'others',
     'category',
-    'carousel'
+    'carousel',
+    'artist_id'
   ];
 
   public function artist()
