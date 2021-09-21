@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { userService } from "../services/userService";
 import { artistService } from "../services/artistService";
 import { eventBus } from "../app.js";
 
@@ -44,42 +45,36 @@ export default {
         {
           id: 1,
           name: "todos los productos",
-          class: "all",
           subMenu: [],
           isOpen: true,
         },
         {
           id: 2,
           name: "edición",
-          class: "edition",
           subMenu: ["Edición Limitada", "Edición Abierta", "Pieza única"],
           isOpen: false,
         },
         {
           id: 3,
           name: "tamaño",
-          class: "size",
           subMenu: ["Pequeño", "Mediano", "Grande", "Muy Grande"],
           isOpen: false,
         },
         {
           id: 4,
           name: "precio",
-          class: "price",
           subMenu: ["<25€", "25-50€", "50-100€", "100-150€", "+150€"],
           isOpen: false,
         },
         {
           id: 5,
           name: "técnica",
-          class: "technique",
           subMenu: ["Dibujo", "Impresión Digital", "Pintura", "Grabado"],
           isOpen: false,
         },
         {
           id: 6,
           name: "temas",
-          class: "themes",
           subMenu: [
             "Animales",
             "Personas y retratos",
@@ -91,14 +86,12 @@ export default {
         {
           id: 7,
           name: "otros",
-          class: "other",
           subMenu: [],
           isOpen: false,
         },
         {
           id: 8,
           name: "artistas",
-          class: "artists",
           subMenu: null,
           isOpen: false,
         },
