@@ -52,7 +52,7 @@
                             <label for="edition">Edición</label>
                         </div>
                         <div class="col-75">
-                            <select id="tecnica" required>
+                            <select id="edition" name="edition" required>
                                 <option value="" selected disabled>Seleccione un tipo</option>
                                 <option value="Pieza unica">Pieza única</option>
                                 <option value="Edición limitada">Edición limitada</option>
@@ -73,7 +73,7 @@
                             <label for="technique">Técnica</label>
                         </div>
                         <div class="col-75">
-                            <select id="edicion" required>
+                            <select id="technique" name="tecnique" required>
                                 <option value="" selected disabled>Seleccione un tipo</option>
                                 <option value="Impresión giclée">Impresión giclée</option>
                                 <option value="Impresión digital">Impresión digital</option>
@@ -92,10 +92,10 @@
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label for="theme">Tema</label>
+                            <label for="them">them</label>
                         </div>
                         <div class="col-75">
-                            <select id="edicion" required>
+                            <select id="them" name="them" required>
                                 <option value="" selected disabled>Seleccione un tipo</option>
                                 <option value="Figurativo">Figurativo</option>
                                 <option value="Abstracto">Abstracto</option>
@@ -123,7 +123,7 @@
                             <label for="category">Tamaño</label>
                         </div>
                         <div class="col-75">
-                            <select id="tamaño" required>
+                            <select id="category" name="category" required>
                                 <option value="" selected disabled>Seleccione un tamaño</option>
                                 <option value="Pequeño">Pequeño</option>
                                 <option value="Mediano">Mediano</option>
@@ -137,7 +137,7 @@
                             <label for="others">Otros</label>
                         </div>
                         <div class="col-75">
-                            <select id="otros" required>
+                            <select id="others"  name="others"  required>
                                 <option value="" selected disabled>Seleccione uno</option>
                                 <option value="Publicaciones">Publicaciones</option>
                                 <option value="Cerámica">Cerámica</option>
