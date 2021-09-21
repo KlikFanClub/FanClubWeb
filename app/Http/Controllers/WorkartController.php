@@ -50,6 +50,7 @@ class WorkartController extends Controller
       'category' => 'required',
       'carousel' => '',
     ]);
+        // dd($request);
 
     $workart = Workart::create([
       'title' => $request->title,
