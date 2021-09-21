@@ -2,8 +2,6 @@
 
 @section('content')
 
-  <x-header />
-
   <div class="mainFatherContainer">
     <main>
 
@@ -21,13 +19,14 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
           </ol>
           <div class="carousel-inner">
+
             @foreach ($workarts as $workart)
               @if ($workart->carousel)
-                <div class="carousel-item active">
-                  <img class="img-fluid" alt="" src="{{ asset('storage') . '/' . $workart->imageworkart }}">
-                </div>
-              @endif
-            @endforeach
+
+            <div class="carousel-item active">
+              <img class="img-fluid" src="{{ asset('storage') . '/' . $workart->imageworkart }}" alt="First image">
+            </div>
+
             <div class="carousel-item">
               <img class="img-fluid" src="{{ asset('img/home/general/Raizal_slider.png') }}" alt="Second slide">
             </div>
@@ -40,6 +39,10 @@
             <div class="carousel-item">
               <img class="img-fluid" src="{{ asset('img/home/general/Chica_azul_slider.png') }}" alt="Fifth slide">
             </div>
+
+                @endif
+            @endforeach
+
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -63,16 +66,16 @@
                   <img class="artwork" alt="" src=<?php echo "storage/{$artist->profile_picture}"; ?>>
                 </div>
                 <span class="artistName">{{ $artist->name }} </span>
-                <a class="artworkDetailsBtn" href="">Ver sus obras</a>
+                <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id)}}">Ver sus obras</a>
               </div>
             @endif
           @endforeach
           <div class="artworkCard">
             <div>
-              <img class="artwork" src="{{ asset('img/home/highlighted/Narrativas_trans_2.png') }}" alt="">
+              <img class="artwork" src="{{ asset('img/home/highlighted/Narrativas_trans_2.png')}}" alt="">
             </div>
             <span class="artistName">Agustina</span>
-            <a class="artworkDetailsBtn" href="">ver su obra</a>
+            <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id)}}">ver su obra</a>
           </div>
 
           <div class="artworkCard">
@@ -80,7 +83,7 @@
               <img class="artwork" src="{{ asset('img/home/highlighted/ORUGA_A3_2.png') }}" alt="">
             </div>
             <span class="artistName">Andrés Barthel</span>
-            <a class="artworkDetailsBtn" href="">ver su obra</a>
+            <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id)}}">ver su obra</a>
           </div>
 
           <div class="artworkCard">
@@ -88,7 +91,7 @@
               <img class="artwork" src="{{ asset('img/home/highlighted/Rebirth_of_venus.png') }}" alt="">
             </div>
             <span class="artistName">Jael Masllorens</span>
-            <a class="artworkDetailsBtn" href="">ver su obra</a>
+            <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id)}} ">ver su obra</a>
           </div>
         </div>
       </section>
@@ -152,7 +155,7 @@
 
   </div>
 
-  <x-footer />
+
 
   <script>
     $('.carousel').carousel()
