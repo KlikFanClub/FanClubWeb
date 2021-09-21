@@ -73,7 +73,7 @@
                             <label for="technique">Técnica</label>
                         </div>
                         <div class="col-75">
-                            <select id="technique" name="tecnique" required>
+                            <select id="technique" name="technique" required>
                                 <option value="" selected disabled>Seleccione un tipo</option>
                                 <option value="Impresión giclée">Impresión giclée</option>
                                 <option value="Impresión digital">Impresión digital</option>
@@ -92,10 +92,10 @@
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label for="them">them</label>
+                            <label for="theme">them</label>
                         </div>
                         <div class="col-75">
-                            <select id="them" name="them" required>
+                            <select id="theme" name="theme" required>
                                 <option value="" selected disabled>Seleccione un tipo</option>
                                 <option value="Figurativo">Figurativo</option>
                                 <option value="Abstracto">Abstracto</option>
