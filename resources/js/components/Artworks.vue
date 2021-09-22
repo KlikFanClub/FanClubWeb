@@ -85,13 +85,20 @@ export default {
   }
 
   @media (max-width: 1023px) {
-    grid-template-columns: 100%;
+    grid-template-columns: 50% 50%;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
 
   @media (max-width: 768px) {
+    grid-template-columns: 50% 50%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 450px) {
     grid-template-columns: 100%;
     max-width: 80%;
     margin-left: auto;
