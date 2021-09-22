@@ -2,8 +2,6 @@
 
 <img width="122" alt="Image" src="https://github.com/KlikFanClub/FanClubWeb/blob/master/public/img/home/logo/fan-club.png">
 
-[![wakatime](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb.svg)](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb)
-
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Concept](#Concept)

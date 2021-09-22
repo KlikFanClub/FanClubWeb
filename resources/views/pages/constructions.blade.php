@@ -13,7 +13,7 @@
         <b> Sorry! </b>
     </h3>
     <h3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-        <b>Esta página esta en construción! Pronto estaremos listo! :)</b>
+        <b>Esta página esta en construcción! Pronto estaremos listos! :)</b>
 
         </h3>
 </div>
