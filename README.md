@@ -50,11 +50,11 @@ That the store and website become a stimulating community, where art can be avai
 
 * Install Composer if you don't have already globally installed
 ```
-$ composer install```
+$ composer install
 
 * Or make an Update
 ```
-$ composer update```
+$ composer update
 
 * Laravel
 ```
@@ -66,8 +66,8 @@ $ php artisan test
 $ npm run watch
 ```
 ## Design
-***
-First, was made a design with Figma. It is also responsive. For the web application web we used SASS and Laravel's Blade components. On the home page there is a slider with favorite workart done with Bootstrap.
+
+First, was made a design with Figma. It is also responsive. For the web application web we used SASS and Laravel's Blade components. On the home page there is a slider with favorite workart done with Bootstrap. With Vue we have worked in the catalog view with the functionalities of filtering an artist or all the products. In addition to configuring the authentication according to the type of user (isAdmin) so that the CRUD buttons appear.
 
 ## Collaboration
 
