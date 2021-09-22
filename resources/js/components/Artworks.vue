@@ -81,7 +81,7 @@ export default {
   }
 
   @media (max-width: 1023px) {
-    grid-template-columns: 100%;
+    grid-template-columns: 50% 50%;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -116,7 +116,6 @@ export default {
 
 .artwork_img {
   width: 100%;
-  height: 22vw;
   object-fit: cover;
 }
 
