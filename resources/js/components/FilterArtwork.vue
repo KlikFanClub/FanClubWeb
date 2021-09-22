@@ -7,11 +7,12 @@
         </div>
         <div :class="subMenuExpanded(menuItem)">
           <span
-            v-for="(item, index) in menuItem.subMenu"
+            v-for="(artistName, index) in menuItem.subMenu"
             v-bind:key="index"
             class="subMenuItem"
+            @click="filterByArtist(artistName)"
           >
-            {{ item }}
+            {{ artistName }}
           </span>
         </div>
       </template>
@@ -29,7 +30,9 @@
 </template>
 
 <script>
-import { artworkService } from "../services/artworkService";
+import { userService } from "../services/userService";
+import { artistService } from "../services/artistService";
+import { eventBus } from "../app.js";
 
 export default {
   name: "FilterArtwork",
@@ -37,13 +40,13 @@ export default {
     return {
       mobileView: false,
       isOpen: true,
-      artistNamesArray: [],
+      namesArray: [],
       menuItems: [
         {
           id: 1,
           name: "todos los productos",
           subMenu: [],
-          isOpen: false,
+          isOpen: true,
         },
         {
           id: 2,
@@ -89,7 +92,7 @@ export default {
         {
           id: 8,
           name: "artistas",
-          subMenu: this.artistNamesArray,
+          subMenu: null,
           isOpen: false,
         },
       ],
@@ -97,12 +100,15 @@ export default {
   },
   methods: {
     handleView() {
-      this.mobileView = window.innerWidth <= 768;
+      this.mobileView = window.innerWidth <= 1023;
     },
     toggleMenu() {
       this.isOpen = !this.isOpen;
     },
     toggleSubMenu(menuItem) {
+      if (menuItem.name === "todos los productos") {
+        this.$root.$refs.Artworks.restoreArtworks();
+      }
       this.menuItems.forEach((item) => {
         if (item === menuItem) {
           menuItem.isOpen = !menuItem.isOpen;
@@ -118,20 +124,37 @@ export default {
       return menuItem.isOpen ? "filter_category open" : "filter_category";
     },
     async getArtistsNames() {
-      const request = await artworkService.getAllArtists();
+      const request = await artistService.getAllArtists();
       request.data.forEach((item) => {
-        this.artistNamesArray.push(item.name);
+        this.namesArray.push(item.name);
       });
-      this.artistNamesArray.sort();
+      this.namesArray.sort();
+      this.setArtistsNames();
+    },
+    setArtistsNames() {
+      this.menuItems.filter((item) => {
+        if (item.name === "artistas") {
+          item.subMenu = this.namesArray;
+        }
+      });
+    },
+    filterByArtist(artistName) {
+      eventBus.$emit("filter", artistName);
+    },
+    async getUserStatus() {
+      const request = await userService.getUserStatus();
+      console.log(request);
+      return request;
     },
   },
-  computed: {},
   created() {
     this.handleView();
     if (this.mobileView) {
       this.isOpen = false;
     }
-    getArtistsNames()
+    this.getArtistsNames();
+    /* this.getUserStatus(); */
+    
   },
 };
 </script>
@@ -150,7 +173,7 @@ export default {
   background-color: rgb(226, 226, 226);
   -webkit-box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     border-radius: 6px;
     position: fixed;
     left: unset;
@@ -160,7 +183,7 @@ export default {
   }
 }
 .mobile_filterBtn {
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     text-decoration: none;
     color: initial;
     border: solid 1px rgb(175, 175, 175);
@@ -195,6 +218,12 @@ export default {
   text-transform: uppercase;
   margin: auto -20px;
   padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #3f88f7;
+  }
 }
 
 .open {
@@ -208,6 +237,7 @@ export default {
   height: 0;
   transition: height 1s 0.2s;
   overflow-y: hidden;
+  cursor: pointer;
 }
 
 .expanded {
@@ -223,5 +253,10 @@ export default {
   margin: auto -20px;
   font-size: 18px;
   padding: 4px 20px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #a45fff;
+  }
 }
 </style>

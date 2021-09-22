@@ -9,6 +9,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\New_Artist_Mail;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,13 +22,15 @@ use App\Mail\New_Artist_Mail;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 Auth::routes();
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/agenda', [HomeController::class, 'pageConstructions'])->name('pageConstructions');
+Route::get('/blog', [HomeController::class, 'pageConstructions'])->name('pageConstructions');
+Route::get('/contactus', [HomeController::class, 'contact'])->name('contact');
 
 //Routes Workart
 
@@ -45,8 +49,12 @@ Route::post('/artists/create', [ArtistController::class, 'store'])->middleware('
 Route::get('/artists/edit/{id}', [ArtistController::class, 'edit'])->middleware('admin')->name('editArtist');
 Route::put('/artists/update/{id}', [ArtistController::class, 'update'])->middleware('admin')->name('updateArtist');
 Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middleware('admin')->name('deleteArtist');
+Route::get('/artists/show/{id}', [ArtistController::class, 'show'])->name('showArtist');
 
 //Send mails
 
-Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
-Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store');
+//Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');
+/* Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
+Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store'); */
+
+

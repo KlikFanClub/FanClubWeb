@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artist;
+use App\Models\Workart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ArtistController extends Controller
@@ -15,9 +17,12 @@ class ArtistController extends Controller
    */
   public function index()
   {
-    $artists = Artist::all()
-      ->sortBy('name');
-    return view('pages.artists', compact('artists'));
+    $authCheck = null;
+    if(Auth::check() && Auth::user()->isAdmin){
+      $authCheck = Auth::check();
+    };
+    $artists = Artist::all()->sortBy('name');
+    return view('pages.artists', compact('artists', 'authCheck'));
   }
 
   /**
@@ -27,7 +32,7 @@ class ArtistController extends Controller
    */
   public function create()
   {
-    return view ('artist.create');
+    return view('artist.create');
   }
 
   /**
@@ -38,65 +43,51 @@ class ArtistController extends Controller
    */
   public function store(Request $request)
   {
-    
     $request->validate([
-      'name'=>'required|max:100',
-      'profile_picture'=>'required',
-      'bio'=>'required|max:500',
-      'website'=>'',
-      'email'=>'required|email|unique:artists',
-      'instagram'=>'',
-      'facebook'=>'',
-      'twitter'=>'',
-      'other_socials'=>'',
-      'highlighted'=>''
-      
-    ]);
-    
-  //   if(isset($request->highlighted)){
-  //     //dd('1');
-  //     $highlighted = true;
-  //     //dd($highlighted);
-  //   }
-  //   if(isset($request->highlighted)==false){
-  //    // dd('0');
-  //    $highlighted = false;
-          
-  // };
-  
-
-    $artist=Artist::create([
-        'name'=>$request->name,
-        'profile_picture'=>$request->profile_picture,
-        'bio'=>$request->bio,
-        'website'=>$request->website,
-        'email'=>$request->email,
-        'instagram'=>$request->instagram,
-        'facebook'=>$request->facebook,
-        'twitter'=>$request->twitter,
-        'other_socials'=>$request->other_socials,
-        'highlighted'=>$request->highlighted
+      'name' => 'required|max:100',
+      'profile_picture' => 'required',
+      'bio' => 'required|max:500',
+      'website' => '',
+      'email' => 'required|email|unique:artists',
+      'instagram' => '',
+      'facebook' => '',
+      'twitter' => '',
+      'other_socials' => '',
+      'highlighted' => ''
     ]);
 
-    //dd($request->hasfile('profile_picture'));
-    if($request->hasFile('profile_picture')){
-     $artist['profile_picture']=$request->file('profile_picture')->store('uploads_artist', 'public');
-   }
-    
+    $artist = Artist::create([
+      'name' => $request->name,
+      'profile_picture' => $request->profile_picture,
+      'bio' => $request->bio,
+      'website' => $request->website,
+      'email' => $request->email,
+      'instagram' => $request->instagram,
+      'facebook' => $request->facebook,
+      'twitter' => $request->twitter,
+      'other_socials' => $request->other_socials,
+      'highlighted' => $request->has('highlighted')
+    ]);
 
-      $artist->save();
-      return redirect()->route('artists');
+    if ($request->hasFile('profile_picture')) {
+      $artist['profile_picture'] = $request->file('profile_picture')->store('uploads_artist', 'public');
+    }
+    $artist->save();
+    return redirect()->route('artists');
   }
-
   /**
    * Display the specified resource.
    *
    * @param  \App\Models\Artist  $artist
    * @return \Illuminate\Http\Response
    */
-  public function show(Artist $artist)
+  public function show($id)
   {
-    //
+    $artist=Artist::find($id);
+    $workarts=Workart::whereArtistId($id)->get();
+    //dd($workarts);
+    
+    return view ('artist.show', compact ('artist', 'workarts'));
   }
 
   /**
@@ -107,9 +98,9 @@ class ArtistController extends Controller
    */
   public function edit(Artist $artist, $id)
   {
-    $artists=Artist::orderBy('name')->get();
-    $artist=Artist::find($id);
-    return view('artist.edit', compact('artist','artists'));
+    $artists = Artist::orderBy('name')->get();
+    $artist = Artist::find($id);
+    return view('artist.edit', compact('artist', 'artists'));
   }
 
   /**
@@ -121,50 +112,17 @@ class ArtistController extends Controller
    */
   public function update(Request $request, Artist $artist, $id)
   {
-      //$artists=Artist::orderBy('name')->get();
-      $artistUpdate=request()->except(['_token', '_method']);
-      // $request->validate([
-      //   'name'=>'required|max:100',
-      //   'profile_picture'=>'required',
-      //   'bio'=>'required|max:500',
-      //   'website'=>'',
-      //   'email'=>'required|email|unique:artists',
-      //   'instagram'=>'',
-      //   'facebook'=>'',
-      //   'twitter'=>'',
-      //   'other_socials'=>'',
-      //   'highlighted'=>''
-        
-      // ]);
+    $artistUpdate = request()->except(['_token', '_method']);
 
-      if($request->hasFile('profile_picture')){
-        $artist=Artist::findOrFail($id);
-        //dd($workart);
-         Storage::delete('public/'. $artist->profile_picture);
-         
-         $artistUpdate['profile_picture']=$request->file('profile_picture')->store('uploads_artist', 'public');
-       //dd($workart->imageworkart);
-       }
+    if ($request->hasFile('profile_picture')) {
+      $artist = Artist::findOrFail($id);
+      Storage::delete('public/' . $artist->profile_picture);
+      $artistUpdate['profile_picture'] = $request->file('profile_picture')->store('uploads_artist', 'public');
+    }
+    Artist::where('id', '=', $id)->update($artistUpdate);
+    $artist = Artist::whereId($id);
 
-       Artist::where('id', '=', $id)->update($artistUpdate);
-
-      $artist=Artist::whereId($id);
-
-      // $artist->update([
-      // 'name'=>$request->name,
-      // 'profile_picture'=>$request->profile_picture,
-      // 'bio'=>$request->bio,
-      // 'website'=>$request->website,
-      // 'email'=>$request->email,
-      // 'instagram'=>$request->instagram,
-      // 'facebook'=>$request->facebook,
-      // 'twitter'=>$request->twitter,
-      // 'other_socials'=>$request->other_socials,
-      // 'highlighted'=>$request->has('highlighted'),
-      // ]);
-
-      return redirect()->route('artists', 'artists');
-
+    return redirect()->route('artists', 'artists');
   }
 
   /**

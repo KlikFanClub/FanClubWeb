@@ -1,20 +1,24 @@
 .mainFatherFooterContainer {
     display: flex;
     justify-content: center;
+    /* position:absolute; */
+    bottom: 0;
+    width: 100%;
+    /* margin: 0px auto; */
 }
+
 
 footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     width: 100%;
     background-color: #E9E9E9 !important;
-    height: 12em;
-    font-weight: 400;
+    font-size: 0.8rem;
+    font-weight: 200;
     color: $fcdark;
-    font-size: 0.9em;
 }
 
 .footerNav {
@@ -23,8 +27,8 @@ footer {
 }
 
 .footerLogo {
-    width: 5em;
-    padding: 1em;
+    width: 3.5em;
+    margin: 1em 2em 1em 1em;
 }
 
 .pageslinks {
@@ -35,6 +39,7 @@ footer {
     margin-left: 2em;
     color: $fcdark;
     background-color: transparent;
+    text-decoration: none;
 }
 
 .socialLinks {
@@ -46,10 +51,11 @@ footer {
     // justify-content: center;
     align-items: center;
     padding: 2em 4em;
+    color: $fcdark;
 }
 
 .socialButtons {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: $fcdark !important;
 }
 
@@ -185,6 +191,10 @@ footer {
     transform: translateY(-50px);
 }
 
+.punto{
+    list-style: none !important;
+}
+
 .footerCR {
     display: flex;
     justify-content: flex-end;
@@ -197,3 +207,8 @@ footer {
     flex-direction: column;
     padding-top: 2em;
 }
+
+.iconos {
+    color: black;
+}
+

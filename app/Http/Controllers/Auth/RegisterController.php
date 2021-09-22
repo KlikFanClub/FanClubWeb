@@ -8,6 +8,11 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\New_Artist_Mail;
+use Illuminate\Http\Request;
+
+
 
 class RegisterController extends Controller
 {
@@ -29,7 +34,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = ('/mail');
 
     /**
      * Create a new controller instance.
@@ -66,6 +71,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        Mail::raw('
+            Nombre del Artista:' . ' ' . $data['name'] . '.
+
+            Correo del artista:' . ' ' . $data['email'] . '.
+
+            Links: ' . $data['someLink'] . '. 
+
+            Info: ' . $data['aboutArtist'] . '.', 
+            function ($m) {
+        $m->from('admin@fanclubproject.com', 'FanClub Bcn');
+
+        $m->to('gabipineiro@hotmail.com')->subject('You have a new notification');
+  
+        });   
+           
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -73,5 +94,17 @@ class RegisterController extends Controller
             'aboutArtist' => $data['aboutArtist'],
             'someLink' => $data['someLink'],
         ]);
+     
     }
+
+    // public function send($email, $dates){
+    //     Mail::send('emails.mail', $dates, function($message) use ($email){
+    //         $message->subject('Hola! Bienvenido a FancLub!');
+    //         $message-> to($email);
+    //         $message-> from('admin@fanclubproject.com', 'FanClub Bcn');
+    //     });
+    // }
+    
+
 }
+

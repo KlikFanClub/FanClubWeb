@@ -30,11 +30,11 @@
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  font-family: 'Roboto' !important;
+
 }
 
 .nav-link:hover, .nav-link:focus {
-  text-decoration-line: underline;
+  text-decoration: none;
   background-color: #ced4da;
   transition: all .5s;
 }
@@ -45,8 +45,9 @@
   color: black;
 }
 
-@media (min-width: 768px) {
-    .navbar-expand-md {
+
+@media (max-width: 768px) {
+    .navbar-expand-lg {
         flex-flow: row nowrap;
         justify-content: space-evenly;
         margin-left: 0.1rem !important;
@@ -54,4 +55,11 @@
     }
 }
 
-
+@media (max-width: 1200px) {
+    .navbar-expand-lg {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        margin-left: 0.1rem !important;
+        margin-right: 0.1rem !important;
+    }
+}

@@ -1,0 +1,14 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.btnLogin {
+  background-color: $fcdark;
+}

@@ -2,8 +2,10 @@
 
 @section ('content')
 
-    <x-header />
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b8aa7e5de89c4c95d5532342af75c84cbd2c71
     <div class="form-container">
 
         <form method="POST" action="{{route ('storeArtist')}}" enctype="multipart/form-data">
@@ -26,6 +28,7 @@
                             </ul>
                         </div>
                     @endif
+
                     <div class="row">
                         <div class="col-25">
                             <label for="name">Nombre</label>
@@ -38,6 +41,7 @@
                     <div class="row">
                         <div class="col-25">
                             <label for="profile_picture">Imagen</label>
+
                         </div>
                         <div class="col-75">
                             <input type="file" name="profile_picture" value="{{old('profile_picture')}}" accept="image/*" required>
@@ -110,7 +114,7 @@
 
                     <div class="row">
                         <div class="col-25">
-                            <input type="checkbox" name="highlighted">
+                            <input type="checkbox" name="highlighted" value="1">
                         </div>
                         <div class="col-75">
                             <label for="highlighted">Destacados</label>
@@ -129,4 +133,8 @@
         </form>
     </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b8b8aa7e5de89c4c95d5532342af75c84cbd2c71
 @endsection
