@@ -2,21 +2,21 @@
 
 <img width="122" alt="Image" src="https://github.com/KlikFanClub/FanClubWeb/blob/master/public/img/home/logo/fan-club.png">
 
-<!-- [![wakatime](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb.svg)](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb) -->
+[![wakatime](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb.svg)](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb)
 
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Concept](#Concept)
 3. [Stack and Technologies](#stack-technologies)
 4. [Installation and Setup](#installation-setup)
-5. Design
-4. [Collaboration](#collaboration)
-6. [FAQs](#faqs)
+5. [Design](#design)
+6. [Collaboration](#collaboration)
 
 ## General info
 ***
 * This is a collaborative Laravel CRUD project for the Full Stack Development Bootcamp developed by KlikFanClub team.
 * Project status: work in progress. It's missing the event views, blog and the entire ecommerce structure. From the beginning we knew that we would not be able to deliver everything.
+
 * Heroku deployment url: https://xyxyxyxyxyxyxyxyxyxyxy.herokuapp.com/
 
 ## Concept
