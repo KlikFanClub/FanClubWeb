@@ -30,6 +30,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/agenda', [HomeController::class, 'pageConstructions'])->name('pageConstructions');
 Route::get('/blog', [HomeController::class, 'pageConstructions'])->name('pageConstructions');
+Route::get('/contactus', [HomeController::class, 'contact'])->name('contact');
 
 //Routes Workart
 
