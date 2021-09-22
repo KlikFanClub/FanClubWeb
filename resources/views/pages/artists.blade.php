@@ -1,7 +1,6 @@
 @extends ('layouts.app')
 @section('content')
 
-    <x-header />
     @if (Auth::user())
     @if (Auth::user()->isAdmin)
     <div>
@@ -17,8 +16,8 @@
         <h6>{{ $artist->name }}</h6>
         @if (Auth::user())
             @if (Auth::user()->isAdmin)
-           
-            
+
+
                 <div>
                     <a href="{{ route('editArtist', ['id' => $artist->id]) }}">
                         <i class="far fa-edit"></i>
@@ -30,4 +29,11 @@
             @endif
         @endif
     @endforeach
+
 @endsection
+
+@if (Auth::user() && Auth::user()->isAdmin)
+  <script>
+    window.authCheck = {!! json_encode($authCheck) !!};
+  </script>
+@endif

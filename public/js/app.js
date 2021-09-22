@@ -2100,6 +2100,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2107,7 +2121,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       allArtworks: [],
-      filteredArtworks: []
+      filteredArtworks: [],
+      isLoggedIn: null
     };
   },
   methods: {
@@ -2161,6 +2176,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       _this3.filteredArtworks = filteredArtworks;
     });
+    this.$root.$refs.Artworks = this;
+    this.isLoggedIn = window.authCheck;
   }
 });
 
@@ -2179,7 +2196,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_artworkService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/artworkService */ "./resources/js/services/artworkService.js");
+/* harmony import */ var _services_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/userService */ "./resources/js/services/userService.js");
 /* harmony import */ var _services_artistService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/artistService */ "./resources/js/services/artistService.js");
 /* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.js */ "./resources/js/app.js");
 
@@ -2228,12 +2245,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       mobileView: false,
       isOpen: true,
-      artistNamesArray: [],
+      namesArray: [],
       menuItems: [{
         id: 1,
         name: "todos los productos",
         subMenu: [],
-        isOpen: false
+        isOpen: true
       }, {
         id: 2,
         name: "edición",
@@ -2267,8 +2284,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         id: 8,
         name: "artistas",
-
-        /* subMenu: this.artistNamesArray, */
         subMenu: null,
         isOpen: false
       }]
@@ -2276,12 +2291,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     handleView: function handleView() {
-      this.mobileView = window.innerWidth <= 768;
+      this.mobileView = window.innerWidth <= 1023;
     },
     toggleMenu: function toggleMenu() {
       this.isOpen = !this.isOpen;
     },
     toggleSubMenu: function toggleSubMenu(menuItem) {
+      if (menuItem.name === "todos los productos") {
+        this.$root.$refs.Artworks.restoreArtworks();
+      }
+
       this.menuItems.forEach(function (item) {
         if (item === menuItem) {
           menuItem.isOpen = !menuItem.isOpen;
@@ -2306,17 +2325,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _services_artworkService__WEBPACK_IMPORTED_MODULE_1__.artworkService.getAllArtists();
+                return _services_artistService__WEBPACK_IMPORTED_MODULE_2__.artistService.getAllArtists();
 
               case 2:
                 request = _context.sent;
                 request.data.forEach(function (item) {
-                  _this.artistNamesArray.push(item.name);
+                  _this.namesArray.push(item.name);
                 });
 
-                _this.artistNamesArray.sort();
+                _this.namesArray.sort();
 
-              case 5:
+                _this.setArtistsNames();
+
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -2334,7 +2355,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     filterByArtist: function filterByArtist(artistName) {
-      _app_js__WEBPACK_IMPORTED_MODULE_3__.eventBus.$emit('filter', artistName);
+      _app_js__WEBPACK_IMPORTED_MODULE_3__.eventBus.$emit("filter", artistName);
+    },
+    getUserStatus: function getUserStatus() {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var request;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _services_userService__WEBPACK_IMPORTED_MODULE_1__.userService.getUserStatus();
+
+              case 2:
+                request = _context2.sent;
+                console.log(request);
+                return _context2.abrupt("return", request);
+
+              case 5:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   created: function created() {
@@ -2345,6 +2389,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
 
     this.getArtistsNames();
+    /* this.getUserStatus(); */
   }
 });
 
@@ -2485,6 +2530,29 @@ var artworkService = {
   },
   getArtwork: function getArtwork(id) {
     return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/workarts/' + id);
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/services/userService.js":
+/*!**********************************************!*\
+  !*** ./resources/js/services/userService.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "userService": () => (/* binding */ userService)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+var baseURL = 'http://127.0.0.1:8000/';
+var userService = {
+  getUserStatus: function getUserStatus() {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/user_status');
   }
 };
 
@@ -17823,6 +17891,30 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".catalogue {\n  display: flex;\n  flex-direction: column;\n}\n.catalogue_artworks {\n  max-width: 75%;\n  display: grid;\n  grid-template-columns: 33.3% 33.3% 33.3%;\n  margin: 30px;\n  margin-left: 300px;\n}\n@media (max-width: 1400px) {\n.catalogue_artworks {\n    grid-template-columns: 50% 50%;\n    max-width: 70%;\n}\n}\n@media (max-width: 1023px) {\n.catalogue_artworks {\n    grid-template-columns: 50% 50%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n@media (max-width: 768px) {\n.catalogue_artworks {\n    grid-template-columns: 50% 50%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n@media (max-width: 450px) {\n.catalogue_artworks {\n    grid-template-columns: 100%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n.artwork_card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 20px;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n.action_buttons {\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n  font-size: 20px;\n}\n.artwork_imgContainer {\n  position: relative;\n  width: 100%;\n  height: 0;\n  padding-bottom: 100%;\n  overflow: hidden;\n}\n.artwork_img {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.artwork_title {\n  font-size: 18px;\n  font-weight: 700;\n}\n.artwork_artistName {\n  font-size: 16px;\n}\n.artwork_date {\n  font-style: italic;\n}\n.artwork_price {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 6px;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilterArtwork.vue?vue&type=style&index=0&lang=scss&":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilterArtwork.vue?vue&type=style&index=0&lang=scss& ***!
@@ -17840,7 +17932,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".filter {\n  overflow-y: scroll;\n  max-height: 600px;\n  position: fixed;\n  left: 0;\n  z-index: 10;\n  display: flex;\n  flex-direction: column;\n  padding: 10px 20px;\n  margin: 50px 30px 30px 30px;\n  background-color: #e2e2e2;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n@media (max-width: 768px) {\n.filter {\n    border-radius: 6px;\n    position: fixed;\n    left: unset;\n    right: 20px;\n    bottom: 85px;\n    width: 260px;\n}\n}\n@media (max-width: 768px) {\n.mobile_filterBtn {\n    text-decoration: none;\n    color: initial;\n    border: solid 1px #afafaf;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    bottom: 50px;\n    right: 50px;\n    z-index: 10;\n    width: 55px;\n    height: 55px;\n    border-radius: 200px;\n    background-color: white;\n    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);\n    font-size: 28px;\n}\n.mobile_filterBtn:hover, .mobile_filterBtn:focus, .mobile_filterBtn:focus-within, .mobile_filterBtn:focus-visible, .mobile_filterBtn:active {\n    color: initial;\n}\n}\n.filter_category {\n  white-space: nowrap;\n  font-size: 18px;\n  padding: 6px 0;\n  text-transform: uppercase;\n  margin: auto -20px;\n  padding: 10px 20px;\n}\n.open {\n  background-color: #1a1a1a;\n  color: white;\n}\n.filter_subMenu {\n  display: flex;\n  flex-direction: column;\n  height: 0;\n  transition: height 1s 0.2s;\n  overflow-y: hidden;\n}\n.expanded {\n  display: flex;\n  flex-direction: column;\n  max-height: 350px;\n  height: auto;\n  overflow-y: unset;\n}\n.subMenuItem {\n  background-color: white;\n  margin: auto -20px;\n  font-size: 18px;\n  padding: 4px 20px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".filter {\n  overflow-y: scroll;\n  max-height: 600px;\n  position: fixed;\n  left: 0;\n  z-index: 10;\n  display: flex;\n  flex-direction: column;\n  padding: 10px 20px;\n  margin: 50px 30px 30px 30px;\n  background-color: #e2e2e2;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n@media (max-width: 1023px) {\n.filter {\n    border-radius: 6px;\n    position: fixed;\n    left: unset;\n    right: 20px;\n    bottom: 85px;\n    width: 260px;\n}\n}\n@media (max-width: 1023px) {\n.mobile_filterBtn {\n    text-decoration: none;\n    color: initial;\n    border: solid 1px #afafaf;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    bottom: 50px;\n    right: 50px;\n    z-index: 10;\n    width: 55px;\n    height: 55px;\n    border-radius: 200px;\n    background-color: white;\n    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);\n    font-size: 28px;\n}\n.mobile_filterBtn:hover, .mobile_filterBtn:focus, .mobile_filterBtn:focus-within, .mobile_filterBtn:focus-visible, .mobile_filterBtn:active {\n    color: initial;\n}\n}\n.filter_category {\n  white-space: nowrap;\n  font-size: 18px;\n  padding: 6px 0;\n  text-transform: uppercase;\n  margin: auto -20px;\n  padding: 10px 20px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n.filter_category:hover {\n  background-color: #3f88f7;\n}\n.open {\n  background-color: #1a1a1a;\n  color: white;\n}\n.filter_subMenu {\n  display: flex;\n  flex-direction: column;\n  height: 0;\n  transition: height 1s 0.2s;\n  overflow-y: hidden;\n  cursor: pointer;\n}\n.expanded {\n  display: flex;\n  flex-direction: column;\n  max-height: 350px;\n  height: auto;\n  overflow-y: unset;\n}\n.subMenuItem {\n  background-color: white;\n  margin: auto -20px;\n  font-size: 18px;\n  padding: 4px 20px;\n  transition: background-color 0.2s;\n}\n.subMenuItem:hover {\n  background-color: #a45fff;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38737,6 +38829,36 @@ try {
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Artworks_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Artworks.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Artworks_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Artworks_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilterArtwork.vue?vue&type=style&index=0&lang=scss&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilterArtwork.vue?vue&type=style&index=0&lang=scss& ***!
@@ -39059,15 +39181,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Artworks_vue_vue_type_template_id_45a924ea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Artworks.vue?vue&type=template&id=45a924ea& */ "./resources/js/components/Artworks.vue?vue&type=template&id=45a924ea&");
 /* harmony import */ var _Artworks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Artworks.vue?vue&type=script&lang=js& */ "./resources/js/components/Artworks.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Artworks_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Artworks.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Artworks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Artworks_vue_vue_type_template_id_45a924ea___WEBPACK_IMPORTED_MODULE_0__.render,
   _Artworks_vue_vue_type_template_id_45a924ea___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -39158,6 +39282,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Artworks_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Artworks.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Artworks.vue?vue&type=style&index=0&lang=scss&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/FilterArtwork.vue?vue&type=style&index=0&lang=scss&":
 /*!*************************************************************************************!*\
   !*** ./resources/js/components/FilterArtwork.vue?vue&type=style&index=0&lang=scss& ***!
@@ -39223,12 +39360,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "catalogue_artworks" },
     _vm._l(_vm.filteredArtworks, function(artwork) {
       return _c("div", { staticClass: "artwork_card" }, [
-        _c("img", {
-          staticClass: "artwork_img",
-          attrs: { src: artwork.imageworkart, alt: "" }
-        }),
+        _c("div", { staticClass: "artwork_imgWrapper" }, [
+          _c("div", { staticClass: "artwork_imgContainer" }, [
+            _c("img", {
+              staticClass: "artwork_img",
+              attrs: { src: "storage/" + artwork.imageworkart, alt: "" }
+            })
+          ])
+        ]),
         _vm._v(" "),
         _c("span", { staticClass: "artwork_title" }, [
           _vm._v(_vm._s(artwork.title))
@@ -39238,13 +39380,21 @@ var render = function() {
           _vm._v(_vm._s(artwork.artist.name))
         ]),
         _vm._v(" "),
-        _c("span", { staticClass: "artwork_date" }, [_vm._v("10/12/2016")]),
+        _c("span", { staticClass: "artwork_price" }, [
+          _vm._v(_vm._s(artwork.price))
+        ]),
         _vm._v(" "),
-        _c(
-          "span",
-          { staticClass: "artwork_price", on: { click: _vm.restoreArtworks } },
-          [_vm._v(_vm._s(artwork.price))]
-        )
+        _vm.isLoggedIn
+          ? _c("div", { staticClass: "action_buttons" }, [
+              _c("a", { attrs: { href: "/workarts/edit/" + artwork.id } }, [
+                _c("i", { staticClass: "far fa-edit" })
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "/workarts/delete/" + artwork.id } }, [
+                _c("i", { staticClass: "fas fa-trash-alt" })
+              ])
+            ])
+          : _vm._e()
       ])
     }),
     0

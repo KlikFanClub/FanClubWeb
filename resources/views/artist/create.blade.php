@@ -2,7 +2,6 @@
 
 @section ('content')
 
-    <x-header />
 
     <div class="form-container">
 
@@ -39,6 +38,7 @@
                     <div class="row">
                         <div class="col-25">
                             <label for="profile_picture">Imagen</label>
+
                         </div>
                         <div class="col-75">
                             <input type="file" name="profile_picture" value="{{old('profile_picture')}}" accept="image/*" required>

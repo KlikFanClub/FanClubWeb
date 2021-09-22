@@ -22,3 +22,4 @@ subscribe_button.addEventListener('click', function(){
 		subscribe_button.classList.remove("subscribe_button_active");
 	}, 4000);
 });
+
