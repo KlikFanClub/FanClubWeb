@@ -9,19 +9,18 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminUser
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
-    public function handle(Request $request, Closure $next)
-    {
-        if(Auth::user()->isAdmin)
-        {
-        return $next($request);
+  /**
+   * Handle an incoming request.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  \Closure  $next
+   * @return mixed
+   */
+  public function handle(Request $request, Closure $next)
+  {
+    if (Auth::user()->isAdmin) {
+      return $next($request);
     }
     return redirect()->route('home');
-    }
+  }
 }

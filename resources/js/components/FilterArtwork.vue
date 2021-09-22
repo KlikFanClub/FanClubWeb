@@ -106,7 +106,7 @@ export default {
       this.isOpen = !this.isOpen;
     },
     toggleSubMenu(menuItem) {
-      if(menuItem.name === "todos los productos") {
+      if (menuItem.name === "todos los productos") {
         this.$root.$refs.Artworks.restoreArtworks();
       }
       this.menuItems.forEach((item) => {
@@ -129,7 +129,7 @@ export default {
         this.namesArray.push(item.name);
       });
       this.namesArray.sort();
-      this.setArtistsNames()
+      this.setArtistsNames();
     },
     setArtistsNames() {
       this.menuItems.filter((item) => {
@@ -139,8 +139,13 @@ export default {
       });
     },
     filterByArtist(artistName) {
-      eventBus.$emit('filter', artistName);
-    }
+      eventBus.$emit("filter", artistName);
+    },
+    async getUserStatus() {
+      const request = await userService.getUserStatus();
+      console.log(request);
+      return request;
+    },
   },
   created() {
     this.handleView();
@@ -148,6 +153,8 @@ export default {
       this.isOpen = false;
     }
     this.getArtistsNames();
+    /* this.getUserStatus(); */
+    
   },
 };
 </script>

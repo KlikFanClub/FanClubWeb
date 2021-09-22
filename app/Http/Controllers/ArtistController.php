@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artist;
 use App\Models\Workart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ArtistController extends Controller
@@ -16,8 +17,9 @@ class ArtistController extends Controller
    */
   public function index()
   {
+    $authCheck = Auth::check();
     $artists = Artist::all()->sortBy('name');
-    return view('pages.artists', compact('artists'));
+    return view('pages.artists', compact('artists', 'authCheck'));
   }
 
   /**

@@ -1,11 +1,23 @@
 <template>
   <div class="catalogue_artworks">
     <div class="artwork_card" v-for="artwork in filteredArtworks">
-      <img class="artwork_img" :src="'storage/' + artwork.imageworkart" alt="" />
+      <img
+        class="artwork_img"
+        :src="'storage/' + artwork.imageworkart"
+        alt=""
+      />
       <span class="artwork_title">{{ artwork.title }}</span>
       <span class="artwork_artistName">{{ artwork.artist.name }}</span>
       <!-- <span class="artwork_date">10/12/2016</span> -->
       <span class="artwork_price">{{ artwork.price }}</span>
+      <div v-if="isLoggedIn" class="action_buttons">
+        <a :href="'/workarts/edit/' + artwork.id">
+          <i class="far fa-edit"></i>
+        </a>
+        <a :href="'/workarts/delete/' + artwork.id">
+          <i class="fas fa-trash-alt"></i>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +32,7 @@ export default {
     return {
       allArtworks: [],
       filteredArtworks: [],
+      isLoggedIn: null,
     };
   },
   methods: {
@@ -47,6 +60,7 @@ export default {
       this.filteredArtworks = filteredArtworks;
     });
     this.$root.$refs.Artworks = this;
+    this.isLoggedIn = window.authCheck;
   },
 };
 </script>

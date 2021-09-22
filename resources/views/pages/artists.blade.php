@@ -31,3 +31,7 @@
     @endforeach
 
 @endsection
+
+<script>
+  window.authCheck = {!! json_encode($authCheck); !!};
+</script>

@@ -43,8 +43,12 @@
             </main>
         </div>
     {{-- </div> --}}
-
+    
 @endsection
+
+<script>
+  window.authCheck = {!! json_encode($authCheck); !!};
+</script>
 {{-- <div class="action_buttons">
   @if (Auth::user())
       @if (Auth::user()->isAdmin)
