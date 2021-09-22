@@ -49,7 +49,7 @@
                                 <img class="artwork" alt="" src=<?php echo "storage/{$artist->profile_picture}"; ?>>
                             </div>
                             <span class="artistName">{{ $artist->name }} </span>
-                            <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id) }}">Ver sus
+                            <a class="artworkDetailsBtn" href="{{ route('showArtist', $artist->id) }}">Ver sus
                                 obras</a>
                         </div>
                     @endif
@@ -60,14 +60,14 @@
                             alt="">
                     </div>
                     <span class="artistName">Agustina</span>
-                    <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id) }}">Ver sus
+                    <a class="artworkDetailsBtn" href="{{ route('showArtist', $artist->id) }}">Ver sus
                         obras</a>
                 </div>                    <div class="artworkCard">
                     <div>
                         <img class="artwork" src="{{ asset('img/home/highlighted/ORUGA_A3_2.png') }}" alt="">
                     </div>
                     <span class="artistName">Andrés Barthel</span>
-                    <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id) }}">Ver sus
+                    <a class="artworkDetailsBtn" href="{{ route('showArtist', $artist->id) }}">Ver sus
                         obras</a>
                 </div>                    <div class="artworkCard">
                     <div>
@@ -75,7 +75,7 @@
                             alt="">
                     </div>
                     <span class="artistName">Jael Masllorens</span>
-                    <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id) }}">Ver sus
+                    <a class="artworkDetailsBtn" href="{{ route('showArtist', $artist->id) }}">Ver sus
                         obras</a>
                 </div>
             </div>
