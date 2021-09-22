@@ -36,10 +36,10 @@
 
       <!-- Facebook -->
       <div class="socialButtons">
-        <a type="button" class="btnInstagram m-2" target="_blank" href="https://www.instagram.com/">
+        <a type="button" class="btnInstagram m-2" target="_blank" href="https://www.instagram.com/fanclubtienda/">
             <i class="fab fa-instagram fa-lg iconos"></i>
         </a>
-        <a type="button" class="btnFacebook m-2" target="_blank" href="https://www.facebook.com/">
+        <a type="button" class="btnFacebook m-2" target="_blank" href="https://www.facebook.com/fanclubtienda/">
             <i class="fab fa-facebook-f iconos"></i>
           </a>
         <a type="button" class="btnTweeter m-2" href="https://twitter.com/?lang=es">
