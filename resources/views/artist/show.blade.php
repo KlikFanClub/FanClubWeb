@@ -2,8 +2,7 @@
 @section('content')
   <x-header />
   <div class="catalogue">  
-    <main>
-      <artworks-component></artworks-component>
+    <main>    
      
         <div class="artwork_card">
           <img class="artwork_img" src="{{ asset('storage') . '/' . $workart->imageworkart }}">

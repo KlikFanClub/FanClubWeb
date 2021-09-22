@@ -63,7 +63,7 @@
                   <img class="artwork" alt="" src=<?php echo "storage/{$artist->profile_picture}"; ?>>
                 </div>
                 <span class="artistName">{{ $artist->name }} </span>
-                <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->id)}}">Ver sus obras</a>
+                <a class="artworkDetailsBtn" href="{{ route('showArtist', $workart->artist_id)}}">Ver sus obras</a>
               </div>
             @endif
           @endforeach
