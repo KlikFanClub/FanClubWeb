@@ -79,10 +79,9 @@ class ArtistController extends Controller
   public function show($id)
   {
     $artist=Artist::find($id);
-    $workart=Workart::find($artist->id);
+    $workarts=Workart::whereArtistId($id)->get();
     
-    //dd($workart);
-    return view ('artist.show', compact ('artist', 'workart'));
+    return view ('artist.show', compact ('artist', 'workarts'));
   }
 
   /**

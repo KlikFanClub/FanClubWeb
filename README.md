@@ -1,13 +1,15 @@
 # FanClubWeb
 
-<img width="222" alt="Image" src="https://github.com/KlikFanClub/FanClubWeb/blob/master/public/img/home/logo/fan-club.png">
+<img width="122" alt="Image" src="https://github.com/KlikFanClub/FanClubWeb/blob/master/public/img/home/logo/fan-club.png">
 
 <!-- [![wakatime](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb.svg)](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb) -->
 
 ## Table of Contents
 1. [General Info](#general-info)
-2. [Stack and Technologies](#stack-technologies)
-3. [Installation and Setup](#installation-setup)
+2. [Concept](#Concept)
+3. [Stack and Technologies](#stack-technologies)
+4. [Installation and Setup](#installation-setup)
+5. Design
 4. [Collaboration](#collaboration)
 6. [FAQs](#faqs)
 
