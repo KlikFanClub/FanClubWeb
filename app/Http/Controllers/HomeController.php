@@ -35,4 +35,8 @@ class HomeController extends Controller
         return view ('home', ['highlighted'=>$highlighted, 'artists'=>$artists, 'slideWorkart'=>$slideWorkart, 'workarts'=>$workarts]);
        
     }
+
+    public function pageConstructions(){
+        return view('pages.constructions');
+    }
 }
