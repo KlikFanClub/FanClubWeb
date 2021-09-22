@@ -48,8 +48,6 @@ Route::put('/artists/update/{id}', [ArtistController::class, 'update'])->middlew
 Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middleware('admin')->name('deleteArtist');
 Route::get('/artists/show/{id}', [ArtistController::class, 'show'])->name('showArtist');
 
-Route::get('/prueba', [User::class, 'isLoggedIn']);
-
 //Send mails
 
 //Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');

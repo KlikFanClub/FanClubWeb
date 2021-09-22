@@ -2110,6 +2110,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -17904,7 +17908,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".catalogue {\n  display: flex;\n  flex-direction: column;\n}\n.catalogue_artworks {\n  max-width: 75%;\n  display: grid;\n  grid-template-columns: 33.3% 33.3% 33.3%;\n  margin: 30px;\n  margin-left: 300px;\n}\n@media (max-width: 1400px) {\n.catalogue_artworks {\n    grid-template-columns: 50% 50%;\n    max-width: 70%;\n}\n}\n@media (max-width: 1023px) {\n.catalogue_artworks {\n    grid-template-columns: 50% 50%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n@media (max-width: 768px) {\n.catalogue_artworks {\n    grid-template-columns: 100%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n.artwork_card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 20px;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n.action_buttons {\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n  font-size: 20px;\n}\n.artwork_img {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.artwork_title {\n  font-size: 18px;\n  font-weight: 700;\n}\n.artwork_artistName {\n  font-size: 16px;\n}\n.artwork_date {\n  font-style: italic;\n}\n.artwork_price {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 6px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".catalogue {\n  display: flex;\n  flex-direction: column;\n}\n.catalogue_artworks {\n  max-width: 75%;\n  display: grid;\n  grid-template-columns: 33.3% 33.3% 33.3%;\n  margin: 30px;\n  margin-left: 300px;\n}\n@media (max-width: 1400px) {\n.catalogue_artworks {\n    grid-template-columns: 50% 50%;\n    max-width: 70%;\n}\n}\n@media (max-width: 1023px) {\n.catalogue_artworks {\n    grid-template-columns: 100%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n@media (max-width: 768px) {\n.catalogue_artworks {\n    grid-template-columns: 100%;\n    max-width: 80%;\n    margin-left: auto;\n    margin-right: auto;\n}\n}\n.artwork_card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 20px;\n  box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);\n}\n.action_buttons {\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n  font-size: 20px;\n}\n.artwork_imgContainer {\n  position: relative;\n  width: 100%;\n  height: 0;\n  padding-bottom: 100%;\n  overflow: hidden;\n}\n.artwork_img {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.artwork_title {\n  font-size: 18px;\n  font-weight: 700;\n}\n.artwork_artistName {\n  font-size: 16px;\n}\n.artwork_date {\n  font-style: italic;\n}\n.artwork_price {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 6px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39359,10 +39363,14 @@ var render = function() {
     { staticClass: "catalogue_artworks" },
     _vm._l(_vm.filteredArtworks, function(artwork) {
       return _c("div", { staticClass: "artwork_card" }, [
-        _c("img", {
-          staticClass: "artwork_img",
-          attrs: { src: "storage/" + artwork.imageworkart, alt: "" }
-        }),
+        _c("div", { staticClass: "artwork_imgWrapper" }, [
+          _c("div", { staticClass: "artwork_imgContainer" }, [
+            _c("img", {
+              staticClass: "artwork_img",
+              attrs: { src: "storage/" + artwork.imageworkart, alt: "" }
+            })
+          ])
+        ]),
         _vm._v(" "),
         _c("span", { staticClass: "artwork_title" }, [
           _vm._v(_vm._s(artwork.title))

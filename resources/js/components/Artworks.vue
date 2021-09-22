@@ -1,11 +1,15 @@
 <template>
   <div class="catalogue_artworks">
     <div class="artwork_card" v-for="artwork in filteredArtworks">
-      <img
-        class="artwork_img"
-        :src="'storage/' + artwork.imageworkart"
-        alt=""
-      />
+      <div class="artwork_imgWrapper">
+        <div class="artwork_imgContainer">
+          <img
+            class="artwork_img"
+            :src="'storage/' + artwork.imageworkart"
+            alt=""
+          />
+        </div>
+      </div>
       <span class="artwork_title">{{ artwork.title }}</span>
       <span class="artwork_artistName">{{ artwork.artist.name }}</span>
       <!-- <span class="artwork_date">10/12/2016</span> -->
@@ -81,7 +85,7 @@ export default {
   }
 
   @media (max-width: 1023px) {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -112,6 +116,14 @@ export default {
   bottom: 5px;
   right: 5px;
   font-size: 20px;
+}
+
+.artwork_imgContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
 }
 
 .artwork_img {
