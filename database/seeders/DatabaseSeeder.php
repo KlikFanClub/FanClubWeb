@@ -117,79 +117,79 @@ class DatabaseSeeder extends Seeder
 
 
         Workart::factory(1)->create([
-            'artist'=>'Milagros Reyes',
+            'artist_id'=>'1',
             'title'=>'3200',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Paisajes y arquitectura',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Milagros Reyes',
+            'artist_id'=>'1',
             'title'=>'Satellite of Love',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Paisajes y arquitectura',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Milagros Reyes',
+            'artist_id'=>'1',
             'title'=>'Momento Frappé',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€40,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Animales',
-            'size'=>'Grande',
+            'category'=>'Grande',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Milagros Reyes',
+            'artist_id'=>'1',
             'title'=>'Este tipo me habla a mí?',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Escenas cotidianas',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Milagros Reyes',
+            'artist_id'=>'1',
             'title'=>'Rhythm',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Paisajes y arquitectura',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Milagros Reyes',
+            'artist_id'=>'1',
             'title'=>'0',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
@@ -202,66 +202,66 @@ class DatabaseSeeder extends Seeder
 
 
         Workart::factory(1)->create([
-            'artist'=>'Andrés Barthel',
+            'artist_id'=>'2',
             'title'=>'Elefantes',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Urban art',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Andrés Barthel',
+            'artist_id'=>'2',
             'title'=>'Amazonas',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€30,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Urban art',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Andrés Barthel',
+            'artist_id'=>'2',
             'title'=>'Hermano Arnu',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'20 euretes',
             'technique'=>'Dibujo',
             'theme'=>'Paisajes y arquitectura',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Andrés Barthel',
+            'artist_id'=>'2',
             'title'=>'Punky y Cerdo',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Escenas cotidianas',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Andrés Barthel',
+            'artist_id'=>'2',
             'title'=>'Alicia',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Arte, música y películas',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
@@ -275,92 +275,92 @@ class DatabaseSeeder extends Seeder
 
 
         Workart::factory(1)->create([
-            'artist'=>'Aluhé Molina',
+            'artist_id'=>'3',
             'title'=>'Verano',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Escenas cotidianas',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Aluhé Molina',
+            'artist_id'=>'3',
             'title'=>'Gata con Botas',
             'imageworkart'=>'',
             'edition'=>'Edición limitada',
             'price'=>'€60,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Animales',
-            'size'=>'Grande',
+            'category'=>'Grande',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Aluhé Molina',
+            'artist_id'=>'3',
             'title'=>'Florista Verde',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€15,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Escenas cotidianas',
-            'size'=>'Pequeño',
+            'category'=>'Pequeño',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Aluhé Molina',
+            'artist_id'=>'3',
             'title'=>'Boga',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€15,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Escenas cotidianas',
-            'size'=>'Pequeño',
+            'category'=>'Pequeño',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Aluhé Molina',
+            'artist_id'=>'3',
             'title'=>'Me pesa la ciudad',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€28,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Paisajes y arquitectura',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Aluhé Molina',
+            'artist_id'=>'3',
             'title'=>'Casa',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€14,00 EUR',
             'technique'=>'Dibujo',
             'theme'=>'Paisajes y arquitecturas',
-            'size'=>'Pequeño',
+            'category'=>'Pequeño',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Aluhé Molina',
+            'artist_id'=>'3',
             'title'=>'Casa',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€30,00 EUR',
             'technique'=>'Collage',
             'theme'=>'Personas y retratos',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
@@ -374,79 +374,79 @@ class DatabaseSeeder extends Seeder
 
 
         Workart::factory(1)->create([
-            'artist'=>'Sara Agustina',
+            'artist_id'=>'4',
             'title'=>'Diosa del Sol',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€88,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Grande',
+            'category'=>'Grande',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Sara Agustina',
+            'artist_id'=>'4',
             'title'=>'Amor Libre',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€72,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Grande',
+            'category'=>'Grande',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Sara Agustina',
+            'artist_id'=>'4',
             'title'=>'Puta Galáctica',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€78,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Grande',
+            'category'=>'Grande',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Sara Agustina',
+            'artist_id'=>'4',
             'title'=>'Este cuerpo es mío',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€45,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Sara Agustina',
+            'artist_id'=>'4',
             'title'=>'Narrativa trans',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€45,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Paisajes y arquitecturas',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Sara Agustina',
+            'artist_id'=>'4',
             'title'=>'Raizal',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€30,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
@@ -460,53 +460,53 @@ class DatabaseSeeder extends Seeder
 
 
         Workart::factory(1)->create([
-            'artist'=>'Emiliano Montani',
+            'artist_id'=>'5',
             'title'=>'Descubrir',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€24,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Geométrico',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Emiliano Montani',
+            'artist_id'=>'5',
             'title'=>'Explorar',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€24,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Geométrico',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Emiliano Montani',
+            'artist_id'=>'5',
             'title'=>'Sumergirse',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€18,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Geométrico',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Emiliano Montani',
+            'artist_id'=>'5',
             'title'=>'Barbarie',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€27,00 EUR',
             'technique'=>'Impresión digital',
             'theme'=>'Geométrico',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
@@ -520,54 +520,54 @@ class DatabaseSeeder extends Seeder
 
 
         Workart::factory(1)->create([
-            'artist'=>'Rick Wessels',
+            'artist_id'=>'6',
             'title'=>'Into the mountains II',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€22,00 EUR',
             'technique'=>'Collage digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Rick Wessels',
+            'artist_id'=>'6',
             'title'=>'Untrue',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€18,00 EUR',
             'technique'=>'Collage digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Rick Wessels',
+            'artist_id'=>'6',
             'title'=>'Unbroken',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€23,00 EUR',
             'technique'=>'Collage digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
 
         Workart::factory(1)->create([
-            'artist'=>'Rick Wessels',
+            'artist_id'=>'6',
             'title'=>'Lady In Venice III',
             'imageworkart'=>'',
             'edition'=>'Edición abierta',
             'price'=>'€26,00 EUR',
             'technique'=>'Collage digital',
             'theme'=>'Personas y retratos',
-            'size'=>'Mediano',
+            'category'=>'Mediano',
             'others'=>'',
             'carousel'=>'0',
         ]);
@@ -581,27 +581,27 @@ class DatabaseSeeder extends Seeder
 
 
         Workart::factory(1)->create([
-            'artist'=>'Camila Lozano',
+            'artist_id'=>'7',
             'title'=>'Fly Away',
             'imageworkart'=>'',
             'edition'=>'Pieza única',
             'price'=>'€30,00 EUR',
             'technique'=>'Serigrafía',
             'theme'=>'Geométrico',
-            'size'=>'Grande',
+            'category'=>'Grande',
             'others'=>'',
             'carousel'=>'0',
         ]);
 
         Workart::factory(1)->create([
-            'artist'=>'Camila Lozano',
+            'artist_id'=>'7',
             'title'=>'Yin Yang',
             'imageworkart'=>'',
             'edition'=>'Pieza única',
             'price'=>'€35,00 EUR',
             'technique'=>'Serigrafía',
             'theme'=>'Geométrico',
-            'size'=>'Grande',
+            'category'=>'Grande',
             'others'=>'',
             'carousel'=>'0',
         ]);

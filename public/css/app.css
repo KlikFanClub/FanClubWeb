@@ -10482,7 +10482,8 @@ button {
   padding: 0.5rem 1rem;
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus {
   text-decoration: none;
   background-color: #ced4da;
   transition: all 0.5s;
@@ -10741,6 +10742,10 @@ body {
   background-color: white;
   font-family: "Source Sans Pro", sans-serif;
   height: 100vh;
+}
+
+.iconoSad {
+  margin-left: 3%;
 }
 
 #app {

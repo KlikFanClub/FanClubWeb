@@ -92,7 +92,7 @@
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label for="theme">them</label>
+                            <label for="theme">Tema</label>
                         </div>
                         <div class="col-75">
                             <select id="theme" name="theme" required>
