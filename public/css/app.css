@@ -10666,6 +10666,10 @@ footer {
   transform: translateY(-50px);
 }
 
+.punto {
+  list-style: none !important;
+}
+
 .footerCR {
   display: flex;
   justify-content: flex-end;
@@ -10738,6 +10742,10 @@ body {
   background-color: white;
   font-family: "Source Sans Pro", sans-serif;
   height: 100vh;
+}
+
+.iconoSad {
+  margin-left: 3%;
 }
 
 #app {

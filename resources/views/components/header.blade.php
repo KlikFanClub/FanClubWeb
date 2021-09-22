@@ -32,7 +32,7 @@
           <a class="nav-link text-dark h5" href="{{ url('artists') }}">ARTISTAS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark h5" href="{{ url('agenda') }}">EVENTOS</a>
+          <a class="nav-link text-dark h5" href="{{url('agenda') }}">EVENTOS</a>
         </li>
         <li class="nav-item ">
           <a class="nav-link text-dark h5" href="{{ url('blog') }}">BLOG</a>

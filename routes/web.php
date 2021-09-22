@@ -28,6 +28,9 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/agenda', [HomeController::class, 'pageConstructions'])->name('pageConstructions');
+Route::get('/blog', [HomeController::class, 'pageConstructions'])->name('pageConstructions');
+Route::get('/contactus', [HomeController::class, 'contact'])->name('contact');
 
 //Routes Workart
 
@@ -53,3 +56,5 @@ Route::get('/artists/show/{id}', [ArtistController::class, 'show'])->name('showA
 //Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');
 /* Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
 Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store'); */
+
+
