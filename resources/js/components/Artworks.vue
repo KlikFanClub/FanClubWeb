@@ -1,11 +1,27 @@
 <template>
   <div class="catalogue_artworks">
     <div class="artwork_card" v-for="artwork in filteredArtworks">
-      <img class="artwork_img" :src="'storage/' + artwork.imageworkart" alt="" />
+      <div class="artwork_imgWrapper">
+        <div class="artwork_imgContainer">
+          <img
+            class="artwork_img"
+            :src="'storage/' + artwork.imageworkart"
+            alt=""
+          />
+        </div>
+      </div>
       <span class="artwork_title">{{ artwork.title }}</span>
       <span class="artwork_artistName">{{ artwork.artist.name }}</span>
       <!-- <span class="artwork_date">10/12/2016</span> -->
       <span class="artwork_price">{{ artwork.price }}</span>
+      <div v-if="isLoggedIn" class="action_buttons">
+        <a :href="'/workarts/edit/' + artwork.id">
+          <i class="far fa-edit"></i>
+        </a>
+        <a :href="'/workarts/delete/' + artwork.id">
+          <i class="fas fa-trash-alt"></i>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +36,7 @@ export default {
     return {
       allArtworks: [],
       filteredArtworks: [],
+      isLoggedIn: null,
     };
   },
   methods: {
@@ -47,6 +64,7 @@ export default {
       this.filteredArtworks = filteredArtworks;
     });
     this.$root.$refs.Artworks = this;
+    this.isLoggedIn = window.authCheck;
   },
 };
 </script>
@@ -67,13 +85,20 @@ export default {
   }
 
   @media (max-width: 1023px) {
-    grid-template-columns: 100%;
+    grid-template-columns: 50% 50%;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
 
   @media (max-width: 768px) {
+    grid-template-columns: 50% 50%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 450px) {
     grid-template-columns: 100%;
     max-width: 80%;
     margin-left: auto;
@@ -100,8 +125,17 @@ export default {
   font-size: 20px;
 }
 
+.artwork_imgContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
 .artwork_img {
   width: 100%;
+  object-fit: cover;
 }
 
 .artwork_title {
