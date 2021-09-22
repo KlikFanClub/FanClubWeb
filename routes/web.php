@@ -9,6 +9,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\New_Artist_Mail;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

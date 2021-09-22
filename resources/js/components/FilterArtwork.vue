@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { userService } from "../services/userService";
 import { artistService } from "../services/artistService";
 import { eventBus } from "../app.js";
 
@@ -44,42 +45,36 @@ export default {
         {
           id: 1,
           name: "todos los productos",
-          class: "all",
           subMenu: [],
           isOpen: true,
         },
         {
           id: 2,
           name: "edición",
-          class: "edition",
           subMenu: ["Edición Limitada", "Edición Abierta", "Pieza única"],
           isOpen: false,
         },
         {
           id: 3,
           name: "tamaño",
-          class: "size",
           subMenu: ["Pequeño", "Mediano", "Grande", "Muy Grande"],
           isOpen: false,
         },
         {
           id: 4,
           name: "precio",
-          class: "price",
           subMenu: ["<25€", "25-50€", "50-100€", "100-150€", "+150€"],
           isOpen: false,
         },
         {
           id: 5,
           name: "técnica",
-          class: "technique",
           subMenu: ["Dibujo", "Impresión Digital", "Pintura", "Grabado"],
           isOpen: false,
         },
         {
           id: 6,
           name: "temas",
-          class: "themes",
           subMenu: [
             "Animales",
             "Personas y retratos",
@@ -91,14 +86,12 @@ export default {
         {
           id: 7,
           name: "otros",
-          class: "other",
           subMenu: [],
           isOpen: false,
         },
         {
           id: 8,
           name: "artistas",
-          class: "artists",
           subMenu: null,
           isOpen: false,
         },
@@ -113,7 +106,7 @@ export default {
       this.isOpen = !this.isOpen;
     },
     toggleSubMenu(menuItem) {
-      if(menuItem.name === "todos los productos") {
+      if (menuItem.name === "todos los productos") {
         this.$root.$refs.Artworks.restoreArtworks();
       }
       this.menuItems.forEach((item) => {
@@ -136,7 +129,7 @@ export default {
         this.namesArray.push(item.name);
       });
       this.namesArray.sort();
-      this.setArtistsNames()
+      this.setArtistsNames();
     },
     setArtistsNames() {
       this.menuItems.filter((item) => {
@@ -146,8 +139,13 @@ export default {
       });
     },
     filterByArtist(artistName) {
-      eventBus.$emit('filter', artistName);
-    }
+      eventBus.$emit("filter", artistName);
+    },
+    async getUserStatus() {
+      const request = await userService.getUserStatus();
+      console.log(request);
+      return request;
+    },
   },
   created() {
     this.handleView();
@@ -155,6 +153,8 @@ export default {
       this.isOpen = false;
     }
     this.getArtistsNames();
+    /* this.getUserStatus(); */
+    
   },
 };
 </script>

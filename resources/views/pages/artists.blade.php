@@ -31,3 +31,9 @@
     @endforeach
 
 @endsection
+
+@if (Auth::user() && Auth::user()->isAdmin)
+  <script>
+    window.authCheck = {!! json_encode($authCheck) !!};
+  </script>
+@endif
