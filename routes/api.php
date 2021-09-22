@@ -4,7 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WorkartController;
 use App\Models\Artist;
+use App\Models\User;
 use App\Models\Workart;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,5 +43,7 @@ Route::get('artists/{id}', function ($id) {
   $artist = Artist::findOrFail($id);
   return response()->json($artist);
 });
+
+Route::get('user_status',[User::class, 'isLoggedIn'])/* ->middleware('auth:api') */;
 
 Route::get('artists/{id}/workarts', [WorkartController::class, 'getWorkarts']);

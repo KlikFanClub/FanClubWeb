@@ -27,6 +27,7 @@ html {
 body {
   background-color: white;
   font-family: $font-family-sans-serif;
+  height: 100vh;
 }
 
 .iconoSad{
@@ -34,3 +35,10 @@ body {
   
 }
 
+#app {
+  height: 100vh;
+}
+
+a:link{
+    text-decoration: none !important;
+}

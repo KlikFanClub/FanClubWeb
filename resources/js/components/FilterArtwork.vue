@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { userService } from "../services/userService";
 import { artistService } from "../services/artistService";
 import { eventBus } from "../app.js";
 
@@ -45,7 +46,7 @@ export default {
           id: 1,
           name: "todos los productos",
           subMenu: [],
-          isOpen: false,
+          isOpen: true,
         },
         {
           id: 2,
@@ -99,12 +100,15 @@ export default {
   },
   methods: {
     handleView() {
-      this.mobileView = window.innerWidth <= 768;
+      this.mobileView = window.innerWidth <= 1023;
     },
     toggleMenu() {
       this.isOpen = !this.isOpen;
     },
     toggleSubMenu(menuItem) {
+      if (menuItem.name === "todos los productos") {
+        this.$root.$refs.Artworks.restoreArtworks();
+      }
       this.menuItems.forEach((item) => {
         if (item === menuItem) {
           menuItem.isOpen = !menuItem.isOpen;
@@ -125,7 +129,7 @@ export default {
         this.namesArray.push(item.name);
       });
       this.namesArray.sort();
-      this.setArtistsNames()
+      this.setArtistsNames();
     },
     setArtistsNames() {
       this.menuItems.filter((item) => {
@@ -135,8 +139,13 @@ export default {
       });
     },
     filterByArtist(artistName) {
-      eventBus.$emit('filter', artistName);
-    }
+      eventBus.$emit("filter", artistName);
+    },
+    async getUserStatus() {
+      const request = await userService.getUserStatus();
+      console.log(request);
+      return request;
+    },
   },
   created() {
     this.handleView();
@@ -144,6 +153,8 @@ export default {
       this.isOpen = false;
     }
     this.getArtistsNames();
+    /* this.getUserStatus(); */
+    
   },
 };
 </script>
@@ -162,7 +173,7 @@ export default {
   background-color: rgb(226, 226, 226);
   -webkit-box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.25);
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     border-radius: 6px;
     position: fixed;
     left: unset;
@@ -172,7 +183,7 @@ export default {
   }
 }
 .mobile_filterBtn {
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     text-decoration: none;
     color: initial;
     border: solid 1px rgb(175, 175, 175);
@@ -208,6 +219,11 @@ export default {
   margin: auto -20px;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #3f88f7;
+  }
 }
 
 .open {
@@ -237,5 +253,10 @@ export default {
   margin: auto -20px;
   font-size: 18px;
   padding: 4px 20px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #a45fff;
+  }
 }
 </style>

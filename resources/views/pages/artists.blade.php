@@ -1,7 +1,6 @@
 @extends ('layouts.app')
 @section('content')
 
-    <x-header />
     @if (Auth::user())
     @if (Auth::user()->isAdmin)
     <div>
@@ -30,5 +29,11 @@
             @endif
         @endif
     @endforeach
-    <x-footer />
+
 @endsection
+
+@if (Auth::user() && Auth::user()->isAdmin)
+  <script>
+    window.authCheck = {!! json_encode($authCheck) !!};
+  </script>
+@endif

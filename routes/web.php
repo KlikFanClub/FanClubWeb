@@ -9,6 +9,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\New_Artist_Mail;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +30,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/agenda', [HomeController::class, 'pageConstructions'])->name('pageConstructions');
 Route::get('/blog', [HomeController::class, 'pageConstructions'])->name('pageConstructions');
+Route::get('/contactus', [HomeController::class, 'contact'])->name('contact');
 
 //Routes Workart
 
@@ -47,6 +50,8 @@ Route::get('/artists/edit/{id}', [ArtistController::class, 'edit'])->middleware(
 Route::put('/artists/update/{id}', [ArtistController::class, 'update'])->middleware('admin')->name('updateArtist');
 Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middleware('admin')->name('deleteArtist');
 Route::get('/artists/show/{id}', [ArtistController::class, 'show'])->name('showArtist');
+
+Route::get('/prueba', [User::class, 'isLoggedIn']);
 
 //Send mails
 
