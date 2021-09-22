@@ -127,6 +127,13 @@
                 <div>
                     <img class="introduction_img" src="{{ asset('img/home/about_us/fanclublocal.png') }}" alt="">
                 </div>
+                <span class="artistName">{{ $artist->name }} </span>
+                <a class="artworkDetailsBtn" href="{{ route('showArtist', $artist->id)}}">Ver sus obras</a>
+              </div>
+         
+          <div class="artworkCard">
+            <div>
+              <img class="artwork" src="{{ asset('img/home/highlighted/Narrativas_trans_2.png')}}" alt="">
             </div>
 
             <div class="objectives_container">
