@@ -36,22 +36,22 @@
 
       <!-- Facebook -->
       <div class="socialButtons">
-        <a type="button" class="btnFacebook" href="#!">
-          <i class="fab fa-facebook-f iconos"></i>
+        <a type="button" class="btnInstagram m-2" target="_blank" href="https://www.instagram.com/">
+            <i class="fab fa-instagram fa-lg iconos"></i>
         </a>
-        <a type="button" class="btnTweeter" href="#!">
+        <a type="button" class="btnFacebook m-2" target="_blank" href="https://www.facebook.com/">
+            <i class="fab fa-facebook-f iconos"></i>
+          </a>
+        <a type="button" class="btnTweeter m-2" href="https://twitter.com/?lang=es">
           <i class="fab fa-twitter fa-lg iconos"></i>
         </a>
-        <a type="button" class="btnInstagram" href="#!">
-          <i class="fab fa-instagram fa-lg iconos"></i>
-        </a>
-        <a type="button" class="btnSpotify" href="#!">
+        <a type="button" class="btnSpotify m-2" href="https://www.spotify.com/es/">
           <i class="fa fa-spotify fa-lg iconos"></i>
         </a>
       </div>
     </div>
     <div class="rightFooter">
-      <div class="newsletter">
+      {{-- <div class="newsletter">
         <p>Si no quieres perderte lo que pasa en FAN CLUB,
           apúntate a nuestra newsletter!</p>
         <div class="login_bar">
@@ -60,7 +60,7 @@
           <span class="subscribing"></span>
           <span class="thanks">Gracias! pronto recibirás noticias nuestras!</span>
         </div>
-      </div>
+      </div> --}}
       <!-- Copyright -->
       <div class="footerCR text-center py-3">© 2021 Copyright:
         <a> FanClubStore</a>
@@ -81,7 +81,7 @@
         </li>
       @endif
     @else
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown punto">
         <a id="dropdownMenuButton" class="nav-link dropdown-toggle iconos" href="#" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false" v-pre>
           {{ Auth::user()->name }}
