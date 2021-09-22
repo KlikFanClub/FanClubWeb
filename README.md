@@ -1,6 +1,6 @@
 # FanClubWeb
 
-<img width="1422" alt="Image" src="https://github.com/KlikFanClub/FanClubWeb/blob/master/public/img/home/logo/fan-club.png">
+<img width="222" alt="Image" src="https://github.com/KlikFanClub/FanClubWeb/blob/master/public/img/home/logo/fan-club.png">
 
 <!-- [![wakatime](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb.svg)](https://wakatime.com/badge/github/JoanRecorda/FanClubWeb) -->
 
