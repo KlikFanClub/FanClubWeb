@@ -17,7 +17,10 @@ class ArtistController extends Controller
    */
   public function index()
   {
-    $authCheck = Auth::check();
+    $authCheck = null;
+    if(Auth::check() && Auth::user()->isAdmin){
+      $authCheck = Auth::check();
+    };
     $artists = Artist::all()->sortBy('name');
     return view('pages.artists', compact('artists', 'authCheck'));
   }

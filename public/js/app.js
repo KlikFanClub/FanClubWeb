@@ -2174,6 +2174,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     });
     this.$root.$refs.Artworks = this;
     this.isLoggedIn = window.authCheck;
+    console.log(window.authCheck);
   }
 });
 

@@ -61,6 +61,7 @@ export default {
     });
     this.$root.$refs.Artworks = this;
     this.isLoggedIn = window.authCheck;
+    console.log(window.authCheck);
   },
 };
 </script>

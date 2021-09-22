@@ -17,7 +17,10 @@ class WorkartController extends Controller
    */
   public function index()
   {
-    $authCheck = Auth::check();
+    $authCheck = null;
+    if(Auth::check() && Auth::user()->isAdmin){
+      $authCheck = Auth::check();
+    };
     $workarts = Workart::all()->sortByDesc('created_at');
     return view('pages.workarts', compact('workarts', 'authCheck'));
   }
