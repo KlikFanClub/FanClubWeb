@@ -2,7 +2,10 @@
 
 @section ('content')
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b8aa7e5de89c4c95d5532342af75c84cbd2c71
     <div class="form-container">
 
         <form method="POST" action="{{route ('storeArtist')}}" enctype="multipart/form-data">
@@ -130,4 +133,8 @@
         </form>
     </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b8b8aa7e5de89c4c95d5532342af75c84cbd2c71
 @endsection
