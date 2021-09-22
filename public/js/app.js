@@ -2102,6 +2102,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2109,7 +2117,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       allArtworks: [],
-      filteredArtworks: []
+      filteredArtworks: [],
+      isLoggedIn: null
     };
   },
   methods: {
@@ -2164,6 +2173,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _this3.filteredArtworks = filteredArtworks;
     });
     this.$root.$refs.Artworks = this;
+    this.isLoggedIn = window.authCheck;
   }
 });
 
@@ -2182,8 +2192,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_artistService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/artistService */ "./resources/js/services/artistService.js");
-/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.js */ "./resources/js/app.js");
+/* harmony import */ var _services_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/userService */ "./resources/js/services/userService.js");
+/* harmony import */ var _services_artistService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/artistService */ "./resources/js/services/artistService.js");
+/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.js */ "./resources/js/app.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2223,6 +2234,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FilterArtwork",
   data: function data() {
@@ -2233,49 +2245,41 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       menuItems: [{
         id: 1,
         name: "todos los productos",
-        "class": "all",
         subMenu: [],
         isOpen: true
       }, {
         id: 2,
         name: "edición",
-        "class": "edition",
         subMenu: ["Edición Limitada", "Edición Abierta", "Pieza única"],
         isOpen: false
       }, {
         id: 3,
         name: "tamaño",
-        "class": "size",
         subMenu: ["Pequeño", "Mediano", "Grande", "Muy Grande"],
         isOpen: false
       }, {
         id: 4,
         name: "precio",
-        "class": "price",
         subMenu: ["<25€", "25-50€", "50-100€", "100-150€", "+150€"],
         isOpen: false
       }, {
         id: 5,
         name: "técnica",
-        "class": "technique",
         subMenu: ["Dibujo", "Impresión Digital", "Pintura", "Grabado"],
         isOpen: false
       }, {
         id: 6,
         name: "temas",
-        "class": "themes",
         subMenu: ["Animales", "Personas y retratos", "Blanco y negro", "Flores y plantas"],
         isOpen: false
       }, {
         id: 7,
         name: "otros",
-        "class": "other",
         subMenu: [],
         isOpen: false
       }, {
         id: 8,
         name: "artistas",
-        "class": "artists",
         subMenu: null,
         isOpen: false
       }]
@@ -2317,7 +2321,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _services_artistService__WEBPACK_IMPORTED_MODULE_1__.artistService.getAllArtists();
+                return _services_artistService__WEBPACK_IMPORTED_MODULE_2__.artistService.getAllArtists();
 
               case 2:
                 request = _context.sent;
@@ -2347,7 +2351,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     filterByArtist: function filterByArtist(artistName) {
-      _app_js__WEBPACK_IMPORTED_MODULE_2__.eventBus.$emit('filter', artistName);
+      _app_js__WEBPACK_IMPORTED_MODULE_3__.eventBus.$emit("filter", artistName);
+    },
+    getUserStatus: function getUserStatus() {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var request;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _services_userService__WEBPACK_IMPORTED_MODULE_1__.userService.getUserStatus();
+
+              case 2:
+                request = _context2.sent;
+                console.log(request);
+                return _context2.abrupt("return", request);
+
+              case 5:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   created: function created() {
@@ -2358,6 +2385,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
 
     this.getArtistsNames();
+    /* this.getUserStatus(); */
   }
 });
 
@@ -2498,6 +2526,29 @@ var artworkService = {
   },
   getArtwork: function getArtwork(id) {
     return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/workarts/' + id);
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/services/userService.js":
+/*!**********************************************!*\
+  !*** ./resources/js/services/userService.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "userService": () => (/* binding */ userService)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+var baseURL = 'http://127.0.0.1:8000/';
+var userService = {
+  getUserStatus: function getUserStatus() {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/user_status');
   }
 };
 
@@ -39323,7 +39374,19 @@ var render = function() {
         _vm._v(" "),
         _c("span", { staticClass: "artwork_price" }, [
           _vm._v(_vm._s(artwork.price))
-        ])
+        ]),
+        _vm._v(" "),
+        _vm.isLoggedIn
+          ? _c("div", { staticClass: "action_buttons" }, [
+              _c("a", { attrs: { href: "/workarts/edit/" + artwork.id } }, [
+                _c("i", { staticClass: "far fa-edit" })
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "/workarts/delete/" + artwork.id } }, [
+                _c("i", { staticClass: "fas fa-trash-alt" })
+              ])
+            ])
+          : _vm._e()
       ])
     }),
     0

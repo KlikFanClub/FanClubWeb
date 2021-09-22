@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Workart;
 use Illuminate\Http\Request;
 use App\Models\Artist;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class WorkartController extends Controller
@@ -16,8 +17,12 @@ class WorkartController extends Controller
    */
   public function index()
   {
+    $authCheck = null;
+    if(Auth::check() && Auth::user()->isAdmin){
+      $authCheck = Auth::check();
+    };
     $workarts = Workart::all()->sortByDesc('created_at');
-    return view('pages.workarts', compact('workarts'));
+    return view('pages.workarts', compact('workarts', 'authCheck'));
   }
 
   /**
