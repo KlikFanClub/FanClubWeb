@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <x-header />
-
+<main>
     <div class="form-container">
         <form method="POST" action="{{ route('updateArtist', $artist->id) }}" enctype="multipart/form-data">
             @csrf
@@ -136,7 +134,7 @@
                     </div>
         </form>
     </div>
-
+</main>
     <script>
         function previewImage(nb) {
             var reader = new FileReader();
@@ -146,5 +144,4 @@
             };
         }
     </script>
-
 @endsection

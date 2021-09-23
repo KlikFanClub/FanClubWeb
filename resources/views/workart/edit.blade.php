@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<main>
     <div class="form-container">
         <form method="POST" action="{{ route('updateWorkart', $workart->id) }}" enctype="multipart/form-data">
             @csrf
@@ -127,7 +128,7 @@
                 </div>
         </form>
     </div>
-
+</main>
     <script>
         function previewImage(nb) {
             var reader = new FileReader();
@@ -135,7 +136,6 @@
             reader.onload = function(e) {
                 document.getElementById('uploadPreview' + nb).src = e.target.result;
             };
-        }
+        }    
     </script>
-
 @endsection

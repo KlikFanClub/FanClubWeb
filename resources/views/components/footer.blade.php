@@ -1,6 +1,6 @@
 <!-- Footer -->
 <div class="mainFatherFooterContainer">
-  <footer class="footer">
+  <footer class="footer mt-5">
     <div class="footerNav">
       <!-- logo -->
       <img class="footerLogo" src="http://127.0.0.1:8000/img/home/logo/fan-club.png" alt="footerLogo">
@@ -70,6 +70,7 @@
 
 
     @guest
+    <ul>
       @if (Route::has('login'))
         <li class="nav-item">
           <a class="nav-link iconos" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -95,10 +96,8 @@
             @csrf
           </form>
         </div>
+      </ul>
       @endguest
-    </li>
-
-  </footer>
-
+   </footer>
 </div>
 <!-- Footer -->

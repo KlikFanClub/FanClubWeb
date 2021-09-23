@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<main>
 <div class="registerContainer container">
     <div class="formulario">
         <div class="col-md-8">
@@ -102,4 +103,5 @@
         </div>
     </div>
 </div>
+</main>
 @endsection

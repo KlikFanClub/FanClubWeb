@@ -73,7 +73,7 @@ class WorkartTest extends TestCase
       'artist_id' => 1
     ]);
 
-    $this->delete('workarts/delete/1');
+    $this->get('workarts/delete/1');
     $workarts = Workart::all();
     $this->assertCount(1, $workarts);
   }
@@ -172,7 +172,7 @@ class WorkartTest extends TestCase
       'category' => 'asd',
       'artist_id' => 1
     ]);
-    
+
     $newTitle = 'Nuevo Título';
     $this->put('workarts/update/1', [
       'title' => $newTitle,
