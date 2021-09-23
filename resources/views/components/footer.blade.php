@@ -37,11 +37,11 @@
       <!-- Facebook -->
       <div class="socialButtons">
         <a type="button" class="btnInstagram m-2" target="_blank" href="https://www.instagram.com/fanclubtienda/">
-            <i class="fab fa-instagram fa-lg iconos"></i>
+          <i class="fab fa-instagram fa-lg iconos"></i>
         </a>
         <a type="button" class="btnFacebook m-2" target="_blank" href="https://www.facebook.com/fanclubtienda/">
-            <i class="fab fa-facebook-f iconos"></i>
-          </a>
+          <i class="fab fa-facebook-f iconos"></i>
+        </a>
         <a type="button" class="btnTweeter m-2" href="https://twitter.com/?lang=es">
           <i class="fab fa-twitter fa-lg iconos"></i>
         </a>
@@ -51,16 +51,6 @@
       </div>
     </div>
     <div class="rightFooter">
-      {{-- <div class="newsletter">
-        <p>Si no quieres perderte lo que pasa en FAN CLUB,
-          apúntate a nuestra newsletter!</p>
-        <div class="login_bar">
-          <input type="email" class="login">super-email@gmail.com
-          <span class="subscribe_button" onclick="subscribeOnClick()">SUBSCRIBIRME</span>
-          <span class="subscribing"></span>
-          <span class="thanks">Gracias! pronto recibirás noticias nuestras!</span>
-        </div>
-      </div> --}}
       <!-- Copyright -->
       <div class="footerCR text-center py-3">© 2021 Copyright:
         <a> FanClubStore</a>
@@ -70,34 +60,34 @@
 
 
     @guest
-    <ul>
-      @if (Route::has('login'))
-        <li class="nav-item">
-          <a class="nav-link iconos" href="{{ route('login') }}">{{ __('Login') }}</a>
-        </li>
-      @endif
-      @if (Route::has('register'))
-        <li class="nav-item d-none">
-          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-        </li>
-      @endif
-    @else
-      <li class="nav-item dropdown punto">
-        <a id="dropdownMenuButton" class="nav-link dropdown-toggle iconos" href="#" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" v-pre>
-          {{ Auth::user()->name }}
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
+      <ul>
+        @if (Route::has('login'))
+          <li class="nav-item">
+            <a class="nav-link iconos" href="{{ route('login') }}">{{ __('Login') }}</a>
+          </li>
+        @endif
+        @if (Route::has('register'))
+          <li class="nav-item d-none">
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+          </li>
+        @endif
+      @else
+        <li class="nav-item dropdown punto">
+          <a id="dropdownMenuButton" class="nav-link dropdown-toggle iconos" href="#" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" v-pre>
+            {{ Auth::user()->name }}
           </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-          </form>
-        </div>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+            </form>
+          </div>
       </ul>
-      @endguest
-   </footer>
+    @endguest
+  </footer>
 </div>
 <!-- Footer -->

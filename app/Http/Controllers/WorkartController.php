@@ -56,7 +56,6 @@ class WorkartController extends Controller
       'category' => 'required',
       'carousel' => '',
     ]);
-        // dd($request);
 
     $workart = Workart::create([
       'title' => $request->title,
@@ -85,7 +84,7 @@ class WorkartController extends Controller
    */
   public function show(Workart $workart)
   {
-    //
+    
   }
 
   /**

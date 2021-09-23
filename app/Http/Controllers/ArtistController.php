@@ -85,7 +85,6 @@ class ArtistController extends Controller
   {
     $artist=Artist::find($id);
     $workarts=Workart::whereArtistId($id)->get();
-    //dd($workarts);
     
     return view ('artist.show', compact ('artist', 'workarts'));
   }
