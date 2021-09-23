@@ -22,8 +22,6 @@ use App\Models\User;
 |
 */
 
-
-
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -53,8 +51,4 @@ Route::get('/artists/show/{id}', [ArtistController::class, 'show'])->name('showA
 
 //Send mails
 
-//Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');
-/* Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
-Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store'); */
-
-
+Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');
