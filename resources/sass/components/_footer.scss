@@ -1,214 +1,213 @@
 .mainFatherFooterContainer {
-    display: flex;
-    justify-content: center;
-    position:absolute;
-    bottom: 0em;
-    width: 100%;
-    /* margin: 0px auto; */
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0em;
+  width: 100%;
+  /* margin: 0px auto; */
 }
 
 
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    /* max-width: 1440px; */
-    width: 100%;
-    background-color: #E9E9E9 !important;
-    font-size: 0.8rem;
-    font-weight: 200;
-    color: $fcdark;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* max-width: 1440px; */
+  width: 100%;
+  background-color: #E9E9E9 !important;
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: $fcdark;
 }
 
 .footerNav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .footerLogo {
-    width: 3.5em;
-    margin: 1em 2em 1em 1em;
+  width: 3.5em;
+  margin: 1em 2em 1em 1em;
 }
 
 .pageslinks {
-    align-items: center;
+  align-items: center;
 }
 
 .txtLinks {
-    margin-left: 2em;
-    color: $fcdark;
-    background-color: transparent;
-    text-decoration: none;
+  margin-left: 2em;
+  color: $fcdark;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 .socialLinks {
-    display: flex;
-    // margin-top: -98px;
-    // margin-left: 27px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    // justify-content: center;
-    align-items: center;
-    padding: 2em 4em;
-    color: $fcdark;
+  display: flex;
+  // margin-top: -98px;
+  // margin-left: 27px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  // justify-content: center;
+  align-items: center;
+  padding: 2em 4em;
+  color: $fcdark;
 }
 
 .socialButtons {
-    font-size: 1.5rem;
-    color: $fcdark !important;
+  font-size: 1.5rem;
+  color: $fcdark !important;
 }
 
 .adressInfo {
-    font-family: Roboto !important;
-    left: 345px;
-    bottom: 86px;
+  font-family: Roboto !important;
+  left: 345px;
+  bottom: 86px;
 }
 
 .newsletter {
-    display: block;
-    // justify-content: center;
-    // margin-top: -59px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    // align-content: center;
-    // align-items: center;
-    padding-left: 2em;
-    padding-right: 2em;
+  display: block;
+  // justify-content: center;
+  // margin-top: -59px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  // align-content: center;
+  // align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .login_bar {
-    width: 21em;
-    height: 2em;
-    background: white;
-    border-radius: 10px;
-    // top: 50%;
-    position: relative;
-    // z-index: 1;
-    overflow: hidden;
+  width: 21em;
+  height: 2em;
+  background: white;
+  border-radius: 10px;
+  // top: 50%;
+  position: relative;
+  // z-index: 1;
+  overflow: hidden;
 }
 
 .login {
-    background: transparent;
-    position: absolute;
-    height: 100%;
-    width: 190px;
-    padding-left: 10px;
-    text-align: left;
-    line-height: 50px;
-    vertical-align: middle;
-    z-index: 10;
-    -webkit-transition: transform 0.2s ease-in-out 0s;
-    -moz-transition: transform 0.2s ease-in-out 0s;
-    -o-transition: transform 0.2s ease-in-out 0s;
-    transition: transform 0.2s ease-in-out 0s;
+  background: transparent;
+  position: absolute;
+  height: 100%;
+  width: 190px;
+  padding-left: 10px;
+  text-align: left;
+  line-height: 50px;
+  vertical-align: middle;
+  z-index: 10;
+  -webkit-transition: transform 0.2s ease-in-out 0s;
+  -moz-transition: transform 0.2s ease-in-out 0s;
+  -o-transition: transform 0.2s ease-in-out 0s;
+  transition: transform 0.2s ease-in-out 0s;
 }
 
 .login_active {
-    -webkit-transform: translateX(300px);
-    -moz-transform: translateX(300px);
-    -ms-transform: translateX(300px);
-    -o-transform: translateX(300px);
-    transform: translateX(300px);
+  -webkit-transform: translateX(300px);
+  -moz-transform: translateX(300px);
+  -ms-transform: translateX(300px);
+  -o-transform: translateX(300px);
+  transform: translateX(300px);
 }
 
 .subscribe_button:hover {
-    background-color: #222a33;
-    cursor: pointer;
+  background-color: #222a33;
+  cursor: pointer;
 }
 
 .subscribe_button {
-    background: #171d23;
-    position: absolute;
-    // top: -50px;
-    left: 200px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    height: 150px;
-    width: 100px;
-    text-align: center;
-    line-height: -2px;
-    vertical-align: middle;
-    color: white;
-    -webkit-transition: transform 0.5s ease 0s;
-    -moz-transition: transform 0.5s ease 0s;
-    -o-transition: transform 0.5s ease 0s;
-    transition: transform 0.5s ease 0s;
+  background: #171d23;
+  position: absolute;
+  // top: -50px;
+  left: 200px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 150px;
+  width: 100px;
+  text-align: center;
+  line-height: -2px;
+  vertical-align: middle;
+  color: white;
+  -webkit-transition: transform 0.5s ease 0s;
+  -moz-transition: transform 0.5s ease 0s;
+  -o-transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
 }
 
 .subscribe_button_active {
-    -webkit-transform: translateY(50px);
-    -moz-transform: translateY(50px);
-    -ms-transform: translateY(50px);
-    -o-transform: translateY(50px);
-    transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  transform: translateY(50px);
 }
 
 .subscribing {
-    background: #f9f9f9 !important;
-    height: 100%;
-    width: 300px;
-    z-index: 5;
-    left: -300px;
-    display: inline-block;
-    -webkit-transition: transform 1s ease 0s;
-    -moz-transition: transform 1s ease 0s;
-    -o-transition: transform 1s ease 0s;
-    transition: transform 1s ease 0s;
+  background: #f9f9f9 !important;
+  height: 100%;
+  width: 300px;
+  z-index: 5;
+  left: -300px;
+  display: inline-block;
+  -webkit-transition: transform 1s ease 0s;
+  -moz-transition: transform 1s ease 0s;
+  -o-transition: transform 1s ease 0s;
+  transition: transform 1s ease 0s;
 }
 
 .subscribing_active {
-    -webkit-transform: translateX(300px);
-    -moz-transform: translateX(300px);
-    -ms-transform: translateX(300px);
-    -o-transform: translateX(300px);
-    transform: translateX(300px);
+  -webkit-transform: translateX(300px);
+  -moz-transform: translateX(300px);
+  -ms-transform: translateX(300px);
+  -o-transform: translateX(300px);
+  transform: translateX(300px);
 }
 
 .thanks {
-    background: transparent;
-    height: 100%;
-    width: 300px;
-    z-index: 5;
-    text-align: left;
-    line-height: 50px;
-    vertical-align: middle;
-    padding-left: 10px;
-    position: absolute;
-    top: 50px;
-    display: inline-block;
-    -webkit-transition: transform 0.5s ease 0s;
-    -moz-transition: transform 0.5s ease 0s;
-    -o-transition: transform 0.5s ease 0s;
-    transition: transform 0.5s ease 0s;
+  background: transparent;
+  height: 100%;
+  width: 300px;
+  z-index: 5;
+  text-align: left;
+  line-height: 50px;
+  vertical-align: middle;
+  padding-left: 10px;
+  position: absolute;
+  top: 50px;
+  display: inline-block;
+  -webkit-transition: transform 0.5s ease 0s;
+  -moz-transition: transform 0.5s ease 0s;
+  -o-transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
 }
 
 .thanks_active {
-    -webkit-transform: translateY(-50px);
-    -moz-transform: translateY(-50px);
-    -ms-transform: translateY(-50px);
-    -o-transform: translateY(-50px);
-    transform: translateY(-50px);
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+  transform: translateY(-50px);
 }
 
-.punto{
-    list-style: none !important;
+.punto {
+  list-style: none !important;
 }
 
 .footerCR {
-    display: flex;
-    justify-content: flex-end;
-    padding-left: 2em;
-    padding-right: 2em;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .rightFooter {
-    display: flex;
-    flex-direction: column;
-    padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
 }
 
 .iconos {
-    color: black;
+  color: black;
 }
-
