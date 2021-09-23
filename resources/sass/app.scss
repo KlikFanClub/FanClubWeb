@@ -36,9 +36,14 @@ body {
 }
 
 #app {
-  height: 100vh;
+  min-height: 100vh;
+  position:relative;
 }
 
 a:link{
     text-decoration: none !important;
+}
+
+main {
+  padding-bottom: 300px;
 }

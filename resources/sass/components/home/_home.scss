@@ -1,7 +1,7 @@
 .mainFatherContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* main {
@@ -9,86 +9,91 @@
 } */
 
 .highlights {
-    padding: 2em;
-    background-color: $fcdark;
-    color: $fcyellow;
+  padding: 2em;
+  background-color: $fcdark;
+  color: $fcyellow;
 }
 
 .highlightsTitle {
-    font-size: 2rem;
-    font-weight: 900;
-    text-align: center;
-    margin-bottom: 2em;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2em;
 }
 
 .artworkHighlights {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .artworkCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 1em;
-    margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1em;
+  margin-left: 1em;
 }
 
 .artwork {
-    height: 20em;
-    width: auto;
+  height: 20em;
+  width: auto;
 }
 
 .artistName {
-    font-weight: 500;
-    font-size: 1.2rem;
-    margin-top: 0.5em;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 0.5em;
 }
 
 .artworkDetailsBtn {
-    border: 1px solid $fcpink;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    color: $fcpink;
-    font-size: 0.7rem;
-    font-weight: 300;
-    padding: 0.5em 0;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    transition: background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid $fcpink;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: $fcpink;
+  font-size: 0.7rem;
+  font-weight: 300;
+  padding: 0.5em 0;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .artworkDetailsBtn:hover {
-    text-decoration: none;
-    color: $fcyellow;
-    background-color: $fcpink;
+  text-decoration: none;
+  color: $fcyellow;
+  background-color: $fcpink;
 }
 
 .joinUsContainer {
-    background-color: $fcdark;
-    width: 100%;
-    max-width: 1440px;
-    padding: 2em;
+  background-color: $fcdark;
+  width: 100%;
+  max-width: 1440px;
+  padding: 5px;
+  margin-bottom: 230px;
+  @media (max-width: 414px) {
+    margin-bottom: 400px;
+  }
 }
 
 .joinUs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .joinUsButton {
-    color: $fcyellow;
-    background-color: #E9E9E9;
-    margin: 0.5em;
-    padding: 1em 4em;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
+  font-size: 20px;
+  color: $fcyellow;
+  background-color: #E9E9E9;
+  margin: 0.5em;
+  padding: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
 }
 
 .card {
@@ -96,36 +101,39 @@
 }
 
 @media only screen and (max-width: 425px) {
-    .highlights {
-        width: 100%;
-    }
-    .artworkHighlights {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
+  .highlights {
+    width: 100%;
+  }
+
+  .artworkHighlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 }
+
 @media screen and (max-width: 768px) {
-    .highlights {
-        width: 100%;
-    }
-    .artworkHighlights {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
+  .highlights {
+    width: 100%;
+  }
+
+  .artworkHighlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    .highlights {
-        width: 100%;
-    }
+  .highlights {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1600px) {
-    .highlights {
-        width: 100%;
-    }
+  .highlights {
+    width: 100%;
+  }
 }

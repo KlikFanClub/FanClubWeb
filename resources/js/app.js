@@ -21,6 +21,8 @@ Vue.component('filter-artwork', require('./components/FilterArtwork.vue').defaul
 
 Vue.component('artworks-component', require('./components/Artworks.vue').default);
 
+Vue.component('artists-component', require('./components/Artists.vue').default);
+
 /**
 * Next, we will create a fresh Vue application instance and attach it to
 * the page. Then, you may begin adding components to this application
