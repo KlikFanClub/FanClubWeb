@@ -1,15 +1,11 @@
 @extends('layouts.app')
 
 @section ('content')
-
-
+<main>
     <div class="form-container">
-
         <form method="POST" action="{{route ('storeArtist')}}" enctype="multipart/form-data">
             @csrf
-
             <div class="form-group row">
-
                 <h4>Formulario del artista</h4>
                 <br>
                 <h6>Introduzca a continuación los datos del artista</h6>
@@ -129,5 +125,5 @@
 
         </form>
     </div>
-
+</main>
 @endsection

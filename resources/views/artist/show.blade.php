@@ -1,7 +1,7 @@
 @extends ('layouts.app')
 @section('content')
+<main>
   <div class="catalogue">
-    <main>
       @foreach($workarts as $workart)
         <div class="artwork_card">             
           <img class="artwork_img" src="{{ asset('storage') . '/' . $workart->imageworkart }}">

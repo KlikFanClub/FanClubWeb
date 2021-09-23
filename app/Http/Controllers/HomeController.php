@@ -39,7 +39,8 @@ class HomeController extends Controller
     public function pageConstructions(){
         return view('pages.constructions');
     }
-public function contact(){
-    return view('pages.contact');
-}
-}
+    
+    public function contact(){
+        return view('pages.contact');
+    }
+    }
