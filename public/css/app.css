@@ -10075,7 +10075,13 @@ h3 {
   background-color: #10072B;
   width: 100%;
   max-width: 1440px;
-  padding: 2em;
+  padding: 5px;
+  margin-bottom: 230px;
+}
+@media (max-width: 414px) {
+  .joinUsContainer {
+    margin-bottom: 400px;
+  }
 }
 
 .joinUs {
@@ -10085,10 +10091,11 @@ h3 {
 }
 
 .joinUsButton {
+  font-size: 20px;
   color: #FBE472;
   background-color: #E9E9E9;
   margin: 0.5em;
-  padding: 1em 4em;
+  padding: 12px;
   text-align: center;
   text-transform: uppercase;
   position: relative;
