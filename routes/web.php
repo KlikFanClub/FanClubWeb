@@ -22,8 +22,6 @@ use App\Models\User;
 |
 */
 
-
-
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -39,7 +37,7 @@ Route::get('/workarts/create',[WorkartController::class, 'create'])->middleware(
 Route::post('/workarts/create', [WorkartController::class,'store'])->middleware('admin')->name('storeWorkart');
 Route::get('/workarts/edit/{id}', [WorkartController::class, 'edit'])->middleware('admin')->name('editWorkart');
 Route::put('/workarts/update/{id}', [WorkartController::class, 'update'])->middleware('admin')->name('updateWorkart');
-Route::delete('/workarts/delete/{id}', [WorkartController::class, 'destroy'])->middleware('admin')->name('deleteWorkart');
+Route::get('/workarts/delete/{id}', [WorkartController::class, 'destroy'])->middleware('admin')->name('deleteWorkart');
 
 //Routes Artists
 
@@ -48,13 +46,9 @@ Route::get('/artists/create', [ArtistController::class, 'create'])->middleware('
 Route::post('/artists/create', [ArtistController::class, 'store'])->middleware('admin')->name('storeArtist');
 Route::get('/artists/edit/{id}', [ArtistController::class, 'edit'])->middleware('admin')->name('editArtist');
 Route::put('/artists/update/{id}', [ArtistController::class, 'update'])->middleware('admin')->name('updateArtist');
-Route::delete('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middleware('admin')->name('deleteArtist');
+Route::get('/artists/delete/{id}', [ArtistController::class, 'destroy'])->middleware('admin')->name('deleteArtist');
 Route::get('/artists/show/{id}', [ArtistController::class, 'show'])->name('showArtist');
 
 //Send mails
 
-//Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');
-/* Route::get ('/newartistmail', [MailController::class, 'index'])->name('sendmail.index');
-Route::post ('/newartistmail', [MailController::class, 'store'])->name('sendmail.store'); */
-
-
+Route::get ('/mail', [MailController::class, 'index'])->name('mailmesaje');

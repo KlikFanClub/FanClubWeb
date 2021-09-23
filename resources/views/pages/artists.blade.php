@@ -1,18 +1,22 @@
 @extends ('layouts.app')
 @section('content')
-
-    @if (Auth::user())
+<main class="catalogue">
+  @if (Auth::user())
     @if (Auth::user()->isAdmin)
-    <div>
+      <div>
         <a href="{{ route('createArtist') }}">
-            <button type='submit'>Crear Nuevo Artista!</button>
+          <button type='submit'>Crear Nuevo Artista</button>
         </a>
-    </div>
+      </div>
     @endif
-    @endif
+  @endif
 
-    @foreach ($artists as $artist)
-        <img src= <?php echo "storage/{$artist->profile_picture}" ?> width="100">
+  
+    <artists-component></artists-component>
+  </main>
+  {{-- @foreach ($artists as $artist)
+        <img src= <?php /* echo "storage/{$artist->profile_picture}" */
+?> width="100">
         <h6>{{ $artist->name }}</h6>
         @if (Auth::user())
             @if (Auth::user()->isAdmin)
@@ -29,11 +33,11 @@
             @endif
         @endif
     @endforeach
+--}}
+@endsection 
 
-@endsection
-
-@if (Auth::user() && Auth::user()->isAdmin)
-  <script>
-    window.authCheck = {!! json_encode($authCheck) !!};
-  </script>
-@endif
+  @if (Auth::user() && Auth::user()->isAdmin)
+    <script>
+      window.authCheck = {!! json_encode($authCheck) !!};
+    </script>
+  @endif
