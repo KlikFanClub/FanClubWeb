@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Artist::factory(1)->create([
-            'name'=>'Milagros Rey',
-            'profile_picture'=>'',
+            'name'=>'Milagros Reyes',
+            'profile_picture'=>'uploads_artist/Milagros_Reyes.png',
             'bio'=>'Fotógrafa con estudios de diseño de imagen y sonido, fotografía profesional y creativa, literatura latinoamericana, protocolo e Inglés de negocios.',
             'website'=>'https://culturacolectiva.com/',
             'email'=>'Milagroskrey@gmail.com',
@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
 
         Artist::factory(1)->create([
             'name'=>'Andrés Barthel',
-            'profile_picture'=>'',
+            'profile_picture'=>'uploads_artist/Andres_Barthel.png',
             'bio'=>'Para ir de Bogotá hasta Barcelona uno debe pasar por Barthel. La obra del artista colombiano está plagada de trazos punk y de ritmos violentos que encierran la sutileza y la ternura de un hombre violento',
             'website'=>'https://post-punk.com/',
             'email'=>'andresbarthel190@hotmail.com',
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
 
         Artist::factory(1)->create([
             'name'=>'Aluhé Molina',
-            'profile_picture'=>'',
+            'profile_picture'=>'uploads_artist/Aluhe_Molina.png',
             'bio'=>'Dibujanta y escenógrafa rionegrina que se caracteriza de una obra llena de un colorido discurso',
             'website'=>'https://artpop.org/',
             'email'=>'alumolina@hotmail.com',
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
 
         Artist::factory(1)->create([
             'name'=>'Sara Agustina',
-            'profile_picture'=>'',
+            'profile_picture'=>'uploads_artist/Sara_Agustina.png',
             'bio'=>'Ilustradora, tatuadora y artista visual residente en Cali',
             'website'=>'https://www.behance.net/saraagustina/',
             'email'=>'saraagustina28@gmail.com',
@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
 
         Artist::factory(1)->create([
             'name'=>'Emiliano Montani',
-            'profile_picture'=>'',
+            'profile_picture'=>'uploads_artist/Emiliano_Montani.png',
             'bio'=>'Guitarrista, diseñador y desarrollador web argentino que actualmente reside en Zaragoza',
             'website'=>'https://www.domestika.org/en/emilianomontani',
             'email'=>'emimonta@gmail.com',
@@ -84,7 +84,7 @@ class DatabaseSeeder extends Seeder
 
         Artist::factory(1)->create([
             'name'=>'Rick Wessels',
-            'profile_picture'=>'',
+            'profile_picture'=>'uploads_artist/Rick_Wessels.png',
             'bio'=>'Maastric based artist from Países Bajos',
             'website'=>'https://www.collaging.org/450186287',
             'email'=>'rckwsls@gmail.com',
@@ -97,7 +97,7 @@ class DatabaseSeeder extends Seeder
 
         Artist::factory(1)->create([
             'name'=>'Camila Lozano',
-            'profile_picture'=>'',
+            'profile_picture'=>'uploads_artist/Camila_Lozano.png',
             'bio'=>'Ilustradora, tatuadora de Bogotá',
             'website'=>'https://www.picuki.com/profile/marica.mila666',
             'email'=>'marica.mila@gmail.com',
@@ -119,7 +119,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'1',
             'title'=>'3200',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/3200_Reyes.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
@@ -132,7 +132,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'1',
             'title'=>'Satellite of Love',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Satellite_of_Love_Reyes.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
@@ -145,7 +145,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'1',
             'title'=>'Momento Frappé',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Momento_frappe_Reyes.png',
             'edition'=>'Edición abierta',
             'price'=>'€40,00 EUR',
             'technique'=>'Impresión digital',
@@ -158,7 +158,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'1',
             'title'=>'Este tipo me habla a mí?',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Este_tipo_me_habla_a_mi_Reyes.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
@@ -171,7 +171,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'1',
             'title'=>'Rhythm',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Rhythm_Reyes.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
@@ -184,7 +184,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'1',
             'title'=>'0',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/0_Reyes.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Impresión digital',
@@ -204,7 +204,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'2',
             'title'=>'Elefantes',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Elefantes_Barthel.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Dibujo',
@@ -217,7 +217,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'2',
             'title'=>'Amazonas',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Amazonas_Barthel.png',
             'edition'=>'Edición abierta',
             'price'=>'€30,00 EUR',
             'technique'=>'Dibujo',
@@ -230,7 +230,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'2',
             'title'=>'Hermano Arnu',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Hermano_Arnu_Barthel.png',
             'edition'=>'Edición abierta',
             'price'=>'20 euretes',
             'technique'=>'Dibujo',
@@ -243,7 +243,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'2',
             'title'=>'Punky y Cerdo',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Punky_y_Cerdo_Barthel.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Dibujo',
@@ -256,7 +256,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'2',
             'title'=>'Alicia',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Alicia_Barthel.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Dibujo',
@@ -277,7 +277,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'3',
             'title'=>'Verano',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Verano_Molina.png',
             'edition'=>'Edición abierta',
             'price'=>'€20,00 EUR',
             'technique'=>'Dibujo',
@@ -290,7 +290,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'3',
             'title'=>'Gata con Botas',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Gata_con_Botas_Molina.png',
             'edition'=>'Edición limitada',
             'price'=>'€60,00 EUR',
             'technique'=>'Dibujo',
@@ -303,7 +303,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'3',
             'title'=>'Florista Verde',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Florista_Verde_Molina.png',
             'edition'=>'Edición abierta',
             'price'=>'€15,00 EUR',
             'technique'=>'Dibujo',
@@ -316,7 +316,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'3',
             'title'=>'Boga',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Boga_Molina.png',
             'edition'=>'Edición abierta',
             'price'=>'€15,00 EUR',
             'technique'=>'Dibujo',
@@ -329,7 +329,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'3',
             'title'=>'Me pesa la ciudad',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Me_pesa_la_ciudad_Molina.png',
             'edition'=>'Edición abierta',
             'price'=>'€28,00 EUR',
             'technique'=>'Dibujo',
@@ -342,7 +342,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'3',
             'title'=>'Casa',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Casa_Molina.png',
             'edition'=>'Edición abierta',
             'price'=>'€14,00 EUR',
             'technique'=>'Dibujo',
@@ -354,8 +354,8 @@ class DatabaseSeeder extends Seeder
 
         Workart::factory(1)->create([
             'artist_id'=>'3',
-            'title'=>'Casa',
-            'imageworkart'=>'',
+            'title'=>'Todos bailan',
+            'imageworkart'=>'uploads_workart/Todos_bailan_Molina.png',
             'edition'=>'Edición abierta',
             'price'=>'€30,00 EUR',
             'technique'=>'Collage',
@@ -376,7 +376,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'4',
             'title'=>'Diosa del Sol',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Diosa_del_Sol_Agustina.png',
             'edition'=>'Edición abierta',
             'price'=>'€88,00 EUR',
             'technique'=>'Impresión digital',
@@ -389,7 +389,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'4',
             'title'=>'Amor Libre',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Amor_Libre_Agustina.png',
             'edition'=>'Edición abierta',
             'price'=>'€72,00 EUR',
             'technique'=>'Impresión digital',
@@ -402,7 +402,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'4',
             'title'=>'Puta Galáctica',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Puta_Galáctica_Agustina.png',
             'edition'=>'Edición abierta',
             'price'=>'€78,00 EUR',
             'technique'=>'Impresión digital',
@@ -415,7 +415,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'4',
             'title'=>'Este cuerpo es mío',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Este_cuerpo_es_mio_Agustina.png',
             'edition'=>'Edición abierta',
             'price'=>'€45,00 EUR',
             'technique'=>'Impresión digital',
@@ -428,7 +428,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'4',
             'title'=>'Narrativa trans',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Narrativa_trans_Agustina.png',
             'edition'=>'Edición abierta',
             'price'=>'€45,00 EUR',
             'technique'=>'Impresión digital',
@@ -441,7 +441,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'4',
             'title'=>'Raizal',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Raizal_Agustina.png',
             'edition'=>'Edición abierta',
             'price'=>'€30,00 EUR',
             'technique'=>'Impresión digital',
@@ -462,7 +462,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'5',
             'title'=>'Descubrir',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Descubrir_Montani.png',
             'edition'=>'Edición abierta',
             'price'=>'€24,00 EUR',
             'technique'=>'Impresión digital',
@@ -475,7 +475,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'5',
             'title'=>'Explorar',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Explorar_Montani.png',
             'edition'=>'Edición abierta',
             'price'=>'€24,00 EUR',
             'technique'=>'Impresión digital',
@@ -488,7 +488,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'5',
             'title'=>'Sumergirse',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Sumergirse_Montani.png',
             'edition'=>'Edición abierta',
             'price'=>'€18,00 EUR',
             'technique'=>'Impresión digital',
@@ -501,7 +501,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'5',
             'title'=>'Barbarie',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Barbarie_Montani.png',
             'edition'=>'Edición abierta',
             'price'=>'€27,00 EUR',
             'technique'=>'Impresión digital',
@@ -522,7 +522,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'6',
             'title'=>'Into the mountains II',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Into_the_mountains_2_Wessels.png',
             'edition'=>'Edición abierta',
             'price'=>'€22,00 EUR',
             'technique'=>'Collage digital',
@@ -535,7 +535,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'6',
             'title'=>'Untrue',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Untrue_Wessels.png',
             'edition'=>'Edición abierta',
             'price'=>'€18,00 EUR',
             'technique'=>'Collage digital',
@@ -548,7 +548,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'6',
             'title'=>'Unbroken',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Unbroken_Wessels.png',
             'edition'=>'Edición abierta',
             'price'=>'€23,00 EUR',
             'technique'=>'Collage digital',
@@ -562,7 +562,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'6',
             'title'=>'Lady In Venice III',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Lady_In_Venice_3_Wessels.png',
             'edition'=>'Edición abierta',
             'price'=>'€26,00 EUR',
             'technique'=>'Collage digital',
@@ -583,7 +583,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'7',
             'title'=>'Fly Away',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Fly_Away_Lozano.png',
             'edition'=>'Pieza única',
             'price'=>'€30,00 EUR',
             'technique'=>'Serigrafía',
@@ -596,7 +596,7 @@ class DatabaseSeeder extends Seeder
         Workart::factory(1)->create([
             'artist_id'=>'7',
             'title'=>'Yin Yang',
-            'imageworkart'=>'',
+            'imageworkart'=>'uploads_workart/Yin_Yang_Lozano.png',
             'edition'=>'Pieza única',
             'price'=>'€35,00 EUR',
             'technique'=>'Serigrafía',
@@ -605,12 +605,6 @@ class DatabaseSeeder extends Seeder
             'others'=>'',
             'carousel'=>'0',
         ]);
-
-
-
-
-
-
 
         User::factory(1)->create([
             'id'=>1,
