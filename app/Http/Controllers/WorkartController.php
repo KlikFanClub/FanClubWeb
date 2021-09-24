@@ -84,7 +84,7 @@ class WorkartController extends Controller
    */
   public function show(Workart $workart)
   {
-    //
+    
   }
 
   /**

@@ -1999,7 +1999,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2275,7 +2274,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
 
     this.getArtistsNames();
-    /* this.getUserStatus(); */
   }
 });
 
@@ -2307,8 +2305,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-// const files = require.context('./', true, /\.vue$/i)
-//files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('filter-artwork', __webpack_require__(/*! ./components/FilterArtwork.vue */ "./resources/js/components/FilterArtwork.vue").default);
 Vue.component('artworks-component', __webpack_require__(/*! ./components/Artworks.vue */ "./resources/js/components/Artworks.vue").default);

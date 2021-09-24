@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<main>
     <div class="form-container">
         <form method="POST" action="{{ route('storeWorkart') }}" enctype="multipart/form-data">
             @csrf
@@ -168,4 +169,5 @@
         </form>
         <div class="buttons">
         </div>
+    </main>
     @endsection
