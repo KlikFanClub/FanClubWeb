@@ -153,8 +153,6 @@ export default {
       this.isOpen = false;
     }
     this.getArtistsNames();
-    /* this.getUserStatus(); */
-    
   },
 };
 </script>

@@ -12,7 +12,6 @@
       </div>
       <span class="artwork_title">{{ artwork.title }}</span>
       <span class="artwork_artistName">{{ artwork.artist.name }}</span>
-      <!-- <span class="artwork_date">10/12/2016</span> -->
       <span class="artwork_price">{{ artwork.price }}</span>
       <div v-if="isLoggedIn" class="action_buttons">
         <a :href="'/workarts/edit/' + artwork.id">
