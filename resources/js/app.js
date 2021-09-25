@@ -27,13 +27,11 @@ Vue.component('artists-component', require('./components/Artists.vue').default);
 * or customize the JavaScript scaffolding to fit your unique needs.
 */
 
-
-export const eventBus = new Vue();
+const cors = require('cors');
 
 const app = new Vue({
   el: '#app',
 });
+app.use(cors());
 
-
-
-
+export const eventBus = new Vue();
