@@ -29,7 +29,8 @@ Route::get('workarts', function () {
   $response = response()->json($workarts)
     ->header('Access-Control-Allow-Origin', '*')
     ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
-    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
+    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE'])
+    ->header('Content-Type', 'application/json');
   return $response;
 });
 
@@ -38,7 +39,8 @@ Route::get('workarts/{id}', function ($id) {
   $response = response()->json($workart)
     ->header('Access-Control-Allow-Origin', '*')
     ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
-    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
+    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE'])
+    ->header('Content-Type', 'application/json');
   return $response;
 });
 
@@ -47,16 +49,18 @@ Route::get('artists', function () {
   $response = response()->json($artists)
     ->header('Access-Control-Allow-Origin', '*')
     ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
-    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
+    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE'])
+    ->header('Content-Type', 'application/json');
   return $response;
 });
 
 Route::get('artists/{id}', function ($id) {
   $artist = Artist::findOrFail($id);
   $response = response()->json($artist)
-    ->header('Access-Control-Allow-Origin', 'http://fanclubweb.herokuapp.com/')
+    ->header('Access-Control-Allow-Origin', '*')
     ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
-    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
+    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE'])
+    ->header('Content-Type', 'application/json');
   return $response;
 });
 
