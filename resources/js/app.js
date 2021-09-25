@@ -28,10 +28,13 @@ Vue.component('artists-component', require('./components/Artists.vue').default);
 */
 
 const cors = require('cors');
+const config = require('./config');
 
 const app = new Vue({
   el: '#app',
 });
-app.use(cors());
+app.use(cors(
+  config.application.cors.server
+));
 
 export const eventBus = new Vue();
