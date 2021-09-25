@@ -27,14 +27,8 @@ Vue.component('artists-component', require('./components/Artists.vue').default);
 * or customize the JavaScript scaffolding to fit your unique needs.
 */
 
-const cors = require('cors');
-const config = require('./config');
-
 const app = new Vue({
   el: '#app',
 });
-app.use(cors(
-  config.application.cors.server
-));
 
 export const eventBus = new Vue();
