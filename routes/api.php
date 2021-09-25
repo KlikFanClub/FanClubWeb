@@ -54,7 +54,7 @@ Route::get('artists', function () {
 Route::get('artists/{id}', function ($id) {
   $artist = Artist::findOrFail($id);
   $response = response()->json($artist)
-    ->header('Access-Control-Allow-Origin', '*')
+    ->header('Access-Control-Allow-Origin', 'http://fanclubweb.herokuapp.com/')
     ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
     ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
   return $response;
