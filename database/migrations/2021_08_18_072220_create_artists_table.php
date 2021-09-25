@@ -20,7 +20,7 @@ class CreateArtistsTable extends Migration
       $table->string('profile_picture')->default();
       $table->string('bio');
       $table->string('website')->nullable();;
-      $table->string('email')->unique();
+      $table->string('email', 100)->unique();
       $table->string('instagram')->nullable();
       $table->string('facebook')->nullable();
       $table->string('twitter')->nullable();
