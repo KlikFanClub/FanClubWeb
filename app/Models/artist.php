@@ -28,3 +28,4 @@ class Artist extends Model
     return $this->hasMany(Workart::class);
   }
 }
+// asdsa
