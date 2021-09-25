@@ -28,4 +28,3 @@ class Workart extends Model
     return $this->belongsTo(Artist::class);
   }
 }
-//asdad
