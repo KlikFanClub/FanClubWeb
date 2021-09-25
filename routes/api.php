@@ -26,24 +26,38 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('workarts', function () {
   $workarts = Workart::all();
   $workarts->load('artist');
-  return json_encode($workarts);
+  $response = response()->json($workarts)
+    ->header('Access-Control-Allow-Origin', '*')
+    ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
+    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
+  return $response;
 });
 
 Route::get('workarts/{id}', function ($id) {
   $workart = Workart::findOrFail($id);
-  return response()->json($workart);
+  $response = response()->json($workart)
+    ->header('Access-Control-Allow-Origin', '*')
+    ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
+    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
+  return $response;
 });
 
 Route::get('artists', function () {
   $artists = Artist::all();
-  return response()->json($artists);
+  $response = response()->json($artists)
+    ->header('Access-Control-Allow-Origin', '*')
+    ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
+    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
+  return $response;
 });
 
 Route::get('artists/{id}', function ($id) {
   $artist = Artist::findOrFail($id);
-  return response()->json($artist);
+  $response = response()->json($artist)
+    ->header('Access-Control-Allow-Origin', '*')
+    ->header('Access-Control-Allow-Headers', ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'])
+    ->header('Access-Control-Allow-Methods', ['GET', 'POST', 'PUT', 'DELETE']);
+  return $response;
 });
-
-Route::get('user_status',[User::class, 'isLoggedIn'])/* ->middleware('auth:api') */;
 
 Route::get('artists/{id}/workarts', [WorkartController::class, 'getWorkarts']);
