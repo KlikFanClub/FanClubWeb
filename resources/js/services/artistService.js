@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'http://fanclubweb.herokuapp.com/'
+const baseURL = 'http://fanclubweb.herokuapp.com'
 
 export const artistService = {
   getAllArtists() {
