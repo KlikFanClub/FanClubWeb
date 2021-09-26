@@ -59,7 +59,7 @@ export default {
     },
   },
   created() {
-    console.log(this.getAllArtists());
+    console.log(this.getAllArtists);
     this.isLoggedIn = window.authCheck;
   },
 };
