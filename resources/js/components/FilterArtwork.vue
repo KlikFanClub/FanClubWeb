@@ -140,18 +140,13 @@ export default {
     filterByArtist(artistName) {
       eventBus.$emit("filter", artistName);
     },
-    async getUserStatus() {
-      const request = await userService.getUserStatus();
-      console.log(request);
-      return request;
-    },
   },
   created() {
     this.handleView();
     if (this.mobileView) {
       this.isOpen = false;
     }
-    this.getArtistsNames();
+    /* this.getArtistsNames(); */
   },
 };
 </script>

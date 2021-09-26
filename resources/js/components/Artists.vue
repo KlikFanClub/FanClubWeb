@@ -53,9 +53,9 @@ export default {
   methods: {
     async getAllArtists() {
       try {
-      const request = await artistService.getAllArtists();}
-      catch (error) {
-        console.log(error)
+        const request = await artistService.getAllArtists();
+      } catch (error) {
+        console.log(error);
       }
       request.data.forEach((item) => {
         this.artists.push(item);
