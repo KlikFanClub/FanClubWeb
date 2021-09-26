@@ -2589,10 +2589,10 @@ __webpack_require__.r(__webpack_exports__);
 var baseURL = 'http://fanclubweb.herokuapp.com';
 var artistService = {
   getAllArtists: function getAllArtists() {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/artists');
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + '/api/artists');
   },
   getArtist: function getArtist(id) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/artists/' + id);
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + '/api/artists/' + id);
   }
 };
 
