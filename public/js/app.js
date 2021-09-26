@@ -2145,29 +2145,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.prev = 0;
-                _context.next = 3;
+                _context.next = 2;
                 return _services_artistService__WEBPACK_IMPORTED_MODULE_1__.artistService.getAllArtists();
 
-              case 3:
+              case 2:
                 request = _context.sent;
                 request.data.forEach(function (item) {
                   _this.artists.push(item);
                 });
-                _context.next = 10;
-                break;
 
-              case 7:
-                _context.prev = 7;
-                _context.t0 = _context["catch"](0);
-                console.log(_context.t0);
-
-              case 10:
+              case 4:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 7]]);
+        }, _callee);
       }))();
     }
   },
@@ -2248,31 +2240,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.prev = 0;
-                _context.next = 3;
+                _context.next = 2;
                 return _services_artworkService__WEBPACK_IMPORTED_MODULE_1__.artworkService.getAllArtworks();
 
-              case 3:
+              case 2:
                 request = _context.sent;
                 request.data.forEach(function (item) {
                   _this.allArtworks.push(item);
 
                   _this.filteredArtworks.push(item);
                 });
-                _context.next = 10;
-                break;
 
-              case 7:
-                _context.prev = 7;
-                _context.t0 = _context["catch"](0);
-                console.log(_context.t0);
-
-              case 10:
+              case 4:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 7]]);
+        }, _callee);
       }))();
     },
     restoreArtworks: function restoreArtworks() {
@@ -2317,8 +2301,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_artistService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/artistService */ "./resources/js/services/artistService.js");
-/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.js */ "./resources/js/app.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '../services/userService'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _services_artistService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/artistService */ "./resources/js/services/artistService.js");
+/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.js */ "./resources/js/app.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2356,6 +2341,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2443,11 +2429,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return _services_artistService__WEBPACK_IMPORTED_MODULE_1__.artistService.getAllArtists();
+                _context.next = 2;
+                return _services_artistService__WEBPACK_IMPORTED_MODULE_2__.artistService.getAllArtists();
 
-              case 3:
+              case 2:
                 request = _context.sent;
                 request.data.forEach(function (item) {
                   _this.namesArray.push(item.name);
@@ -2457,20 +2442,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this.setArtistsNames();
 
-                _context.next = 12;
-                break;
-
-              case 9:
-                _context.prev = 9;
-                _context.t0 = _context["catch"](0);
-                console.log(_context.t0);
-
-              case 12:
+              case 6:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 9]]);
+        }, _callee);
       }))();
     },
     setArtistsNames: function setArtistsNames() {
@@ -2483,7 +2460,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     filterByArtist: function filterByArtist(artistName) {
-      _app_js__WEBPACK_IMPORTED_MODULE_2__.eventBus.$emit("filter", artistName);
+      _app_js__WEBPACK_IMPORTED_MODULE_3__.eventBus.$emit("filter", artistName);
+    },
+    getUserStatus: function getUserStatus() {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var request;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return Object(function webpackMissingModule() { var e = new Error("Cannot find module '../services/userService'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+
+              case 2:
+                request = _context2.sent;
+                console.log(request);
+                return _context2.abrupt("return", request);
+
+              case 5:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   created: function created() {
