@@ -63,8 +63,7 @@ export default {
     },
   },
   created() {
-    /* this.getAllArtists(); */
-    this.artists = window.artists;
+    this.getAllArtists();
     this.isLoggedIn = window.authCheck;
   },
 };

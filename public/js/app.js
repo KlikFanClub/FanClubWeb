@@ -2175,8 +2175,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   created: function created() {
-    /* this.getAllArtists(); */
-    this.artists = window.artists;
+    this.getAllArtists();
     this.isLoggedIn = window.authCheck;
   }
 });
@@ -2283,7 +2282,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   created: function created() {
     var _this3 = this;
 
-    /* this.getAllArtworks(); */
+    this.getAllArtworks();
     _app_js__WEBPACK_IMPORTED_MODULE_2__.eventBus.$on("filter", function (artistName) {
       _this3.restoreArtworks();
 
@@ -2295,8 +2294,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     });
     this.$root.$refs.Artworks = this;
     this.isLoggedIn = window.authCheck;
-    this.allArtworks = window.artworks;
-    this.restoreArtworks();
   }
 });
 
@@ -2481,8 +2478,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     if (this.mobileView) {
       this.isOpen = false;
     }
-    /* this.getArtistsNames(); */
 
+    this.getArtistsNames();
   }
 });
 
@@ -2524,10 +2521,10 @@ Vue.component('artists-component', __webpack_require__(/*! ./components/Artists.
 * or customize the JavaScript scaffolding to fit your unique needs.
 */
 
+var eventBus = new Vue();
 var app = new Vue({
   el: '#app'
 });
-var eventBus = new Vue();
 
 /***/ }),
 

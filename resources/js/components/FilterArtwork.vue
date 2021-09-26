@@ -146,7 +146,7 @@ export default {
     if (this.mobileView) {
       this.isOpen = false;
     }
-    /* this.getArtistsNames(); */
+    this.getArtistsNames();
   },
 };
 </script>

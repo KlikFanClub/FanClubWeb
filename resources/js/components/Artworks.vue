@@ -54,7 +54,7 @@ export default {
     },
   },
   created() {
-    /* this.getAllArtworks(); */
+    this.getAllArtworks();
     eventBus.$on("filter", (artistName) => {
       this.restoreArtworks();
       let filteredArtworks = this.filteredArtworks.filter(
@@ -64,8 +64,6 @@ export default {
     });
     this.$root.$refs.Artworks = this;
     this.isLoggedIn = window.authCheck;
-    this.allArtworks = window.artworks;
-    this.restoreArtworks();
   },
 };
 </script>

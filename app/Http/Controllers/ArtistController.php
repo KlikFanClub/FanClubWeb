@@ -20,6 +20,8 @@ class ArtistController extends Controller
     $authCheck = null;
     if(Auth::check() && Auth::user()->isAdmin){
       $authCheck = Auth::check();
+    } else {
+      $authCheck = false;
     };
     $artists = Artist::all()->sortBy('name');
     return view('pages.artists', compact('artists', 'authCheck'));

@@ -10,14 +10,11 @@
         </div>
       @endif
     @endif
-
     <artists-component></artists-component>
   </main>
 @endsection
 
-@if (Auth::user() && Auth::user()->isAdmin)
   <script>
     window.authCheck = {!! json_encode($authCheck) !!};
-    window.artists = {!! json_encode($artists) !!};
   </script>
-@endif
+

@@ -20,6 +20,8 @@ class WorkartController extends Controller
     $authCheck = null;
     if(Auth::check() && Auth::user()->isAdmin){
       $authCheck = Auth::check();
+    } else {
+      $authCheck = false;
     };
     $workarts = Workart::all()->sortByDesc('created_at')
       ->load('artist');
