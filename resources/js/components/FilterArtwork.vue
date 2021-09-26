@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import { userService } from "../services/userService";
 import { artistService } from "../services/artistService";
 import { eventBus } from "../app.js";
 
