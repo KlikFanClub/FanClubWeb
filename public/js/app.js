@@ -2140,31 +2140,43 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var request;
+        var _request;
+
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                _context.prev = 0;
+                _context.next = 3;
                 return _services_artistService__WEBPACK_IMPORTED_MODULE_1__.artistService.getAllArtists();
 
-              case 2:
-                request = _context.sent;
+              case 3:
+                _request = _context.sent;
+                _context.next = 9;
+                break;
+
+              case 6:
+                _context.prev = 6;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
+
+              case 9:
                 request.data.forEach(function (item) {
                   _this.artists.push(item);
                 });
 
-              case 4:
+              case 10:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[0, 6]]);
       }))();
     }
   },
   created: function created() {
-    this.getAllArtists();
+    /* this.getAllArtists(); */
+    this.artists = window.artists;
     this.isLoggedIn = window.authCheck;
   }
 });
@@ -2271,7 +2283,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   created: function created() {
     var _this3 = this;
 
-    this.getAllArtworks();
+    /* this.getAllArtworks(); */
     _app_js__WEBPACK_IMPORTED_MODULE_2__.eventBus.$on("filter", function (artistName) {
       _this3.restoreArtworks();
 
@@ -2283,6 +2295,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     });
     this.$root.$refs.Artworks = this;
     this.isLoggedIn = window.authCheck;
+    this.allArtworks = window.artworks;
+    this.restoreArtworks();
   }
 });
 
@@ -2301,9 +2315,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/userService */ "./resources/js/services/userService.js");
-/* harmony import */ var _services_artistService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/artistService */ "./resources/js/services/artistService.js");
-/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.js */ "./resources/js/app.js");
+/* harmony import */ var _services_artistService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/artistService */ "./resources/js/services/artistService.js");
+/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.js */ "./resources/js/app.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2341,7 +2354,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2430,7 +2442,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _services_artistService__WEBPACK_IMPORTED_MODULE_2__.artistService.getAllArtists();
+                return _services_artistService__WEBPACK_IMPORTED_MODULE_1__.artistService.getAllArtists();
 
               case 2:
                 request = _context.sent;
@@ -2460,30 +2472,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     filterByArtist: function filterByArtist(artistName) {
-      _app_js__WEBPACK_IMPORTED_MODULE_3__.eventBus.$emit("filter", artistName);
-    },
-    getUserStatus: function getUserStatus() {
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        var request;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return _services_userService__WEBPACK_IMPORTED_MODULE_1__.userService.getUserStatus();
-
-              case 2:
-                request = _context2.sent;
-                console.log(request);
-                return _context2.abrupt("return", request);
-
-              case 5:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }))();
+      _app_js__WEBPACK_IMPORTED_MODULE_2__.eventBus.$emit("filter", artistName);
     }
   },
   created: function created() {
@@ -2492,8 +2481,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     if (this.mobileView) {
       this.isOpen = false;
     }
+    /* this.getArtistsNames(); */
 
-    this.getArtistsNames();
   }
 });
 
@@ -2535,10 +2524,10 @@ Vue.component('artists-component', __webpack_require__(/*! ./components/Artists.
 * or customize the JavaScript scaffolding to fit your unique needs.
 */
 
-var eventBus = new Vue();
 var app = new Vue({
   el: '#app'
 });
+var eventBus = new Vue();
 
 /***/ }),
 
@@ -2600,7 +2589,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-var baseURL = 'http://127.0.0.1:8000/';
+var baseURL = 'http://fanclubweb.herokuapp.com/';
 var artistService = {
   getAllArtists: function getAllArtists() {
     return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/artists');
@@ -2626,36 +2615,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-var baseURL = 'http://127.0.0.1:8000/';
+var baseURL = 'http://fanclubweb.herokuapp.com/';
 var artworkService = {
   getAllArtworks: function getAllArtworks() {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/workarts');
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + '/api/workarts');
   },
   getArtwork: function getArtwork(id) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/workarts/' + id);
-  }
-};
-
-/***/ }),
-
-/***/ "./resources/js/services/userService.js":
-/*!**********************************************!*\
-  !*** ./resources/js/services/userService.js ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "userService": () => (/* binding */ userService)
-/* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-
-var baseURL = 'http://127.0.0.1:8000/';
-var userService = {
-  getUserStatus: function getUserStatus() {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + 'api/user_status');
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().get(baseURL + '/api/workarts/' + id);
   }
 };
 

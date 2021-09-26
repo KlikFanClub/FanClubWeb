@@ -21,8 +21,10 @@ class WorkartController extends Controller
     if(Auth::check() && Auth::user()->isAdmin){
       $authCheck = Auth::check();
     };
-    $workarts = Workart::all()->sortByDesc('created_at');
-    return view('pages.workarts', compact('workarts', 'authCheck'));
+    $workarts = Workart::all()->sortByDesc('created_at')
+      ->load('artist');
+    $artists = Artist::all();
+    return view('pages.workarts', compact('workarts', 'artists', 'authCheck'));
   }
 
   /**
