@@ -18,5 +18,6 @@
 @if (Auth::user() && Auth::user()->isAdmin)
   <script>
     window.authCheck = {!! json_encode($authCheck) !!};
+    window.artists = {!! json_encode($artists) !!};
   </script>
 @endif

@@ -54,7 +54,7 @@ export default {
     },
   },
   created() {
-    this.getAllArtworks();
+    /* this.getAllArtworks(); */
     eventBus.$on("filter", (artistName) => {
       this.restoreArtworks();
       let filteredArtworks = this.filteredArtworks.filter(
