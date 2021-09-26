@@ -2140,8 +2140,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var _request;
-
+        var request;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -2151,26 +2150,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _services_artistService__WEBPACK_IMPORTED_MODULE_1__.artistService.getAllArtists();
 
               case 3:
-                _request = _context.sent;
-                _context.next = 9;
-                break;
-
-              case 6:
-                _context.prev = 6;
-                _context.t0 = _context["catch"](0);
-                console.log(_context.t0);
-
-              case 9:
+                request = _context.sent;
                 request.data.forEach(function (item) {
                   _this.artists.push(item);
                 });
+                _context.next = 10;
+                break;
+
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
 
               case 10:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 6]]);
+        }, _callee, null, [[0, 7]]);
       }))();
     }
   },
@@ -2251,23 +2248,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                _context.prev = 0;
+                _context.next = 3;
                 return _services_artworkService__WEBPACK_IMPORTED_MODULE_1__.artworkService.getAllArtworks();
 
-              case 2:
+              case 3:
                 request = _context.sent;
                 request.data.forEach(function (item) {
                   _this.allArtworks.push(item);
 
                   _this.filteredArtworks.push(item);
                 });
+                _context.next = 10;
+                break;
 
-              case 4:
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
+
+              case 10:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[0, 7]]);
       }))();
     },
     restoreArtworks: function restoreArtworks() {
@@ -2438,10 +2443,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                _context.prev = 0;
+                _context.next = 3;
                 return _services_artistService__WEBPACK_IMPORTED_MODULE_1__.artistService.getAllArtists();
 
-              case 2:
+              case 3:
                 request = _context.sent;
                 request.data.forEach(function (item) {
                   _this.namesArray.push(item.name);
@@ -2451,12 +2457,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this.setArtistsNames();
 
-              case 6:
+                _context.next = 12;
+                break;
+
+              case 9:
+                _context.prev = 9;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
+
+              case 12:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[0, 9]]);
       }))();
     },
     setArtistsNames: function setArtistsNames() {

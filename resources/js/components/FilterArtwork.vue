@@ -123,12 +123,17 @@ export default {
       return menuItem.isOpen ? "filter_category open" : "filter_category";
     },
     async getArtistsNames() {
-      const request = await artistService.getAllArtists();
-      request.data.forEach((item) => {
-        this.namesArray.push(item.name);
-      });
-      this.namesArray.sort();
-      this.setArtistsNames();
+      try {
+        const request = await artistService.getAllArtists();
+        request.data.forEach((item) => {
+          this.namesArray.push(item.name);
+        });
+        this.namesArray.sort();
+        this.setArtistsNames();
+        
+      } catch (error) {
+        console.log(error);
+      }
     },
     setArtistsNames() {
       this.menuItems.filter((item) => {

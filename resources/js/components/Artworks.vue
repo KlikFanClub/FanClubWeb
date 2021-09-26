@@ -40,11 +40,16 @@ export default {
   },
   methods: {
     async getAllArtworks() {
-      const request = await artworkService.getAllArtworks();
-      request.data.forEach((item) => {
-        this.allArtworks.push(item);
-        this.filteredArtworks.push(item);
-      });
+      try {
+        const request = await artworkService.getAllArtworks();
+        request.data.forEach((item) => {
+          this.allArtworks.push(item);
+          this.filteredArtworks.push(item);
+        });
+        
+      } catch (error) {
+        console.log(error);
+      }
     },
     restoreArtworks() {
       this.filteredArtworks.splice(0);

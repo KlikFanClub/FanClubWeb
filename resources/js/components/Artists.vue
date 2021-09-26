@@ -54,12 +54,12 @@ export default {
     async getAllArtists() {
       try {
         const request = await artistService.getAllArtists();
+        request.data.forEach((item) => {
+          this.artists.push(item);
+        });
       } catch (error) {
         console.log(error);
       }
-      request.data.forEach((item) => {
-        this.artists.push(item);
-      });
     },
   },
   created() {
