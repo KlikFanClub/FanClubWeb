@@ -10439,10 +10439,12 @@ button {
 
 .btnCreate {
   background-color: #381377;
+  color: white !important;
 }
 
 .btnCancel {
   background-color: #E14E85;
+  color: white !important;
 }
 
 .btnCreate[type=submit]:hover {
@@ -10714,6 +10716,7 @@ footer {
   position: absolute;
   background-color: #10072B;
   margin: 15px;
+  color: white !important;
 }
 
 @media only screen and (max-width: 425px) {
@@ -10741,6 +10744,7 @@ footer {
 
 .btnLogin {
   background-color: #10072B;
+  color: white !important;
 }
 
 html {
@@ -10769,3 +10773,4 @@ a:link {
 main {
   padding-bottom: 300px;
 }
+
