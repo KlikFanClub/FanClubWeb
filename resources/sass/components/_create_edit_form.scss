@@ -129,10 +129,12 @@ button {
 
 .btnCreate {
     background-color: $fcblue;
+    color: white !important;
 }
 
 .btnCancel {
     background-color: $fcpink;
+    color: white !important;
 }
 
 .btnCreate[type=submit]:hover {
