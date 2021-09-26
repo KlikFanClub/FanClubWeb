@@ -64,7 +64,7 @@ export default {
   },
   created() {
     /* this.getAllArtists(); */
-    this.artists = artists;
+    this.artists = window.artists;
     this.isLoggedIn = window.authCheck;
   },
 };
