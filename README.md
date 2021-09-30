@@ -15,7 +15,6 @@
 * This is a collaborative Laravel CRUD project for the Full Stack Development Bootcamp developed by KlikFanClub team.
 * Project status: work in progress. It's missing the event views, blog and the entire ecommerce structure. From the beginning we knew that we would not be able to deliver everything.
 
-* Heroku deployment url: https://xyxyxyxyxyxyxyxyxyxyxy.herokuapp.com/
 
 ## Concept
 ***
